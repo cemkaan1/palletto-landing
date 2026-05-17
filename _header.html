@@ -1,0 +1,118 @@
+<header class="fixed top-0 left-0 right-0 z-50 px-6 lg:px-8 pt-4 pb-3 bg-warm border-b border-navy/5">
+  <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+    
+    <!-- Logo -->
+    <a href="/" class="flex items-center -ml-2 shrink-0">
+      <img src="/pallettologdunkel.png" alt="Palletto" class="h-10 lg:h-12 w-auto">
+    </a>
+    
+    <!-- Desktop Pill Nav -->
+    <nav class="hidden lg:flex items-center bg-navy-dark backdrop-blur-md rounded-full px-2 py-2 shadow-lg shadow-navy/30 border border-white/10">
+      <a href="/#features" data-nav-item class="nav-pill-item px-5 py-2 text-sm font-medium text-white/70 hover:text-white rounded-full transition-all">Features</a>
+      <a href="/#wie-es-funktioniert" data-nav-item class="nav-pill-item px-5 py-2 text-sm font-medium text-white/70 hover:text-white rounded-full transition-all">Wie es funktioniert</a>
+      <a href="/#preise" data-nav-item class="nav-pill-item px-5 py-2 text-sm font-medium text-white/70 hover:text-white rounded-full transition-all">Preise</a>
+      <a href="/#faq" data-nav-item class="nav-pill-item px-5 py-2 text-sm font-medium text-white/70 hover:text-white rounded-full transition-all">FAQ</a>
+    </nav>
+    
+    <!-- Right: Login, CTA, Hamburger -->
+    <div class="flex items-center gap-2 lg:gap-3 shrink-0">
+      <a href="https://app.palletto.de" class="hidden sm:inline-flex text-sm font-medium text-navy/70 hover:text-navy transition-colors px-3 py-2">Login</a>
+      <a href="/#anmelden" class="inline-flex items-center gap-2 bg-navy text-white px-3 py-2 lg:px-5 lg:py-2.5 rounded-full text-xs lg:text-sm font-semibold hover:bg-navy-dark transition-colors shadow-md shadow-navy/20">
+        <span class="hidden sm:inline">Kostenlos testen</span>
+        <span class="sm:hidden">Testen</span>
+      </a>
+      
+      <!-- Hamburger mit Premium Animation -->
+      <button id="mobile-menu-btn" aria-label="Menü" class="lg:hidden relative flex items-center justify-center w-11 h-11 rounded-full bg-navy text-white shadow-lg shadow-navy/40 active:scale-90 transition-transform">
+        <div class="hamburger-icon">
+          <span class="hamburger-line hamburger-line-1"></span>
+          <span class="hamburger-line hamburger-line-2"></span>
+          <span class="hamburger-line hamburger-line-3"></span>
+        </div>
+      </button>
+    </div>
+    
+  </div>
+  
+  <!-- Mobile Menu Dropdown -->
+  <div id="mobile-menu" class="mobile-menu lg:hidden absolute top-20 right-6 left-6 bg-navy-dark rounded-2xl shadow-2xl border border-white/10 p-2 origin-top-right">
+    <a href="/#features" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">Features</a>
+    <a href="/#wie-es-funktioniert" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">Wie es funktioniert</a>
+    <a href="/#preise" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">Preise</a>
+    <a href="/#faq" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">FAQ</a>
+    <div class="border-t border-white/10 my-2"></div>
+    <a href="https://app.palletto.de" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">Login</a>
+  </div>
+</header>
+
+<style>
+  /* DESKTOP PILL */
+  .nav-pill-item:hover { background: rgba(255, 255, 255, 0.1); }
+  .nav-pill-item.active { background: #FF9500; color: white; }
+  .nav-pill-item.active:hover { background: #e88500; }
+  
+  /* PREMIUM HAMBURGER - asymmetrische Linien morphen elegant zu X */
+  .hamburger-icon {
+    position: relative;
+    width: 22px;
+    height: 16px;
+  }
+  .hamburger-line {
+    position: absolute;
+    left: 0;
+    height: 2px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  }
+  .hamburger-line-1 { top: 0; width: 100%; }
+  .hamburger-line-2 { top: 7px; width: 70%; right: 0; left: auto; }
+  .hamburger-line-3 { top: 14px; width: 85%; }
+  
+  #mobile-menu-btn.open .hamburger-line-1 {
+    top: 7px;
+    transform: rotate(45deg);
+    width: 100%;
+  }
+  #mobile-menu-btn.open .hamburger-line-2 {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  #mobile-menu-btn.open .hamburger-line-3 {
+    top: 7px;
+    transform: rotate(-45deg);
+    width: 100%;
+    right: 0;
+    left: auto;
+  }
+  
+  /* MENU DROPDOWN - elegant scale + fade from top-right corner */
+  .mobile-menu {
+    opacity: 0;
+    transform: scale(0.85) translateY(-15px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  .mobile-menu.open {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    pointer-events: auto;
+  }
+  
+  /* STAGGERED ITEMS - kommen wellenartig rein */
+  .mobile-menu .mobile-nav-link {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s ease;
+  }
+  .mobile-menu.open .mobile-nav-link {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .mobile-menu.open .mobile-nav-link:nth-child(1) { transition-delay: 0.1s; }
+  .mobile-menu.open .mobile-nav-link:nth-child(2) { transition-delay: 0.17s; }
+  .mobile-menu.open .mobile-nav-link:nth-child(3) { transition-delay: 0.24s; }
+  .mobile-menu.open .mobile-nav-link:nth-child(4) { transition-delay: 0.31s; }
+  .mobile-menu.open .mobile-nav-link:nth-child(6) { transition-delay: 0.38s; }
+</style>
