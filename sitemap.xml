@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemaps-image/1.1">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://palletto.de/</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://palletto.de/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://palletto.de/" />
+    <image:image>
+      <image:loc>https://palletto.de/og-image.png</image:loc>
+      <image:title>Palletto - Palettenkonto Software für Transportunternehmen</image:title>
+      <image:caption>Digitale Palettenscheine mit Unterschrift. Rechtssicher nach §126b BGB.</image:caption>
+    </image:image>
+  </url>
+
+</urlset>
