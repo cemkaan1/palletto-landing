@@ -3,19 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AGB & Nutzungsbedingungen – palletto</title>
-  <meta name="description" content="Allgemeine Geschäftsbedingungen und Nutzungsbedingungen für die Pilot-Phase von palletto.">
   <meta name="robots" content="noindex, nofollow">
-  
-  <!-- Inter Font (lokal gehostet, DSGVO-konform) -->
-  <style>
-    @font-face { font-family: 'Inter'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/inter-v20-latin-regular.woff2') format('woff2'); }
-    @font-face { font-family: 'Inter'; font-style: normal; font-weight: 500; font-display: swap; src: url('fonts/inter-v20-latin-500.woff2') format('woff2'); }
-    @font-face { font-family: 'Inter'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/inter-v20-latin-600.woff2') format('woff2'); }
-    @font-face { font-family: 'Inter'; font-style: normal; font-weight: 700; font-display: swap; src: url('fonts/inter-v20-latin-700.woff2') format('woff2'); }
-    @font-face { font-family: 'Inter'; font-style: normal; font-weight: 800; font-display: swap; src: url('fonts/inter-v20-latin-800.woff2') format('woff2'); }
-    @font-face { font-family: 'Inter'; font-style: normal; font-weight: 900; font-display: swap; src: url('fonts/inter-v20-latin-900.woff2') format('woff2'); }
-  </style>
+  <title>AGB – Palletto</title>
   
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -23,246 +12,308 @@
       theme: {
         extend: {
           colors: {
-            navy: { DEFAULT: '#1B3A6B', dark: '#142C52', light: '#2A4F8C' },
-            orange: { DEFAULT: '#FF9500', dark: '#E68600', light: '#FFB347' },
-            cream: '#FAFAF7'
+            navy: '#1B3A6B',
+            'navy-dark': '#142b50',
+            orange: '#FF9500',
+            'orange-dark': '#e88500',
+            warm: '#FAFAF7',
           },
           fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif']
-          }
-        }
-      }
-    }
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
   </script>
-  
+
   <style>
-    body { font-family: 'Inter', system-ui, sans-serif; }
-    .legal-content h2 { font-size: 1.5rem; font-weight: 700; color: #1B3A6B; margin-top: 2.5rem; margin-bottom: 1rem; }
-    .legal-content h3 { font-size: 1.125rem; font-weight: 600; color: #1B3A6B; margin-top: 1.5rem; margin-bottom: 0.5rem; }
-    .legal-content p { margin-bottom: 1rem; line-height: 1.7; color: #374151; }
-    .legal-content a { color: #FF9500; text-decoration: underline; }
-    .legal-content a:hover { color: #E68600; }
-    .legal-content ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; color: #374151; }
-    .legal-content li { margin-bottom: 0.5rem; line-height: 1.7; }
-    .legal-content strong { color: #1B3A6B; font-weight: 600; }
-    .notice-box { background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%); border-left: 4px solid #FF9500; padding: 1.5rem; border-radius: 0.75rem; margin: 2rem 0; }
-    .notice-box p { margin-bottom: 0.5rem; color: #1B3A6B; }
-    .notice-box p:last-child { margin-bottom: 0; }
+    @font-face { font-family: 'Inter'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/inter-v20-latin-regular.woff2') format('woff2'); }
+    @font-face { font-family: 'Inter'; font-style: normal; font-weight: 500; font-display: swap; src: url('fonts/inter-v20-latin-500.woff2') format('woff2'); }
+    @font-face { font-family: 'Inter'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/inter-v20-latin-600.woff2') format('woff2'); }
+    @font-face { font-family: 'Inter'; font-style: normal; font-weight: 700; font-display: swap; src: url('fonts/inter-v20-latin-700.woff2') format('woff2'); }
+    @font-face { font-family: 'Inter'; font-style: normal; font-weight: 800; font-display: swap; src: url('fonts/inter-v20-latin-800.woff2') format('woff2'); }
+    
+    html { scroll-behavior: smooth; }
+    body { font-feature-settings: 'cv11', 'ss01'; }
+    .legal-content h2 { font-size: 1.5rem; font-weight: 800; margin-top: 2.5rem; margin-bottom: 1rem; color: #1B3A6B; }
+    .legal-content h3 { font-size: 1.125rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.5rem; color: #1B3A6B; }
+    .legal-content p { margin-bottom: 1rem; line-height: 1.7; color: #1B3A6B; opacity: 0.85; }
+    .legal-content ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
+    .legal-content li { margin-bottom: 0.5rem; line-height: 1.7; color: #1B3A6B; opacity: 0.85; }
+    .legal-content strong { color: #1B3A6B; font-weight: 700; }
   </style>
 </head>
-
-<body class="bg-cream text-navy antialiased">
+<body class="bg-warm text-navy font-sans antialiased">
 
   <div id="site-header"></div>
 
-  <!-- Main Content -->
-  <main class="py-16 lg:py-24 px-6 lg:px-8">
-    <div class="max-w-4xl mx-auto">
+  <main class="pt-32 pb-20 px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
       
-      <!-- Page Header -->
-      <div class="mb-12 pb-8 border-b border-navy/10">
-        <div class="text-sm font-semibold text-orange mb-3 tracking-wide uppercase">Rechtliches</div>
-        <h1 class="text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
-          Nutzungsbedingungen
-        </h1>
-        <p class="text-lg text-navy/60 mt-3">Allgemeine Geschäftsbedingungen für die Pilot-Phase</p>
-        <p class="text-sm text-navy/50 mt-2">Stand: Mai 2026</p>
+      <div class="mb-12">
+        <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Rechtliches</div>
+        <h1 class="text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight mb-4">Allgemeine Geschäftsbedingungen</h1>
+        <p class="text-navy/60 text-sm">Stand: 17. Mai 2026</p>
       </div>
-      
-      <!-- Notice Box -->
-      <div class="notice-box">
-        <p><strong>Hinweis zur aktuellen Phase</strong></p>
-        <p>
-          Palletto befindet sich derzeit in der Pilot-Phase. Unsere finalen AGB werden gemeinsam mit der Veröffentlichung unserer Preismodelle bereitgestellt. Bis dahin gelten die nachfolgenden Pilot-Nutzungsbedingungen sowie individuelle Vereinbarungen mit unseren Pilotkunden.
-        </p>
-      </div>
-      
-      <!-- Content -->
+
       <div class="legal-content">
         
-        <h2>§ 1 Geltungsbereich</h2>
+        <h2>§1 Geltungsbereich und Vertragspartner</h2>
         <p>
-          Diese Pilot-Nutzungsbedingungen gelten für die Nutzung der SaaS-Anwendung Palletto („Software") sowie die zugehörige Website palletto.de während der Pilot-Phase. Anbieter ist:
+          (1) Diese Allgemeinen Geschäftsbedingungen (nachfolgend „AGB") gelten für alle Verträge zwischen
         </p>
         <p>
           <strong>Cem-Kaan Özertas</strong><br>
           Habichtweg 6<br>
           25336 Elmshorn<br>
-          Deutschland<br>
-          E-Mail: <a href="mailto:info@palletto.de">info@palletto.de</a>
+          E-Mail: info@palletto.de<br>
+          (nachfolgend „Anbieter")
         </p>
         <p>
-          Mit der Registrierung und Nutzung der Software erklären Sie sich mit diesen Bedingungen einverstanden.
-        </p>
-        
-        <h2>§ 2 Vertragsgegenstand</h2>
-        <p>
-          Palletto stellt eine cloudbasierte Software zur digitalen Verwaltung von Palettenscheinen, Lieferungen und Kundenbilanzen für Transportunternehmen zur Verfügung. Der genaue Funktionsumfang ergibt sich aus der jeweils aktuellen Produktbeschreibung auf <a href="https://palletto.de">palletto.de</a>.
-        </p>
-        
-        <h2>§ 3 Pilot-Phase und Testbetrieb</h2>
-        <p>
-          Während der Pilot-Phase wird die Software für einen Zeitraum von <strong>30 Tagen kostenfrei</strong> zum Test bereitgestellt. Eine automatische Vertragsverlängerung findet während der Pilot-Phase nicht statt.
+          und den Kunden (nachfolgend „Kunde") über die Nutzung der Software-as-a-Service-Anwendung „Palletto" (nachfolgend „Software" oder „Dienst").
         </p>
         <p>
-          <strong>Ablauf nach Ende der 30-tägigen Testphase:</strong>
+          (2) Das Angebot richtet sich ausschließlich an Unternehmer im Sinne des § 14 BGB, juristische Personen des öffentlichen Rechts oder öffentlich-rechtliche Sondervermögen. Verträge mit Verbrauchern werden nicht geschlossen.
+        </p>
+        <p>
+          (3) Abweichende, entgegenstehende oder ergänzende Geschäftsbedingungen des Kunden werden nicht Vertragsbestandteil, es sei denn, der Anbieter stimmt ihrer Geltung ausdrücklich schriftlich zu.
+        </p>
+
+        <h2>§2 Vertragsgegenstand</h2>
+        <p>
+          (1) Der Anbieter stellt dem Kunden die Software „Palletto" zur Nutzung über das Internet zur Verfügung. Die Software ermöglicht die digitale Erfassung, Verwaltung und Auswertung von Palettenbewegungen mit digitaler Empfänger-Unterschrift in Textform nach §126b BGB.
+        </p>
+        <p>
+          (2) Der Funktionsumfang richtet sich nach dem gewählten Tarif (Starter, Business oder Enterprise). Die jeweils aktuellen Leistungsbeschreibungen sind unter <a href="https://palletto.de/#preise" class="text-orange underline">palletto.de/#preise</a> einsehbar.
+        </p>
+        <p>
+          (3) Der Anbieter ist berechtigt, den Funktionsumfang weiterzuentwickeln und zu verbessern. Wesentliche Funktionsänderungen werden dem Kunden mit angemessener Vorlaufzeit per E-Mail mitgeteilt.
+        </p>
+
+        <h2>§3 Vertragsschluss und Testphase</h2>
+        <p>
+          (1) Der Kunde kann die Software für 30 Tage kostenlos und unverbindlich testen. Hierfür ist die Eintragung im Anmeldeformular unter palletto.de erforderlich.
+        </p>
+        <p>
+          (2) Die Testphase endet nach 30 Tagen automatisch. Es entstehen keine Kosten und keine Verpflichtungen. Eine Kreditkarte oder andere Zahlungsmittel sind während der Testphase nicht erforderlich.
+        </p>
+        <p>
+          (3) Wünscht der Kunde nach der Testphase die weitere Nutzung, schließt der Anbieter mit ihm einen kostenpflichtigen Vertrag. Der Vertrag kommt durch Vertragsunterzeichnung (per E-Mail oder Online-Bestätigung) oder durch die Bezahlung der ersten Rechnung zustande.
+        </p>
+        <p>
+          (4) Wird die Testphase nicht in einen kostenpflichtigen Vertrag überführt, wird der Account inkl. aller Daten nach Ablauf der Testphase gesperrt und innerhalb von 30 Tagen vollständig gelöscht. Eine Wiederherstellung ist nach Löschung nicht möglich.
+        </p>
+
+        <h2>§4 Preise und Zahlungsbedingungen</h2>
+        <p>
+          (1) Es gelten die zum Zeitpunkt des Vertragsabschlusses gültigen Preise gemäß der Preisliste unter <a href="https://palletto.de/#preise" class="text-orange underline">palletto.de/#preise</a>:
         </p>
         <ul>
-          <li>Der Anbieter unterbreitet dem Nutzer ein individuelles Angebot zur Fortsetzung der Nutzung, oder</li>
-          <li>Der Nutzerzugang wird geschlossen und sämtliche Daten des Nutzers werden gelöscht.</li>
+          <li><strong>Starter:</strong> ab 499 € / Monat (zzgl. 19% USt.)</li>
+          <li><strong>Business:</strong> ab 999 € / Monat (zzgl. 19% USt.)</li>
+          <li><strong>Enterprise:</strong> Individuelle Kalkulation</li>
         </ul>
         <p>
-          <strong>Wichtiger Hinweis:</strong> Nach Schließung des Zugangs und Löschung der Daten ist eine Wiederherstellung oder Reaktivierung des Accounts <strong>nicht mehr möglich</strong>. Eine erneute Nutzung erfordert eine vollständige Neuanmeldung mit neuer Datenerfassung.
+          (2) Alle genannten Preise verstehen sich als Netto-Preise zuzüglich der gesetzlichen Umsatzsteuer in Höhe von derzeit 19%.
         </p>
         <p>
-          Der Nutzer kann vor Ablauf der Testphase einen Datenexport anfordern, um seine Daten lokal zu sichern.
-        </p>
-        <p>
-          Der Anbieter behält sich vor, die Pilot-Phase, einzelne Funktionen oder die Software insgesamt jederzeit zu ändern, einzustellen oder anzupassen. Ein Anspruch auf bestimmte Funktionen oder eine bestimmte Verfügbarkeit besteht während der Pilot-Phase nicht.
-        </p>
-        
-        <h2>§ 4 Pflichten des Nutzers</h2>
-        <p>
-          Der Nutzer verpflichtet sich:
+          (3) Die Abrechnung erfolgt wahlweise:
         </p>
         <ul>
-          <li>Die Software nur zu den vertraglich vereinbarten Zwecken zu nutzen</li>
-          <li>Zugangsdaten sicher zu verwahren und nicht an Dritte weiterzugeben</li>
-          <li>Keine Inhalte einzustellen, die gegen geltendes Recht verstoßen</li>
-          <li>Keine Sicherheitsmaßnahmen zu umgehen oder die Software unbefugt zu kopieren</li>
-          <li>Bei Datenschutzvorfällen oder Sicherheitslücken den Anbieter unverzüglich zu informieren</li>
-          <li>Eigenverantwortlich für die Richtigkeit und Rechtmäßigkeit der eingegebenen Daten zu sorgen</li>
+          <li><strong>Monatlich:</strong> Vorab zum jeweiligen Monatsersten</li>
+          <li><strong>Jährlich:</strong> Vorab zu Vertragsbeginn (mit 10% Rabatt auf die monatlichen Preise)</li>
         </ul>
-        
-        <h2>§ 5 Verfügbarkeit</h2>
         <p>
-          Der Anbieter bemüht sich um eine hohe Verfügbarkeit der Software, kann diese während der Pilot-Phase jedoch nicht garantieren. Wartungsarbeiten, Updates und unvorhergesehene Ausfälle können zu zeitweiligen Einschränkungen führen.
+          (4) Die erste Aktivierung erfolgt grundsätzlich auf Vorkasse. Folgerechnungen werden per E-Mail versandt und sind innerhalb von 14 Tagen ohne Abzug zur Zahlung fällig.
         </p>
         <p>
-          Geplante Wartungsarbeiten werden nach Möglichkeit außerhalb üblicher Geschäftszeiten durchgeführt.
+          (5) Bei Zahlungsverzug ist der Anbieter berechtigt, gesetzliche Verzugszinsen sowie eine Mahnpauschale gemäß § 288 Abs. 5 BGB zu erheben.
         </p>
-        
-        <h2>§ 6 Datensicherung und Backups</h2>
+
+        <h2>§5 Preisanpassung und Preisgarantie</h2>
         <p>
-          Der Anbieter führt tägliche automatische Backups der Anwendungsdaten durch und speichert diese verschlüsselt in europäischen Rechenzentren. Trotz dieser Maßnahmen empfiehlt der Anbieter dem Nutzer, eigene Sicherungen wichtiger Daten anzulegen.
-        </p>
-        <p>
-          Eine Haftung für Datenverluste richtet sich nach § 8.
-        </p>
-        
-        <h2>§ 7 Datenschutz</h2>
-        <p>
-          Der Anbieter verarbeitet personenbezogene Daten ausschließlich im Rahmen der geltenden Datenschutzgesetze (DSGVO, BDSG, TDDDG). Details zur Datenverarbeitung finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+          (1) Der Anbieter garantiert dem Kunden eine Preisgarantie von 12 Monaten ab Vertragsbeginn. Innerhalb dieses Zeitraums wird der vereinbarte Nutzungspreis nicht erhöht.
         </p>
         <p>
-          Für die Verarbeitung personenbezogener Daten im Auftrag des Nutzers stellt der Anbieter auf Anfrage einen <a href="avv.html">Auftragsverarbeitungsvertrag</a> nach Art. 28 DSGVO bereit.
-        </p>
-        
-        <h2>§ 8 Haftung</h2>
-        <p>
-          <strong>8.1</strong> Der Anbieter haftet unbeschränkt für Vorsatz und grobe Fahrlässigkeit sowie für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit.
+          (2) Nach Ablauf der 12-monatigen Preisgarantie ist der Anbieter berechtigt, die Preise mit einer Ankündigungsfrist von 3 Monaten zum Monatsende anzupassen. Die Anpassung erfolgt nach billigem Ermessen unter Berücksichtigung der allgemeinen Marktentwicklung.
         </p>
         <p>
-          <strong>8.2</strong> Bei leichter Fahrlässigkeit haftet der Anbieter nur bei Verletzung wesentlicher Vertragspflichten (Kardinalpflichten). Die Haftung ist in diesem Fall auf den vertragstypischen, vorhersehbaren Schaden begrenzt.
+          (3) Der Kunde ist im Falle einer Preiserhöhung um mehr als 10% berechtigt, den Vertrag mit Wirksamwerden der Preiserhöhung außerordentlich zu kündigen.
+        </p>
+
+        <h2>§6 Vertragslaufzeit und Kündigung</h2>
+        <p>
+          (1) Der Vertrag beginnt mit dem Datum der ersten kostenpflichtigen Aktivierung des Accounts.
         </p>
         <p>
-          <strong>8.3</strong> Der Anbieter haftet <strong>nicht</strong> für:
+          (2) Die Mindestvertragslaufzeit beträgt <strong>6 Monate</strong>.
+        </p>
+        <p>
+          (3) Nach Ablauf der Mindestlaufzeit verlängert sich der Vertrag automatisch um jeweils einen weiteren Monat, sofern er nicht mit einer Frist von <strong>1 Monat zum Monatsende</strong> gekündigt wird.
+        </p>
+        <p>
+          (4) Die Kündigung bedarf der Textform (z.B. E-Mail an info@palletto.de).
+        </p>
+        <p>
+          (5) Das Recht zur außerordentlichen Kündigung aus wichtigem Grund bleibt für beide Parteien unberührt.
+        </p>
+
+        <h2>§7 Zahlungsverzug und Account-Sperrung</h2>
+        <p>
+          (1) Bei Zahlungsverzug erfolgt zunächst eine Zahlungserinnerung mit einer Nachfrist von 14 Tagen.
+        </p>
+        <p>
+          (2) Bleiben 2 aufeinanderfolgende Rechnungen unbezahlt, ist der Anbieter berechtigt, den Account des Kunden zu sperren. Der Kunde wird hierüber per E-Mail informiert.
+        </p>
+        <p>
+          (3) Während der Sperrung kann der Kunde weder neue Daten erfassen noch bestehende Daten exportieren. Der Anbieter speichert die Kundendaten für weitere <strong>30 Tage</strong> nach Sperrung.
+        </p>
+        <p>
+          (4) Begleicht der Kunde die offenen Rechnungen innerhalb dieser 30 Tage, wird der Account wieder freigeschaltet. Andernfalls werden alle Kundendaten nach Ablauf der 30 Tage vollständig und unwiderruflich gelöscht.
+        </p>
+        <p>
+          (5) Bereits gezahlte Beträge werden bei Account-Sperrung nicht erstattet.
+        </p>
+
+        <h2>§8 Verfügbarkeit und Support</h2>
+        <p>
+          (1) Der Anbieter bemüht sich nach besten Kräften um eine hohe Verfügbarkeit der Software. Eine bestimmte Verfügbarkeitsrate (SLA) wird nicht garantiert.
+        </p>
+        <p>
+          (2) Wartungsarbeiten werden, soweit möglich, in verkehrsarmen Zeiten durchgeführt und mit angemessener Vorlaufzeit angekündigt.
+        </p>
+        <p>
+          (3) Der Anbieter haftet nicht für Ausfälle aufgrund höherer Gewalt, technischer Störungen Dritter (z.B. Hosting-Provider, Internet-Provider) oder notwendiger Wartungsarbeiten.
+        </p>
+        <p>
+          (4) Support-Reaktionszeiten (jeweils Werktage Mo-Fr, 9-17 Uhr):
         </p>
         <ul>
-          <li>Mittelbare Schäden und Folgeschäden</li>
-          <li>Entgangenen Gewinn</li>
-          <li>Datenverluste trotz ordnungsgemäßer Backups</li>
-          <li>Schäden durch höhere Gewalt (z.B. Naturereignisse, Streiks, Krieg)</li>
-          <li>Schäden durch Ausfall der Internet-Infrastruktur</li>
-          <li>Schäden durch Drittanbieter-Dienste (Hosting, E-Mail, etc.) außerhalb des Einflussbereichs des Anbieters</li>
-          <li>Schäden durch unsachgemäße Nutzung oder Falscheingaben durch den Nutzer</li>
+          <li><strong>Starter:</strong> E-Mail-Support, Reaktion innerhalb 48 Stunden</li>
+          <li><strong>Business:</strong> E-Mail-Support, Reaktion innerhalb 24 Stunden</li>
+          <li><strong>Enterprise:</strong> Telefon-Support mit direkter Durchwahl, Reaktion innerhalb 4 Stunden</li>
         </ul>
         <p>
-          <strong>8.4</strong> Während der kostenfreien Pilot-Phase haftet der Anbieter ausschließlich für Vorsatz und grobe Fahrlässigkeit.
+          (5) Die genannten Reaktionszeiten beziehen sich auf die Erstreaktion. Eine Garantie für die Behebung von Störungen innerhalb dieser Zeit besteht nicht.
+        </p>
+
+        <h2>§9 Pflichten des Kunden</h2>
+        <p>
+          (1) Der Kunde verpflichtet sich, die Zugangsdaten zur Software vertraulich zu behandeln und Dritten nicht zugänglich zu machen.
         </p>
         <p>
-          <strong>8.5</strong> Die vorstehenden Haftungsbeschränkungen gelten auch für die persönliche Haftung von Mitarbeitern, Vertretern und Erfüllungsgehilfen des Anbieters.
-        </p>
-        
-        <h2>§ 9 Beendigung der Nutzung</h2>
-        <p>
-          Der Nutzer kann die Nutzung der Software während der Pilot-Phase jederzeit und ohne Angabe von Gründen beenden. Eine Kündigung erfolgt formlos per E-Mail an <a href="mailto:info@palletto.de">info@palletto.de</a>.
+          (2) Der Kunde ist für alle Aktivitäten verantwortlich, die unter seinem Account durchgeführt werden.
         </p>
         <p>
-          Der Anbieter kann die Nutzung mit einer Frist von 14 Tagen beenden. Bei Verstößen gegen diese Nutzungsbedingungen ist eine außerordentliche Kündigung jederzeit möglich.
-        </p>
-       <p>
-          Nach Beendigung der Nutzung werden die Daten des Nutzers <strong>unverzüglich gelöscht</strong>, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen. Eine Wiederherstellung gelöschter Daten ist <strong>technisch ausgeschlossen</strong>.
+          (3) Bei Verdacht auf Missbrauch (z.B. Diebstahl der Zugangsdaten) ist der Anbieter unverzüglich zu informieren.
         </p>
         <p>
-          Der Nutzer kann <strong>vor</strong> Beendigung einen Datenexport anfordern, um seine Daten lokal zu sichern. Anfragen sind per E-Mail an <a href="mailto:info@palletto.de">info@palletto.de</a> zu richten.
+          (4) Der Kunde verpflichtet sich, die Software ausschließlich im Rahmen der gesetzlichen Bestimmungen zu nutzen. Insbesondere ist es untersagt, die Software für rechtswidrige Zwecke oder zur Verbreitung schädlicher Inhalte einzusetzen.
         </p>
-        
-        <h2>§ 10 Änderung dieser Bedingungen</h2>
+
+        <h2>§10 Datenschutz und Auftragsverarbeitung</h2>
         <p>
-          Der Anbieter behält sich vor, diese Pilot-Nutzungsbedingungen mit angemessener Frist anzupassen, insbesondere bei rechtlichen Änderungen oder Anpassungen des Leistungsumfangs. Änderungen werden dem Nutzer rechtzeitig per E-Mail mitgeteilt.
-        </p>
-        
-        <h2>§ 11 Schlussbestimmungen</h2>
-        <p>
-          <strong>11.1</strong> Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts.
+          (1) Der Anbieter erhebt und verarbeitet personenbezogene Daten des Kunden ausschließlich nach den Bestimmungen der Datenschutz-Grundverordnung (DSGVO) und des Bundesdatenschutzgesetzes (BDSG). Details siehe <a href="/datenschutz.html" class="text-orange underline">Datenschutzerklärung</a>.
         </p>
         <p>
-          <strong>11.2</strong> Sofern der Nutzer Kaufmann, juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen ist, ist Gerichtsstand für alle Streitigkeiten der Sitz des Anbieters.
+          (2) Soweit der Anbieter im Auftrag des Kunden personenbezogene Daten von Dritten (z.B. Mitarbeiter, Kunden des Kunden) verarbeitet, wird hierfür ein gesonderter Auftragsverarbeitungsvertrag (AVV) gemäß Art. 28 DSGVO geschlossen.
         </p>
         <p>
-          <strong>11.3</strong> Sollten einzelne Bestimmungen dieser Pilot-Nutzungsbedingungen unwirksam sein, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt.
+          (3) Der AVV wird dem Kunden auf Anfrage zur Verfügung gestellt.
+        </p>
+
+        <h2>§11 Datenexport und Datenlöschung</h2>
+        <p>
+          (1) Während der aktiven Vertragslaufzeit kann der Kunde seine Daten jederzeit als PDF und CSV exportieren.
         </p>
         <p>
-          <strong>11.4</strong> Bei Streitigkeiten ist der Anbieter nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
-        </p>
-        
-        <h2>§ 12 Kontakt</h2>
-        <p>
-          Bei Fragen zu diesen Nutzungsbedingungen erreichen Sie uns unter:
+          (2) Nach Vertragsende oder Account-Sperrung ist ein Datenexport nicht mehr möglich. Der Kunde ist daher gehalten, einen Datenexport rechtzeitig vor Vertragsende durchzuführen.
         </p>
         <p>
-          E-Mail: <a href="mailto:info@palletto.de">info@palletto.de</a><br>
-          Telefon: <a href="tel:+4917621856977">0176 21856977</a>
+          (3) Nach Ablauf der gesetzlichen oder vertraglichen Aufbewahrungsfristen werden die Daten vollständig und unwiderruflich gelöscht.
         </p>
-        
+
+        <h2>§12 Haftung</h2>
+        <p>
+          (1) Der Anbieter haftet unbeschränkt bei Vorsatz und grober Fahrlässigkeit.
+        </p>
+        <p>
+          (2) Bei einfacher Fahrlässigkeit haftet der Anbieter nur bei Verletzung wesentlicher Vertragspflichten (Kardinalpflichten). Die Haftung ist in diesem Fall auf den vertragstypischen, vorhersehbaren Schaden begrenzt.
+        </p>
+        <p>
+          (3) Die Haftung des Anbieters für entgangenen Gewinn, ausgebliebene Einsparungen, mittelbare Schäden und Folgeschäden ist ausgeschlossen, soweit nicht Vorsatz oder grobe Fahrlässigkeit vorliegt.
+        </p>
+        <p>
+          (4) Der Anbieter haftet nicht für Schäden, die durch höhere Gewalt, Streik, behördliche Anordnungen oder durch Dritte (z.B. Hosting-Provider, Subunternehmer) verursacht werden, soweit diese außerhalb des Einflussbereichs des Anbieters liegen.
+        </p>
+        <p>
+          (5) Trotz regelmäßiger Backups übernimmt der Anbieter keine Haftung für Datenverluste, soweit nicht Vorsatz oder grobe Fahrlässigkeit vorliegt. Der Kunde ist gehalten, regelmäßig eigene Sicherungskopien (z.B. via Datenexport) anzufertigen.
+        </p>
+        <p>
+          (6) Die Haftung nach dem Produkthaftungsgesetz sowie für die Verletzung von Leben, Körper und Gesundheit bleibt unberührt.
+        </p>
+
+        <h2>§13 Rechtswahl und Gerichtsstand</h2>
+        <p>
+          (1) Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts.
+        </p>
+        <p>
+          (2) Ausschließlicher Gerichtsstand für alle Streitigkeiten aus oder im Zusammenhang mit diesem Vertrag ist Elmshorn, soweit der Kunde Kaufmann, juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen ist.
+        </p>
+
+        <h2>§14 Schlussbestimmungen</h2>
+        <p>
+          (1) Änderungen und Ergänzungen dieses Vertrages bedürfen der Textform. Dies gilt auch für die Aufhebung dieses Textformerfordernisses.
+        </p>
+        <p>
+          (2) Sollten einzelne Bestimmungen dieser AGB unwirksam sein oder werden, bleibt die Wirksamkeit der übrigen Bestimmungen davon unberührt. An die Stelle der unwirksamen Bestimmung tritt diejenige rechtlich zulässige Regelung, die dem mit der unwirksamen Bestimmung verfolgten Zweck am nächsten kommt.
+        </p>
+        <p>
+          (3) Der Anbieter behält sich vor, diese AGB jederzeit zu ändern. Änderungen werden dem Kunden mindestens 6 Wochen vor Inkrafttreten per E-Mail mitgeteilt. Widerspricht der Kunde der Änderung nicht innerhalb von 6 Wochen nach Zugang der Änderungsmitteilung in Textform, gelten die geänderten AGB als angenommen. Der Anbieter wird den Kunden auf diese Folge im Rahmen der Änderungsmitteilung hinweisen.
+        </p>
+
       </div>
-      
+
+      <div class="mt-16 p-6 bg-white rounded-2xl border border-navy/10">
+        <p class="text-sm text-navy/60">
+          Bei Fragen zu diesen AGB erreichst du uns unter <a href="mailto:info@palletto.de" class="text-orange font-semibold hover:underline">info@palletto.de</a>.
+        </p>
+      </div>
+
     </div>
   </main>
-<div id="site-footer"></div>
-<script>
-  Promise.all([
-    fetch('/_header.html').then(r => r.text()),
-    fetch('/_footer.html').then(r => r.text())
-  ]).then(([h, f]) => {
-    document.getElementById('site-header').innerHTML = h;
-    document.getElementById('site-footer').innerHTML = f;
-    
-    // Scroll-Spy nach Header-Load aktivieren
-    const navItems = document.querySelectorAll('[data-nav-item]');
-    const sections = ['features', 'wie-es-funktioniert', 'preise', 'faq'];
-    function updateActive() {
-      let current = '';
-      sections.forEach(id => {
-        const el = document.getElementById(id);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= 150 && rect.bottom >= 150) current = id;
-        }
-      });
-      navItems.forEach(item => {
-        const href = item.getAttribute('href');
-        if (href === '#' + current || href === '/#' + current) {
-          item.classList.add('active');
-        } else {
-          item.classList.remove('active');
-        }
-      });
-    }
-    window.addEventListener('scroll', updateActive);
-    updateActive();
-  });
-</script>
+
+  <div id="site-footer"></div>
+
+  <script>
+    Promise.all([
+      fetch('/_header.html').then(r => r.text()),
+      fetch('/_footer.html').then(r => r.text())
+    ]).then(([h, f]) => {
+      document.getElementById('site-header').innerHTML = h;
+      document.getElementById('site-footer').innerHTML = f;
+      
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      if (btn && menu) {
+        btn.addEventListener('click', () => {
+          btn.classList.toggle('open');
+          menu.classList.toggle('open');
+        });
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+          link.addEventListener('click', () => {
+            btn.classList.remove('open');
+            menu.classList.remove('open');
+          });
+        });
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            btn.classList.remove('open');
+            menu.classList.remove('open');
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>
