@@ -635,7 +635,7 @@ Impressum, Datenschutz, AGB – alles da.</p></div>
     </div>
   </section>
 
-  <!-- PREISE -->
+ <!-- PREISE -->
   <section id="preise" class="py-20 lg:py-32 px-6 lg:px-8">
     <div class="max-w-6xl mx-auto">
       <div class="max-w-2xl mb-16 mx-auto text-center">
@@ -644,8 +644,8 @@ Impressum, Datenschutz, AGB – alles da.</p></div>
         <p class="text-lg text-navy/70">3 Pakete für jede Unternehmensgröße. Erst nach dem Trial entscheidest du.</p>
       </div>
 
-      <!-- 3 Pricing Cards -->
-      <div class="grid md:grid-cols-3 gap-6">
+      <!-- 3 Pricing Cards - alle gleich lang -->
+      <div class="grid md:grid-cols-3 gap-6 items-stretch">
 
         <!-- STARTER -->
         <div class="bg-warm rounded-3xl border border-navy/10 p-8 hover:border-navy/20 transition-colors flex flex-col">
@@ -654,22 +654,29 @@ Impressum, Datenschutz, AGB – alles da.</p></div>
             <p class="text-sm text-navy/60">Für kleine Transportunternehmen</p>
           </div>
           <div class="mb-6 pb-6 border-b border-navy/10">
-            <div class="text-3xl font-extrabold text-navy/80">Faire Preise</div>
-            <div class="text-sm text-navy/60 mt-1">Nach Trial individuell</div>
+            <div class="flex items-baseline gap-1">
+              <span class="text-sm text-navy/60">ab</span>
+              <span class="text-4xl font-extrabold">499 €</span>
+              <span class="text-sm text-navy/60">/Monat</span>
+            </div>
+            <div class="text-sm text-navy/60 mt-1">zzgl. MwSt.</div>
           </div>
           <ul class="space-y-3 mb-8 text-sm flex-1">
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Bis 5 Fahrer</span></li>
+            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span><strong>Bis 5 Fahrer</strong></span></li>
+            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>1 Office-Zugang</span></li>
             <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Digitale Palettenscheine</span></li>
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Kunden-Bilanz</span></li>
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Tägliche Auswertung</span></li>
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>PDF & Druck</span></li>
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Email-Support</span></li>
+            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Empfänger-Unterschrift (§126b BGB)</span></li>
+            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Offline-Modus</span></li>
+            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Tägliche Auswertung per E-Mail</span></li>
+            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>PDF-Export & Druck</span></li>
+            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Verschlüsselte Backups</span></li>
+            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>E-Mail-Support</span></li>
           </ul>
           <a href="#anmelden" class="block w-full bg-white border border-navy/15 text-navy text-center px-6 py-3 rounded-xl font-semibold hover:border-navy/30 transition-colors">30 Tage gratis testen</a>
         </div>
 
         <!-- BUSINESS (Highlighted) -->
-        <div class="bg-navy text-white rounded-3xl p-8 relative shadow-2xl overflow-hidden flex flex-col lg:-mt-4">
+        <div class="bg-navy text-white rounded-3xl p-8 relative shadow-2xl overflow-hidden flex flex-col">
           <div class="absolute top-0 right-0 w-64 h-64 bg-orange/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
           <div class="relative flex flex-col h-full">
             <div class="inline-flex items-center gap-2 bg-orange text-white px-3 py-1 rounded-full text-xs font-bold mb-4 w-fit">⭐ Beliebteste Wahl</div>
@@ -678,16 +685,23 @@ Impressum, Datenschutz, AGB – alles da.</p></div>
               <p class="text-sm text-white/70">Für mittelständische Unternehmen</p>
             </div>
             <div class="mb-6 pb-6 border-b border-white/10">
-              <div class="text-3xl font-extrabold text-orange">Faire Preise</div>
-              <div class="text-sm text-white/60 mt-1">Nach Trial individuell</div>
+              <div class="flex items-baseline gap-1">
+                <span class="text-sm text-white/60">ab</span>
+                <span class="text-4xl font-extrabold text-orange">999 €</span>
+                <span class="text-sm text-white/60">/Monat</span>
+              </div>
+              <div class="text-sm text-white/60 mt-1">zzgl. MwSt.</div>
             </div>
             <ul class="space-y-3 mb-8 text-sm flex-1">
               <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span><strong>Bis 20 Fahrer</strong></span></li>
-              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Alle Starter-Features</span></li>
-              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Priority Email-Support</span></li>
-              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Erweiterte Auswertungen</span></li>
-              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>CSV-Export</span></li>
-              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Individuelle Anpassungen</span></li>
+              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span><strong>3 Office-Zugänge</strong></span></li>
+              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Digitale Palettenscheine</span></li>
+              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Empfänger-Unterschrift (§126b BGB)</span></li>
+              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Offline-Modus</span></li>
+              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Tägliche Auswertung per E-Mail</span></li>
+              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>PDF-Export & Druck</span></li>
+              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Verschlüsselte Backups</span></li>
+              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>E-Mail-Support</span></li>
             </ul>
             <a href="#anmelden" class="block w-full bg-orange text-white text-center px-6 py-3 rounded-xl font-bold hover:bg-orange-dark transition-colors">30 Tage gratis testen</a>
           </div>
@@ -700,16 +714,19 @@ Impressum, Datenschutz, AGB – alles da.</p></div>
             <p class="text-sm text-navy/60">Für große Flotten und Konzerne</p>
           </div>
           <div class="mb-6 pb-6 border-b border-navy/10">
-            <div class="text-3xl font-extrabold text-navy/80">Individuell</div>
+            <div class="text-4xl font-extrabold">Individuell</div>
             <div class="text-sm text-navy/60 mt-1">Nach Bedarf kalkuliert</div>
           </div>
           <ul class="space-y-3 mb-8 text-sm flex-1">
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span><strong>Unlimited Fahrer</strong></span></li>
+            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span><strong>Unbegrenzte Fahrer</strong></span></li>
+            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span><strong>Unbegrenzte Office-Zugänge</strong></span></li>
             <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Alle Business-Features</span></li>
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Telefon-Support</span></li>
             <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Persönliches Onboarding</span></li>
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>SLA-Garantie</span></li>
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Custom Integrations</span></li>
+            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Telefon-Support</span></li>
+            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Individuelle Anpassungen</span></li>
+            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Eigener Ansprechpartner</span></li>
+            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Schulung Ihres Teams</span></li>
+            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Priorität bei neuen Features</span></li>
           </ul>
           <a href="#anmelden" class="block w-full bg-white border border-navy/15 text-navy text-center px-6 py-3 rounded-xl font-semibold hover:border-navy/30 transition-colors">Anfrage stellen</a>
         </div>
