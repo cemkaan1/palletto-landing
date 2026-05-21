@@ -1070,7 +1070,10 @@
       <div class="grid md:grid-cols-3 gap-6 items-stretch">
 
         <!-- STARTER -->
-        <div class="bg-warm rounded-3xl border border-navy/10 p-8 hover:border-navy/20 transition-colors flex flex-col">
+        <div class="bg-warm rounded-3xl border border-navy/10 p-8 hover:border-navy/20 transition-colors flex flex-col relative">
+
+          <!-- Label oben -->
+          <div class="absolute top-6 right-6 bg-navy/10 text-navy text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Perfekt zum Start</div>
 
           <!-- Header (fixed height) -->
           <div class="mb-6 min-h-[80px]">
@@ -1100,14 +1103,16 @@
             <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>E-Mail-Support</span></li>
           </ul>
 
+          <div class="mb-6 p-3 bg-orange/5 border border-orange/15 rounded-xl text-center">
+            <p class="text-xs text-navy/70">Wächst dein Betrieb? <strong class="text-navy">Jederzeit auf Business upgradebar.</strong></p>
+          </div>
+
           <a href="#anmelden" class="block w-full bg-white border border-navy/15 text-navy text-center px-6 py-3 rounded-xl font-semibold hover:border-navy/30 transition-colors">30 Tage gratis testen</a>
         </div>
 
         <!-- BUSINESS -->
         <div class="bg-navy text-white rounded-3xl p-8 relative shadow-2xl overflow-hidden flex flex-col">
           <div class="absolute top-0 right-0 w-64 h-64 bg-orange/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-          <!-- Beliebt-Badge -->
-          <div class="absolute top-6 right-6 bg-orange text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Beliebt</div>
           <div class="relative flex flex-col h-full">
 
             <!-- Header (fixed height) -->
@@ -1151,7 +1156,7 @@
           <!-- Header (fixed height) -->
           <div class="mb-6 min-h-[80px]">
             <h3 class="text-2xl font-extrabold mb-2">Enterprise</h3>
-            <p class="text-sm text-navy/60">Für große Flotten und Konzerne</p>
+            <p class="text-sm text-navy/60">Für große Flotten und Konzerne. Zugeschnitten auf Ihre individuellen Bedürfnisse.</p>
           </div>
 
           <!-- Price (fixed height) -->
