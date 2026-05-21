@@ -150,6 +150,11 @@
           "Tägliche automatische Email-Auswertung",
           "PDF-Export und Druck",
           "Kunden-Bilanz Live-Übersicht",
+          "QR-Code Echtheits-Verifizierung",
+          "Kunden-Portal ohne Login",
+          "Foto-Dokumentation mit Foto-Pflicht",
+          "Automatisches Mahnwesen",
+          "CSV-Export für die Buchhaltung",
           "AES-256 verschlüsselte Backups",
           "DSGVO-konform mit AVV",
           "EU-Server (Frankfurt)",
@@ -159,12 +164,12 @@
           {
             "@type": "Offer",
             "name": "Starter",
-            "description": "Für kleine Transportunternehmen bis 5 Fahrer",
-            "price": "499",
+            "description": "Der digitale Einstieg für kleine Transportunternehmen bis 5 Fahrer",
+            "price": "179",
             "priceCurrency": "EUR",
             "priceSpecification": {
               "@type": "UnitPriceSpecification",
-              "price": "499",
+              "price": "179",
               "priceCurrency": "EUR",
               "billingDuration": "P1M",
               "unitText": "MONTH"
@@ -175,12 +180,12 @@
           {
             "@type": "Offer",
             "name": "Business",
-            "description": "Für mittelständische Unternehmen bis 20 Fahrer",
-            "price": "999",
+            "description": "Das volle Programm für mittelständische Unternehmen bis 20 Fahrer",
+            "price": "499",
             "priceCurrency": "EUR",
             "priceSpecification": {
               "@type": "UnitPriceSpecification",
-              "price": "999",
+              "price": "499",
               "priceCurrency": "EUR",
               "billingDuration": "P1M",
               "unitText": "MONTH"
@@ -581,6 +586,21 @@
           <h3 class="text-2xl font-extrabold mb-3">PDF & Drucken</h3>
           <p class="text-navy/70 leading-relaxed">Gerichtsfeste Dokumente auf Knopfdruck. Für Buchhaltung, Versicherung oder den Streitfall.</p>
         </div>
+        <div class="bg-warm border border-navy/10 rounded-3xl p-8 hover:border-orange/30 transition-colors">
+          <div class="w-12 h-12 bg-orange rounded-xl flex items-center justify-center mb-4 text-2xl" aria-hidden="true">📷</div>
+          <h3 class="text-2xl font-extrabold mb-3">Foto-Dokumentation</h3>
+          <p class="text-navy/70 leading-relaxed">Beschädigte oder nicht-genormte Paletten? Der Fahrer macht direkt ein Foto. Pro Kunde lässt sich eine <strong>Foto-Pflicht</strong> festlegen.</p>
+        </div>
+        <div class="bg-warm border border-navy/10 rounded-3xl p-8 hover:border-orange/30 transition-colors">
+          <div class="w-12 h-12 bg-navy rounded-xl flex items-center justify-center mb-4 text-2xl" aria-hidden="true">✉️</div>
+          <h3 class="text-2xl font-extrabold mb-3">Mahnwesen</h3>
+          <p class="text-navy/70 leading-relaxed">Kunde gibt Paletten nicht zurück? Erstelle auf Knopfdruck eine freundliche <strong>Zahlungserinnerung</strong> oder formelle Mahnung mit Frist.</p>
+        </div>
+        <div class="bg-warm border border-navy/10 rounded-3xl p-8 hover:border-orange/30 transition-colors">
+          <div class="w-12 h-12 bg-orange rounded-xl flex items-center justify-center mb-4 text-2xl" aria-hidden="true">📑</div>
+          <h3 class="text-2xl font-extrabold mb-3">CSV-Export</h3>
+          <p class="text-navy/70 leading-relaxed">Alle Scheine mit einem Klick als Excel-Datei (CSV). Perfekt für Steuerberater, Buchhaltung und eigene Auswertungen.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -845,7 +865,111 @@
         <div class="grid grid-cols-3 border-b border-navy/5"><div class="p-6 font-semibold">Auswertung</div><div class="p-6 text-center text-navy/60">Excel-Hölle</div><div class="p-6 text-center font-bold text-orange bg-orange/5">Automatisch</div></div>
         <div class="grid grid-cols-3 border-b border-navy/5"><div class="p-6 font-semibold">BGB-konform</div><div class="p-6 text-center text-navy/60">✓ wenn lesbar</div><div class="p-6 text-center font-bold text-orange bg-orange/5">✓ immer</div></div>
         <div class="grid grid-cols-3 border-b border-navy/5"><div class="p-6 font-semibold">Backups</div><div class="p-6 text-center text-navy/60">❌</div><div class="p-6 text-center font-bold text-orange bg-orange/5">✓ täglich, verschlüsselt</div></div>
-        <div class="grid grid-cols-3"><div class="p-6 font-semibold">Offline-Modus</div><div class="p-6 text-center text-navy/60">–</div><div class="p-6 text-center font-bold text-orange bg-orange/5">✓ ohne Internet</div></div>
+        <div class="grid grid-cols-3 border-b border-navy/5"><div class="p-6 font-semibold">Offline-Modus</div><div class="p-6 text-center text-navy/60">–</div><div class="p-6 text-center font-bold text-orange bg-orange/5">✓ ohne Internet</div></div>
+        <div class="grid grid-cols-3 border-b border-navy/5"><div class="p-6 font-semibold">Fälschungssicher</div><div class="p-6 text-center text-navy/60">❌</div><div class="p-6 text-center font-bold text-orange bg-orange/5">✓ QR-Code &amp; Prüfsumme</div></div>
+        <div class="grid grid-cols-3"><div class="p-6 font-semibold">Foto-Beweis</div><div class="p-6 text-center text-navy/60">–</div><div class="p-6 text-center font-bold text-orange bg-orange/5">✓ direkt am Schein</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QR-VERIFIZIERUNG -->
+  <section class="py-20 lg:py-32 px-6 lg:px-8 bg-white border-y border-navy/5 overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
+          <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Fälschungssicher</div>
+          <h2 class="text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight mb-6">Jeder Schein hat einen<br><span class="text-orange">QR-Code zum Prüfen.</span></h2>
+          <p class="text-lg text-navy/70 leading-relaxed mb-8">
+            Auf jedem PDF sitzt ein QR-Code mit einer eindeutigen Prüfsumme (SHA-256). Einmal scannen und jeder sieht sofort: Dieser Lieferschein ist echt, unverändert und stammt wirklich aus Palletto. Schluss mit gefälschten oder nachträglich geänderten Scheinen.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3"><div class="w-6 h-6 bg-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-navy/80"><strong>QR-Code scannen</strong> – mit jedem Handy, ohne App</span></li>
+            <li class="flex items-start gap-3"><div class="w-6 h-6 bg-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-navy/80"><strong>Echtheit bestätigt</strong> – direkt online, in Sekunden</span></li>
+            <li class="flex items-start gap-3"><div class="w-6 h-6 bg-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-navy/80"><strong>Nachträglich geändert?</strong> – fliegt sofort auf</span></li>
+          </ul>
+        </div>
+
+        <div class="relative">
+          <div class="absolute inset-0 bg-gradient-to-br from-orange/20 to-navy/10 blur-3xl opacity-50"></div>
+          <div class="relative bg-warm rounded-3xl border border-navy/10 p-8 shadow-xl">
+            <div class="bg-white rounded-2xl border border-navy/10 p-6">
+              <div class="flex items-center gap-5">
+                <!-- Fake QR (CSS-Grid) -->
+                <div class="w-24 h-24 flex-shrink-0 grid grid-cols-5 grid-rows-5 gap-0.5 p-1 bg-white border border-navy/10 rounded-lg">
+                  <div class="bg-navy rounded-sm"></div><div class="bg-navy rounded-sm"></div><div class="bg-navy rounded-sm"></div><div></div><div class="bg-navy rounded-sm"></div>
+                  <div class="bg-navy rounded-sm"></div><div></div><div class="bg-navy rounded-sm"></div><div></div><div class="bg-navy rounded-sm"></div>
+                  <div></div><div class="bg-navy rounded-sm"></div><div class="bg-navy rounded-sm"></div><div class="bg-navy rounded-sm"></div><div></div>
+                  <div class="bg-navy rounded-sm"></div><div></div><div class="bg-navy rounded-sm"></div><div></div><div class="bg-navy rounded-sm"></div>
+                  <div class="bg-navy rounded-sm"></div><div class="bg-navy rounded-sm"></div><div></div><div class="bg-navy rounded-sm"></div><div class="bg-navy rounded-sm"></div>
+                </div>
+                <div class="flex-1">
+                  <div class="text-xs font-bold text-navy uppercase tracking-wide mb-2">🔒 Echtheits-Verifizierung</div>
+                  <div class="text-xs text-navy/60 mb-2 leading-relaxed">Scanne den QR-Code zur Online-Überprüfung der Echtheit.</div>
+                  <div class="text-[10px] text-navy/50 mb-1">Prüfsumme (SHA-256):</div>
+                  <div class="inline-block font-mono text-xs font-bold text-navy bg-navy/5 px-2 py-1 rounded border border-navy/10">A3F8B2E1C9D4F067</div>
+                </div>
+              </div>
+              <div class="mt-5 pt-5 border-t border-navy/5 flex items-center gap-2">
+                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-green-600">Echtheit bestätigt</div>
+                  <div class="text-xs text-navy/50">Dokument unverändert · Original aus Palletto</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KUNDEN-PORTAL -->
+  <section class="py-20 lg:py-32 px-6 lg:px-8 overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+        <div class="order-2 lg:order-1 relative">
+          <div class="absolute inset-0 bg-gradient-to-br from-orange/20 to-navy/10 blur-3xl opacity-50"></div>
+          <div class="relative bg-white rounded-3xl border border-navy/10 shadow-xl overflow-hidden max-w-sm mx-auto">
+            <div class="p-6 text-center border-b border-navy/5">
+              <div class="text-2xl font-extrabold text-navy mb-1">Palletto</div>
+              <div class="text-xs text-navy/50 uppercase tracking-wider font-semibold">Paletten-Konto</div>
+            </div>
+            <div class="p-6">
+              <div class="bg-red-500 rounded-2xl p-6 text-center text-white mb-4">
+                <div class="text-xs font-semibold opacity-85 mb-2">Sie schulden Müller Transport</div>
+                <div class="text-5xl font-extrabold tracking-tight leading-none">8</div>
+                <div class="text-sm opacity-90 mt-1">Europaletten</div>
+              </div>
+              <div class="grid grid-cols-2 border border-navy/10 rounded-xl overflow-hidden">
+                <div class="p-4 text-center border-r border-navy/10">
+                  <div class="text-[10px] text-navy/50 uppercase tracking-wide mb-1">An Sie geliefert</div>
+                  <div class="text-2xl font-extrabold text-navy">↓ 24</div>
+                </div>
+                <div class="p-4 text-center">
+                  <div class="text-[10px] text-navy/50 uppercase tracking-wide mb-1">Zurückgegeben</div>
+                  <div class="text-2xl font-extrabold text-navy">↑ 16</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="order-1 lg:order-2">
+          <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Für deine Kunden</div>
+          <h2 class="text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight mb-6">Deine Kunden sehen<br><span class="text-orange">ihren Saldo selbst.</span></h2>
+          <p class="text-lg text-navy/70 leading-relaxed mb-8">
+            Jeder Kunde bekommt einen eigenen Link zu seinem Palettenkonto – ganz ohne Login. Er sieht jederzeit, wie viele Paletten offen sind und welche Lieferungen erfasst wurden. Das schafft Vertrauen, beendet Diskussionen und zeigt bei jedem Kunden dein Branding.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3"><div class="w-6 h-6 bg-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-navy/80"><strong>Ein Link genügt</strong> – kein Login, kein Passwort für den Kunden</span></li>
+            <li class="flex items-start gap-3"><div class="w-6 h-6 bg-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-navy/80"><strong>Immer aktuell</strong> – Saldo und Lieferungen live</span></li>
+            <li class="flex items-start gap-3"><div class="w-6 h-6 bg-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-navy/80"><strong>Weniger Rückfragen</strong> – der Kunde schaut einfach selbst nach</span></li>
+          </ul>
+        </div>
+
       </div>
     </div>
   </section>
@@ -933,7 +1057,7 @@
     </div>
   </section>
 
-<!-- PREISE -->
+  <!-- PREISE -->
   <section id="preise" class="py-20 lg:py-32 px-6 lg:px-8">
     <div class="max-w-6xl mx-auto">
       <div class="max-w-2xl mb-16 mx-auto text-center">
@@ -951,14 +1075,14 @@
           <!-- Header (fixed height) -->
           <div class="mb-6 min-h-[80px]">
             <h3 class="text-2xl font-extrabold mb-2">Starter</h3>
-            <p class="text-sm text-navy/60">Für kleine Transportunternehmen</p>
+            <p class="text-sm text-navy/60">Der digitale Einstieg für kleine Betriebe</p>
           </div>
 
           <!-- Price (fixed height) -->
           <div class="mb-6 pb-6 border-b border-navy/10 min-h-[120px]">
             <div class="flex items-baseline gap-2 mb-1">
               <span class="text-sm text-navy/60 font-medium">ab</span>
-              <span class="text-5xl font-extrabold leading-none">499</span>
+              <span class="text-5xl font-extrabold leading-none">179</span>
               <span class="text-2xl font-bold">€</span>
               <span class="text-sm text-navy/60">/ Monat</span>
             </div>
@@ -970,11 +1094,9 @@
             <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span><strong>Bis 5 Fahrer</strong></span></li>
             <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>1 Office-Zugang</span></li>
             <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Digitale Palettenscheine</span></li>
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Empfänger-Unterschrift (§126b BGB)</span></li>
+            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Empfänger- & Fahrer-Unterschrift (§126b BGB)</span></li>
             <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Offline-Modus</span></li>
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Tägliche Auswertung per E-Mail</span></li>
             <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>PDF-Export & Druck</span></li>
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Verschlüsselte Backups</span></li>
             <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>E-Mail-Support</span></li>
           </ul>
 
@@ -984,19 +1106,21 @@
         <!-- BUSINESS -->
         <div class="bg-navy text-white rounded-3xl p-8 relative shadow-2xl overflow-hidden flex flex-col">
           <div class="absolute top-0 right-0 w-64 h-64 bg-orange/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+          <!-- Beliebt-Badge -->
+          <div class="absolute top-6 right-6 bg-orange text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Beliebt</div>
           <div class="relative flex flex-col h-full">
 
             <!-- Header (fixed height) -->
             <div class="mb-6 min-h-[80px]">
               <h3 class="text-2xl font-extrabold mb-2">Business</h3>
-              <p class="text-sm text-white/70">Für mittelständische Unternehmen</p>
+              <p class="text-sm text-white/70">Das volle Programm für Profis</p>
             </div>
 
             <!-- Price (fixed height) -->
             <div class="mb-6 pb-6 border-b border-white/10 min-h-[120px]">
               <div class="flex items-baseline gap-2 mb-1">
                 <span class="text-sm text-white/60 font-medium">ab</span>
-                <span class="text-5xl font-extrabold text-orange leading-none">999</span>
+                <span class="text-5xl font-extrabold text-orange leading-none">499</span>
                 <span class="text-2xl font-bold text-orange">€</span>
                 <span class="text-sm text-white/60">/ Monat</span>
               </div>
@@ -1007,13 +1131,14 @@
             <ul class="space-y-3 mb-8 text-sm flex-1">
               <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span><strong>Bis 20 Fahrer</strong></span></li>
               <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span><strong>3 Office-Zugänge</strong></span></li>
-              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Digitale Palettenscheine</span></li>
-              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Empfänger-Unterschrift (§126b BGB)</span></li>
-              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Offline-Modus</span></li>
+              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="font-semibold">Alles aus Starter, plus:</span></li>
               <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Tägliche Auswertung per E-Mail</span></li>
-              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>PDF-Export & Druck</span></li>
-              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Verschlüsselte Backups</span></li>
-              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>E-Mail-Support</span></li>
+              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Monatliche Auswertung per E-Mail</span></li>
+              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Foto-Funktion (inkl. Foto-Pflicht pro Kunde)</span></li>
+              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Kunden-Portal (Saldo & Differenzen)</span></li>
+              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>QR-Code Echtheits-Verifizierung</span></li>
+              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>CSV-Export für die Buchhaltung</span></li>
+              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Mahnwesen (Erinnerung & Mahnung)</span></li>
             </ul>
 
             <a href="#anmelden" class="block w-full bg-orange text-white text-center px-6 py-3 rounded-xl font-bold hover:bg-orange-dark transition-colors">30 Tage gratis testen</a>
@@ -1037,15 +1162,12 @@
 
           <!-- Features -->
           <ul class="space-y-3 mb-8 text-sm flex-1">
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span><strong>Unbegrenzte Fahrer</strong></span></li>
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span><strong>Unbegrenzte Office-Zugänge</strong></span></li>
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Alle Business-Features</span></li>
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Persönliches Onboarding</span></li>
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Telefon-Support</span></li>
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Individuelle Anpassungen</span></li>
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Eigener Ansprechpartner</span></li>
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Schulung Ihres Teams</span></li>
+            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span><strong>Unbegrenzte Fahrer & Office-Zugänge</strong></span></li>
+            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="font-semibold">Alles aus Business, plus:</span></li>
+            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Persönliches Onboarding & Schulung</span></li>
+            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Telefon-Support & eigener Ansprechpartner</span></li>
             <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Priorität bei neuen Features</span></li>
+            <li class="flex items-start gap-2 pt-2 mt-1 border-t border-navy/10"><svg class="w-5 h-5 text-navy/40 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg><span class="text-navy/60"><strong class="text-navy/70">Auf Wunsch:</strong> Standort-/Filial-Verwaltung, API-Anbindung, individuelle Anpassungen</span></li>
           </ul>
 
           <a href="#anmelden" class="block w-full bg-white border border-navy/15 text-navy text-center px-6 py-3 rounded-xl font-semibold hover:border-navy/30 transition-colors">Anfrage stellen</a>
@@ -1058,6 +1180,7 @@
       </div>
     </div>
   </section>
+
 
   <!-- ANMELDEN -->
   <section id="anmelden" class="py-20 lg:py-32 px-6 lg:px-8 bg-white border-y border-navy/5">
