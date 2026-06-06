@@ -1,20 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml"
-        xmlns:image="http://www.google.com/schemas/sitemaps-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <!-- Homepage -->
   <url>
     <loc>https://palletto.de/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://palletto.de/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://palletto.de/" />
     <image:image>
       <image:loc>https://palletto.de/og-image.png</image:loc>
-      <image:title>Palletto - Palettenkonto Software für Transportunternehmen</image:title>
+      <image:title>Palletto – Palettenkonto Software für Transportunternehmen</image:title>
       <image:caption>Digitale Palettenscheine mit Unterschrift. Rechtssicher nach §126b BGB.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://palletto.de/blog/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://palletto.de/blog/palettenkonto-fuehren/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://palletto.de/blog/images/hero-palettenkonto.png</image:loc>
+      <image:title>Palettenkonto führen: So behalten Speditionen den Überblick</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://palletto.de/blog/digitaler-palettenschein/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://palletto.de/blog/images/hero-palettenschein.png</image:loc>
+      <image:title>Digitaler Palettenschein: rechtssicher dokumentieren</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://palletto.de/blog/palettentausch-fehler/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://palletto.de/blog/images/hero-palettentausch.png</image:loc>
+      <image:title>Palettentausch: 5 Fehler, die Speditionen Geld kosten</image:title>
     </image:image>
   </url>
 
