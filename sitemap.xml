@@ -28,13 +28,112 @@
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://palletto.de/blog/images/was-ist-ein-palettenschein.svg</image:loc>
-      <image:title>Was ist ein Palettenschein? Definition & Pflichtangaben</image:title>
+      <image:title>Was ist ein Palettenschein? Definition &amp; Pflichtangaben</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://palletto.de/blog/epal-vs-eur-palette/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://palletto.de/blog/images/epal-vs-eur-palette.svg</image:loc>
+      <image:title>EPAL vs. EUR-Palette: Unterschiede und Tauschfähigkeit</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://palletto.de/blog/tauschfaehige-palette-erkennen/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://palletto.de/blog/images/tauschfaehige-palette-erkennen.svg</image:loc>
+      <image:title>Tauschfähige Palette erkennen: die Checkliste</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://palletto.de/blog/lieferschein-vs-palettenschein/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://palletto.de/blog/images/lieferschein-vs-palettenschein.svg</image:loc>
+      <image:title>Lieferschein vs. Palettenschein: der Unterschied</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://palletto.de/blog/palettenschuld-eintreiben/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://palletto.de/blog/images/palettenschuld-eintreiben.svg</image:loc>
+      <image:title>Palettenschuld eintreiben: So kommst du zu deinen Paletten</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://palletto.de/blog/paletten-pfand-abrechnen/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://palletto.de/blog/images/paletten-pfand-abrechnen.svg</image:loc>
+      <image:title>Paletten-Pfand richtig abrechnen: Tausch oder Pfand?</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://palletto.de/blog/palettentausch-neukunden/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://palletto.de/blog/images/palettentausch-neukunden.svg</image:loc>
+      <image:title>Palettentausch bei Neukunden: Spielregeln von Anfang an</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://palletto.de/blog/palettenkonto-software-vergleich/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://palletto.de/blog/images/palettenkonto-software-vergleich.svg</image:loc>
+      <image:title>Palettenkonto-Software: Worauf Speditionen achten sollten</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://palletto.de/blog/digitalisierung-spedition/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://palletto.de/blog/images/digitalisierung-spedition.svg</image:loc>
+      <image:title>Digitalisierung in der Spedition: klein anfangen, groß wirken</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://palletto.de/blog/kosten-schlechtes-palettenmanagement/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://palletto.de/blog/images/kosten-schlechtes-palettenmanagement.svg</image:loc>
+      <image:title>Was schlechtes Palettenmanagement wirklich kostet</image:title>
     </image:image>
   </url>
 
   <url>
     <loc>https://palletto.de/blog/palettenkonto-fuehren/</loc>
-    <lastmod>2026-06-05</lastmod>
+    <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -45,7 +144,7 @@
 
   <url>
     <loc>https://palletto.de/blog/digitaler-palettenschein/</loc>
-    <lastmod>2026-06-05</lastmod>
+    <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -56,7 +155,7 @@
 
   <url>
     <loc>https://palletto.de/blog/palettentausch-fehler/</loc>
-    <lastmod>2026-06-05</lastmod>
+    <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
