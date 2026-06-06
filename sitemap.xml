@@ -4,7 +4,7 @@
 
   <url>
     <loc>https://palletto.de/</loc>
-    <lastmod>2026-06-05</lastmod>
+    <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -16,9 +16,20 @@
 
   <url>
     <loc>https://palletto.de/blog/</loc>
-    <lastmod>2026-06-05</lastmod>
+    <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://palletto.de/blog/was-ist-ein-palettenschein/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://palletto.de/blog/images/was-ist-ein-palettenschein.svg</image:loc>
+      <image:title>Was ist ein Palettenschein? Definition & Pflichtangaben</image:title>
+    </image:image>
   </url>
 
   <url>
