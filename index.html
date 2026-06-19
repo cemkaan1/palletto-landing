@@ -63,8 +63,7 @@
   <meta name="application-name" content="Palletto">
   <meta name="msapplication-TileColor" content="#1B3A6B">
 
- <!-- ============================================================ -->
-  <<!-- ============================================================ -->
+  <!-- ============================================================ -->
   <!-- FAVICONS                                                      -->
   <!-- ============================================================ -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -146,6 +145,10 @@
         "featureList": [
           "Digitale Palettenscheine mit Unterschrift",
           "Rechtssicher nach §126b BGB",
+          "Lücken-Erkennung (fehlende Palettenscheine automatisch erkennen)",
+          "Nacherfassung mit Beleg-Upload",
+          "Lückenlose Druck-Historie (revisionssicher)",
+          "Touren-Planung mit festen Kunden",
           "Offline-Modus für Fahrer-App",
           "Tägliche automatische Email-Auswertung",
           "PDF-Export und Druck",
@@ -164,32 +167,14 @@
           {
             "@type": "Offer",
             "name": "Starter",
-            "description": "Der digitale Einstieg für kleine Transportunternehmen bis 5 Fahrer",
-            "price": "179",
-            "priceCurrency": "EUR",
-            "priceSpecification": {
-              "@type": "UnitPriceSpecification",
-              "price": "179",
-              "priceCurrency": "EUR",
-              "billingDuration": "P1M",
-              "unitText": "MONTH"
-            },
+            "description": "Der digitale Einstieg für kleine Transportunternehmen. Preis individuell nach Fuhrparkgröße.",
             "availability": "https://schema.org/InStock",
             "url": "https://palletto.de/#preise"
           },
           {
             "@type": "Offer",
             "name": "Business",
-            "description": "Das volle Programm für mittelständische Unternehmen bis 20 Fahrer",
-            "price": "499",
-            "priceCurrency": "EUR",
-            "priceSpecification": {
-              "@type": "UnitPriceSpecification",
-              "price": "499",
-              "priceCurrency": "EUR",
-              "billingDuration": "P1M",
-              "unitText": "MONTH"
-            },
+            "description": "Das volle Programm für mittelständische Transportunternehmen. Preis individuell nach Fuhrparkgröße.",
             "availability": "https://schema.org/InStock",
             "url": "https://palletto.de/#preise"
           },
@@ -601,9 +586,256 @@
           <h3 class="text-2xl font-extrabold mb-3">CSV-Export</h3>
           <p class="text-navy/70 leading-relaxed">Alle Scheine mit einem Klick als Excel-Datei (CSV). Perfekt für Steuerberater, Buchhaltung und eigene Auswertungen.</p>
         </div>
+        <div class="bg-warm border border-navy/10 rounded-3xl p-8 hover:border-orange/30 transition-colors">
+          <div class="w-12 h-12 bg-navy rounded-xl flex items-center justify-center mb-4 text-2xl" aria-hidden="true">📝</div>
+          <h3 class="text-2xl font-extrabold mb-3">Nacherfassung</h3>
+          <p class="text-navy/70 leading-relaxed">Lieferung vergessen? Trag sie nachträglich nach – inklusive <strong>Foto-Beleg</strong> als Nachweis. Nichts geht mehr verloren.</p>
+        </div>
+        <div class="bg-warm border border-navy/10 rounded-3xl p-8 hover:border-orange/30 transition-colors">
+          <div class="w-12 h-12 bg-orange rounded-xl flex items-center justify-center mb-4 text-2xl" aria-hidden="true">🕓</div>
+          <h3 class="text-2xl font-extrabold mb-3">Druck-Historie</h3>
+          <p class="text-navy/70 leading-relaxed">Jeder Ausdruck eines Scheins wird protokolliert – wann und von wem. <strong>Revisionssicher</strong> für Buchhaltung und Streitfall.</p>
+        </div>
+        <div class="bg-warm border border-navy/10 rounded-3xl p-8 hover:border-orange/30 transition-colors">
+          <div class="w-12 h-12 bg-navy rounded-xl flex items-center justify-center mb-4 text-2xl" aria-hidden="true">🗺️</div>
+          <h3 class="text-2xl font-extrabold mb-3">Touren-Planung</h3>
+          <p class="text-navy/70 leading-relaxed">Plane Touren mit festen Kunden vor und sieh den Tagesplan deiner Fahrer auf einen Blick – nichts wird vergessen.</p>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- LÜCKEN-ERKENNUNG -->
+  <section class="py-20 lg:py-32 px-6 lg:px-8 bg-white border-y border-navy/5 overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
+          <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Das Herzstück</div>
+          <h2 class="text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight mb-6">Du siehst jede vergessene Palette.<br><span class="text-orange">Bevor der Kunde es tut.</span></h2>
+          <p class="text-lg text-navy/70 leading-relaxed mb-8">
+            Palletto erkennt automatisch, welcher Stammkunde an einem Tag beliefert wurde – aber bei wem kein Palettenschein erfasst ist. Die Lücke wird sofort sichtbar, statt am Monatsende spurlos zu verschwinden. Vergessene Lieferungen trägst du in Sekunden nach – mit unterschriebenem Beleg als Nachweis.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3"><div class="w-6 h-6 bg-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-navy/80"><strong>Offene Kunden auf einen Blick</strong> – pro Tag und pro Fahrer</span></li>
+            <li class="flex items-start gap-3"><div class="w-6 h-6 bg-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-navy/80"><strong>Direkt nacherfassen</strong> – mit Foto-Beleg als Nachweis</span></li>
+            <li class="flex items-start gap-3"><div class="w-6 h-6 bg-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-navy/80"><strong>Keine verlorenen Paletten mehr</strong> – jede Lücke wird sichtbar</span></li>
+          </ul>
+        </div>
+
+        <div class="relative">
+          <div class="absolute inset-0 bg-gradient-to-br from-orange/20 to-navy/10 blur-3xl opacity-50"></div>
+          <div class="relative bg-warm rounded-3xl border border-navy/10 p-6 shadow-xl">
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-xs font-bold text-navy/50 uppercase tracking-wider">Fahrer Murat · Heute</div>
+              <div id="luecke-counter" class="text-xs font-bold text-orange bg-orange/10 px-2.5 py-1 rounded-full transition-colors">3 / 4 erfasst</div>
+            </div>
+            <div class="space-y-2.5">
+              <div class="flex items-center justify-between px-4 py-3 rounded-xl bg-white border border-navy/10"><span class="text-sm font-medium">EDEKA Logistik Nord</span><span class="text-xs font-semibold text-green-600">✓ erfasst</span></div>
+              <div id="luecke-row" class="flex items-center justify-between px-4 py-3 rounded-xl bg-orange/5 border border-orange/30 transition-all duration-500"><span id="luecke-name" class="text-sm font-semibold text-orange transition-colors">Spedition Berger</span><span id="luecke-status" class="text-xs font-bold text-orange transition-colors">⚠ keine Paletten</span></div>
+              <div class="flex items-center justify-between px-4 py-3 rounded-xl bg-white border border-navy/10"><span class="text-sm font-medium">Hansa Frischdienst</span><span class="text-xs font-semibold text-green-600">✓ erfasst</span></div>
+              <div class="flex items-center justify-between px-4 py-3 rounded-xl bg-white border border-navy/10"><span class="text-sm font-medium">Nordfracht GmbH</span><span class="text-xs font-semibold text-green-600">✓ erfasst</span></div>
+            </div>
+            <button id="luecke-btn" type="button" class="mt-4 w-full bg-navy text-white text-sm font-semibold py-2.5 rounded-xl hover:bg-navy-dark transition-colors">Schein für Berger nacherfassen</button>
+            <p class="text-center text-xs text-navy/40 mt-2">👆 Klick mich – so schließt du eine Lücke in Sekunden.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('luecke-btn');
+      if (!btn) return;
+      var row = document.getElementById('luecke-row');
+      var nameEl = document.getElementById('luecke-name');
+      var statusEl = document.getElementById('luecke-status');
+      var counter = document.getElementById('luecke-counter');
+      var resolved = false;
+      btn.addEventListener('click', function () {
+        resolved = !resolved;
+        if (resolved) {
+          row.className = 'flex items-center justify-between px-4 py-3 rounded-xl bg-white border border-navy/10 transition-all duration-500';
+          nameEl.className = 'text-sm font-medium transition-colors';
+          statusEl.className = 'text-xs font-semibold text-green-600 transition-colors';
+          statusEl.textContent = '✓ erfasst';
+          counter.className = 'text-xs font-bold text-green-600 bg-green-100 px-2.5 py-1 rounded-full transition-colors';
+          counter.textContent = '4 / 4 erfasst';
+          btn.textContent = '↺ Demo zurücksetzen';
+        } else {
+          row.className = 'flex items-center justify-between px-4 py-3 rounded-xl bg-orange/5 border border-orange/30 transition-all duration-500';
+          nameEl.className = 'text-sm font-semibold text-orange transition-colors';
+          statusEl.className = 'text-xs font-bold text-orange transition-colors';
+          statusEl.textContent = '⚠ keine Paletten';
+          counter.className = 'text-xs font-bold text-orange bg-orange/10 px-2.5 py-1 rounded-full transition-colors';
+          counter.textContent = '3 / 4 erfasst';
+          btn.textContent = 'Schein für Berger nacherfassen';
+        }
+      });
+    })();
+  </script>
+
+  <!-- INTERAKTIVER PALETTEN-SANDKASTEN (Drag & Drop) -->
+  <style>
+    .pw-pallet{position:relative;width:46px;height:30px;flex:0 0 auto;cursor:grab;touch-action:none;animation:pw-drop .45s cubic-bezier(.34,1.56,.64,1) both;}
+    .pw-pallet i{position:absolute;background:#cda05f;border:1px solid #a87f44;box-sizing:border-box;border-radius:1px;pointer-events:none;}
+    .pw-pallet .t{top:0;left:0;width:100%;height:7px;}
+    .pw-pallet .m{top:12px;left:0;width:100%;height:6px;}
+    .pw-pallet .l1{bottom:0;left:0;width:9px;height:14px;}
+    .pw-pallet .l2{bottom:0;left:50%;transform:translateX(-50%);width:9px;height:14px;}
+    .pw-pallet .l3{bottom:0;right:0;width:9px;height:14px;}
+    .pw-pallet:hover{transform:translateY(-3px) rotate(-3deg);transition:transform .15s;}
+    .pw-pallet.pw-dragging{z-index:60;cursor:grabbing;transform:none !important;filter:drop-shadow(0 10px 10px rgba(0,0,0,.35)) brightness(1.05);}
+    .pw-zone{transition:background .2s,border-color .2s;}
+    .pw-zone.pw-over{background:rgba(255,149,0,.14);border-color:rgba(255,149,0,.65);}
+    #pw-saldo.pw-pop{animation:pw-pop .35s ease;}
+    @keyframes pw-drop{0%{opacity:0;transform:translateY(-50px) rotate(-10deg);}100%{opacity:1;transform:translateY(0) rotate(0);}}
+    @keyframes pw-pop{0%{transform:scale(1);}40%{transform:scale(1.28);}100%{transform:scale(1);}}
+  </style>
+  <section id="spielwiese" class="py-20 lg:py-32 px-6 lg:px-8 overflow-hidden">
+    <div class="max-w-5xl mx-auto">
+      <div class="max-w-2xl mb-12 mx-auto text-center">
+        <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Probier's aus</div>
+        <h2 class="text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight mb-4">Zieh die Paletten <span class="text-orange">selbst rüber.</span></h2>
+        <p class="text-lg text-navy/70">Pack eine Palette und zieh sie vom Lkw zum Kunden (= Lieferung) oder zurück (= Abholung). Der Saldo läuft live mit.</p>
+      </div>
+
+      <div class="relative">
+        <div class="absolute inset-0 bg-gradient-to-br from-orange/20 to-navy/10 blur-3xl opacity-40"></div>
+        <div class="relative bg-navy rounded-3xl p-6 lg:p-8 text-white shadow-2xl overflow-hidden">
+          <div class="absolute top-0 right-0 w-72 h-72 bg-orange/20 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4"></div>
+
+          <div class="relative">
+            <div class="grid md:grid-cols-2 gap-4 lg:gap-6">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <div class="text-sm font-semibold text-white/80">&#128666; Dein Lkw</div>
+                  <div class="text-xs text-white/45">zum Liefern r&uuml;berziehen &rarr;</div>
+                </div>
+                <div id="pw-truck" class="pw-zone bg-white/5 border-2 border-dashed border-white/15 rounded-2xl h-48 p-3 flex flex-wrap content-start items-start gap-2 overflow-hidden"></div>
+              </div>
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <div class="text-sm font-semibold text-white/80">&#127981; Kunde &middot; M&uuml;ller GmbH</div>
+                  <div class="text-xs text-white/45">&larr; zum Abholen zur&uuml;ckziehen</div>
+                </div>
+                <div id="pw-kunde" class="pw-zone bg-white/5 border-2 border-dashed border-white/15 rounded-2xl h-48 p-3 flex flex-wrap content-start items-start gap-2 overflow-hidden"></div>
+              </div>
+            </div>
+
+            <div class="mt-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div class="text-sm text-white/60" id="pw-hint">Zieh eine Palette vom Lkw zum Kunden &#128070; &ndash; oder nutz die Buttons.</div>
+              <div class="flex items-center gap-3">
+                <div class="text-right">
+                  <div class="text-[10px] uppercase tracking-wider text-white/50">Saldo</div>
+                  <div class="flex items-baseline gap-1"><span id="pw-saldo" class="text-3xl font-extrabold text-orange leading-none">0</span><span class="text-xs text-white/60">offen</span></div>
+                </div>
+                <div class="flex gap-2">
+                  <button id="pw-add" type="button" class="bg-orange text-white text-sm font-bold px-4 py-2.5 rounded-xl hover:bg-orange-dark transition-colors">+ Lieferung</button>
+                  <button id="pw-sub" type="button" class="bg-white/10 border border-white/15 text-white text-sm font-semibold px-4 py-2.5 rounded-xl hover:bg-white/20 transition-colors">&minus; Abholung</button>
+                  <button id="pw-reset" type="button" class="text-white/50 text-xs hover:text-white transition-colors px-2">&#8634;</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    (function () {
+      var truck = document.getElementById('pw-truck');
+      var kunde = document.getElementById('pw-kunde');
+      if (!truck || !kunde) return;
+      var saldoEl = document.getElementById('pw-saldo');
+      var hint = document.getElementById('pw-hint');
+      var addBtn = document.getElementById('pw-add');
+      var subBtn = document.getElementById('pw-sub');
+      var resetBtn = document.getElementById('pw-reset');
+
+      function pop(){ saldoEl.classList.remove('pw-pop'); void saldoEl.offsetWidth; saldoEl.classList.add('pw-pop'); }
+      function updateSaldo(){ saldoEl.textContent = kunde.children.length; pop(); }
+      function makePallet(){
+        var d = document.createElement('div');
+        d.className = 'pw-pallet';
+        d.innerHTML = '<i class="t"></i><i class="m"></i><i class="l1"></i><i class="l2"></i><i class="l3"></i>';
+        attachDrag(d);
+        return d;
+      }
+      function ensureTruck(min){ while (truck.children.length < min) truck.appendChild(makePallet()); }
+
+      var drag = null;
+      function attachDrag(el){
+        el.addEventListener('pointerdown', function(e){
+          e.preventDefault();
+          var r = el.getBoundingClientRect();
+          drag = { el: el, dx: e.clientX - r.left, dy: e.clientY - r.top, from: el.parentNode };
+          el.classList.add('pw-dragging');
+          el.style.position = 'fixed';
+          el.style.width = r.width + 'px';
+          el.style.left = r.left + 'px';
+          el.style.top = r.top + 'px';
+          el.style.pointerEvents = 'none';
+          document.body.appendChild(el);
+          window.addEventListener('pointermove', onMove);
+          window.addEventListener('pointerup', onUp);
+        });
+      }
+      function zoneUnder(x, y){
+        function hit(z){ var r=z.getBoundingClientRect(); return x>=r.left&&x<=r.right&&y>=r.top&&y<=r.bottom; }
+        if (hit(kunde)) return kunde;
+        if (hit(truck)) return truck;
+        return null;
+      }
+      function onMove(e){
+        if (!drag) return;
+        drag.el.style.left = (e.clientX - drag.dx) + 'px';
+        drag.el.style.top = (e.clientY - drag.dy) + 'px';
+        var z = zoneUnder(e.clientX, e.clientY);
+        truck.classList.toggle('pw-over', z === truck && drag.from !== truck);
+        kunde.classList.toggle('pw-over', z === kunde && drag.from !== kunde);
+      }
+      function onUp(e){
+        window.removeEventListener('pointermove', onMove);
+        window.removeEventListener('pointerup', onUp);
+        truck.classList.remove('pw-over'); kunde.classList.remove('pw-over');
+        if (!drag) return;
+        var el = drag.el, from = drag.from;
+        var z = zoneUnder(e.clientX, e.clientY) || from;
+        var target = (z === from) ? from : z;
+        el.classList.remove('pw-dragging');
+        el.style.position=''; el.style.left=''; el.style.top=''; el.style.width=''; el.style.pointerEvents='';
+        target.appendChild(el);
+        if (target !== from){
+          if (target === kunde) hint.textContent = 'Geliefert! M\u00fcller GmbH schuldet dir jetzt ' + kunde.children.length + ' Paletten.';
+          else hint.textContent = 'Abgeholt! Noch ' + kunde.children.length + ' Paletten offen.';
+        }
+        ensureTruck(3);
+        updateSaldo();
+        drag = null;
+      }
+
+      addBtn.addEventListener('click', function(){
+        if (kunde.children.length >= 30){ hint.textContent='Gro\u00dfer Kunde! \ud83d\ude04'; return; }
+        ensureTruck(1);
+        kunde.appendChild(truck.lastElementChild);
+        ensureTruck(3); updateSaldo();
+        hint.textContent = 'Lieferung gebucht \u2013 ' + kunde.children.length + ' Paletten offen.';
+      });
+      subBtn.addEventListener('click', function(){
+        if (kunde.children.length <= 0){ hint.textContent='Saldo ist bei 0 \u2013 nichts abzuholen.'; return; }
+        truck.appendChild(kunde.lastElementChild); updateSaldo();
+        hint.textContent = 'Abholung gebucht \u2013 noch ' + kunde.children.length + ' Paletten offen.';
+      });
+      resetBtn.addEventListener('click', function(){
+        truck.innerHTML=''; kunde.innerHTML=''; ensureTruck(6); updateSaldo();
+        hint.textContent = 'Zieh eine Palette vom Lkw zum Kunden \ud83d\udc46 \u2013 oder nutz die Buttons.';
+      });
+
+      ensureTruck(6);
+      updateSaldo();
+    })();
+  </script>
 
   <!-- WIE ES FUNKTIONIERT - ANIMATED DEMO -->
   <section id="wie-es-funktioniert" class="py-20 lg:py-32 px-6 lg:px-8 bg-white border-y border-navy/5 overflow-hidden">
@@ -1061,9 +1293,9 @@
   <section id="preise" class="py-20 lg:py-32 px-6 lg:px-8">
     <div class="max-w-6xl mx-auto">
       <div class="max-w-2xl mb-16 mx-auto text-center">
-        <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Preise</div>
-        <h2 class="text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight mb-4">Faire Preise.<br><span class="text-orange">Keine Überraschungen.</span></h2>
-        <p class="text-lg text-navy/70">3 Pakete für jede Unternehmensgröße. 30 Tage kostenlos testen.</p>
+        <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Pakete</div>
+        <h2 class="text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight mb-4">Das passende Paket.<br><span class="text-orange">Für jede Größe.</span></h2>
+        <p class="text-lg text-navy/70">Vom kleinen Betrieb bis zur großen Flotte. Der Preis richtet sich nach deiner Fuhrparkgröße – 30 Tage kostenlos testen.</p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6 items-stretch">
@@ -1076,15 +1308,9 @@
             <p class="text-sm text-navy/60">Der digitale Einstieg für kleine Betriebe</p>
           </div>
           <div class="mb-6 pb-6 border-b border-navy/10 min-h-[120px]">
-            <div class="flex items-baseline gap-2 mb-1">
-              <!-- Fahrerpreis Starter (15 / ggf. 12) -->
-              <span class="text-5xl font-extrabold leading-none">15</span>
-              <span class="text-2xl font-bold">€</span>
-              <span class="text-sm text-navy/60">/ Fahrer / Monat</span>
-            </div>
-            <!-- Grundgebühr Starter -->
-            <div class="text-sm text-navy/70 mt-2">+ 59 € Grundgebühr / Monat</div>
-            <div class="text-xs text-navy/50 mt-1">zzgl. MwSt.</div>
+            <div class="text-4xl font-extrabold leading-none">Auf Anfrage</div>
+            <div class="text-sm text-navy/70 mt-3">Individuell nach Fuhrparkgröße</div>
+            <div class="text-xs text-navy/50 mt-1">30 Tage kostenlos testen</div>
           </div>
           <ul class="space-y-3 mb-8 text-sm flex-1">
             <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span><strong>1 Office-Zugang</strong></span></li>
@@ -1109,15 +1335,9 @@
               <p class="text-sm text-white/70">Volle Kontrolle. Hol dir deine Paletten zurück.</p>
             </div>
             <div class="mb-6 pb-6 border-b border-white/10 min-h-[120px]">
-              <div class="flex items-baseline gap-2 mb-1">
-                <!-- Fahrerpreis Business -->
-                <span class="text-5xl font-extrabold text-orange leading-none">19</span>
-                <span class="text-2xl font-bold text-orange">€</span>
-                <span class="text-sm text-white/60">/ Fahrer / Monat</span>
-              </div>
-              <!-- Grundgebühr Business -->
-              <div class="text-sm text-white/80 mt-2">+ 99 € Grundgebühr / Monat</div>
-              <div class="text-xs text-white/50 mt-1">zzgl. MwSt.</div>
+              <div class="text-4xl font-extrabold text-orange leading-none">Auf Anfrage</div>
+              <div class="text-sm text-white/80 mt-3">Individuell nach Fuhrparkgröße</div>
+              <div class="text-xs text-white/50 mt-1">30 Tage kostenlos testen</div>
             </div>
             <ul class="space-y-3 mb-8 text-sm flex-1">
               <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span><strong>3 Office-Zugänge</strong></span></li>
