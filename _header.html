@@ -12,6 +12,31 @@
       <a href="/#wie-es-funktioniert" data-nav-item class="nav-pill-item px-5 py-2 text-sm font-medium text-white/70 hover:text-white rounded-full transition-all">Wie es funktioniert</a>
       <a href="/#preise" data-nav-item class="nav-pill-item px-5 py-2 text-sm font-medium text-white/70 hover:text-white rounded-full transition-all">Preise</a>
       <a href="/#faq" data-nav-item class="nav-pill-item px-5 py-2 text-sm font-medium text-white/70 hover:text-white rounded-full transition-all">FAQ</a>
+
+      <!-- Wissen Dropdown -->
+      <div class="nav-dropdown relative">
+        <button type="button" class="nav-pill-item px-5 py-2 text-sm font-medium text-white/70 hover:text-white rounded-full transition-all flex items-center gap-1.5" aria-haspopup="true" aria-expanded="false">
+          Wissen
+          <svg class="nav-dropdown-chevron w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="nav-dropdown-panel absolute top-full left-1/2 pt-3 w-72">
+          <div class="bg-white rounded-2xl shadow-2xl shadow-navy/20 border border-navy/10 p-2">
+            <div class="px-3 pt-2 pb-1 text-[10px] font-bold uppercase tracking-wider text-navy/40">Seiten</div>
+            <a href="/palettenschein-digitalisieren.html" class="block px-3 py-2 text-sm font-medium text-navy/80 hover:bg-navy/5 hover:text-navy rounded-lg transition-colors">Palettenschein digitalisieren</a>
+            <a href="/palettenkonto-software.html" class="block px-3 py-2 text-sm font-medium text-navy/80 hover:bg-navy/5 hover:text-navy rounded-lg transition-colors">Palettenkonto Software</a>
+            <a href="/palettentausch-app.html" class="block px-3 py-2 text-sm font-medium text-navy/80 hover:bg-navy/5 hover:text-navy rounded-lg transition-colors">Palettentausch App</a>
+            <a href="/palettenschein-vorlage.html" class="block px-3 py-2 text-sm font-medium text-navy/80 hover:bg-navy/5 hover:text-navy rounded-lg transition-colors">Palettenschein Vorlage</a>
+            <a href="/palettenmanagement-software.html" class="block px-3 py-2 text-sm font-medium text-navy/80 hover:bg-navy/5 hover:text-navy rounded-lg transition-colors">Palettenmanagement Software</a>
+            <div class="border-t border-navy/5 my-1.5"></div>
+            <div class="px-3 pt-1 pb-1 text-[10px] font-bold uppercase tracking-wider text-navy/40">Funktionen</div>
+            <a href="/luecken-erkennung.html" class="block px-3 py-2 text-sm font-medium text-navy/80 hover:bg-navy/5 hover:text-navy rounded-lg transition-colors">Lücken-Erkennung</a>
+            <a href="/echtheitspruefung-qr-code.html" class="block px-3 py-2 text-sm font-medium text-navy/80 hover:bg-navy/5 hover:text-navy rounded-lg transition-colors">Echtheitsprüfung (QR-Code)</a>
+            <a href="/kunden-portal.html" class="block px-3 py-2 text-sm font-medium text-navy/80 hover:bg-navy/5 hover:text-navy rounded-lg transition-colors">Kunden-Portal</a>
+          </div>
+        </div>
+      </div>
+
+      <a href="/blog/" class="nav-pill-item px-5 py-2 text-sm font-medium text-white/70 hover:text-white rounded-full transition-all">Blog</a>
     </nav>
     
     <!-- Right: Login, CTA, Hamburger -->
@@ -35,12 +60,27 @@
   </div>
   
   <!-- Mobile Menu Dropdown -->
-  <div id="mobile-menu" class="mobile-menu lg:hidden absolute top-20 right-6 left-6 bg-navy-dark rounded-2xl shadow-2xl border border-white/10 p-2 origin-top-right">
+  <div id="mobile-menu" class="mobile-menu lg:hidden absolute top-20 right-6 left-6 bg-navy-dark rounded-2xl shadow-2xl border border-white/10 p-2 origin-top-right max-h-[80vh] overflow-y-auto">
     <a href="/#features" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">Features</a>
     <a href="/#wie-es-funktioniert" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">Wie es funktioniert</a>
     <a href="/#preise" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">Preise</a>
     <a href="/#faq" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">FAQ</a>
+
     <div class="border-t border-white/10 my-2"></div>
+    <div class="px-4 pt-1 pb-1 text-[10px] font-bold uppercase tracking-wider text-white/40">Wissen</div>
+    <a href="/palettenschein-digitalisieren.html" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">Palettenschein digitalisieren</a>
+    <a href="/palettenkonto-software.html" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">Palettenkonto Software</a>
+    <a href="/palettentausch-app.html" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">Palettentausch App</a>
+    <a href="/palettenschein-vorlage.html" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">Palettenschein Vorlage</a>
+    <a href="/palettenmanagement-software.html" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">Palettenmanagement Software</a>
+
+    <div class="px-4 pt-2 pb-1 text-[10px] font-bold uppercase tracking-wider text-white/40">Funktionen</div>
+    <a href="/luecken-erkennung.html" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">Lücken-Erkennung</a>
+    <a href="/echtheitspruefung-qr-code.html" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">Echtheitsprüfung (QR-Code)</a>
+    <a href="/kunden-portal.html" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">Kunden-Portal</a>
+
+    <div class="border-t border-white/10 my-2"></div>
+    <a href="/blog/" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">Blog</a>
     <a href="https://app.palletto.de" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">Login</a>
   </div>
 </header>
@@ -50,7 +90,27 @@
   .nav-pill-item:hover { background: rgba(255, 255, 255, 0.1); }
   .nav-pill-item.active { background: #FF9500; color: white; }
   .nav-pill-item.active:hover { background: #e88500; }
-  
+
+  /* WISSEN DROPDOWN (CSS-only, hover + keyboard focus) */
+  .nav-dropdown-chevron { transition: transform 0.3s ease; }
+  .nav-dropdown:hover .nav-dropdown-chevron,
+  .nav-dropdown:focus-within .nav-dropdown-chevron { transform: rotate(180deg); }
+
+  .nav-dropdown-panel {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(8px);
+    transition: opacity 0.25s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), visibility 0.25s;
+  }
+  .nav-dropdown:hover .nav-dropdown-panel,
+  .nav-dropdown:focus-within .nav-dropdown-panel {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+
   /* PREMIUM HAMBURGER - asymmetrische Linien morphen elegant zu X */
   .hamburger-icon {
     position: relative;
@@ -110,9 +170,13 @@
     opacity: 1;
     transform: translateX(0);
   }
-  .mobile-menu.open .mobile-nav-link:nth-child(1) { transition-delay: 0.1s; }
-  .mobile-menu.open .mobile-nav-link:nth-child(2) { transition-delay: 0.17s; }
-  .mobile-menu.open .mobile-nav-link:nth-child(3) { transition-delay: 0.24s; }
-  .mobile-menu.open .mobile-nav-link:nth-child(4) { transition-delay: 0.31s; }
-  .mobile-menu.open .mobile-nav-link:nth-child(6) { transition-delay: 0.38s; }
+
+  /* Reduced motion respektieren */
+  @media (prefers-reduced-motion: reduce) {
+    .nav-dropdown-panel,
+    .nav-dropdown-chevron,
+    .mobile-menu,
+    .mobile-menu .mobile-nav-link,
+    .hamburger-line { transition: none; }
+  }
 </style>
