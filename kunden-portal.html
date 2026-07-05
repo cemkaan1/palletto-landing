@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <title>Kunden-Portal ohne Login – Palettensaldo für deine Kunden | Palletto</title>
-  <meta name="description" content="Mit dem Palletto Kunden-Portal sehen deine Kunden ihren Palettensaldo selbst – über einen Link, ohne Login, nur lesend. Weniger Rückfragen, mehr Vertrauen.">
+  <meta name="description" content="Mit dem Palletto Kunden-Portal sehen deine Kunden ihren Palettensaldo selbst – über einen Link, ohne Login, nur lesend. Mit Sicherheits-Details, Beispiel und FAQ.">
   <meta name="keywords" content="Kunden-Portal Paletten, Palettensaldo Kunde, Palettenkonto teilen, Kundenportal Spedition">
   <meta name="author" content="Palletto">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -24,14 +24,14 @@
   <meta property="og:locale" content="de_DE">
   <meta property="og:url" content="https://palletto.de/kunden-portal.html">
   <meta property="og:title" content="Kunden-Portal ohne Login – Saldo für deine Kunden">
-  <meta property="og:description" content="Mit dem Palletto Kunden-Portal sehen deine Kunden ihren Palettensaldo selbst – über einen Link, ohne Login, nur lesend. Weniger Rückfragen, mehr Vertrauen.">
+  <meta property="og:description" content="Mit dem Palletto Kunden-Portal sehen deine Kunden ihren Palettensaldo selbst – über einen Link, ohne Login, nur lesend. Mit Sicherheits-Details, Beispiel und FAQ.">
   <meta property="og:image" content="https://palletto.de/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Kunden-Portal ohne Login – Saldo für deine Kunden">
-  <meta name="twitter:description" content="Mit dem Palletto Kunden-Portal sehen deine Kunden ihren Palettensaldo selbst – über einen Link, ohne Login, nur lesend. Weniger Rückfragen, mehr Vertrauen.">
+  <meta name="twitter:description" content="Mit dem Palletto Kunden-Portal sehen deine Kunden ihren Palettensaldo selbst – über einen Link, ohne Login, nur lesend. Mit Sicherheits-Details, Beispiel und FAQ.">
   <meta name="twitter:image" content="https://palletto.de/og-image.png">
 
   <meta name="theme-color" content="#1B3A6B">
@@ -72,7 +72,7 @@
       "@id": "https://palletto.de/kunden-portal.html#webpage",
       "url": "https://palletto.de/kunden-portal.html",
       "name": "Kunden-Portal ohne Login – Palettensaldo für deine Kunden | Palletto",
-      "description": "Mit dem Palletto Kunden-Portal sehen deine Kunden ihren Palettensaldo selbst – über einen Link, ohne Login, nur lesend. Weniger Rückfragen, mehr Vertrauen.",
+      "description": "Mit dem Palletto Kunden-Portal sehen deine Kunden ihren Palettensaldo selbst – über einen Link, ohne Login, nur lesend. Mit Sicherheits-Details, Beispiel und FAQ.",
       "inLanguage": "de-DE",
       "isPartOf": {
         "@type": "WebSite",
@@ -96,15 +96,31 @@
           "name": "Muss mein Kunde sich registrieren?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nein. Das Portal ist ein tokenisierter Link mit Nur-Lese-Zugriff. Der Kunde klickt, sieht seinen Stand – mehr braucht er nicht. Kein Konto, kein Passwort, keine Hürde."
+            "text": "Nein. Das Portal ist ein Link mit Nur-Lese-Zugriff. Der Kunde klickt, sieht seinen Stand – mehr braucht er nicht. Kein Konto, kein Passwort, keine Hürde."
           }
         },
         {
           "@type": "Question",
-          "name": "Kann der Kunde etwas verändern?",
+          "name": "Ist der Portal-Link sicher?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nein. Der Zugriff ist ausschließlich lesend. Der Kunde sieht seinen Saldo und seine Lieferungen, kann aber nichts bearbeiten. Die Datenhoheit bleibt bei dir."
+            "text": "Ja. Der Link ist ein langer, nicht erratbarer Token und gibt ausschließlich Lesezugriff auf das eigene Konto des Kunden. Andere Kunden oder Bearbeitungsfunktionen sind darüber nicht erreichbar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann der Kunde Daten verändern?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nein. Der Zugriff ist rein lesend. Der Kunde sieht seinen Saldo und seine Lieferungen, kann aber nichts bearbeiten. Die Datenhoheit bleibt bei dir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Sieht der Kunde auch die einzelnen Lieferungen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Neben dem Saldo sieht der Kunde die erfassten Lieferungen – also nachvollziehbar, wie sich der Stand ergibt. Das beendet die meisten Diskussionen über die Zahlen."
           }
         }
       ]
@@ -152,23 +168,44 @@
   </section>
   <section class="py-14 lg:py-20 px-6 lg:px-8 bg-white border-y border-navy/5">
     <div class="max-w-4xl mx-auto">
-      <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Das Problem</div>
-      <h2 class="text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight mb-6">Ständige Rückfragen zum Saldo</h2>
-      <p class="text-lg text-navy/70 leading-relaxed mb-4">„Wie viele Paletten sind bei uns noch offen?“ – diese Frage kommt regelmäßig, und jedes Mal muss jemand nachschauen und zurückmelden. Das kostet Zeit und führt oft zu Diskussionen, wenn deine Zahl und die des Kunden nicht zusammenpassen.</p>
+      <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Grundlage</div>
+      <h2 class="text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight mb-6">Was ist das Kunden-Portal?</h2>
+      <div class="bg-white border-l-4 border-orange rounded-r-2xl p-6 mb-6 shadow-sm"><div class="text-xs font-bold uppercase tracking-wider text-orange mb-2">Kurz erklärt</div><p class="text-lg text-navy/80 leading-relaxed">Beim Kunden-Portal bekommt jeder deiner Kunden einen eigenen Link zu seinem Palettenkonto – ohne Login und ohne Passwort. Über den Link sieht er seinen aktuellen Saldo und die erfassten Lieferungen, kann aber nichts verändern. Der Zugriff ist rein lesend und läuft über einen langen, nicht erratbaren Token. So schaut der Kunde seinen Stand selbst nach, statt bei dir anzurufen, und ihr redet über dieselben, aktuellen Zahlen.</p></div>
     </div>
   </section>
   <section class="py-14 lg:py-20 px-6 lg:px-8 ">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Das Problem</div>
+      <h2 class="text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight mb-6">Ständige Rückfragen zum Saldo</h2>
+      <p class="text-lg text-navy/70 leading-relaxed mb-4">Wie viele Paletten sind bei uns noch offen? Diese Frage kommt regelmäßig, und jedes Mal muss jemand nachschauen und zurückmelden. Das kostet Zeit und führt oft zu Diskussionen, wenn deine Zahl und die des Kunden nicht zusammenpassen.</p>
+    </div>
+  </section>
+  <section class="py-14 lg:py-20 px-6 lg:px-8 bg-white border-y border-navy/5">
     <div class="max-w-4xl mx-auto">
       <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">So funktioniert es</div>
       <h2 class="text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight mb-6">Ein Link genügt</h2>
       <div class="flex items-start gap-4 mb-5"><div class="w-9 h-9 bg-orange text-white rounded-xl flex items-center justify-center font-extrabold shrink-0">1</div><div><div class="font-bold text-lg mb-1">Link teilen</div><div class="text-navy/70 leading-relaxed">Jeder Kunde erhält einen eigenen, tokenisierten Link zu seinem Palettenkonto.</div></div></div><div class="flex items-start gap-4 mb-5"><div class="w-9 h-9 bg-orange text-white rounded-xl flex items-center justify-center font-extrabold shrink-0">2</div><div><div class="font-bold text-lg mb-1">Kunde öffnet – ohne Login</div><div class="text-navy/70 leading-relaxed">Kein Konto, kein Passwort. Der Link führt direkt zu seinem Stand.</div></div></div><div class="flex items-start gap-4 mb-5"><div class="w-9 h-9 bg-orange text-white rounded-xl flex items-center justify-center font-extrabold shrink-0">3</div><div><div class="font-bold text-lg mb-1">Saldo live</div><div class="text-navy/70 leading-relaxed">Der Kunde sieht seinen aktuellen Saldo und die erfassten Lieferungen in Echtzeit.</div></div></div><div class="flex items-start gap-4 mb-5"><div class="w-9 h-9 bg-orange text-white rounded-xl flex items-center justify-center font-extrabold shrink-0">4</div><div><div class="font-bold text-lg mb-1">Nur lesen</div><div class="text-navy/70 leading-relaxed">Der Zugriff ist rein lesend – verändern kann der Kunde nichts.</div></div></div>
     </div>
   </section>
+  <section class="py-14 lg:py-20 px-6 lg:px-8 ">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Sicherheit</div>
+      <h2 class="text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight mb-6">Eng gefasster Zugriff</h2>
+      <p class="text-lg text-navy/70 leading-relaxed mb-4">Der Zugang ist bewusst eng: Der Link ist ein langer, zufälliger Token, der Kunde sieht ausschließlich sein eigenes Konto, und er hat nur Leserechte. Bearbeiten, löschen oder andere Kunden einsehen kann er nicht. Die Datenhoheit bleibt vollständig bei dir.</p>
+    </div>
+  </section>
   <section class="py-14 lg:py-20 px-6 lg:px-8 bg-white border-y border-navy/5">
     <div class="max-w-4xl mx-auto">
-      <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Der Effekt</div>
-      <h2 class="text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight mb-6">Weniger Telefon, mehr Vertrauen</h2>
-      <ul class="space-y-3"><li class="flex items-start gap-3"><div class="w-6 h-6 bg-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-navy/80">Der Kunde schaut selbst nach, statt bei dir anzurufen</span></li><li class="flex items-start gap-3"><div class="w-6 h-6 bg-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-navy/80">Ihr redet über denselben, aktuellen Stand – das beendet die meisten Diskussionen</span></li><li class="flex items-start gap-3"><div class="w-6 h-6 bg-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-navy/80">Auf dem Portal steht dein Branding, bei jedem Kunden</span></li></ul>
+      <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Beispiel</div>
+      <h2 class="text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight mb-6">Statt wöchentlicher Anrufe</h2>
+      <p class="text-lg text-navy/70 leading-relaxed mb-4">Bisher rief ein Kunde jede Woche an, um seinen Palettenstand zu erfragen. Jetzt hat er einmal seinen Portal-Link bekommen. Er öffnet ihn, wann er will, und sieht: Saldo 8 Paletten offen, letzte Lieferung Dienstag. Der Anruf entfällt – und beide reden über denselben Stand.</p>
+    </div>
+  </section>
+  <section class="py-14 lg:py-20 px-6 lg:px-8 ">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Mehr</div>
+      <h2 class="text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight mb-6">Verwandte Themen</h2>
+      <div class="grid sm:grid-cols-2 gap-4"><a href="/palettenkonto-software.html" class="block bg-warm border border-navy/10 rounded-2xl p-6 hover:border-orange/40 transition-colors"><div class="font-extrabold text-xl mb-2">Palettenkonto-Software</div><p class="text-sm text-navy/70 leading-relaxed">Woher der Saldo kommt, den der Kunde im Portal sieht.</p><span class="inline-block mt-3 text-sm font-semibold text-orange">Mehr erfahren →</span></a><a href="/echtheitspruefung-qr-code.html" class="block bg-warm border border-navy/10 rounded-2xl p-6 hover:border-orange/40 transition-colors"><div class="font-extrabold text-xl mb-2">Echtheitsprüfung per QR-Code</div><p class="text-sm text-navy/70 leading-relaxed">Wie einzelne Scheine auf Echtheit geprüft werden.</p><span class="inline-block mt-3 text-sm font-semibold text-orange">Mehr erfahren →</span></a><a href="/luecken-erkennung.html" class="block bg-warm border border-navy/10 rounded-2xl p-6 hover:border-orange/40 transition-colors"><div class="font-extrabold text-xl mb-2">Lücken-Erkennung</div><p class="text-sm text-navy/70 leading-relaxed">Warum der Saldo im Portal verlässlich vollständig ist.</p><span class="inline-block mt-3 text-sm font-semibold text-orange">Mehr erfahren →</span></a></div>
     </div>
   </section>
   <section class="py-14 lg:py-20 px-6 lg:px-8 bg-white border-y border-navy/5">
@@ -182,11 +219,19 @@
         </details>
         <details class="bg-white rounded-2xl border border-navy/10 group">
           <summary class="cursor-pointer p-6 font-semibold text-lg flex items-center justify-between list-none">Muss mein Kunde sich registrieren?<svg class="w-5 h-5 text-orange transition-transform group-open:rotate-180 shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
-          <div class="px-6 pb-6 text-navy/70 leading-relaxed">Nein. Das Portal ist ein tokenisierter Link mit Nur-Lese-Zugriff. Der Kunde klickt, sieht seinen Stand – mehr braucht er nicht. Kein Konto, kein Passwort, keine Hürde.</div>
+          <div class="px-6 pb-6 text-navy/70 leading-relaxed">Nein. Das Portal ist ein Link mit Nur-Lese-Zugriff. Der Kunde klickt, sieht seinen Stand – mehr braucht er nicht. Kein Konto, kein Passwort, keine Hürde.</div>
         </details>
         <details class="bg-white rounded-2xl border border-navy/10 group">
-          <summary class="cursor-pointer p-6 font-semibold text-lg flex items-center justify-between list-none">Kann der Kunde etwas verändern?<svg class="w-5 h-5 text-orange transition-transform group-open:rotate-180 shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
-          <div class="px-6 pb-6 text-navy/70 leading-relaxed">Nein. Der Zugriff ist ausschließlich lesend. Der Kunde sieht seinen Saldo und seine Lieferungen, kann aber nichts bearbeiten. Die Datenhoheit bleibt bei dir.</div>
+          <summary class="cursor-pointer p-6 font-semibold text-lg flex items-center justify-between list-none">Ist der Portal-Link sicher?<svg class="w-5 h-5 text-orange transition-transform group-open:rotate-180 shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+          <div class="px-6 pb-6 text-navy/70 leading-relaxed">Ja. Der Link ist ein langer, nicht erratbarer Token und gibt ausschließlich Lesezugriff auf das eigene Konto des Kunden. Andere Kunden oder Bearbeitungsfunktionen sind darüber nicht erreichbar.</div>
+        </details>
+        <details class="bg-white rounded-2xl border border-navy/10 group">
+          <summary class="cursor-pointer p-6 font-semibold text-lg flex items-center justify-between list-none">Kann der Kunde Daten verändern?<svg class="w-5 h-5 text-orange transition-transform group-open:rotate-180 shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+          <div class="px-6 pb-6 text-navy/70 leading-relaxed">Nein. Der Zugriff ist rein lesend. Der Kunde sieht seinen Saldo und seine Lieferungen, kann aber nichts bearbeiten. Die Datenhoheit bleibt bei dir.</div>
+        </details>
+        <details class="bg-white rounded-2xl border border-navy/10 group">
+          <summary class="cursor-pointer p-6 font-semibold text-lg flex items-center justify-between list-none">Sieht der Kunde auch die einzelnen Lieferungen?<svg class="w-5 h-5 text-orange transition-transform group-open:rotate-180 shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+          <div class="px-6 pb-6 text-navy/70 leading-relaxed">Ja. Neben dem Saldo sieht der Kunde die erfassten Lieferungen – also nachvollziehbar, wie sich der Stand ergibt. Das beendet die meisten Diskussionen über die Zahlen.</div>
         </details>
       </div>
     </div>

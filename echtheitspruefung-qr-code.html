@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <title>Echtheitsprüfung per QR-Code (SHA-256) für Palettenscheine | Palletto</title>
-  <meta name="description" content="Jeder Palettenschein aus Palletto trägt eine SHA-256-Prüfsumme im QR-Code. Scannen und in Sekunden sehen: echt und unverändert oder manipuliert. Ohne App.">
+  <meta name="description" content="Jeder Palettenschein aus Palletto trägt eine SHA-256-Prüfsumme im QR-Code. Scannen und sehen: echt oder manipuliert. Mit Beispiel und FAQ, ohne App.">
   <meta name="keywords" content="Echtheitsprüfung Palettenschein, QR-Code Prüfsumme, SHA-256 Palettenschein, fälschungssicherer Lieferschein">
   <meta name="author" content="Palletto">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -24,14 +24,14 @@
   <meta property="og:locale" content="de_DE">
   <meta property="og:url" content="https://palletto.de/echtheitspruefung-qr-code.html">
   <meta property="og:title" content="Echtheitsprüfung per QR-Code – fälschungssichere Palettenscheine">
-  <meta property="og:description" content="Jeder Palettenschein aus Palletto trägt eine SHA-256-Prüfsumme im QR-Code. Scannen und in Sekunden sehen: echt und unverändert oder manipuliert. Ohne App.">
+  <meta property="og:description" content="Jeder Palettenschein aus Palletto trägt eine SHA-256-Prüfsumme im QR-Code. Scannen und sehen: echt oder manipuliert. Mit Beispiel und FAQ, ohne App.">
   <meta property="og:image" content="https://palletto.de/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Echtheitsprüfung per QR-Code – fälschungssichere Palettenscheine">
-  <meta name="twitter:description" content="Jeder Palettenschein aus Palletto trägt eine SHA-256-Prüfsumme im QR-Code. Scannen und in Sekunden sehen: echt und unverändert oder manipuliert. Ohne App.">
+  <meta name="twitter:description" content="Jeder Palettenschein aus Palletto trägt eine SHA-256-Prüfsumme im QR-Code. Scannen und sehen: echt oder manipuliert. Mit Beispiel und FAQ, ohne App.">
   <meta name="twitter:image" content="https://palletto.de/og-image.png">
 
   <meta name="theme-color" content="#1B3A6B">
@@ -72,7 +72,7 @@
       "@id": "https://palletto.de/echtheitspruefung-qr-code.html#webpage",
       "url": "https://palletto.de/echtheitspruefung-qr-code.html",
       "name": "Echtheitsprüfung per QR-Code (SHA-256) für Palettenscheine | Palletto",
-      "description": "Jeder Palettenschein aus Palletto trägt eine SHA-256-Prüfsumme im QR-Code. Scannen und in Sekunden sehen: echt und unverändert oder manipuliert. Ohne App.",
+      "description": "Jeder Palettenschein aus Palletto trägt eine SHA-256-Prüfsumme im QR-Code. Scannen und sehen: echt oder manipuliert. Mit Beispiel und FAQ, ohne App.",
       "inLanguage": "de-DE",
       "isPartOf": {
         "@type": "WebSite",
@@ -101,10 +101,26 @@
         },
         {
           "@type": "Question",
+          "name": "Was ist eine Prüfsumme?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Eine Prüfsumme ist ein kurzer, eindeutiger Fingerabdruck eines Dokuments. Ändert sich am Inhalt etwas, ändert sich der Fingerabdruck komplett. So lässt sich zuverlässig feststellen, ob ein Dokument seit seiner Erstellung verändert wurde."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Brauche ich eine App zum Scannen?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Nein. Der QR-Code lässt sich mit der normalen Kamera jedes Handys scannen. Die Prüfung läuft danach online im Browser, ohne Installation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich alte Scheine nachträglich prüfen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Solange das PDF vorliegt, prüft der QR-Code jederzeit gegen den gespeicherten Fingerabdruck – auch Wochen oder Monate später."
           }
         }
       ]
@@ -152,23 +168,37 @@
   </section>
   <section class="py-14 lg:py-20 px-6 lg:px-8 bg-white border-y border-navy/5">
     <div class="max-w-4xl mx-auto">
+      <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Grundlage</div>
+      <h2 class="text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight mb-6">Wie die Echtheitsprüfung funktioniert</h2>
+      <div class="bg-white border-l-4 border-orange rounded-r-2xl p-6 mb-6 shadow-sm"><div class="text-xs font-bold uppercase tracking-wider text-orange mb-2">Kurz erklärt</div><p class="text-lg text-navy/80 leading-relaxed">Jeder Palettenschein aus Palletto trägt einen QR-Code mit einer kryptografischen Prüfsumme (SHA-256). Wer den Code scannt, landet auf einer Prüfseite, die bestätigt, ob das Dokument echt und unverändert ist. Weil die Prüfsumme auf jede noch so kleine Änderung reagiert, fällt eine nachträgliche Manipulation sofort auf. So lässt sich ein Palettenschein nicht fälschen oder heimlich abändern – der Beweis steckt im Dokument selbst.</p></div>
+    </div>
+  </section>
+  <section class="py-14 lg:py-20 px-6 lg:px-8 ">
+    <div class="max-w-4xl mx-auto">
       <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Das Problem</div>
       <h2 class="text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight mb-6">Gefälschte und geänderte Scheine</h2>
       <p class="text-lg text-navy/70 leading-relaxed mb-4">Ein Papierschein lässt sich nachträglich ändern, und man sieht es ihm nicht an. Eine Zahl überschrieben, eine Unterschrift kopiert – im Streitfall steht Aussage gegen Aussage. Ohne fälschungssicheren Nachweis verlierst du solche Diskussionen.</p>
     </div>
   </section>
-  <section class="py-14 lg:py-20 px-6 lg:px-8 ">
+  <section class="py-14 lg:py-20 px-6 lg:px-8 bg-white border-y border-navy/5">
     <div class="max-w-4xl mx-auto">
       <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">So funktioniert es</div>
       <h2 class="text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight mb-6">Prüfsumme, QR-Code, Verify-Seite</h2>
       <div class="flex items-start gap-4 mb-5"><div class="w-9 h-9 bg-orange text-white rounded-xl flex items-center justify-center font-extrabold shrink-0">1</div><div><div class="font-bold text-lg mb-1">Prüfsumme beim Erstellen</div><div class="text-navy/70 leading-relaxed">Beim Erzeugen des PDFs berechnet Palletto einen SHA-256-Fingerabdruck über den Inhalt des Scheins.</div></div></div><div class="flex items-start gap-4 mb-5"><div class="w-9 h-9 bg-orange text-white rounded-xl flex items-center justify-center font-extrabold shrink-0">2</div><div><div class="font-bold text-lg mb-1">QR-Code auf dem Dokument</div><div class="text-navy/70 leading-relaxed">Dieser Fingerabdruck steckt im QR-Code, der auf jedem PDF sitzt.</div></div></div><div class="flex items-start gap-4 mb-5"><div class="w-9 h-9 bg-orange text-white rounded-xl flex items-center justify-center font-extrabold shrink-0">3</div><div><div class="font-bold text-lg mb-1">Scannen</div><div class="text-navy/70 leading-relaxed">Empfänger, Kunde oder Prüfer scannt den Code mit der Handykamera – keine App nötig.</div></div></div><div class="flex items-start gap-4 mb-5"><div class="w-9 h-9 bg-orange text-white rounded-xl flex items-center justify-center font-extrabold shrink-0">4</div><div><div class="font-bold text-lg mb-1">Ergebnis in Sekunden</div><div class="text-navy/70 leading-relaxed">Die Prüfseite zeigt: Dokument unverändert, Original aus Palletto – oder eben nicht.</div></div></div>
     </div>
   </section>
+  <section class="py-14 lg:py-20 px-6 lg:px-8 ">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Hintergrund</div>
+      <h2 class="text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight mb-6">Was ist SHA-256?</h2>
+      <p class="text-lg text-navy/70 leading-relaxed mb-4">SHA-256 ist ein etabliertes Standardverfahren, das aus einem beliebig langen Inhalt einen kurzen, eindeutigen Fingerabdruck berechnet. Ändert sich am Inhalt auch nur ein Zeichen, ändert sich der komplette Fingerabdruck. Genau deshalb lässt sich damit zuverlässig feststellen, ob ein Dokument seit seiner Erstellung verändert wurde – dieselbe Technik sichert auch Bank- und Behördendokumente.</p>
+    </div>
+  </section>
   <section class="py-14 lg:py-20 px-6 lg:px-8 bg-white border-y border-navy/5">
     <div class="max-w-4xl mx-auto">
-      <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Bei Manipulation</div>
-      <h2 class="text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight mb-6">Warum jede Änderung auffällt</h2>
-      <p class="text-lg text-navy/70 leading-relaxed mb-4">Der SHA-256-Fingerabdruck reagiert auf jede noch so kleine Änderung im Dokument. Wird auch nur eine Ziffer verändert, passt die Prüfsumme nicht mehr, und der Abgleich schlägt fehl. Ein manipulierter Schein lässt sich damit nicht als echt ausgeben.</p>
+      <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Beispiel</div>
+      <h2 class="text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight mb-6">Der geänderte Schein im Streitfall</h2>
+      <p class="text-lg text-navy/70 leading-relaxed mb-4">Ein Kunde legt einen Palettenschein vor, auf dem statt 8 nun 18 zurückgegebene Paletten stehen. Du scannst den QR-Code: Die Prüfung schlägt fehl, weil die Zahl geändert wurde und die Prüfsumme nicht mehr passt. Dein Original dagegen wird beim Scannen als echt und unverändert bestätigt – die Diskussion ist entschieden.</p>
     </div>
   </section>
   <section class="py-14 lg:py-20 px-6 lg:px-8 bg-white border-y border-navy/5">
@@ -185,8 +215,16 @@
           <div class="px-6 pb-6 text-navy/70 leading-relaxed">Dann stimmt die Prüfsumme nicht mehr mit dem Dokument überein. Die Prüfung schlägt fehl und die Manipulation fällt sofort auf. Schon eine geänderte Zahl reicht, damit der Abgleich nicht mehr passt.</div>
         </details>
         <details class="bg-white rounded-2xl border border-navy/10 group">
+          <summary class="cursor-pointer p-6 font-semibold text-lg flex items-center justify-between list-none">Was ist eine Prüfsumme?<svg class="w-5 h-5 text-orange transition-transform group-open:rotate-180 shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+          <div class="px-6 pb-6 text-navy/70 leading-relaxed">Eine Prüfsumme ist ein kurzer, eindeutiger Fingerabdruck eines Dokuments. Ändert sich am Inhalt etwas, ändert sich der Fingerabdruck komplett. So lässt sich zuverlässig feststellen, ob ein Dokument seit seiner Erstellung verändert wurde.</div>
+        </details>
+        <details class="bg-white rounded-2xl border border-navy/10 group">
           <summary class="cursor-pointer p-6 font-semibold text-lg flex items-center justify-between list-none">Brauche ich eine App zum Scannen?<svg class="w-5 h-5 text-orange transition-transform group-open:rotate-180 shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
           <div class="px-6 pb-6 text-navy/70 leading-relaxed">Nein. Der QR-Code lässt sich mit der normalen Kamera jedes Handys scannen. Die Prüfung läuft danach online im Browser, ohne Installation.</div>
+        </details>
+        <details class="bg-white rounded-2xl border border-navy/10 group">
+          <summary class="cursor-pointer p-6 font-semibold text-lg flex items-center justify-between list-none">Kann ich alte Scheine nachträglich prüfen?<svg class="w-5 h-5 text-orange transition-transform group-open:rotate-180 shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+          <div class="px-6 pb-6 text-navy/70 leading-relaxed">Ja. Solange das PDF vorliegt, prüft der QR-Code jederzeit gegen den gespeicherten Fingerabdruck – auch Wochen oder Monate später.</div>
         </details>
       </div>
     </div>
