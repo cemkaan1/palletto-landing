@@ -63,8 +63,7 @@
   <meta name="application-name" content="Palletto">
   <meta name="msapplication-TileColor" content="#1B3A6B">
 
- <!-- ============================================================ -->
-  <<!-- ============================================================ -->
+  <!-- ============================================================ -->
   <!-- FAVICONS                                                      -->
   <!-- ============================================================ -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -81,6 +80,7 @@
   <link rel="preload" href="fonts/inter-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/inter-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/inter-v20-latin-800.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="assets/img/paletten-hof.webp" fetchpriority="high">
 
   <!-- ============================================================ -->
   <!-- SCHEMA.ORG STRUCTURED DATA (JSON-LD)                          -->
@@ -111,9 +111,9 @@
         },
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Habichtweg 6",
-          "addressLocality": "Elmshorn",
-          "postalCode": "25336",
+          "streetAddress": "Bei den Mühren 1",
+          "addressLocality": "Hamburg",
+          "postalCode": "20457",
           "addressCountry": "DE"
         },
         "contactPoint": {
@@ -146,10 +146,19 @@
         "featureList": [
           "Digitale Palettenscheine mit Unterschrift",
           "Rechtssicher nach §126b BGB",
+          "Lücken-Erkennung (fehlende Palettenscheine automatisch erkennen)",
+          "Nacherfassung mit Beleg-Upload",
+          "Lückenlose Druck-Historie (revisionssicher)",
+          "Touren-Planung mit festen Kunden",
           "Offline-Modus für Fahrer-App",
           "Tägliche automatische Email-Auswertung",
           "PDF-Export und Druck",
           "Kunden-Bilanz Live-Übersicht",
+          "QR-Code Echtheits-Verifizierung",
+          "Kunden-Portal ohne Login",
+          "Foto-Dokumentation mit Foto-Pflicht",
+          "Automatisches Mahnwesen",
+          "CSV-Export für die Buchhaltung",
           "AES-256 verschlüsselte Backups",
           "DSGVO-konform mit AVV",
           "EU-Server (Frankfurt)",
@@ -159,32 +168,14 @@
           {
             "@type": "Offer",
             "name": "Starter",
-            "description": "Für kleine Transportunternehmen bis 5 Fahrer",
-            "price": "499",
-            "priceCurrency": "EUR",
-            "priceSpecification": {
-              "@type": "UnitPriceSpecification",
-              "price": "499",
-              "priceCurrency": "EUR",
-              "billingDuration": "P1M",
-              "unitText": "MONTH"
-            },
+            "description": "Der digitale Einstieg für kleine Transportunternehmen. Preis individuell nach Fuhrparkgröße.",
             "availability": "https://schema.org/InStock",
             "url": "https://palletto.de/#preise"
           },
           {
             "@type": "Offer",
             "name": "Business",
-            "description": "Für mittelständische Unternehmen bis 20 Fahrer",
-            "price": "999",
-            "priceCurrency": "EUR",
-            "priceSpecification": {
-              "@type": "UnitPriceSpecification",
-              "price": "999",
-              "priceCurrency": "EUR",
-              "billingDuration": "P1M",
-              "unitText": "MONTH"
-            },
+            "description": "Das volle Programm für mittelständische Transportunternehmen. Preis individuell nach Fuhrparkgröße.",
             "availability": "https://schema.org/InStock",
             "url": "https://palletto.de/#preise"
           },
@@ -258,7 +249,7 @@
             "name": "Kann ich Palletto jederzeit kündigen?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Ja. Keine Mindestlaufzeit, monatlich kündbar. Eure Daten könnt ihr jederzeit als PDF/CSV exportieren."
+              "text": "Die Mindestvertragslaufzeit beträgt 6 Monate. Danach verlängert sich der Vertrag monatlich und ist mit einer Frist von einem Monat zum Monatsende kündbar. Eure Daten könnt ihr jederzeit als PDF/CSV exportieren."
             }
           }
         ]
@@ -403,84 +394,26 @@
           </div>
         </div>
 
-        <!-- App Mockup (CSS, kein Bild!) -->
+        <!-- Echtes Foto: EPAL-Europaletten auf dem Speditionshof -->
         <div class="fade-in-delay-2 relative">
           <div class="absolute inset-0 bg-gradient-to-br from-orange/20 to-navy/10 blur-3xl opacity-50"></div>
 
-          <div class="relative bg-white rounded-2xl shadow-2xl border border-navy/10 overflow-hidden">
-            <!-- Browser Bar -->
-            <div class="bg-navy/5 px-4 py-3 flex items-center gap-2 border-b border-navy/5">
-              <div class="flex gap-1.5">
-                <div class="w-3 h-3 rounded-full bg-red-400"></div>
-                <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
-                <div class="w-3 h-3 rounded-full bg-green-400"></div>
+          <div class="relative">
+            <img src="assets/img/paletten-hof.webp"
+                 alt="Gestapelte EPAL-Europaletten auf dem Speditionshof – Palettentausch im Transportunternehmen"
+                 width="1200" height="1600"
+                 loading="eager" fetchpriority="high" decoding="async"
+                 class="w-full h-[400px] lg:h-[560px] object-cover rounded-3xl shadow-2xl border border-navy/10">
+
+            <!-- Floating Card -->
+            <div class="absolute -bottom-5 -left-5 bg-white rounded-xl shadow-xl border border-navy/10 p-4 flex items-center gap-3">
+              <div class="w-10 h-10 bg-orange/10 rounded-lg flex items-center justify-center">
+                <span class="text-xl" aria-hidden="true">⚡</span>
               </div>
-              <div class="mx-auto bg-white px-4 py-1 rounded text-xs text-navy/60 font-mono">app.palletto.de</div>
-            </div>
-
-            <!-- Fake App Content -->
-            <div class="p-6 bg-warm">
-              <!-- Top Stats Row -->
-              <div class="grid grid-cols-3 gap-3 mb-5">
-                <div class="bg-white rounded-xl p-3 border border-navy/5">
-                  <div class="text-xs text-navy/60 mb-1">Heute</div>
-                  <div class="text-2xl font-extrabold">24</div>
-                  <div class="text-xs text-orange font-semibold">↑ 12%</div>
-                </div>
-                <div class="bg-white rounded-xl p-3 border border-navy/5">
-                  <div class="text-xs text-navy/60 mb-1">Offen</div>
-                  <div class="text-2xl font-extrabold">142</div>
-                  <div class="text-xs text-navy/60">Paletten</div>
-                </div>
-                <div class="bg-white rounded-xl p-3 border border-navy/5">
-                  <div class="text-xs text-navy/60 mb-1">Kunden</div>
-                  <div class="text-2xl font-extrabold">38</div>
-                  <div class="text-xs text-navy/60">Aktiv</div>
-                </div>
+              <div>
+                <div class="text-xs text-navy/60 font-medium">Erfasst in</div>
+                <div class="text-lg font-bold">unter 30 Sek</div>
               </div>
-
-              <!-- Recent Activity -->
-              <div class="bg-white rounded-xl border border-navy/5 overflow-hidden">
-                <div class="px-4 py-3 border-b border-navy/5 flex items-center justify-between">
-                  <div class="text-sm font-bold">Letzte Lieferungen</div>
-                  <div class="text-xs text-navy/60">Heute</div>
-                </div>
-
-                <div class="divide-y divide-navy/5">
-                  <div class="px-4 py-3 flex items-center justify-between">
-                    <div>
-                      <div class="text-sm font-semibold">Müller GmbH</div>
-                      <div class="text-xs text-navy/60">12 abgeliefert · 8 abgeholt</div>
-                    </div>
-                    <div class="text-orange font-bold text-sm">+4</div>
-                  </div>
-                  <div class="px-4 py-3 flex items-center justify-between">
-                    <div>
-                      <div class="text-sm font-semibold">Schmidt Logistik</div>
-                      <div class="text-xs text-navy/60">0 abgeliefert · 6 abgeholt</div>
-                    </div>
-                    <div class="text-red-500 font-bold text-sm">-6</div>
-                  </div>
-                  <div class="px-4 py-3 flex items-center justify-between">
-                    <div>
-                      <div class="text-sm font-semibold">Becker AG</div>
-                      <div class="text-xs text-navy/60">15 abgeliefert · 9 abgeholt</div>
-                    </div>
-                    <div class="text-orange font-bold text-sm">+6</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Floating Card -->
-          <div class="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl border border-navy/10 p-4 flex items-center gap-3">
-            <div class="w-10 h-10 bg-orange/10 rounded-lg flex items-center justify-center">
-              <span class="text-xl" aria-hidden="true">⚡</span>
-            </div>
-            <div>
-              <div class="text-xs text-navy/60 font-medium">Erfasst in</div>
-              <div class="text-lg font-bold">unter 30 Sek</div>
             </div>
           </div>
         </div>
@@ -581,9 +514,271 @@
           <h3 class="text-2xl font-extrabold mb-3">PDF & Drucken</h3>
           <p class="text-navy/70 leading-relaxed">Gerichtsfeste Dokumente auf Knopfdruck. Für Buchhaltung, Versicherung oder den Streitfall.</p>
         </div>
+        <div class="bg-warm border border-navy/10 rounded-3xl p-8 hover:border-orange/30 transition-colors">
+          <div class="w-12 h-12 bg-orange rounded-xl flex items-center justify-center mb-4 text-2xl" aria-hidden="true">📷</div>
+          <h3 class="text-2xl font-extrabold mb-3">Foto-Dokumentation</h3>
+          <p class="text-navy/70 leading-relaxed">Beschädigte oder nicht-genormte Paletten? Der Fahrer macht direkt ein Foto. Pro Kunde lässt sich eine <strong>Foto-Pflicht</strong> festlegen.</p>
+        </div>
+        <div class="bg-warm border border-navy/10 rounded-3xl p-8 hover:border-orange/30 transition-colors">
+          <div class="w-12 h-12 bg-navy rounded-xl flex items-center justify-center mb-4 text-2xl" aria-hidden="true">✉️</div>
+          <h3 class="text-2xl font-extrabold mb-3">Mahnwesen</h3>
+          <p class="text-navy/70 leading-relaxed">Kunde gibt Paletten nicht zurück? Erstelle auf Knopfdruck eine freundliche <strong>Zahlungserinnerung</strong> oder formelle Mahnung mit Frist.</p>
+        </div>
+        <div class="bg-warm border border-navy/10 rounded-3xl p-8 hover:border-orange/30 transition-colors">
+          <div class="w-12 h-12 bg-orange rounded-xl flex items-center justify-center mb-4 text-2xl" aria-hidden="true">📑</div>
+          <h3 class="text-2xl font-extrabold mb-3">CSV-Export</h3>
+          <p class="text-navy/70 leading-relaxed">Alle Scheine mit einem Klick als Excel-Datei (CSV). Perfekt für Steuerberater, Buchhaltung und eigene Auswertungen.</p>
+        </div>
+        <div class="bg-warm border border-navy/10 rounded-3xl p-8 hover:border-orange/30 transition-colors">
+          <div class="w-12 h-12 bg-navy rounded-xl flex items-center justify-center mb-4 text-2xl" aria-hidden="true">📝</div>
+          <h3 class="text-2xl font-extrabold mb-3">Nacherfassung</h3>
+          <p class="text-navy/70 leading-relaxed">Lieferung vergessen? Trag sie nachträglich nach – inklusive <strong>Foto-Beleg</strong> als Nachweis. Nichts geht mehr verloren.</p>
+        </div>
+        <div class="bg-warm border border-navy/10 rounded-3xl p-8 hover:border-orange/30 transition-colors">
+          <div class="w-12 h-12 bg-orange rounded-xl flex items-center justify-center mb-4 text-2xl" aria-hidden="true">🕓</div>
+          <h3 class="text-2xl font-extrabold mb-3">Druck-Historie</h3>
+          <p class="text-navy/70 leading-relaxed">Jeder Ausdruck eines Scheins wird protokolliert – wann und von wem. <strong>Revisionssicher</strong> für Buchhaltung und Streitfall.</p>
+        </div>
+        <div class="bg-warm border border-navy/10 rounded-3xl p-8 hover:border-orange/30 transition-colors">
+          <div class="w-12 h-12 bg-navy rounded-xl flex items-center justify-center mb-4 text-2xl" aria-hidden="true">🗺️</div>
+          <h3 class="text-2xl font-extrabold mb-3">Touren-Planung</h3>
+          <p class="text-navy/70 leading-relaxed">Plane Touren mit festen Kunden vor und sieh den Tagesplan deiner Fahrer auf einen Blick – nichts wird vergessen.</p>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- LÜCKEN-ERKENNUNG -->
+  <section class="py-20 lg:py-32 px-6 lg:px-8 bg-white border-y border-navy/5 overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
+          <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Das Herzstück</div>
+          <h2 class="text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight mb-6">Du siehst jede vergessene Palette.<br><span class="text-orange">Bevor der Kunde es tut.</span></h2>
+          <p class="text-lg text-navy/70 leading-relaxed mb-8">
+            Palletto erkennt automatisch, welcher Stammkunde an einem Tag beliefert wurde – aber bei wem kein Palettenschein erfasst ist. Die Lücke wird sofort sichtbar, statt am Monatsende spurlos zu verschwinden. Vergessene Lieferungen trägst du in Sekunden nach – mit unterschriebenem Beleg als Nachweis.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3"><div class="w-6 h-6 bg-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-navy/80"><strong>Offene Kunden auf einen Blick</strong> – pro Tag und pro Fahrer</span></li>
+            <li class="flex items-start gap-3"><div class="w-6 h-6 bg-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-navy/80"><strong>Direkt nacherfassen</strong> – mit Foto-Beleg als Nachweis</span></li>
+            <li class="flex items-start gap-3"><div class="w-6 h-6 bg-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-navy/80"><strong>Keine verlorenen Paletten mehr</strong> – jede Lücke wird sichtbar</span></li>
+          </ul>
+        </div>
+
+        <div class="relative">
+          <div class="absolute inset-0 bg-gradient-to-br from-orange/20 to-navy/10 blur-3xl opacity-50"></div>
+          <div class="relative bg-warm rounded-3xl border border-navy/10 p-6 shadow-xl">
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-xs font-bold text-navy/50 uppercase tracking-wider">Fahrer Murat · Heute</div>
+              <div id="luecke-counter" class="text-xs font-bold text-orange bg-orange/10 px-2.5 py-1 rounded-full transition-colors">3 / 4 erfasst</div>
+            </div>
+            <div class="space-y-2.5">
+              <div class="flex items-center justify-between px-4 py-3 rounded-xl bg-white border border-navy/10"><span class="text-sm font-medium">EDEKA Logistik Nord</span><span class="text-xs font-semibold text-green-600">✓ erfasst</span></div>
+              <div id="luecke-row" class="flex items-center justify-between px-4 py-3 rounded-xl bg-orange/5 border border-orange/30 transition-all duration-500"><span id="luecke-name" class="text-sm font-semibold text-orange transition-colors">Spedition Berger</span><span id="luecke-status" class="text-xs font-bold text-orange transition-colors">⚠ keine Paletten</span></div>
+              <div class="flex items-center justify-between px-4 py-3 rounded-xl bg-white border border-navy/10"><span class="text-sm font-medium">Hansa Frischdienst</span><span class="text-xs font-semibold text-green-600">✓ erfasst</span></div>
+              <div class="flex items-center justify-between px-4 py-3 rounded-xl bg-white border border-navy/10"><span class="text-sm font-medium">Nordfracht GmbH</span><span class="text-xs font-semibold text-green-600">✓ erfasst</span></div>
+            </div>
+            <button id="luecke-btn" type="button" class="mt-4 w-full bg-navy text-white text-sm font-semibold py-2.5 rounded-xl hover:bg-navy-dark transition-colors">Schein für Berger nacherfassen</button>
+            <p class="text-center text-xs text-navy/40 mt-2">👆 Klick mich – so schließt du eine Lücke in Sekunden.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('luecke-btn');
+      if (!btn) return;
+      var row = document.getElementById('luecke-row');
+      var nameEl = document.getElementById('luecke-name');
+      var statusEl = document.getElementById('luecke-status');
+      var counter = document.getElementById('luecke-counter');
+      var resolved = false;
+      btn.addEventListener('click', function () {
+        resolved = !resolved;
+        if (resolved) {
+          row.className = 'flex items-center justify-between px-4 py-3 rounded-xl bg-white border border-navy/10 transition-all duration-500';
+          nameEl.className = 'text-sm font-medium transition-colors';
+          statusEl.className = 'text-xs font-semibold text-green-600 transition-colors';
+          statusEl.textContent = '✓ erfasst';
+          counter.className = 'text-xs font-bold text-green-600 bg-green-100 px-2.5 py-1 rounded-full transition-colors';
+          counter.textContent = '4 / 4 erfasst';
+          btn.textContent = '↺ Demo zurücksetzen';
+        } else {
+          row.className = 'flex items-center justify-between px-4 py-3 rounded-xl bg-orange/5 border border-orange/30 transition-all duration-500';
+          nameEl.className = 'text-sm font-semibold text-orange transition-colors';
+          statusEl.className = 'text-xs font-bold text-orange transition-colors';
+          statusEl.textContent = '⚠ keine Paletten';
+          counter.className = 'text-xs font-bold text-orange bg-orange/10 px-2.5 py-1 rounded-full transition-colors';
+          counter.textContent = '3 / 4 erfasst';
+          btn.textContent = 'Schein für Berger nacherfassen';
+        }
+      });
+    })();
+  </script>
+
+  <!-- INTERAKTIVER PALETTEN-SANDKASTEN (Drag & Drop) -->
+  <style>
+    .pw-pallet{position:relative;width:46px;height:30px;flex:0 0 auto;cursor:grab;touch-action:none;animation:pw-drop .45s cubic-bezier(.34,1.56,.64,1) both;}
+    .pw-pallet i{position:absolute;background:#cda05f;border:1px solid #a87f44;box-sizing:border-box;border-radius:1px;pointer-events:none;}
+    .pw-pallet .t{top:0;left:0;width:100%;height:7px;}
+    .pw-pallet .m{top:12px;left:0;width:100%;height:6px;}
+    .pw-pallet .l1{bottom:0;left:0;width:9px;height:14px;}
+    .pw-pallet .l2{bottom:0;left:50%;transform:translateX(-50%);width:9px;height:14px;}
+    .pw-pallet .l3{bottom:0;right:0;width:9px;height:14px;}
+    .pw-pallet:hover{transform:translateY(-3px) rotate(-3deg);transition:transform .15s;}
+    .pw-pallet.pw-dragging{z-index:60;cursor:grabbing;transform:none !important;filter:drop-shadow(0 10px 10px rgba(0,0,0,.35)) brightness(1.05);}
+    .pw-zone{transition:background .2s,border-color .2s;}
+    .pw-zone.pw-over{background:rgba(255,149,0,.14);border-color:rgba(255,149,0,.65);}
+    #pw-saldo.pw-pop{animation:pw-pop .35s ease;}
+    @keyframes pw-drop{0%{opacity:0;transform:translateY(-50px) rotate(-10deg);}100%{opacity:1;transform:translateY(0) rotate(0);}}
+    @keyframes pw-pop{0%{transform:scale(1);}40%{transform:scale(1.28);}100%{transform:scale(1);}}
+  </style>
+  <section id="spielwiese" class="py-20 lg:py-32 px-6 lg:px-8 overflow-hidden">
+    <div class="max-w-5xl mx-auto">
+      <div class="max-w-2xl mb-12 mx-auto text-center">
+        <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Probier's aus</div>
+        <h2 class="text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight mb-4">Zieh die Paletten <span class="text-orange">selbst rüber.</span></h2>
+        <p class="text-lg text-navy/70">Pack eine Palette und zieh sie vom Lkw zum Kunden (= Lieferung) oder zurück (= Abholung). Der Saldo läuft live mit.</p>
+      </div>
+
+      <div class="relative">
+        <div class="absolute inset-0 bg-gradient-to-br from-orange/20 to-navy/10 blur-3xl opacity-40"></div>
+        <div class="relative bg-navy rounded-3xl p-6 lg:p-8 text-white shadow-2xl overflow-hidden">
+          <div class="absolute top-0 right-0 w-72 h-72 bg-orange/20 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4"></div>
+
+          <div class="relative">
+            <div class="grid md:grid-cols-2 gap-4 lg:gap-6">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <div class="text-sm font-semibold text-white/80">&#128666; Dein Lkw</div>
+                  <div class="text-xs text-white/45">zum Liefern r&uuml;berziehen &rarr;</div>
+                </div>
+                <div id="pw-truck" class="pw-zone bg-white/5 border-2 border-dashed border-white/15 rounded-2xl h-48 p-3 flex flex-wrap content-start items-start gap-2 overflow-hidden"></div>
+              </div>
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <div class="text-sm font-semibold text-white/80">&#127981; Kunde &middot; M&uuml;ller GmbH</div>
+                  <div class="text-xs text-white/45">&larr; zum Abholen zur&uuml;ckziehen</div>
+                </div>
+                <div id="pw-kunde" class="pw-zone bg-white/5 border-2 border-dashed border-white/15 rounded-2xl h-48 p-3 flex flex-wrap content-start items-start gap-2 overflow-hidden"></div>
+              </div>
+            </div>
+
+            <div class="mt-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div class="text-sm text-white/60" id="pw-hint">Zieh eine Palette vom Lkw zum Kunden &#128070; &ndash; oder nutz die Buttons.</div>
+              <div class="flex items-center gap-3">
+                <div class="text-right">
+                  <div class="text-[10px] uppercase tracking-wider text-white/50">Saldo</div>
+                  <div class="flex items-baseline gap-1"><span id="pw-saldo" class="text-3xl font-extrabold text-orange leading-none">0</span><span class="text-xs text-white/60">offen</span></div>
+                </div>
+                <div class="flex gap-2">
+                  <button id="pw-add" type="button" class="bg-orange text-white text-sm font-bold px-4 py-2.5 rounded-xl hover:bg-orange-dark transition-colors">+ Lieferung</button>
+                  <button id="pw-sub" type="button" class="bg-white/10 border border-white/15 text-white text-sm font-semibold px-4 py-2.5 rounded-xl hover:bg-white/20 transition-colors">&minus; Abholung</button>
+                  <button id="pw-reset" type="button" class="text-white/50 text-xs hover:text-white transition-colors px-2">&#8634;</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    (function () {
+      var truck = document.getElementById('pw-truck');
+      var kunde = document.getElementById('pw-kunde');
+      if (!truck || !kunde) return;
+      var saldoEl = document.getElementById('pw-saldo');
+      var hint = document.getElementById('pw-hint');
+      var addBtn = document.getElementById('pw-add');
+      var subBtn = document.getElementById('pw-sub');
+      var resetBtn = document.getElementById('pw-reset');
+
+      function pop(){ saldoEl.classList.remove('pw-pop'); void saldoEl.offsetWidth; saldoEl.classList.add('pw-pop'); }
+      function updateSaldo(){ saldoEl.textContent = kunde.children.length; pop(); }
+      function makePallet(){
+        var d = document.createElement('div');
+        d.className = 'pw-pallet';
+        d.innerHTML = '<i class="t"></i><i class="m"></i><i class="l1"></i><i class="l2"></i><i class="l3"></i>';
+        attachDrag(d);
+        return d;
+      }
+      function ensureTruck(min){ while (truck.children.length < min) truck.appendChild(makePallet()); }
+
+      var drag = null;
+      function attachDrag(el){
+        el.addEventListener('pointerdown', function(e){
+          e.preventDefault();
+          var r = el.getBoundingClientRect();
+          drag = { el: el, dx: e.clientX - r.left, dy: e.clientY - r.top, from: el.parentNode };
+          el.classList.add('pw-dragging');
+          el.style.position = 'fixed';
+          el.style.width = r.width + 'px';
+          el.style.left = r.left + 'px';
+          el.style.top = r.top + 'px';
+          el.style.pointerEvents = 'none';
+          document.body.appendChild(el);
+          window.addEventListener('pointermove', onMove);
+          window.addEventListener('pointerup', onUp);
+        });
+      }
+      function zoneUnder(x, y){
+        function hit(z){ var r=z.getBoundingClientRect(); return x>=r.left&&x<=r.right&&y>=r.top&&y<=r.bottom; }
+        if (hit(kunde)) return kunde;
+        if (hit(truck)) return truck;
+        return null;
+      }
+      function onMove(e){
+        if (!drag) return;
+        drag.el.style.left = (e.clientX - drag.dx) + 'px';
+        drag.el.style.top = (e.clientY - drag.dy) + 'px';
+        var z = zoneUnder(e.clientX, e.clientY);
+        truck.classList.toggle('pw-over', z === truck && drag.from !== truck);
+        kunde.classList.toggle('pw-over', z === kunde && drag.from !== kunde);
+      }
+      function onUp(e){
+        window.removeEventListener('pointermove', onMove);
+        window.removeEventListener('pointerup', onUp);
+        truck.classList.remove('pw-over'); kunde.classList.remove('pw-over');
+        if (!drag) return;
+        var el = drag.el, from = drag.from;
+        var z = zoneUnder(e.clientX, e.clientY) || from;
+        var target = (z === from) ? from : z;
+        el.classList.remove('pw-dragging');
+        el.style.position=''; el.style.left=''; el.style.top=''; el.style.width=''; el.style.pointerEvents='';
+        target.appendChild(el);
+        if (target !== from){
+          if (target === kunde) hint.textContent = 'Geliefert! M\u00fcller GmbH schuldet dir jetzt ' + kunde.children.length + ' Paletten.';
+          else hint.textContent = 'Abgeholt! Noch ' + kunde.children.length + ' Paletten offen.';
+        }
+        ensureTruck(3);
+        updateSaldo();
+        drag = null;
+      }
+
+      addBtn.addEventListener('click', function(){
+        if (kunde.children.length >= 30){ hint.textContent='Gro\u00dfer Kunde! \ud83d\ude04'; return; }
+        ensureTruck(1);
+        kunde.appendChild(truck.lastElementChild);
+        ensureTruck(3); updateSaldo();
+        hint.textContent = 'Lieferung gebucht \u2013 ' + kunde.children.length + ' Paletten offen.';
+      });
+      subBtn.addEventListener('click', function(){
+        if (kunde.children.length <= 0){ hint.textContent='Saldo ist bei 0 \u2013 nichts abzuholen.'; return; }
+        truck.appendChild(kunde.lastElementChild); updateSaldo();
+        hint.textContent = 'Abholung gebucht \u2013 noch ' + kunde.children.length + ' Paletten offen.';
+      });
+      resetBtn.addEventListener('click', function(){
+        truck.innerHTML=''; kunde.innerHTML=''; ensureTruck(6); updateSaldo();
+        hint.textContent = 'Zieh eine Palette vom Lkw zum Kunden \ud83d\udc46 \u2013 oder nutz die Buttons.';
+      });
+
+      ensureTruck(6);
+      updateSaldo();
+    })();
+  </script>
 
   <!-- WIE ES FUNKTIONIERT - ANIMATED DEMO -->
   <section id="wie-es-funktioniert" class="py-20 lg:py-32 px-6 lg:px-8 bg-white border-y border-navy/5 overflow-hidden">
@@ -845,7 +1040,111 @@
         <div class="grid grid-cols-3 border-b border-navy/5"><div class="p-6 font-semibold">Auswertung</div><div class="p-6 text-center text-navy/60">Excel-Hölle</div><div class="p-6 text-center font-bold text-orange bg-orange/5">Automatisch</div></div>
         <div class="grid grid-cols-3 border-b border-navy/5"><div class="p-6 font-semibold">BGB-konform</div><div class="p-6 text-center text-navy/60">✓ wenn lesbar</div><div class="p-6 text-center font-bold text-orange bg-orange/5">✓ immer</div></div>
         <div class="grid grid-cols-3 border-b border-navy/5"><div class="p-6 font-semibold">Backups</div><div class="p-6 text-center text-navy/60">❌</div><div class="p-6 text-center font-bold text-orange bg-orange/5">✓ täglich, verschlüsselt</div></div>
-        <div class="grid grid-cols-3"><div class="p-6 font-semibold">Offline-Modus</div><div class="p-6 text-center text-navy/60">–</div><div class="p-6 text-center font-bold text-orange bg-orange/5">✓ ohne Internet</div></div>
+        <div class="grid grid-cols-3 border-b border-navy/5"><div class="p-6 font-semibold">Offline-Modus</div><div class="p-6 text-center text-navy/60">–</div><div class="p-6 text-center font-bold text-orange bg-orange/5">✓ ohne Internet</div></div>
+        <div class="grid grid-cols-3 border-b border-navy/5"><div class="p-6 font-semibold">Fälschungssicher</div><div class="p-6 text-center text-navy/60">❌</div><div class="p-6 text-center font-bold text-orange bg-orange/5">✓ QR-Code &amp; Prüfsumme</div></div>
+        <div class="grid grid-cols-3"><div class="p-6 font-semibold">Foto-Beweis</div><div class="p-6 text-center text-navy/60">–</div><div class="p-6 text-center font-bold text-orange bg-orange/5">✓ direkt am Schein</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QR-VERIFIZIERUNG -->
+  <section class="py-20 lg:py-32 px-6 lg:px-8 bg-white border-y border-navy/5 overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
+          <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Fälschungssicher</div>
+          <h2 class="text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight mb-6">Jeder Schein hat einen<br><span class="text-orange">QR-Code zum Prüfen.</span></h2>
+          <p class="text-lg text-navy/70 leading-relaxed mb-8">
+            Auf jedem PDF sitzt ein QR-Code mit einer eindeutigen Prüfsumme (SHA-256). Einmal scannen und jeder sieht sofort: Dieser Lieferschein ist echt, unverändert und stammt wirklich aus Palletto. Schluss mit gefälschten oder nachträglich geänderten Scheinen.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3"><div class="w-6 h-6 bg-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-navy/80"><strong>QR-Code scannen</strong> – mit jedem Handy, ohne App</span></li>
+            <li class="flex items-start gap-3"><div class="w-6 h-6 bg-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-navy/80"><strong>Echtheit bestätigt</strong> – direkt online, in Sekunden</span></li>
+            <li class="flex items-start gap-3"><div class="w-6 h-6 bg-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-navy/80"><strong>Nachträglich geändert?</strong> – fliegt sofort auf</span></li>
+          </ul>
+        </div>
+
+        <div class="relative">
+          <div class="absolute inset-0 bg-gradient-to-br from-orange/20 to-navy/10 blur-3xl opacity-50"></div>
+          <div class="relative bg-warm rounded-3xl border border-navy/10 p-8 shadow-xl">
+            <div class="bg-white rounded-2xl border border-navy/10 p-6">
+              <div class="flex items-center gap-5">
+                <!-- Fake QR (CSS-Grid) -->
+                <div class="w-24 h-24 flex-shrink-0 grid grid-cols-5 grid-rows-5 gap-0.5 p-1 bg-white border border-navy/10 rounded-lg">
+                  <div class="bg-navy rounded-sm"></div><div class="bg-navy rounded-sm"></div><div class="bg-navy rounded-sm"></div><div></div><div class="bg-navy rounded-sm"></div>
+                  <div class="bg-navy rounded-sm"></div><div></div><div class="bg-navy rounded-sm"></div><div></div><div class="bg-navy rounded-sm"></div>
+                  <div></div><div class="bg-navy rounded-sm"></div><div class="bg-navy rounded-sm"></div><div class="bg-navy rounded-sm"></div><div></div>
+                  <div class="bg-navy rounded-sm"></div><div></div><div class="bg-navy rounded-sm"></div><div></div><div class="bg-navy rounded-sm"></div>
+                  <div class="bg-navy rounded-sm"></div><div class="bg-navy rounded-sm"></div><div></div><div class="bg-navy rounded-sm"></div><div class="bg-navy rounded-sm"></div>
+                </div>
+                <div class="flex-1">
+                  <div class="text-xs font-bold text-navy uppercase tracking-wide mb-2">🔒 Echtheits-Verifizierung</div>
+                  <div class="text-xs text-navy/60 mb-2 leading-relaxed">Scanne den QR-Code zur Online-Überprüfung der Echtheit.</div>
+                  <div class="text-[10px] text-navy/50 mb-1">Prüfsumme (SHA-256):</div>
+                  <div class="inline-block font-mono text-xs font-bold text-navy bg-navy/5 px-2 py-1 rounded border border-navy/10">A3F8B2E1C9D4F067</div>
+                </div>
+              </div>
+              <div class="mt-5 pt-5 border-t border-navy/5 flex items-center gap-2">
+                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-green-600">Echtheit bestätigt</div>
+                  <div class="text-xs text-navy/50">Dokument unverändert · Original aus Palletto</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KUNDEN-PORTAL -->
+  <section class="py-20 lg:py-32 px-6 lg:px-8 overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+        <div class="order-2 lg:order-1 relative">
+          <div class="absolute inset-0 bg-gradient-to-br from-orange/20 to-navy/10 blur-3xl opacity-50"></div>
+          <div class="relative bg-white rounded-3xl border border-navy/10 shadow-xl overflow-hidden max-w-sm mx-auto">
+            <div class="p-6 text-center border-b border-navy/5">
+              <div class="text-2xl font-extrabold text-navy mb-1">Palletto</div>
+              <div class="text-xs text-navy/50 uppercase tracking-wider font-semibold">Paletten-Konto</div>
+            </div>
+            <div class="p-6">
+              <div class="bg-red-500 rounded-2xl p-6 text-center text-white mb-4">
+                <div class="text-xs font-semibold opacity-85 mb-2">Sie schulden Müller Transport</div>
+                <div class="text-5xl font-extrabold tracking-tight leading-none">8</div>
+                <div class="text-sm opacity-90 mt-1">Europaletten</div>
+              </div>
+              <div class="grid grid-cols-2 border border-navy/10 rounded-xl overflow-hidden">
+                <div class="p-4 text-center border-r border-navy/10">
+                  <div class="text-[10px] text-navy/50 uppercase tracking-wide mb-1">An Sie geliefert</div>
+                  <div class="text-2xl font-extrabold text-navy">↓ 24</div>
+                </div>
+                <div class="p-4 text-center">
+                  <div class="text-[10px] text-navy/50 uppercase tracking-wide mb-1">Zurückgegeben</div>
+                  <div class="text-2xl font-extrabold text-navy">↑ 16</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="order-1 lg:order-2">
+          <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Für deine Kunden</div>
+          <h2 class="text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight mb-6">Deine Kunden sehen<br><span class="text-orange">ihren Saldo selbst.</span></h2>
+          <p class="text-lg text-navy/70 leading-relaxed mb-8">
+            Jeder Kunde bekommt einen eigenen Link zu seinem Palettenkonto – ganz ohne Login. Er sieht jederzeit, wie viele Paletten offen sind und welche Lieferungen erfasst wurden. Das schafft Vertrauen, beendet Diskussionen und zeigt bei jedem Kunden dein Branding.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3"><div class="w-6 h-6 bg-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-navy/80"><strong>Ein Link genügt</strong> – kein Login, kein Passwort für den Kunden</span></li>
+            <li class="flex items-start gap-3"><div class="w-6 h-6 bg-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-navy/80"><strong>Immer aktuell</strong> – Saldo und Lieferungen live</span></li>
+            <li class="flex items-start gap-3"><div class="w-6 h-6 bg-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-navy/80"><strong>Weniger Rückfragen</strong> – der Kunde schaut einfach selbst nach</span></li>
+          </ul>
+        </div>
+
       </div>
     </div>
   </section>
@@ -937,47 +1236,36 @@
   <section id="preise" class="py-20 lg:py-32 px-6 lg:px-8">
     <div class="max-w-6xl mx-auto">
       <div class="max-w-2xl mb-16 mx-auto text-center">
-        <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Preise</div>
-        <h2 class="text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight mb-4">Faire Preise.<br><span class="text-orange">Keine Überraschungen.</span></h2>
-        <p class="text-lg text-navy/70">3 Pakete für jede Unternehmensgröße. 30 Tage kostenlos testen.</p>
+        <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Pakete</div>
+        <h2 class="text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight mb-4">Das passende Paket.<br><span class="text-orange">Für jede Größe.</span></h2>
+        <p class="text-lg text-navy/70">Vom kleinen Betrieb bis zur großen Flotte. Der Preis richtet sich nach deiner Fuhrparkgröße – 30 Tage kostenlos testen.</p>
       </div>
 
-      <!-- 3 Pricing Cards -->
       <div class="grid md:grid-cols-3 gap-6 items-stretch">
 
         <!-- STARTER -->
-        <div class="bg-warm rounded-3xl border border-navy/10 p-8 hover:border-navy/20 transition-colors flex flex-col">
-
-          <!-- Header (fixed height) -->
-          <div class="mb-6 min-h-[80px]">
+        <div class="bg-warm rounded-3xl border border-navy/10 p-8 hover:border-navy/20 transition-colors flex flex-col relative">
+          <div class="absolute top-6 right-6 bg-navy/10 text-navy text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Perfekt zum Start</div>
+          <div class="mb-6 min-h-[52px]">
             <h3 class="text-2xl font-extrabold mb-2">Starter</h3>
-            <p class="text-sm text-navy/60">Für kleine Transportunternehmen</p>
+            <p class="text-sm text-navy/60">Der digitale Einstieg für kleine Betriebe</p>
           </div>
-
-          <!-- Price (fixed height) -->
           <div class="mb-6 pb-6 border-b border-navy/10 min-h-[120px]">
-            <div class="flex items-baseline gap-2 mb-1">
-              <span class="text-sm text-navy/60 font-medium">ab</span>
-              <span class="text-5xl font-extrabold leading-none">499</span>
-              <span class="text-2xl font-bold">€</span>
-              <span class="text-sm text-navy/60">/ Monat</span>
-            </div>
-            <div class="text-xs text-navy/50 mt-2">zzgl. MwSt.</div>
+            <div class="text-4xl font-extrabold leading-none">Auf Anfrage</div>
+            <div class="text-sm text-navy/70 mt-3">Individuell nach Fuhrparkgröße</div>
+            <div class="text-xs text-navy/50 mt-1">30 Tage kostenlos testen</div>
           </div>
-
-          <!-- Features -->
           <ul class="space-y-3 mb-8 text-sm flex-1">
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span><strong>Bis 5 Fahrer</strong></span></li>
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>1 Office-Zugang</span></li>
+            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span><strong>1 Office-Zugang</strong></span></li>
             <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Digitale Palettenscheine</span></li>
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Empfänger-Unterschrift (§126b BGB)</span></li>
+            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Empfänger- & Fahrer-Unterschrift (§126b BGB)</span></li>
             <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Offline-Modus</span></li>
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Tägliche Auswertung per E-Mail</span></li>
             <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>PDF-Export & Druck</span></li>
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Verschlüsselte Backups</span></li>
             <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>E-Mail-Support</span></li>
           </ul>
-
+          <div class="mb-6 p-3 bg-orange/5 border border-orange/15 rounded-xl text-center">
+            <p class="text-xs text-navy/70">Wächst dein Betrieb? <strong class="text-navy">Jederzeit auf Business upgradebar.</strong></p>
+          </div>
           <a href="#anmelden" class="block w-full bg-white border border-navy/15 text-navy text-center px-6 py-3 rounded-xl font-semibold hover:border-navy/30 transition-colors">30 Tage gratis testen</a>
         </div>
 
@@ -985,76 +1273,56 @@
         <div class="bg-navy text-white rounded-3xl p-8 relative shadow-2xl overflow-hidden flex flex-col">
           <div class="absolute top-0 right-0 w-64 h-64 bg-orange/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
           <div class="relative flex flex-col h-full">
-
-            <!-- Header (fixed height) -->
-            <div class="mb-6 min-h-[80px]">
+            <div class="mb-6 min-h-[52px]">
               <h3 class="text-2xl font-extrabold mb-2">Business</h3>
-              <p class="text-sm text-white/70">Für mittelständische Unternehmen</p>
+              <p class="text-sm text-white/70">Volle Kontrolle. Hol dir deine Paletten zurück.</p>
             </div>
-
-            <!-- Price (fixed height) -->
             <div class="mb-6 pb-6 border-b border-white/10 min-h-[120px]">
-              <div class="flex items-baseline gap-2 mb-1">
-                <span class="text-sm text-white/60 font-medium">ab</span>
-                <span class="text-5xl font-extrabold text-orange leading-none">999</span>
-                <span class="text-2xl font-bold text-orange">€</span>
-                <span class="text-sm text-white/60">/ Monat</span>
-              </div>
-              <div class="text-xs text-white/50 mt-2">zzgl. MwSt.</div>
+              <div class="text-4xl font-extrabold text-orange leading-none">Auf Anfrage</div>
+              <div class="text-sm text-white/80 mt-3">Individuell nach Fuhrparkgröße</div>
+              <div class="text-xs text-white/50 mt-1">30 Tage kostenlos testen</div>
             </div>
-
-            <!-- Features -->
             <ul class="space-y-3 mb-8 text-sm flex-1">
-              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span><strong>Bis 20 Fahrer</strong></span></li>
               <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span><strong>3 Office-Zugänge</strong></span></li>
-              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Digitale Palettenscheine</span></li>
-              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Empfänger-Unterschrift (§126b BGB)</span></li>
-              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Offline-Modus</span></li>
-              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Tägliche Auswertung per E-Mail</span></li>
-              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>PDF-Export & Druck</span></li>
-              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Verschlüsselte Backups</span></li>
-              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>E-Mail-Support</span></li>
+              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="font-semibold">Alles aus Starter, plus:</span></li>
+              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span><strong>Lücken-Erkennung</strong> – sofort sehen, welcher Kunde keine Paletten erfasst hat</span></li>
+              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span><strong>Mahnwesen</strong> – offene Paletten automatisch zurückfordern</span></li>
+              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span><strong>Kunden-Portal</strong> (Saldo & Differenzen)</span></li>
+              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Foto-Funktion (inkl. Foto-Pflicht pro Kunde)</span></li>
+              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>QR-Code Echtheits-Verifizierung</span></li>
+              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>CSV-Export für die Buchhaltung</span></li>
+              <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Automatische Auswertungen per E-Mail (täglich & monatlich)</span></li>
             </ul>
-
             <a href="#anmelden" class="block w-full bg-orange text-white text-center px-6 py-3 rounded-xl font-bold hover:bg-orange-dark transition-colors">30 Tage gratis testen</a>
           </div>
         </div>
 
         <!-- ENTERPRISE -->
         <div class="bg-warm rounded-3xl border border-navy/10 p-8 hover:border-navy/20 transition-colors flex flex-col">
-
-          <!-- Header (fixed height) -->
           <div class="mb-6 min-h-[80px]">
             <h3 class="text-2xl font-extrabold mb-2">Enterprise</h3>
-            <p class="text-sm text-navy/60">Für große Flotten und Konzerne</p>
+            <p class="text-sm text-navy/60">Für große Flotten und Konzerne. Zugeschnitten auf Ihre individuellen Bedürfnisse.</p>
           </div>
-
-          <!-- Price (fixed height) -->
           <div class="mb-6 pb-6 border-b border-navy/10 min-h-[120px]">
             <div class="text-5xl font-extrabold leading-none">Individuell</div>
-            <div class="text-xs text-navy/50 mt-2">Nach Bedarf kalkuliert</div>
+            <div class="text-sm text-navy/70 mt-2">Mengenrabatt bei vielen Fahrern</div>
+            <div class="text-xs text-navy/50 mt-1">Nach Bedarf kalkuliert</div>
           </div>
-
-          <!-- Features -->
           <ul class="space-y-3 mb-8 text-sm flex-1">
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span><strong>Unbegrenzte Fahrer</strong></span></li>
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span><strong>Unbegrenzte Office-Zugänge</strong></span></li>
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Alle Business-Features</span></li>
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Persönliches Onboarding</span></li>
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Telefon-Support</span></li>
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Individuelle Anpassungen</span></li>
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Eigener Ansprechpartner</span></li>
-            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Schulung Ihres Teams</span></li>
+            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span><strong>Unbegrenzte Fahrer & Office-Zugänge</strong></span></li>
+            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="font-semibold">Alles aus Business, plus:</span></li>
+            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Persönliches Onboarding & Schulung</span></li>
+            <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Telefon-Support & eigener Ansprechpartner</span></li>
             <li class="flex items-start gap-2"><svg class="w-5 h-5 text-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Priorität bei neuen Features</span></li>
+            <li class="flex items-start gap-2 pt-2 mt-1 border-t border-navy/10"><svg class="w-5 h-5 text-navy/40 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg><span class="text-navy/60"><strong class="text-navy/70">Auf Wunsch:</strong> Standort-/Filial-Verwaltung, API-Anbindung, individuelle Anpassungen</span></li>
           </ul>
-
           <a href="#anmelden" class="block w-full bg-white border border-navy/15 text-navy text-center px-6 py-3 rounded-xl font-semibold hover:border-navy/30 transition-colors">Anfrage stellen</a>
         </div>
 
       </div>
 
       <div class="mt-8 text-center text-sm text-navy/60">
-        ⚡ 30 Tage kostenlos testen · Keine Kreditkarte beim Trial · Jederzeit kündbar
+        ⚡ 30 Tage kostenlos testen · Keine Kreditkarte beim Trial
       </div>
     </div>
   </section>
@@ -1243,7 +1511,7 @@ AES-256 verschlüsselt nach Bankenstandard, tägliche Backups.</div>
 
         <details class="bg-white rounded-2xl border border-navy/10 group">
           <summary class="cursor-pointer p-6 font-semibold text-lg flex items-center justify-between list-none">Kann ich Palletto jederzeit kündigen?<svg class="w-5 h-5 text-orange transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
-          <div class="px-6 pb-6 text-navy/70 leading-relaxed">Ja. Keine Mindestlaufzeit, monatlich kündbar. Eure Daten könnt ihr jederzeit als PDF/CSV exportieren.</div>
+          <div class="px-6 pb-6 text-navy/70 leading-relaxed">Die Mindestvertragslaufzeit beträgt 6 Monate. Danach verlängert sich der Vertrag automatisch um jeweils einen Monat und kann mit einer Frist von einem Monat zum Monatsende gekündigt werden. Eure Daten könnt ihr jederzeit als PDF/CSV exportieren – auch nach Vertragsende.</div>
         </details>
       </div>
     </div>
@@ -1306,5 +1574,6 @@ AES-256 verschlüsselt nach Bankenstandard, tägliche Backups.</div>
     updateActive();
   });
 </script>
+
 </body>
 </html>
