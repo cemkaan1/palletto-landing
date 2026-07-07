@@ -60,21 +60,32 @@
 
   <link rel="stylesheet" href="/assets/palletto.css">
 </head>
-<body class="bg-white text-ink font-sans antialiased">
+<body class="bg-sand text-ink font-sans antialiased">
 
   <!-- ============ HEADER ============ -->
   <header class="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-line">
     <div class="max-w-7xl mx-auto px-5 lg:px-8">
       <div class="flex items-center justify-between gap-6 h-[70px]">
-        <a href="/" class="flex items-center gap-2.5 shrink-0" aria-label="Palletto Startseite">
-          <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-orange shadow-sm">
-            <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg>
-          </span>
-          <span class="font-display text-xl font-bold tracking-tight text-ink">palletto</span>
+        <a href="/" class="flex items-center shrink-0" aria-label="Palletto Startseite">
+          <img src="/assets/img/logo.webp" alt="Palletto" width="525" height="140" class="h-7 lg:h-8 w-auto">
         </a>
 
         <nav class="hidden lg:flex items-center gap-1 text-sm font-semibold text-navy/70 absolute left-1/2 -translate-x-1/2">
-          <a href="#features" data-nav-item class="px-3.5 py-2 rounded-full hover:text-ink hover:bg-navy/5 transition-colors">Features</a>
+          <div class="nav-dd">
+            <button type="button" class="nav-dd-btn px-3.5 py-2 rounded-full hover:text-ink hover:bg-navy/5 transition-colors inline-flex items-center gap-1">Funktionen
+              <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="nav-dd-menu">
+              <a href="/palettenschein-digitalisieren.html">📄 Palettenschein digitalisieren</a>
+              <a href="/palettenkonto-software.html">📊 Palettenkonto-Software</a>
+              <a href="/palettenmanagement-software.html">🗂️ Palettenmanagement-Software</a>
+              <a href="/palettentausch-app.html">📱 Palettentausch-App</a>
+              <a href="/luecken-erkennung.html">🔍 Lücken-Erkennung</a>
+              <a href="/kunden-portal.html">🔗 Kunden-Portal</a>
+              <a href="/echtheitspruefung-qr-code.html">✅ QR-Echtheitsprüfung</a>
+              <a href="/palettenschein-vorlage.html">📝 Palettenschein-Vorlage</a>
+            </div>
+          </div>
           <a href="#so-gehts" data-nav-item class="px-3.5 py-2 rounded-full hover:text-ink hover:bg-navy/5 transition-colors">So geht's</a>
           <a href="#preise" data-nav-item class="px-3.5 py-2 rounded-full hover:text-ink hover:bg-navy/5 transition-colors">Preise</a>
           <a href="#faq" data-nav-item class="px-3.5 py-2 rounded-full hover:text-ink hover:bg-navy/5 transition-colors">FAQ</a>
@@ -93,28 +104,36 @@
         </div>
       </div>
     </div>
-    <div id="mobile-menu" class="lg:hidden hidden px-4 pb-3">
-      <div class="rounded-3xl border border-line bg-white shadow-xl p-3 flex flex-col gap-0.5">
-        <a href="#features" class="mobile-nav-link px-4 py-3 rounded-2xl font-semibold text-navy/80 hover:bg-navy/5">Features</a>
-        <a href="#so-gehts" class="mobile-nav-link px-4 py-3 rounded-2xl font-semibold text-navy/80 hover:bg-navy/5">So geht's</a>
-        <a href="#preise" class="mobile-nav-link px-4 py-3 rounded-2xl font-semibold text-navy/80 hover:bg-navy/5">Preise</a>
-        <a href="#faq" class="mobile-nav-link px-4 py-3 rounded-2xl font-semibold text-navy/80 hover:bg-navy/5">FAQ</a>
-        <a href="/blog/" class="mobile-nav-link px-4 py-3 rounded-2xl font-semibold text-navy/80 hover:bg-navy/5">Blog</a>
-        <a href="#anmelden" class="mobile-nav-link mt-1 px-4 py-3 rounded-2xl bg-orange text-white text-center font-bold">Kostenlos testen</a>
+    <div id="mobile-menu" class="lg:hidden hidden px-4 pb-4">
+      <div class="rounded-3xl border border-line bg-white shadow-2xl p-4 flex flex-col gap-0.5 max-h-[80vh] overflow-y-auto">
+        <div class="px-2 pt-1 pb-1.5 text-[11px] font-bold uppercase tracking-wider text-navy/40">Funktionen</div>
+        <a href="/palettenschein-digitalisieren.html" class="mobile-nav-link px-4 py-2.5 rounded-2xl font-semibold text-navy/80 hover:bg-navy/5">📄 Palettenschein digitalisieren</a>
+        <a href="/palettenkonto-software.html" class="mobile-nav-link px-4 py-2.5 rounded-2xl font-semibold text-navy/80 hover:bg-navy/5">📊 Palettenkonto-Software</a>
+        <a href="/palettentausch-app.html" class="mobile-nav-link px-4 py-2.5 rounded-2xl font-semibold text-navy/80 hover:bg-navy/5">📱 Palettentausch-App</a>
+        <a href="/luecken-erkennung.html" class="mobile-nav-link px-4 py-2.5 rounded-2xl font-semibold text-navy/80 hover:bg-navy/5">🔍 Lücken-Erkennung</a>
+        <a href="/kunden-portal.html" class="mobile-nav-link px-4 py-2.5 rounded-2xl font-semibold text-navy/80 hover:bg-navy/5">🔗 Kunden-Portal</a>
+        <a href="/echtheitspruefung-qr-code.html" class="mobile-nav-link px-4 py-2.5 rounded-2xl font-semibold text-navy/80 hover:bg-navy/5">✅ QR-Echtheitsprüfung</a>
+        <div class="h-px bg-line my-2"></div>
+        <a href="#preise" class="mobile-nav-link px-4 py-2.5 rounded-2xl font-semibold text-navy/80 hover:bg-navy/5">Preise</a>
+        <a href="#faq" class="mobile-nav-link px-4 py-2.5 rounded-2xl font-semibold text-navy/80 hover:bg-navy/5">FAQ</a>
+        <a href="/blog/" class="mobile-nav-link px-4 py-2.5 rounded-2xl font-semibold text-navy/80 hover:bg-navy/5">Blog</a>
+        <a href="https://app.palletto.de" class="mobile-nav-link px-4 py-2.5 rounded-2xl font-semibold text-navy/80 hover:bg-navy/5">→ Login</a>
+        <a href="#anmelden" class="mobile-nav-link mt-2 px-4 py-3 rounded-2xl bg-orange text-white text-center font-bold shadow-lg shadow-orange/30">30 Tage kostenlos testen</a>
       </div>
     </div>
   </header>
 
   <!-- ============ HERO ============ -->
-  <section class="relative px-6 pt-14 lg:pt-20 pb-0 overflow-hidden">
+  <section class="relative px-6 pt-10 lg:pt-20 pb-0 overflow-hidden">
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-[720px] -z-10" style="background:radial-gradient(60% 55% at 15% 0%, rgba(93,214,178,.28), transparent 60%), radial-gradient(55% 55% at 88% 5%, rgba(255,149,0,.20), transparent 55%), linear-gradient(#ffffff, rgba(255,255,255,0));"></div>
     <div class="relative max-w-4xl mx-auto text-center">
-      <div class="fade-in eyebrow mb-7"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Neu · für deutsche Speditionen</span></div>
+      <div class="fade-in eyebrow mb-7"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Schluss mit der Zettelwirtschaft</span></div>
 
-      <h1 class="fade-in-1 font-display text-5xl sm:text-6xl lg:text-[4.6rem] font-bold leading-[1.02] tracking-tight text-ink mb-6">
+      <h1 class="fade-in-1 font-display text-4xl sm:text-6xl lg:text-[4.6rem] font-bold leading-[1.02] tracking-tight text-ink mb-6">
         Deine <span class="text-orange">Palettenscheine.</span><br>Digital. Rechtssicher.
       </h1>
       <p class="fade-in-1 text-lg lg:text-xl text-navy/60 leading-relaxed max-w-2xl mx-auto mb-9">
-        Erfasst in unter 30 Sekunden – mit Unterschrift, lückenloser Auswertung und ohne Excel-Chaos. Von einem Spediteur für Speditionen gebaut.
+        Erfasst in unter 30 Sekunden – mit Unterschrift, lückenloser Auswertung und ohne Excel-Chaos. Aus der Praxis für Speditionen gebaut.
       </p>
       <div class="fade-in-2 flex flex-col sm:flex-row items-center justify-center gap-3">
         <a href="#anmelden" class="btn-primary">
@@ -125,32 +144,33 @@
       </div>
     </div>
 
-    <!-- Produkt-Shot auf Gradient: echtes Büro-Dashboard + Handy -->
-    <div class="fade-in-2 relative max-w-6xl mx-auto mt-16">
-      <div class="glow-mint relative rounded-t-[2.5rem] px-4 sm:px-8 pt-10 sm:pt-14">
-        <div class="relative">
+    <!-- Produkt-Shot auf Gradient -->
+    <div class="fade-in-2 relative max-w-6xl mx-auto mt-12 sm:mt-16">
+      <div class="glow-mint relative rounded-t-[2.5rem] px-4 sm:px-8 pt-8 sm:pt-14">
+        <!-- Mobile: knackiges Handy -->
+        <img src="/assets/img/app-fahrer-dashboard.webp" alt="Palletto am Handy: Palettenscheine erfassen und Salden je Kunde sehen" width="560" height="1137" loading="eager" fetchpriority="high" decoding="async" class="sm:hidden mx-auto w-[250px] drop-shadow-2xl">
+        <!-- Desktop: Büro-Dashboard + Handy -->
+        <div class="relative hidden sm:block">
           <img src="/assets/img/app-bilanz-desktop.webp" alt="Palletto Bilanz im Büro: Palettenkonto aller Kunden mit geliefert, abgeholt und offenem Saldo" width="2000" height="1128" loading="eager" fetchpriority="high" decoding="async" class="w-full rounded-[1.4rem] border border-line shadow-2xl">
-          <img src="/assets/img/app-erfassen.webp" alt="Palettenschein am Handy erfassen: abgeliefert und abgeholt mit Differenz" width="560" height="1136" loading="eager" decoding="async" class="hidden sm:block absolute -bottom-8 -left-2 lg:-left-12 w-[120px] lg:w-[176px] drop-shadow-2xl">
+          <img src="/assets/img/app-erfassen.webp" alt="Palettenschein am Handy erfassen: abgeliefert und abgeholt mit Differenz" width="560" height="1136" loading="lazy" decoding="async" class="absolute -bottom-8 -left-2 lg:-left-12 w-[120px] lg:w-[176px] drop-shadow-2xl">
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============ TRUST MARQUEE ============ -->
-  <section class="py-10 lg:py-14 bg-sand border-y border-line">
+  <section class="py-10 lg:py-14 bg-white border-y border-line">
     <p class="text-center text-sm font-semibold text-navy/45 mb-6">Gebaut für den echten Speditionsalltag – rechtssicher & DSGVO-konform</p>
     <div class="marquee max-w-6xl mx-auto px-6">
       <div class="marquee-track">
-        <!-- set 1 -->
-        <span class="trust-pill">§126b BGB</span><span class="trust-pill">DSGVO-konform</span><span class="trust-pill">EU-Server · Frankfurt</span><span class="trust-pill">AES-256 verschlüsselt</span><span class="trust-pill">GüKV-Lizenz</span><span class="trust-pill">Made in Germany</span><span class="trust-pill">Offline-fähig</span><span class="trust-pill">§126b BGB</span><span class="trust-pill">DSGVO-konform</span>
-        <!-- set 2 (dupe for loop) -->
-        <span class="trust-pill">§126b BGB</span><span class="trust-pill">DSGVO-konform</span><span class="trust-pill">EU-Server · Frankfurt</span><span class="trust-pill">AES-256 verschlüsselt</span><span class="trust-pill">GüKV-Lizenz</span><span class="trust-pill">Made in Germany</span><span class="trust-pill">Offline-fähig</span><span class="trust-pill">§126b BGB</span><span class="trust-pill">DSGVO-konform</span>
+        <span class="trust-pill">⚖️ §126b BGB</span><span class="trust-pill">🔒 DSGVO-konform</span><span class="trust-pill">🇪🇺 EU-Server · Frankfurt</span><span class="trust-pill">🔐 AES-256 verschlüsselt</span><span class="trust-pill">📜 GüKV-Lizenz</span><span class="trust-pill">🇩🇪 Made in Germany</span><span class="trust-pill">📶 Offline-fähig</span><span class="trust-pill">✍️ Digitale Unterschrift</span>
+        <span class="trust-pill">⚖️ §126b BGB</span><span class="trust-pill">🔒 DSGVO-konform</span><span class="trust-pill">🇪🇺 EU-Server · Frankfurt</span><span class="trust-pill">🔐 AES-256 verschlüsselt</span><span class="trust-pill">📜 GüKV-Lizenz</span><span class="trust-pill">🇩🇪 Made in Germany</span><span class="trust-pill">📶 Offline-fähig</span><span class="trust-pill">✍️ Digitale Unterschrift</span>
       </div>
     </div>
   </section>
 
   <!-- ============ DER DIGITALE PALETTENSCHEIN (Flagship) ============ -->
-  <section id="palettenschein" class="py-20 lg:py-28 px-6 lg:px-8 overflow-hidden">
+  <section id="palettenschein" class="py-14 lg:py-28 px-6 lg:px-8 overflow-hidden">
     <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
       <div>
         <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Das Kernstück</span></div>
@@ -173,7 +193,7 @@
   </section>
 
   <!-- ============ PROBLEM ============ -->
-  <section class="py-20 lg:py-28 px-6 lg:px-8 bg-sand border-y border-line">
+  <section class="py-14 lg:py-28 px-6 lg:px-8 bg-sand border-y border-line">
     <div class="max-w-7xl mx-auto">
       <div class="max-w-2xl mb-12">
         <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Das Problem</span></div>
@@ -190,7 +210,7 @@
   </section>
 
   <!-- ============ FEATURES ============ -->
-  <section id="features" class="py-20 lg:py-28 px-6 lg:px-8">
+  <section id="features" class="py-14 lg:py-28 px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
       <div class="text-center max-w-2xl mx-auto mb-14">
         <div class="fade-in eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Features</span></div>
@@ -219,7 +239,7 @@
         </div>
 
         <!-- Feature 3: Bilanz (breit, mit Screenshot) -->
-        <div class="card md:col-span-2 p-8 lg:p-10 bg-ink text-white relative overflow-hidden">
+        <div class="rounded-[1.75rem] md:col-span-2 p-8 lg:p-10 bg-ink text-white relative overflow-hidden shadow-2xl">
           <div class="absolute top-0 right-0 w-72 h-72 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4" style="background:rgba(255,149,0,.22)"></div>
           <div class="relative grid lg:grid-cols-2 gap-8 items-center">
             <div>
@@ -233,7 +253,7 @@
               </ul>
             </div>
             <div class="flex justify-center">
-              <img src="/assets/img/app-bilanz.webp" alt="Kunden-Bilanz: offene Palettenkonten je Kunde – wer schuldet wem" width="828" height="1671" loading="lazy" class="w-[240px] lg:w-[270px] rounded-[2rem] border border-white/10 shadow-2xl">
+              <img src="/assets/img/app-fahrer-dashboard.webp" alt="Palletto am Handy: Übersicht aller Palettenscheine je Kunde mit Saldo – wer schuldet wem" width="560" height="1137" loading="lazy" decoding="async" class="w-[210px] lg:w-[250px] drop-shadow-2xl">
             </div>
           </div>
         </div>
@@ -242,7 +262,7 @@
   </section>
 
   <!-- ============ ALLE FUNKTIONEN ============ -->
-  <section class="py-20 lg:py-28 px-6 lg:px-8">
+  <section class="py-14 lg:py-28 px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
       <div class="max-w-2xl mb-12">
         <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Alles dabei</span></div>
@@ -264,7 +284,7 @@
   </section>
 
   <!-- ============ FÜRS BÜRO (Desktop) ============ -->
-  <section class="py-20 lg:py-28 px-6 lg:px-8 bg-ink text-white overflow-hidden">
+  <section class="py-14 lg:py-28 px-6 lg:px-8 bg-ink text-white overflow-hidden">
     <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
       <div>
         <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Fürs Büro</span></div>
@@ -286,7 +306,7 @@
   </section>
 
   <!-- ============ BENEFITS (2x2) ============ -->
-  <section class="py-20 lg:py-28 px-6 lg:px-8 bg-sand border-y border-line">
+  <section class="py-14 lg:py-28 px-6 lg:px-8 bg-sand border-y border-line">
     <div class="max-w-7xl mx-auto">
       <div class="max-w-2xl mb-14">
         <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Vorteile</span></div>
@@ -302,7 +322,7 @@
   </section>
 
   <!-- ============ LÜCKEN-ERKENNUNG (interaktiv) ============ -->
-  <section class="py-20 lg:py-28 px-6 lg:px-8 bg-sand border-y border-line overflow-hidden">
+  <section class="py-14 lg:py-28 px-6 lg:px-8 bg-sand border-y border-line overflow-hidden">
     <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
       <div>
         <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Das Herzstück</span></div>
@@ -346,7 +366,7 @@
   </script>
 
   <!-- ============ VERGLEICH ============ -->
-  <section class="py-20 lg:py-28 px-6 lg:px-8">
+  <section class="py-14 lg:py-28 px-6 lg:px-8">
     <div class="max-w-5xl mx-auto">
       <div class="max-w-2xl mb-12">
         <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Der Unterschied</span></div>
@@ -371,7 +391,7 @@
   </section>
 
   <!-- ============ SO GEHT'S (3 Schritte) ============ -->
-  <section id="so-gehts" class="py-20 lg:py-28 px-6 lg:px-8">
+  <section id="so-gehts" class="py-14 lg:py-28 px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
       <div class="text-center max-w-2xl mx-auto mb-14">
         <div class="eyebrow mb-5 mx-auto"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">So geht's</span></div>
@@ -398,7 +418,7 @@
   </section>
 
   <!-- ============ SICHERHEIT ============ -->
-  <section class="py-20 lg:py-28 px-6 lg:px-8 bg-ink text-white relative overflow-hidden">
+  <section class="py-14 lg:py-28 px-6 lg:px-8 bg-ink text-white relative overflow-hidden">
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full blur-3xl" style="background:rgba(255,149,0,.10)"></div>
     <div class="max-w-7xl mx-auto relative">
       <div class="max-w-2xl mb-12">
@@ -418,7 +438,7 @@
   </section>
 
   <!-- ============ ROI ============ -->
-  <section class="py-20 lg:py-28 px-6 lg:px-8">
+  <section class="py-14 lg:py-28 px-6 lg:px-8">
     <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
       <div>
         <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Was es bringt</span></div>
@@ -452,7 +472,7 @@
   </section>
 
   <!-- ============ QR-VERIFIZIERUNG ============ -->
-  <section class="py-20 lg:py-28 px-6 lg:px-8 bg-sand border-y border-line overflow-hidden">
+  <section class="py-14 lg:py-28 px-6 lg:px-8 bg-sand border-y border-line overflow-hidden">
     <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
       <div>
         <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Fälschungssicher</span></div>
@@ -478,7 +498,7 @@
   </section>
 
   <!-- ============ KUNDEN-PORTAL ============ -->
-  <section class="py-20 lg:py-28 px-6 lg:px-8 overflow-hidden">
+  <section class="py-14 lg:py-28 px-6 lg:px-8 overflow-hidden">
     <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
       <div class="order-2 lg:order-1 relative">
         <div class="glow-mint absolute -inset-4 -z-10 rounded-[2rem]"></div>
@@ -507,33 +527,23 @@
   </section>
 
   <!-- ============ FOUNDER / STORY ============ -->
-  <section class="py-20 lg:py-28 px-6 lg:px-8 bg-sand border-y border-line overflow-hidden">
-    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-      <div class="relative">
-        <div class="glow-mint absolute -inset-4 -z-10 rounded-[2rem]"></div>
-        <img src="/assets/img/founder.webp" alt="Cem-Kaan Özertas, Gründer von Palletto, vor dem neuen Mercedes Sprinter seiner Spedition Connecting Transport" width="760" height="760" loading="lazy" decoding="async" class="w-full h-[420px] lg:h-[540px] object-cover object-[60%_center] rounded-[2rem] border border-line shadow-2xl">
-        <div class="absolute -bottom-5 -right-4 sm:-right-6 bg-white rounded-2xl shadow-xl border border-line px-5 py-4">
-          <div class="font-display text-2xl font-bold text-ink leading-none">10+ Jahre</div>
-          <div class="text-xs text-navy/60 mt-1">eigener Fuhrpark & Touren</div>
-        </div>
-      </div>
-      <div>
-        <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Wer dahinter steckt</span></div>
-        <h2 class="font-display font-bold text-4xl lg:text-5xl leading-tight tracking-tight mb-6">Von einem Spediteur.<br><span class="text-orange">Für Speditionen.</span></h2>
-        <p class="text-lg text-navy/70 leading-relaxed mb-5">Palletto kommt nicht aus einem Software-Labor, sondern von der Rampe. Ich bin selbst LKW gefahren, hatte eigene Fahrzeuge mit angestellten Fahrern und als GLS-Subunternehmer täglich echte Palettenscheine in der Hand – mit Stationen bei DB Schenker, DSV, Lufthansa und Oetjer Logistik.</p>
-        <p class="text-lg text-navy/70 leading-relaxed mb-8">Ich kenne das Chaos aus Zetteln, Excel und Diskussionen am Monatsende aus erster Hand. Genau dafür ist Palletto gebaut – von jemandem, der den Alltag kennt.</p>
-        <div class="flex flex-wrap gap-2.5">
-          <span class="inline-flex items-center bg-white border border-line rounded-full px-4 py-2 text-sm font-semibold text-navy/80">GüKV-Lizenz</span>
-          <span class="inline-flex items-center bg-white border border-line rounded-full px-4 py-2 text-sm font-semibold text-navy/80">PQ-Zertifiziert</span>
-          <span class="inline-flex items-center bg-white border border-line rounded-full px-4 py-2 text-sm font-semibold text-navy/80">EU-Lizenz</span>
-          <span class="inline-flex items-center bg-white border border-line rounded-full px-4 py-2 text-sm font-semibold text-navy/80">GLS-Subunternehmer</span>
+  <section class="py-16 lg:py-20 px-6 bg-white border-y border-line">
+    <div class="max-w-2xl mx-auto text-center">
+      <div class="eyebrow mb-5 mx-auto"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Wer dahinter steckt</span></div>
+      <h2 class="font-display font-bold text-3xl lg:text-4xl leading-tight tracking-tight mb-5">Von der Rampe gebaut.<br><span class="text-orange">Nicht aus dem Software-Labor.</span></h2>
+      <p class="text-lg text-navy/70 leading-relaxed mb-9 max-w-xl mx-auto">Palletto kommt von jemandem, der den Speditionsalltag aus erster Hand kennt – das Chaos aus Zetteln, Excel und Diskussionen am Monatsende. Genau dafür ist Palletto gebaut: praxisnah, rechtssicher und ohne Schnickschnack.</p>
+      <div class="flex flex-col items-center gap-3">
+        <img src="/assets/img/founder-avatar.webp" alt="Cem-Kaan Özertas, Gründer von Palletto" width="320" height="320" loading="lazy" decoding="async" class="w-20 h-20 rounded-full object-cover ring-4 ring-white shadow-lg">
+        <div>
+          <div class="font-display font-bold text-ink leading-tight">Cem-Kaan Özertas</div>
+          <div class="text-sm text-navy/55">Gründer von Palletto</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============ PREISE ============ -->
-  <section id="preise" class="py-20 lg:py-28 px-6 lg:px-8">
+  <section id="preise" class="py-14 lg:py-28 px-6 lg:px-8">
     <div class="max-w-6xl mx-auto">
       <div class="text-center max-w-2xl mx-auto mb-14">
         <div class="eyebrow mb-5 mx-auto"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Preise</span></div>
@@ -592,7 +602,7 @@
   </section>
 
   <!-- ============ FAQ (2-Spalten) ============ -->
-  <section id="faq" class="py-20 lg:py-28 px-6 lg:px-8 bg-sand border-y border-line">
+  <section id="faq" class="py-14 lg:py-28 px-6 lg:px-8 bg-sand border-y border-line">
     <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16">
       <div>
         <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">FAQ</span></div>
@@ -612,7 +622,7 @@
   </section>
 
   <!-- ============ CTA mit schwebenden Cards ============ -->
-  <section class="px-6 lg:px-8 py-20 lg:py-28">
+  <section class="px-6 lg:px-8 py-14 lg:py-28">
     <div class="max-w-6xl mx-auto relative overflow-hidden rounded-[2.5rem] bg-ink text-white px-8 py-16 lg:px-16 lg:py-20">
       <div class="absolute inset-0 -z-0" style="background:radial-gradient(50% 80% at 15% 0%, rgba(93,214,178,.22), transparent 60%), radial-gradient(50% 90% at 90% 100%, rgba(255,149,0,.28), transparent 60%);"></div>
       <div class="relative max-w-xl">
@@ -627,7 +637,7 @@
   </section>
 
   <!-- ============ ANMELDEN (Formular) ============ -->
-  <section id="anmelden" class="py-20 lg:py-28 px-6 lg:px-8 border-t border-line">
+  <section id="anmelden" class="py-14 lg:py-28 px-6 lg:px-8 border-t border-line">
     <div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
       <div>
         <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Anmelden</span></div>
@@ -673,7 +683,7 @@
             <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-orange"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span>
             <span class="font-display text-xl font-bold text-white">palletto</span>
           </a>
-          <p class="text-sm text-white/50 max-w-xs leading-relaxed">Digitale Palettenscheine für Speditionen. Von einem Spediteur gebaut – rechtssicher nach §126b BGB, DSGVO-konform, EU-Server in Frankfurt.</p>
+          <p class="text-sm text-white/50 max-w-xs leading-relaxed">Digitale Palettenscheine für Speditionen. Aus der Praxis gebaut – rechtssicher nach §126b BGB, DSGVO-konform, EU-Server in Frankfurt.</p>
         </div>
         <div>
           <div class="font-display text-xs uppercase tracking-[0.14em] text-white/40 font-bold mb-4">Produkt</div>
