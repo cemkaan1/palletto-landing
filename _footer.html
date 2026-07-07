@@ -1,65 +1,69 @@
-<footer class="border-t border-navy/10 py-12 px-6 lg:px-8 bg-white">
-  <div class="max-w-7xl mx-auto">
-    <div class="grid sm:grid-cols-2 lg:grid-cols-6 gap-8 mb-12">
-      <div class="sm:col-span-2">
-        <a href="/" class="inline-block mb-3">
-          <img src="/pallettologdunkel.webp" alt="Palletto" class="h-12 w-auto">
-        </a>
-        <p class="text-sm text-navy/70 leading-relaxed max-w-md mb-4">Digitale Palettenverwaltung für moderne Transportunternehmen. Made in Germany, gehostet in Europa.</p>
-        <div class="flex items-center gap-3 text-xs text-navy/60">
-          <span>🇩🇪 Made in Germany</span><span>·</span><span>🇪🇺 EU-Server</span>
-        </div>
-        <div class="mt-4 text-sm">
-          <a href="mailto:info@palletto.de" class="text-navy/80 hover:text-orange transition-colors">📧 info@palletto.de</a>
-        </div>
+<style>
+@font-face{font-family:'Space Grotesk';font-weight:700;font-display:swap;src:url('/assets/fonts/space-grotesk-700.woff2') format('woff2');}
+.plf{background:#0F1B2D;color:#fff;font-family:'Plus Jakarta Sans',system-ui,sans-serif;padding:4rem 1.5rem 2rem;overflow:hidden;position:relative;}
+.plf-in{max-width:80rem;margin:0 auto;position:relative;}
+.plf-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2.5rem;}
+.plf-brand img{height:30px;width:auto;filter:brightness(0) invert(1);opacity:.95;margin-bottom:1rem;}
+.plf-brand p{font-size:.875rem;line-height:1.6;color:rgba(255,255,255,.55);max-width:22rem;}
+.plf-col h4{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.4);margin:0 0 1rem;}
+.plf-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.6rem;}
+.plf-col a{font-size:.9rem;color:rgba(255,255,255,.7);text-decoration:none;transition:.15s;}
+.plf-col a:hover{color:#fff;}
+.plf-bottom{margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.1);display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;align-items:center;justify-content:space-between;font-size:.8rem;color:rgba(255,255,255,.45);}
+.plf-bottom .legal{display:flex;flex-wrap:wrap;gap:1.25rem;}
+.plf-bottom a{color:rgba(255,255,255,.55);text-decoration:none;}
+.plf-bottom a:hover{color:#fff;}
+.plf-word{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22vw;line-height:.8;letter-spacing:-.04em;color:#fff;opacity:.04;margin-top:2.5rem;text-align:center;pointer-events:none;user-select:none;}
+@media(max-width:900px){.plf-grid{grid-template-columns:1fr 1fr;gap:2rem;}.plf-brand{grid-column:1 / -1;}}
+@media(max-width:560px){.plf-grid{grid-template-columns:1fr;}}
+</style>
+<footer class="plf">
+  <div class="plf-in">
+    <div class="plf-grid">
+      <div class="plf-brand">
+        <a href="/" aria-label="Palletto Startseite"><img src="/assets/img/logo.webp" alt="Palletto"></a>
+        <p>Digitale Palettenscheine für Speditionen. Aus der Praxis gebaut – rechtssicher nach §126b BGB, DSGVO-konform, EU-Server in Frankfurt.</p>
       </div>
-      <div>
-        <div class="font-bold mb-4 text-sm uppercase tracking-wider text-navy/60">Produkt</div>
-        <ul class="space-y-2 text-sm">
-          <li><a href="/#features" class="text-navy/80 hover:text-orange transition-colors">Features</a></li>
-          <li><a href="/#wie-es-funktioniert" class="text-navy/80 hover:text-orange transition-colors">Wie es funktioniert</a></li>
-          <li><a href="/#preise" class="text-navy/80 hover:text-orange transition-colors">Preise</a></li>
-          <li><a href="/#faq" class="text-navy/80 hover:text-orange transition-colors">FAQ</a></li>
-          <li><a href="https://app.palletto.de" class="text-navy/80 hover:text-orange transition-colors">Login</a></li>
+      <div class="plf-col">
+        <h4>Produkt</h4>
+        <ul>
+          <li><a href="/#so-gehts">So funktioniert's</a></li>
+          <li><a href="/#preise">Preise</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="https://app.palletto.de">Login</a></li>
         </ul>
       </div>
-      <div>
-        <div class="font-bold mb-4 text-sm uppercase tracking-wider text-navy/60">Wissen</div>
-        <ul class="space-y-2 text-sm">
-          <li><a href="/palettenschein-digitalisieren.html" class="text-navy/80 hover:text-orange transition-colors">Palettenschein digitalisieren</a></li>
-          <li><a href="/palettenkonto-software.html" class="text-navy/80 hover:text-orange transition-colors">Palettenkonto Software</a></li>
-          <li><a href="/palettentausch-app.html" class="text-navy/80 hover:text-orange transition-colors">Palettentausch App</a></li>
-          <li><a href="/palettenschein-vorlage.html" class="text-navy/80 hover:text-orange transition-colors">Palettenschein Vorlage</a></li>
-          <li><a href="/palettenmanagement-software.html" class="text-navy/80 hover:text-orange transition-colors">Palettenmanagement Software</a></li>
-          <li><a href="/blog/" class="text-navy/80 hover:text-orange transition-colors">Blog</a></li>
+      <div class="plf-col">
+        <h4>Funktionen</h4>
+        <ul>
+          <li><a href="/palettenschein-digitalisieren.html">Palettenschein digitalisieren</a></li>
+          <li><a href="/palettenkonto-software.html">Palettenkonto-Software</a></li>
+          <li><a href="/palettentausch-app.html">Palettentausch-App</a></li>
+          <li><a href="/luecken-erkennung.html">Lücken-Erkennung</a></li>
+          <li><a href="/kunden-portal.html">Kunden-Portal</a></li>
+          <li><a href="/echtheitspruefung-qr-code.html">QR-Echtheitsprüfung</a></li>
         </ul>
       </div>
-      <div>
-        <div class="font-bold mb-4 text-sm uppercase tracking-wider text-navy/60">Funktionen</div>
-        <ul class="space-y-2 text-sm">
-          <li><a href="/luecken-erkennung.html" class="text-navy/80 hover:text-orange transition-colors">Lücken-Erkennung</a></li>
-          <li><a href="/echtheitspruefung-qr-code.html" class="text-navy/80 hover:text-orange transition-colors">Echtheitsprüfung (QR-Code)</a></li>
-          <li><a href="/kunden-portal.html" class="text-navy/80 hover:text-orange transition-colors">Kunden-Portal</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="font-bold mb-4 text-sm uppercase tracking-wider text-navy/60">Rechtliches</div>
-        <ul class="space-y-2 text-sm">
-          <li><a href="/impressum.html" class="text-navy/80 hover:text-orange transition-colors">Impressum</a></li>
-          <li><a href="/datenschutz.html" class="text-navy/80 hover:text-orange transition-colors">Datenschutz</a></li>
-          <li><a href="/agb.html" class="text-navy/80 hover:text-orange transition-colors">AGB</a></li>
-          <li><a href="/avv.html" class="text-navy/80 hover:text-orange transition-colors">AVV</a></li>
-          <li><a href="mailto:info@palletto.de" class="text-navy/80 hover:text-orange transition-colors">Kontakt</a></li>
+      <div class="plf-col">
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="/impressum.html">Impressum</a></li>
+          <li><a href="/datenschutz.html">Datenschutz</a></li>
+          <li><a href="/agb.html">AGB</a></li>
+          <li><a href="/avv.html">AVV</a></li>
+          <li><a href="mailto:info@palletto.de">info@palletto.de</a></li>
         </ul>
       </div>
     </div>
-    <div class="pt-8 border-t border-navy/10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-navy/60">
-      <div>© 2026 palletto · Alle Rechte vorbehalten</div>
-      <div class="flex items-center gap-2">
-        <span>Built with</span>
-        <span class="text-orange">❤</span>
-        <span>in Germany</span>
+    <div class="plf-bottom">
+      <div>© 2026 Palletto · Cem-Kaan Özertas</div>
+      <div class="legal">
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+        <a href="/agb.html">AGB</a>
       </div>
     </div>
+    <div class="plf-word" aria-hidden="true">palletto</div>
   </div>
 </footer>

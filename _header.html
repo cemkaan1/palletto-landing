@@ -1,182 +1,92 @@
-<header class="fixed top-0 left-0 right-0 z-50 px-6 lg:px-8 pt-4 pb-3 bg-warm border-b border-navy/5">
-  <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
-    
-    <!-- Logo -->
-    <a href="/" class="flex items-center -ml-2 shrink-0">
-      <img src="/pallettologdunkel.webp" alt="Palletto" class="h-10 lg:h-12 w-auto">
-    </a>
-    
-    <!-- Desktop Pill Nav -->
-    <nav class="hidden lg:flex items-center bg-navy-dark backdrop-blur-md rounded-full px-2 py-2 shadow-lg shadow-navy/30 border border-white/10">
-      <a href="/#features" data-nav-item class="nav-pill-item px-5 py-2 text-sm font-medium text-white/70 hover:text-white rounded-full transition-all">Features</a>
-      <a href="/#wie-es-funktioniert" data-nav-item class="nav-pill-item px-5 py-2 text-sm font-medium text-white/70 hover:text-white rounded-full transition-all">Wie es funktioniert</a>
-      <a href="/#preise" data-nav-item class="nav-pill-item px-5 py-2 text-sm font-medium text-white/70 hover:text-white rounded-full transition-all">Preise</a>
-      <a href="/#faq" data-nav-item class="nav-pill-item px-5 py-2 text-sm font-medium text-white/70 hover:text-white rounded-full transition-all">FAQ</a>
-
-      <!-- Wissen Dropdown -->
-      <div class="nav-dropdown relative">
-        <button type="button" class="nav-pill-item px-5 py-2 text-sm font-medium text-white/70 hover:text-white rounded-full transition-all flex items-center gap-1.5" aria-haspopup="true" aria-expanded="false">
-          Wissen
-          <svg class="nav-dropdown-chevron w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+<style>
+@font-face{font-family:'Plus Jakarta Sans';font-weight:600;font-display:swap;src:url('/assets/fonts/jakarta-600.woff2') format('woff2');}
+@font-face{font-family:'Plus Jakarta Sans';font-weight:700;font-display:swap;src:url('/assets/fonts/jakarta-700.woff2') format('woff2');}
+.plh{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid #EBE8E1;font-family:'Plus Jakarta Sans',system-ui,sans-serif;}
+.plh-cb{position:absolute;width:0;height:0;opacity:0;pointer-events:none;}
+.plh-in{max-width:80rem;margin:0 auto;padding:0 1.25rem;height:70px;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;}
+.plh-logo{display:flex;align-items:center;flex-shrink:0;}
+.plh-logo img{height:30px;width:auto;display:block;}
+.plh-nav{display:none;align-items:center;gap:.15rem;font-size:.875rem;font-weight:600;color:rgba(27,58,107,.72);}
+.plh-nav a,.plh-ddbtn{padding:.5rem .9rem;border-radius:999px;color:inherit;text-decoration:none;transition:.15s;display:inline-flex;align-items:center;gap:.35rem;background:none;border:none;cursor:pointer;font:inherit;}
+.plh-nav a:hover,.plh-ddbtn:hover{color:#0F1B2D;background:rgba(27,58,107,.05);}
+.plh-dd{position:relative;}
+.plh-ddmenu{position:absolute;top:100%;left:50%;transform:translateX(-50%);margin-top:.4rem;min-width:290px;background:#fff;border:1px solid #EBE8E1;border-radius:1.25rem;box-shadow:0 24px 48px -20px rgba(15,27,45,.28);padding:.5rem;opacity:0;visibility:hidden;transition:opacity .18s ease;}
+.plh-dd::after{content:"";position:absolute;top:100%;left:0;right:0;height:.6rem;}
+.plh-dd:hover .plh-ddmenu,.plh-dd:focus-within .plh-ddmenu{opacity:1;visibility:visible;}
+.plh-ddmenu a{display:block;padding:.6rem .85rem;border-radius:.85rem;font-size:.9rem;font-weight:600;color:#1B3A6B;white-space:nowrap;}
+.plh-ddmenu a:hover{background:#FAF8F3;color:#0F1B2D;}
+.plh-actions{display:flex;align-items:center;gap:.5rem;flex-shrink:0;}
+.plh-login{display:none;font-size:.875rem;font-weight:600;color:rgba(27,58,107,.72);padding:.5rem .75rem;text-decoration:none;}
+.plh-login:hover{color:#0F1B2D;}
+.plh-cta{display:inline-flex;align-items:center;gap:.55rem;background:#FF9500;color:#fff;font-weight:700;font-size:.875rem;padding:.45rem .45rem .45rem 1.1rem;border-radius:999px;text-decoration:none;box-shadow:0 12px 28px -10px rgba(255,149,0,.6);transition:.2s;white-space:nowrap;}
+.plh-cta:hover{background:#e88500;}
+.plh-cta .ico{width:1.9rem;height:1.9rem;background:#fff;color:#FF9500;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.plh-burger{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:999px;border:1px solid #EBE8E1;color:#0F1B2D;background:none;cursor:pointer;}
+.plh-burger .x{display:none;}
+.plh-cb:checked ~ .plh-in .plh-burger .bars{display:none;}
+.plh-cb:checked ~ .plh-in .plh-burger .x{display:block;}
+.plh-mobile{display:none;padding:0 1rem 1rem;font-family:'Plus Jakarta Sans',system-ui,sans-serif;}
+.plh-cb:checked ~ .plh-mobile{display:block;}
+.plh-mcard{background:#fff;border:1px solid #EBE8E1;border-radius:1.5rem;box-shadow:0 24px 48px -20px rgba(15,27,45,.3);padding:1rem;display:flex;flex-direction:column;gap:.1rem;max-height:78vh;overflow-y:auto;}
+.plh-mcard .lbl{padding:.25rem .5rem;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(27,58,107,.4);}
+.plh-mcard a{padding:.65rem 1rem;border-radius:1rem;font-weight:600;color:rgba(27,58,107,.85);text-decoration:none;}
+.plh-mcard a:hover{background:rgba(27,58,107,.05);}
+.plh-mcard .sep{height:1px;background:#EBE8E1;margin:.5rem 0;}
+.plh-mcard .cta{margin-top:.5rem;background:#FF9500;color:#fff;text-align:center;font-weight:700;box-shadow:0 10px 24px -8px rgba(255,149,0,.5);}
+@media(min-width:1024px){.plh-nav{display:flex;}.plh-login{display:inline-flex;}.plh-burger{display:none;}.plh-mobile,.plh-cb:checked ~ .plh-mobile{display:none;}}
+</style>
+<header class="plh">
+  <input type="checkbox" id="plh-toggle" class="plh-cb" aria-hidden="true">
+  <div class="plh-in">
+    <a href="/" class="plh-logo" aria-label="Palletto Startseite"><img src="/assets/img/logo.webp" alt="Palletto" width="525" height="140"></a>
+    <nav class="plh-nav" aria-label="Hauptnavigation">
+      <div class="plh-dd">
+        <button type="button" class="plh-ddbtn" aria-haspopup="true">Funktionen
+          <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 9l6 6 6-6"/></svg>
         </button>
-        <div class="nav-dropdown-panel absolute top-full left-1/2 pt-3 w-72">
-          <div class="bg-white rounded-2xl shadow-2xl shadow-navy/20 border border-navy/10 p-2">
-            <div class="px-3 pt-2 pb-1 text-[10px] font-bold uppercase tracking-wider text-navy/40">Seiten</div>
-            <a href="/palettenschein-digitalisieren.html" class="block px-3 py-2 text-sm font-medium text-navy/80 hover:bg-navy/5 hover:text-navy rounded-lg transition-colors">Palettenschein digitalisieren</a>
-            <a href="/palettenkonto-software.html" class="block px-3 py-2 text-sm font-medium text-navy/80 hover:bg-navy/5 hover:text-navy rounded-lg transition-colors">Palettenkonto Software</a>
-            <a href="/palettentausch-app.html" class="block px-3 py-2 text-sm font-medium text-navy/80 hover:bg-navy/5 hover:text-navy rounded-lg transition-colors">Palettentausch App</a>
-            <a href="/palettenschein-vorlage.html" class="block px-3 py-2 text-sm font-medium text-navy/80 hover:bg-navy/5 hover:text-navy rounded-lg transition-colors">Palettenschein Vorlage</a>
-            <a href="/palettenmanagement-software.html" class="block px-3 py-2 text-sm font-medium text-navy/80 hover:bg-navy/5 hover:text-navy rounded-lg transition-colors">Palettenmanagement Software</a>
-            <div class="border-t border-navy/5 my-1.5"></div>
-            <div class="px-3 pt-1 pb-1 text-[10px] font-bold uppercase tracking-wider text-navy/40">Funktionen</div>
-            <a href="/luecken-erkennung.html" class="block px-3 py-2 text-sm font-medium text-navy/80 hover:bg-navy/5 hover:text-navy rounded-lg transition-colors">Lücken-Erkennung</a>
-            <a href="/echtheitspruefung-qr-code.html" class="block px-3 py-2 text-sm font-medium text-navy/80 hover:bg-navy/5 hover:text-navy rounded-lg transition-colors">Echtheitsprüfung (QR-Code)</a>
-            <a href="/kunden-portal.html" class="block px-3 py-2 text-sm font-medium text-navy/80 hover:bg-navy/5 hover:text-navy rounded-lg transition-colors">Kunden-Portal</a>
-          </div>
+        <div class="plh-ddmenu">
+          <a href="/palettenschein-digitalisieren.html">📄 Palettenschein digitalisieren</a>
+          <a href="/palettenkonto-software.html">📊 Palettenkonto-Software</a>
+          <a href="/palettenmanagement-software.html">🗂️ Palettenmanagement-Software</a>
+          <a href="/palettentausch-app.html">📱 Palettentausch-App</a>
+          <a href="/luecken-erkennung.html">🔍 Lücken-Erkennung</a>
+          <a href="/kunden-portal.html">🔗 Kunden-Portal</a>
+          <a href="/echtheitspruefung-qr-code.html">✅ QR-Echtheitsprüfung</a>
+          <a href="/palettenschein-vorlage.html">📝 Palettenschein-Vorlage</a>
         </div>
       </div>
-
-      <a href="/blog/" class="nav-pill-item px-5 py-2 text-sm font-medium text-white/70 hover:text-white rounded-full transition-all">Blog</a>
+      <a href="/#so-gehts">So geht's</a>
+      <a href="/#preise">Preise</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/blog/">Blog</a>
     </nav>
-    
-    <!-- Right: Login, CTA, Hamburger -->
-    <div class="flex items-center gap-2 lg:gap-3 shrink-0">
-      <a href="https://app.palletto.de" class="hidden sm:inline-flex text-sm font-medium text-navy/70 hover:text-navy transition-colors px-3 py-2">Login</a>
-      <a href="/#anmelden" class="inline-flex items-center gap-2 bg-navy text-white px-3 py-2 lg:px-5 lg:py-2.5 rounded-full text-xs lg:text-sm font-semibold hover:bg-navy-dark transition-colors shadow-md shadow-navy/20">
-        <span class="hidden sm:inline">Kostenlos testen</span>
-        <span class="sm:hidden">Testen</span>
+    <div class="plh-actions">
+      <a href="https://app.palletto.de" class="plh-login">Login</a>
+      <a href="/#anmelden" class="plh-cta">Kostenlos testen
+        <span class="ico"><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
       </a>
-      
-      <!-- Hamburger mit Premium Animation -->
-      <button id="mobile-menu-btn" aria-label="Menü" class="lg:hidden relative flex items-center justify-center w-11 h-11 rounded-full bg-navy text-white shadow-lg shadow-navy/40 active:scale-90 transition-transform">
-        <div class="hamburger-icon">
-          <span class="hamburger-line hamburger-line-1"></span>
-          <span class="hamburger-line hamburger-line-2"></span>
-          <span class="hamburger-line hamburger-line-3"></span>
-        </div>
-      </button>
+      <label for="plh-toggle" class="plh-burger" aria-label="Menü">
+        <svg class="bars" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="x" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 6l12 12M18 6L6 18"/></svg>
+      </label>
     </div>
-    
   </div>
-  
-  <!-- Mobile Menu Dropdown -->
-  <div id="mobile-menu" class="mobile-menu lg:hidden absolute top-20 right-6 left-6 bg-navy-dark rounded-2xl shadow-2xl border border-white/10 p-2 origin-top-right max-h-[80vh] overflow-y-auto">
-    <a href="/#features" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">Features</a>
-    <a href="/#wie-es-funktioniert" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">Wie es funktioniert</a>
-    <a href="/#preise" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">Preise</a>
-    <a href="/#faq" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">FAQ</a>
-
-    <div class="border-t border-white/10 my-2"></div>
-    <div class="px-4 pt-1 pb-1 text-[10px] font-bold uppercase tracking-wider text-white/40">Wissen</div>
-    <a href="/palettenschein-digitalisieren.html" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">Palettenschein digitalisieren</a>
-    <a href="/palettenkonto-software.html" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">Palettenkonto Software</a>
-    <a href="/palettentausch-app.html" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">Palettentausch App</a>
-    <a href="/palettenschein-vorlage.html" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">Palettenschein Vorlage</a>
-    <a href="/palettenmanagement-software.html" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">Palettenmanagement Software</a>
-
-    <div class="px-4 pt-2 pb-1 text-[10px] font-bold uppercase tracking-wider text-white/40">Funktionen</div>
-    <a href="/luecken-erkennung.html" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">Lücken-Erkennung</a>
-    <a href="/echtheitspruefung-qr-code.html" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">Echtheitsprüfung (QR-Code)</a>
-    <a href="/kunden-portal.html" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">Kunden-Portal</a>
-
-    <div class="border-t border-white/10 my-2"></div>
-    <a href="/blog/" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">Blog</a>
-    <a href="https://app.palletto.de" class="mobile-nav-link block px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:translate-x-1 rounded-lg transition-all">Login</a>
+  <div class="plh-mobile">
+    <div class="plh-mcard">
+      <div class="lbl">Funktionen</div>
+      <a href="/palettenschein-digitalisieren.html">📄 Palettenschein digitalisieren</a>
+      <a href="/palettenkonto-software.html">📊 Palettenkonto-Software</a>
+      <a href="/palettentausch-app.html">📱 Palettentausch-App</a>
+      <a href="/luecken-erkennung.html">🔍 Lücken-Erkennung</a>
+      <a href="/kunden-portal.html">🔗 Kunden-Portal</a>
+      <a href="/echtheitspruefung-qr-code.html">✅ QR-Echtheitsprüfung</a>
+      <a href="/palettenschein-vorlage.html">📝 Palettenschein-Vorlage</a>
+      <div class="sep"></div>
+      <a href="/#preise">Preise</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/blog/">Blog</a>
+      <a href="https://app.palletto.de">→ Login</a>
+      <a href="/#anmelden" class="cta">30 Tage kostenlos testen</a>
+    </div>
   </div>
 </header>
-
-<style>
-  /* DESKTOP PILL */
-  .nav-pill-item:hover { background: rgba(255, 255, 255, 0.1); }
-  .nav-pill-item.active { background: #FF9500; color: white; }
-  .nav-pill-item.active:hover { background: #e88500; }
-
-  /* WISSEN DROPDOWN (CSS-only, hover + keyboard focus) */
-  .nav-dropdown-chevron { transition: transform 0.3s ease; }
-  .nav-dropdown:hover .nav-dropdown-chevron,
-  .nav-dropdown:focus-within .nav-dropdown-chevron { transform: rotate(180deg); }
-
-  .nav-dropdown-panel {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transform: translateX(-50%) translateY(8px);
-    transition: opacity 0.25s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), visibility 0.25s;
-  }
-  .nav-dropdown:hover .nav-dropdown-panel,
-  .nav-dropdown:focus-within .nav-dropdown-panel {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transform: translateX(-50%) translateY(0);
-  }
-
-  /* PREMIUM HAMBURGER - asymmetrische Linien morphen elegant zu X */
-  .hamburger-icon {
-    position: relative;
-    width: 22px;
-    height: 16px;
-  }
-  .hamburger-line {
-    position: absolute;
-    left: 0;
-    height: 2px;
-    background: white;
-    border-radius: 2px;
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-  }
-  .hamburger-line-1 { top: 0; width: 100%; }
-  .hamburger-line-2 { top: 7px; width: 70%; right: 0; left: auto; }
-  .hamburger-line-3 { top: 14px; width: 85%; }
-  
-  #mobile-menu-btn.open .hamburger-line-1 {
-    top: 7px;
-    transform: rotate(45deg);
-    width: 100%;
-  }
-  #mobile-menu-btn.open .hamburger-line-2 {
-    opacity: 0;
-    transform: scaleX(0);
-  }
-  #mobile-menu-btn.open .hamburger-line-3 {
-    top: 7px;
-    transform: rotate(-45deg);
-    width: 100%;
-    right: 0;
-    left: auto;
-  }
-  
-  /* MENU DROPDOWN - elegant scale + fade from top-right corner */
-  .mobile-menu {
-    opacity: 0;
-    transform: scale(0.85) translateY(-15px);
-    pointer-events: none;
-    transition: opacity 0.3s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-  
-  .mobile-menu.open {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-    pointer-events: auto;
-  }
-  
-  /* STAGGERED ITEMS - kommen wellenartig rein */
-  .mobile-menu .mobile-nav-link {
-    opacity: 0;
-    transform: translateX(20px);
-    transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s ease;
-  }
-  .mobile-menu.open .mobile-nav-link {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  /* Reduced motion respektieren */
-  @media (prefers-reduced-motion: reduce) {
-    .nav-dropdown-panel,
-    .nav-dropdown-chevron,
-    .mobile-menu,
-    .mobile-menu .mobile-nav-link,
-    .hamburger-line { transition: none; }
-  }
-</style>
