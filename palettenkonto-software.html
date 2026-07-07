@@ -1,302 +1,152 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Palettenkonto-Software für Transportunternehmen | Palletto</title>
-  <meta name="description" content="Palettenkonto-Software für Speditionen: Palettensaldo pro Kunde in Echtzeit, mit Unterschrift dokumentiert, ohne Excel. Mit Beispiel, Vergleich und FAQ. 30 Tage gratis.">
-  <meta name="keywords" content="Palettenkonto Software, Palettenkonto führen, Palettensaldo, Palettenverwaltung, Tauschpaletten verwalten, EUR EPAL Palette">
-  <meta name="author" content="Palletto">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <meta name="googlebot" content="index, follow">
-  <meta name="language" content="German">
-  <meta name="geo.region" content="DE-HH">
-  <meta name="geo.placename" content="Hamburg">
-
+  <meta name="description" content="Palettenkonto-Software für Speditionen: Palettensaldo pro Kunde in Echtzeit, mit Unterschrift dokumentiert, ohne Excel. So führst du dein Palettenkonto automatisch.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0F1B2D">
   <link rel="canonical" href="https://palletto.de/palettenkonto-software.html">
-  <link rel="alternate" hreflang="de" href="https://palletto.de/palettenkonto-software.html">
-  <link rel="alternate" hreflang="x-default" href="https://palletto.de/palettenkonto-software.html">
-
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Palletto">
-  <meta property="og:locale" content="de_DE">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Palettenkonto-Software für Transportunternehmen">
+  <meta property="og:description" content="Palettensaldo pro Kunde in Echtzeit, mit Unterschrift dokumentiert, ohne Excel.">
   <meta property="og:url" content="https://palletto.de/palettenkonto-software.html">
-  <meta property="og:title" content="Palettenkonto-Software – Palettensaldo live führen">
-  <meta property="og:description" content="Palettenkonto-Software für Speditionen: Palettensaldo pro Kunde in Echtzeit, mit Unterschrift dokumentiert, ohne Excel. Mit Beispiel, Vergleich und FAQ. 30 Tage gratis.">
   <meta property="og:image" content="https://palletto.de/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Palettenkonto-Software – Palettensaldo live führen">
-  <meta name="twitter:description" content="Palettenkonto-Software für Speditionen: Palettensaldo pro Kunde in Echtzeit, mit Unterschrift dokumentiert, ohne Excel. Mit Beispiel, Vergleich und FAQ. 30 Tage gratis.">
-  <meta name="twitter:image" content="https://palletto.de/og-image.png">
-
-  <meta name="theme-color" content="#1B3A6B">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <link rel="preconnect" href="https://cdn.tailwindcss.com">
-  <link rel="preload" href="fonts/inter-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/inter-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/inter-v20-latin-800.woff2" as="font" type="font/woff2" crossorigin>
-
+  <link rel="stylesheet" href="/assets/palletto.css?v=3">
+  <link rel="preload" href="/assets/fonts/jakarta-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/space-grotesk-700.woff2" as="font" type="font/woff2" crossorigin>
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Start",
-          "item": "https://palletto.de/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Palettenkonto Software",
-          "item": "https://palletto.de/palettenkonto-software.html"
-        }
-      ]
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://palletto.de/palettenkonto-software.html#webpage",
-      "url": "https://palletto.de/palettenkonto-software.html",
-      "name": "Palettenkonto-Software für Transportunternehmen | Palletto",
-      "description": "Palettenkonto-Software für Speditionen: Palettensaldo pro Kunde in Echtzeit, mit Unterschrift dokumentiert, ohne Excel. Mit Beispiel, Vergleich und FAQ. 30 Tage gratis.",
-      "inLanguage": "de-DE",
-      "isPartOf": {
-        "@type": "WebSite",
-        "url": "https://palletto.de/",
-        "name": "Palletto"
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Was ist ein Palettenkonto?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ein Palettenkonto ist der laufende Saldo an Tauschpaletten zwischen dir und einem Geschäftspartner: wie viele Paletten du geliefert und wie viele du zurückerhalten hast. Die Differenz ist der offene Bestand – die Paletten, die dir noch geschuldet werden oder die du noch schuldest."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Wie führe ich ein Palettenkonto richtig?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Wichtig ist, jede Palettenbewegung sofort und mit Nachweis zu erfassen: Datum, Kunde, Anzahl abgeliefert und abgeholt, Zustand und die Unterschrift des Empfängers. Aus diesen Bewegungen ergibt sich der Saldo pro Kunde. Eine Software übernimmt die Verrechnung automatisch, statt dass jemand eine Tabelle pflegt."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Kann ich mein Palettenkonto in Excel führen?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Technisch ja, praktisch wird es ab wenigen Kunden unübersichtlich: jede Lieferung muss von Hand eingetragen werden, es fehlt der Nachweis mit Unterschrift, und niemand sieht in Echtzeit, wer wem wie viele Paletten schuldet. Genau hier setzt eine Palettenkonto-Software an."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Was ist der Unterschied zwischen EUR- und EPAL-Paletten?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "EUR-Palette und EPAL-Palette bezeichnen faktisch dieselbe genormte Europalette (1200 × 800 mm). EPAL ist die Organisation, die die Qualitäts- und Reparaturkriterien für den Tausch festlegt. Für dein Palettenkonto zählt vor allem, ob eine Palette tauschfähig ist, also im geforderten Zustand."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Sehen meine Kunden ihr Palettenkonto?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Mit Palletto ja. Jeder Kunde bekommt einen eigenen Link zu seinem Konto – ohne Login. Er sieht seinen aktuellen Saldo und die erfassten Lieferungen selbst und muss nicht mehr bei dir nachfragen."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Wie fordere ich offene Paletten zurück?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Wenn ein Kunde Paletten nicht zurückgibt, erzeugst du aus dem Saldo heraus auf Knopfdruck eine Zahlungserinnerung oder eine formelle Mahnung mit Frist. Grundlage ist der dokumentierte Saldo mit den unterschriebenen Belegen – nicht eine Behauptung aus einer Excel-Tabelle."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Was kostet eine Palettenkonto-Software?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Der Preis richtet sich bei Palletto nach deiner Fuhrparkgröße – du zahlst pro Fahrer, nicht pro Buchung. Das macht die Kosten planbar, auch wenn das Volumen schwankt. Du kannst 30 Tage kostenlos testen, ohne Kreditkarte."
-          }
-        }
-      ]
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "WebPage", "@id": "https://palletto.de/palettenkonto-software.html", "name": "Palettenkonto-Software", "inLanguage": "de-DE",
+        "description": "Software, die den Palettensaldo je Kunde automatisch führt – mit Unterschrift dokumentiert, ohne Excel.",
+        "isPartOf": { "@type": "WebSite", "name": "Palletto", "url": "https://palletto.de/" } },
+      { "@type": "BreadcrumbList", "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://palletto.de/" },
+        { "@type": "ListItem", "position": 2, "name": "Palettenkonto-Software", "item": "https://palletto.de/palettenkonto-software.html" }
+      ]},
+      { "@type": "FAQPage", "mainEntity": [
+        { "@type": "Question", "name": "Was ist ein Palettenkonto?", "acceptedAnswer": { "@type": "Answer", "text": "Ein Palettenkonto ist das laufende Konto der getauschten Europaletten je Geschäftspartner: Wie viele Paletten wurden geliefert, wie viele abgeholt, und wer schuldet wem am Ende wie viele. Es funktioniert wie ein Kontokorrent, nur in Paletten statt Euro." } },
+        { "@type": "Question", "name": "Kann Palletto Excel für das Palettenkonto ersetzen?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Palletto führt den Saldo je Kunde automatisch aus den erfassten Palettenscheinen – ohne manuelles Nachtragen, ohne Formelfehler und immer aktuell. Ein Export als CSV für die Buchhaltung ist möglich." } },
+        { "@type": "Question", "name": "Sehen meine Kunden ihren Palettensaldo?", "acceptedAnswer": { "@type": "Answer", "text": "Auf Wunsch ja. Jeder Kunde erhält einen Link zu seinem Palettenkonto – ohne Login. Das schafft Vertrauen und reduziert Rückfragen." } }
+      ]}
+    ]
+  }
   </script>
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = { theme: { extend: {
-      colors: { navy:'#1B3A6B','navy-dark':'#142b50', orange:'#FF9500','orange-dark':'#e88500', warm:'#FAFAF7' },
-      fontFamily: { sans:['Inter','system-ui','sans-serif'] },
-    }}};
-  </script>
-
-  <style>
-    @font-face { font-family:'Inter'; font-style:normal; font-weight:400; font-display:swap; src:url('fonts/inter-v20-latin-regular.woff2') format('woff2'); }
-    @font-face { font-family:'Inter'; font-style:normal; font-weight:500; font-display:swap; src:url('fonts/inter-v20-latin-500.woff2') format('woff2'); }
-    @font-face { font-family:'Inter'; font-style:normal; font-weight:600; font-display:swap; src:url('fonts/inter-v20-latin-600.woff2') format('woff2'); }
-    @font-face { font-family:'Inter'; font-style:normal; font-weight:700; font-display:swap; src:url('fonts/inter-v20-latin-700.woff2') format('woff2'); }
-    @font-face { font-family:'Inter'; font-style:normal; font-weight:800; font-display:swap; src:url('fonts/inter-v20-latin-800.woff2') format('woff2'); }
-    html { scroll-behavior:smooth; }
-    body { font-feature-settings:'cv11','ss01'; }
-    .fade-in { animation: fadeIn .8s ease-out forwards; opacity:0; }
-    .fade-in-delay-1 { animation: fadeIn .8s ease-out .15s forwards; opacity:0; }
-    .fade-in-delay-2 { animation: fadeIn .8s ease-out .3s forwards; opacity:0; }
-    @keyframes fadeIn { from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:translateY(0);} }
-    @media (prefers-reduced-motion: reduce){ .fade-in,.fade-in-delay-1,.fade-in-delay-2{animation:none;opacity:1;} html{scroll-behavior:auto;} }
-  </style>
 </head>
-<body class="bg-warm text-navy font-sans antialiased">
-
+<body class="bg-sand text-ink font-sans antialiased">
   <div id="site-header"></div>
-
-  <section class="pt-32 pb-14 lg:pt-40 lg:pb-20 px-6 lg:px-8">
-    <div class="max-w-4xl mx-auto">
-      <nav class="text-sm text-navy/50 mb-6 fade-in"><a href="/" class="hover:text-orange transition-colors">Start</a> <span class="mx-2">/</span> <span class="text-navy/70">Palettenkonto Software</span></nav>
-      <div class="inline-flex items-center gap-2 bg-orange/10 text-orange-dark px-4 py-2 rounded-full text-sm font-semibold mb-6 fade-in">💰 Palettensaldo in Echtzeit</div>
-      <h1 class="text-4xl lg:text-6xl font-extrabold leading-[1.06] tracking-tight mb-6 fade-in-delay-1">Palettenkonto-Software für Transportunternehmen</h1>
-      <p class="text-lg lg:text-xl text-navy/70 leading-relaxed mb-8 max-w-2xl fade-in-delay-2">Führe dein Palettenkonto pro Kunde live und ohne Excel. Jede Lieferung mit Unterschrift dokumentiert, jeder Saldo jederzeit aktuell – und dein Kunde sieht seinen Stand selbst.</p>
-      <a href="/#anmelden" class="inline-flex items-center gap-2 bg-navy text-white px-6 py-4 rounded-xl text-base font-semibold hover:bg-navy-dark transition-all hover:scale-[1.02] fade-in-delay-2">30 Tage kostenlos testen
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
-    </div>
-  </section>
-  <section class="py-14 lg:py-20 px-6 lg:px-8 bg-white border-y border-navy/5">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Grundlage</div>
-      <h2 class="text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight mb-6">Was ist ein Palettenkonto?</h2>
-      <div class="bg-white border-l-4 border-orange rounded-r-2xl p-6 mb-6 shadow-sm"><div class="text-xs font-bold uppercase tracking-wider text-orange mb-2">Kurz erklärt</div><p class="text-lg text-navy/80 leading-relaxed">Ein Palettenkonto ist die laufende Abrechnung von Tauschpaletten zwischen zwei Partnern. Du lieferst Paletten aus und bekommst welche zurück; die Differenz – der Saldo – zeigt, wie viele Paletten offen sind. Eine Palettenkonto-Software erfasst jede dieser Bewegungen mit Unterschrift, verrechnet den Saldo pro Kunde automatisch und macht fehlende Belege sichtbar. Statt Excel-Tabellen und Papierscheinen liegt der aktuelle Stand jederzeit vor – für dich und für deinen Kunden.</p></div><p class="text-lg text-navy/70 leading-relaxed mb-4">Bei einem einzelnen Kunden ist das noch überschaubar. Sobald mehrere Fahrer täglich bei dutzenden Stammkunden Paletten abliefern und abholen, wird die Buchführung im Kopf oder in der Tabelle zur Fehlerquelle. Der entscheidende Unterschied zu einer Liste: In einem Palettenkonto ist jede Bewegung mit Zeitstempel und Empfänger-Unterschrift dokumentiert und damit im Streitfall belastbar.</p>
-    </div>
-  </section>
-  <section class="py-14 lg:py-20 px-6 lg:px-8 ">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Das Problem</div>
-      <h2 class="text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight mb-6">Warum Excel-Palettenkonten scheitern</h2>
-      <p class="text-lg text-navy/70 leading-relaxed mb-4">Excel funktioniert am Anfang. Der Ärger kommt mit dem Volumen:</p><ul class="space-y-3"><li class="flex items-start gap-3"><div class="w-6 h-6 bg-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-navy/80">Jede Lieferung muss manuell eingetippt werden – Fehler und Vergessenes inklusive.</span></li><li class="flex items-start gap-3"><div class="w-6 h-6 bg-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-navy/80">Kein Nachweis: Bei Streit fehlt die Unterschrift des Empfängers, es steht Aussage gegen Aussage.</span></li><li class="flex items-start gap-3"><div class="w-6 h-6 bg-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-navy/80">Kein Live-Stand: Der Chef sieht den Saldo erst, wenn jemand die Tabelle aktualisiert hat.</span></li><li class="flex items-start gap-3"><div class="w-6 h-6 bg-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-navy/80">Kein Kundenzugang: Jede Rückfrage landet am Telefon und endet oft im Streit über die Zahlen.</span></li><li class="flex items-start gap-3"><div class="w-6 h-6 bg-orange/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-navy/80">Keine Rückforderung: Offene Paletten bleiben offen, weil niemand systematisch nachhält.</span></li></ul>
-    </div>
-  </section>
-  <section class="py-14 lg:py-20 px-6 lg:px-8 bg-white border-y border-navy/5">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Die Lösung</div>
-      <h2 class="text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight mb-6">Wie Palletto dein Palettenkonto führt</h2>
-      <div class="flex items-start gap-4 mb-5"><div class="w-9 h-9 bg-orange text-white rounded-xl flex items-center justify-center font-extrabold shrink-0">1</div><div><div class="font-bold text-lg mb-1">Fahrer erfasst die Bewegung</div><div class="text-navy/70 leading-relaxed">Abgeliefert und abgeholt direkt auf dem Handy eintippen, Empfänger unterschreibt in Textform nach §126b BGB.</div></div></div><div class="flex items-start gap-4 mb-5"><div class="w-9 h-9 bg-orange text-white rounded-xl flex items-center justify-center font-extrabold shrink-0">2</div><div><div class="font-bold text-lg mb-1">Saldo läuft automatisch mit</div><div class="text-navy/70 leading-relaxed">Pro Kunde wird der offene Bestand sofort verrechnet – ohne dass jemand eine Tabelle pflegt.</div></div></div><div class="flex items-start gap-4 mb-5"><div class="w-9 h-9 bg-orange text-white rounded-xl flex items-center justify-center font-extrabold shrink-0">3</div><div><div class="font-bold text-lg mb-1">Lücken werden sichtbar</div><div class="text-navy/70 leading-relaxed">Wurde ein Stammkunde beliefert, aber kein Schein erfasst, meldet das System die Lücke am selben Tag.</div></div></div><div class="flex items-start gap-4 mb-5"><div class="w-9 h-9 bg-orange text-white rounded-xl flex items-center justify-center font-extrabold shrink-0">4</div><div><div class="font-bold text-lg mb-1">Kunde sieht seinen Stand selbst</div><div class="text-navy/70 leading-relaxed">Über einen Link ohne Login – das beendet die meisten Rückfragen.</div></div></div><div class="flex items-start gap-4 mb-5"><div class="w-9 h-9 bg-orange text-white rounded-xl flex items-center justify-center font-extrabold shrink-0">5</div><div><div class="font-bold text-lg mb-1">Offene Paletten zurückfordern</div><div class="text-navy/70 leading-relaxed">Aus dem Saldo heraus erzeugst du eine Zahlungserinnerung oder Mahnung mit Frist.</div></div></div>
-    </div>
-  </section>
-  <section class="py-14 lg:py-20 px-6 lg:px-8 ">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Beispiel</div>
-      <h2 class="text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight mb-6">Ein Dienstag mit drei Fahrern</h2>
-      <p class="text-lg text-navy/70 leading-relaxed mb-4">Drei Fahrer, dreißig Stammkunden. Fahrer Murat liefert bei EDEKA 12 Paletten ab und holt 8 zurück – der Saldo für EDEKA steht auf +4 zu deinen Gunsten. Bei Spedition Berger vergisst er im Stress die Erfassung.</p><p class="text-lg text-navy/70 leading-relaxed mb-4">Ohne System fällt das erst am Monatsende auf, wenn sechs Paletten unauffindbar fehlen und niemand mehr weiß, wo. Mit einem digitalen Palettenkonto zeigt die Lücken-Erkennung noch am selben Tag: Berger wurde beliefert, aber kein Schein erfasst. Du erfasst nach, der Saldo stimmt wieder – die sechs Paletten sind nicht verloren.</p>
-    </div>
-  </section>
-  <section class="py-14 lg:py-20 px-6 lg:px-8 bg-white border-y border-navy/5">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Vergleich</div>
-      <h2 class="text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight mb-6">Excel-Tabelle vs. Palletto-Palettenkonto</h2>
-      <div class="bg-white rounded-2xl border border-navy/10 overflow-hidden shadow-sm"><div class="grid grid-cols-3 bg-navy/5 border-b border-navy/10"><div class="p-4 text-xs font-semibold uppercase tracking-wider text-navy/60">Aufgabe</div><div class="p-4 text-center text-xs font-semibold uppercase tracking-wider text-navy/60">Excel</div><div class="p-4 text-center text-xs font-semibold uppercase tracking-wider text-orange bg-orange/5">Palletto</div></div><div class="grid grid-cols-3 border-b border-navy/5 last:border-0"><div class="p-4 font-semibold text-sm">Erfassung</div><div class="p-4 text-center text-sm text-navy/60">manuell abtippen</div><div class="p-4 text-center text-sm font-bold text-orange bg-orange/5">direkt an der Rampe</div></div><div class="grid grid-cols-3 border-b border-navy/5 last:border-0"><div class="p-4 font-semibold text-sm">Saldo aktuell</div><div class="p-4 text-center text-sm text-navy/60">erst nach Update</div><div class="p-4 text-center text-sm font-bold text-orange bg-orange/5">live, automatisch</div></div><div class="grid grid-cols-3 border-b border-navy/5 last:border-0"><div class="p-4 font-semibold text-sm">Nachweis</div><div class="p-4 text-center text-sm text-navy/60">keine Unterschrift</div><div class="p-4 text-center text-sm font-bold text-orange bg-orange/5">Unterschrift §126b BGB</div></div><div class="grid grid-cols-3 border-b border-navy/5 last:border-0"><div class="p-4 font-semibold text-sm">Fehlender Schein</div><div class="p-4 text-center text-sm text-navy/60">fällt spät auf</div><div class="p-4 text-center text-sm font-bold text-orange bg-orange/5">sofort sichtbar</div></div><div class="grid grid-cols-3 border-b border-navy/5 last:border-0"><div class="p-4 font-semibold text-sm">Kundenzugang</div><div class="p-4 text-center text-sm text-navy/60">per Telefon</div><div class="p-4 text-center text-sm font-bold text-orange bg-orange/5">Portal ohne Login</div></div><div class="grid grid-cols-3 border-b border-navy/5 last:border-0"><div class="p-4 font-semibold text-sm">Rückforderung</div><div class="p-4 text-center text-sm text-navy/60">von Hand</div><div class="p-4 text-center text-sm font-bold text-orange bg-orange/5">Mahnung auf Knopfdruck</div></div></div>
-    </div>
-  </section>
-  <section class="py-14 lg:py-20 px-6 lg:px-8 ">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Begriffe</div>
-      <h2 class="text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight mb-6">Kurz erklärt</h2>
-      <dl class="bg-warm rounded-2xl border border-navy/10 p-6"><div class="py-3 border-b border-navy/5 last:border-0"><dt class="font-bold text-navy">EUR-/EPAL-Palette</dt><dd class="text-navy/70 leading-relaxed mt-1">Die genormte Europalette (1200 × 800 mm). EUR und EPAL meinen faktisch dieselbe Palette; EPAL ist die Organisation hinter den Tausch- und Reparaturkriterien.</dd></div><div class="py-3 border-b border-navy/5 last:border-0"><dt class="font-bold text-navy">Tauschfähig</dt><dd class="text-navy/70 leading-relaxed mt-1">Eine Palette in einem Zustand, der den EPAL-Kriterien entspricht und beim Tausch angenommen werden muss. Nicht tauschfähige Paletten führen sonst zu Streit.</dd></div><div class="py-3 border-b border-navy/5 last:border-0"><dt class="font-bold text-navy">Saldo</dt><dd class="text-navy/70 leading-relaxed mt-1">Die Differenz aus gelieferten und zurückerhaltenen Paletten pro Partner – der Kern jedes Palettenkontos.</dd></div><div class="py-3 border-b border-navy/5 last:border-0"><dt class="font-bold text-navy">Lademittel</dt><dd class="text-navy/70 leading-relaxed mt-1">Oberbegriff für Paletten, Gitterboxen und Ähnliches, die getauscht und verrechnet werden.</dd></div><div class="py-3 border-b border-navy/5 last:border-0"><dt class="font-bold text-navy">Palettenschein</dt><dd class="text-navy/70 leading-relaxed mt-1">Der Beleg über eine einzelne Palettenbewegung, mit Anzahl, Kunde und Unterschrift des Empfängers.</dd></div></dl>
-    </div>
-  </section>
-  <section class="py-14 lg:py-20 px-6 lg:px-8 bg-white border-y border-navy/5">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Mehr</div>
-      <h2 class="text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight mb-6">Verwandte Themen</h2>
-      <div class="grid sm:grid-cols-2 gap-4"><a href="/palettenschein-digitalisieren.html" class="block bg-warm border border-navy/10 rounded-2xl p-6 hover:border-orange/40 transition-colors"><div class="font-extrabold text-xl mb-2">Palettenschein digitalisieren</div><p class="text-sm text-navy/70 leading-relaxed">Den Beleg mobil erfassen statt auf Papier – die Basis jedes Palettenkontos.</p><span class="inline-block mt-3 text-sm font-semibold text-orange">Mehr erfahren →</span></a><a href="/palettentausch-app.html" class="block bg-warm border border-navy/10 rounded-2xl p-6 hover:border-orange/40 transition-colors"><div class="font-extrabold text-xl mb-2">Palettentausch-App</div><p class="text-sm text-navy/70 leading-relaxed">Wie deine Fahrer die Bewegungen an der Rampe erfassen, auch offline.</p><span class="inline-block mt-3 text-sm font-semibold text-orange">Mehr erfahren →</span></a><a href="/luecken-erkennung.html" class="block bg-warm border border-navy/10 rounded-2xl p-6 hover:border-orange/40 transition-colors"><div class="font-extrabold text-xl mb-2">Lücken-Erkennung</div><p class="text-sm text-navy/70 leading-relaxed">Sieh sofort, welcher belieferte Kunde keinen erfassten Schein hat.</p><span class="inline-block mt-3 text-sm font-semibold text-orange">Mehr erfahren →</span></a><a href="/kunden-portal.html" class="block bg-warm border border-navy/10 rounded-2xl p-6 hover:border-orange/40 transition-colors"><div class="font-extrabold text-xl mb-2">Kunden-Portal</div><p class="text-sm text-navy/70 leading-relaxed">Dein Kunde sieht seinen Saldo selbst – ohne Login, ohne Rückfrage.</p><span class="inline-block mt-3 text-sm font-semibold text-orange">Mehr erfahren →</span></a></div>
-    </div>
-  </section>
-  <section class="py-14 lg:py-20 px-6 lg:px-8 bg-white border-y border-navy/5">
-    <div class="max-w-3xl mx-auto">
-      <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">FAQ</div>
-      <h2 class="text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight mb-8">Häufige Fragen</h2>
-      <div class="space-y-4">
-        <details class="bg-white rounded-2xl border border-navy/10 group">
-          <summary class="cursor-pointer p-6 font-semibold text-lg flex items-center justify-between list-none">Was ist ein Palettenkonto?<svg class="w-5 h-5 text-orange transition-transform group-open:rotate-180 shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
-          <div class="px-6 pb-6 text-navy/70 leading-relaxed">Ein Palettenkonto ist der laufende Saldo an Tauschpaletten zwischen dir und einem Geschäftspartner: wie viele Paletten du geliefert und wie viele du zurückerhalten hast. Die Differenz ist der offene Bestand – die Paletten, die dir noch geschuldet werden oder die du noch schuldest.</div>
-        </details>
-        <details class="bg-white rounded-2xl border border-navy/10 group">
-          <summary class="cursor-pointer p-6 font-semibold text-lg flex items-center justify-between list-none">Wie führe ich ein Palettenkonto richtig?<svg class="w-5 h-5 text-orange transition-transform group-open:rotate-180 shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
-          <div class="px-6 pb-6 text-navy/70 leading-relaxed">Wichtig ist, jede Palettenbewegung sofort und mit Nachweis zu erfassen: Datum, Kunde, Anzahl abgeliefert und abgeholt, Zustand und die Unterschrift des Empfängers. Aus diesen Bewegungen ergibt sich der Saldo pro Kunde. Eine Software übernimmt die Verrechnung automatisch, statt dass jemand eine Tabelle pflegt.</div>
-        </details>
-        <details class="bg-white rounded-2xl border border-navy/10 group">
-          <summary class="cursor-pointer p-6 font-semibold text-lg flex items-center justify-between list-none">Kann ich mein Palettenkonto in Excel führen?<svg class="w-5 h-5 text-orange transition-transform group-open:rotate-180 shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
-          <div class="px-6 pb-6 text-navy/70 leading-relaxed">Technisch ja, praktisch wird es ab wenigen Kunden unübersichtlich: jede Lieferung muss von Hand eingetragen werden, es fehlt der Nachweis mit Unterschrift, und niemand sieht in Echtzeit, wer wem wie viele Paletten schuldet. Genau hier setzt eine Palettenkonto-Software an.</div>
-        </details>
-        <details class="bg-white rounded-2xl border border-navy/10 group">
-          <summary class="cursor-pointer p-6 font-semibold text-lg flex items-center justify-between list-none">Was ist der Unterschied zwischen EUR- und EPAL-Paletten?<svg class="w-5 h-5 text-orange transition-transform group-open:rotate-180 shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
-          <div class="px-6 pb-6 text-navy/70 leading-relaxed">EUR-Palette und EPAL-Palette bezeichnen faktisch dieselbe genormte Europalette (1200 × 800 mm). EPAL ist die Organisation, die die Qualitäts- und Reparaturkriterien für den Tausch festlegt. Für dein Palettenkonto zählt vor allem, ob eine Palette tauschfähig ist, also im geforderten Zustand.</div>
-        </details>
-        <details class="bg-white rounded-2xl border border-navy/10 group">
-          <summary class="cursor-pointer p-6 font-semibold text-lg flex items-center justify-between list-none">Sehen meine Kunden ihr Palettenkonto?<svg class="w-5 h-5 text-orange transition-transform group-open:rotate-180 shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
-          <div class="px-6 pb-6 text-navy/70 leading-relaxed">Mit Palletto ja. Jeder Kunde bekommt einen eigenen Link zu seinem Konto – ohne Login. Er sieht seinen aktuellen Saldo und die erfassten Lieferungen selbst und muss nicht mehr bei dir nachfragen.</div>
-        </details>
-        <details class="bg-white rounded-2xl border border-navy/10 group">
-          <summary class="cursor-pointer p-6 font-semibold text-lg flex items-center justify-between list-none">Wie fordere ich offene Paletten zurück?<svg class="w-5 h-5 text-orange transition-transform group-open:rotate-180 shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
-          <div class="px-6 pb-6 text-navy/70 leading-relaxed">Wenn ein Kunde Paletten nicht zurückgibt, erzeugst du aus dem Saldo heraus auf Knopfdruck eine Zahlungserinnerung oder eine formelle Mahnung mit Frist. Grundlage ist der dokumentierte Saldo mit den unterschriebenen Belegen – nicht eine Behauptung aus einer Excel-Tabelle.</div>
-        </details>
-        <details class="bg-white rounded-2xl border border-navy/10 group">
-          <summary class="cursor-pointer p-6 font-semibold text-lg flex items-center justify-between list-none">Was kostet eine Palettenkonto-Software?<svg class="w-5 h-5 text-orange transition-transform group-open:rotate-180 shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
-          <div class="px-6 pb-6 text-navy/70 leading-relaxed">Der Preis richtet sich bei Palletto nach deiner Fuhrparkgröße – du zahlst pro Fahrer, nicht pro Buchung. Das macht die Kosten planbar, auch wenn das Volumen schwankt. Du kannst 30 Tage kostenlos testen, ohne Kreditkarte.</div>
-        </details>
+  <main>
+    <section class="relative px-6 pt-10 lg:pt-16 pb-4 overflow-hidden">
+      <div class="pointer-events-none absolute inset-x-0 top-0 h-[560px] -z-10" style="background:radial-gradient(60% 55% at 15% 0%, rgba(93,214,178,.24), transparent 60%), radial-gradient(55% 55% at 88% 5%, rgba(255,149,0,.18), transparent 55%);"></div>
+      <div class="max-w-4xl mx-auto">
+        <nav aria-label="Breadcrumb" class="text-sm text-navy/50 mb-6"><a href="/" class="hover:text-orange">Start</a> <span class="mx-1.5">›</span> <span class="text-navy/70">Palettenkonto-Software</span></nav>
+        <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Palettenkonto · Software</span></div>
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight mb-6">Palettenkonto-<span class="text-orange">Software</span></h1>
+        <p class="text-lg lg:text-xl text-navy/70 leading-relaxed max-w-2xl mb-6">Wer schuldet wem wie viele Paletten? Palletto führt den Saldo je Kunde automatisch – in Echtzeit, mit Unterschrift dokumentiert, ohne Excel.</p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="/#anmelden" class="btn-primary"><span class="swap"><span>30 Tage kostenlos testen</span><span>Ohne Kreditkarte</span></span><span class="ico"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span></a>
+          <a href="/palettenschein-digitalisieren.html" class="btn-ghost">Palettenschein digitalisieren</a>
+        </div>
       </div>
-    </div>
-  </section>
-  <section class="py-14 lg:py-24 px-6 lg:px-8">
-    <div class="max-w-4xl mx-auto bg-navy text-white rounded-3xl p-8 lg:p-12 text-center relative overflow-hidden">
-      <div class="absolute top-0 right-0 w-64 h-64 bg-orange/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-      <div class="relative">
-        <h2 class="text-3xl lg:text-4xl font-extrabold mb-4">Teste Palletto 30 Tage kostenlos</h2>
-        <p class="text-white/70 text-lg mb-8 max-w-xl mx-auto">Keine Kreditkarte. Account innerhalb von 24 Stunden eingerichtet. Made in Germany, EU-Server.</p>
-        <a href="/#anmelden" class="inline-flex items-center gap-2 bg-orange text-white px-8 py-4 rounded-xl text-base font-bold hover:bg-orange-dark transition-colors">Jetzt kostenlos starten
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+    </section>
+
+    <section class="px-6 py-8">
+      <div class="max-w-4xl mx-auto card p-7 lg:p-8">
+        <p class="text-lg text-navy/80 leading-relaxed"><strong class="text-ink">Kurz erklärt:</strong> Ein <em>Palettenkonto</em> ist das laufende Konto der getauschten Europaletten je Geschäftspartner – wie ein Kontokorrent, nur in Paletten statt Euro. <em>Palettenkonto-Software</em> führt diesen Saldo automatisch aus jedem erfassten Palettenschein: geliefert, abgeholt, offener Bestand – je Kunde, immer aktuell und ohne manuelles Nachtragen.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <section class="px-6 py-14 lg:py-20 bg-white border-y border-line">
+      <div class="max-w-3xl mx-auto">
+        <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Grundlagen</span></div>
+        <h2 class="font-display text-3xl lg:text-4xl font-bold tracking-tight mb-4">Was ist ein Palettenkonto?</h2>
+        <p class="text-lg text-navy/70 leading-relaxed mb-4">Beim Palettentausch bekommt jeder Partner Europaletten geliefert und gibt welche zurück. Das Palettenkonto hält fest, wie dieser Austausch über die Zeit steht: Wer hat mehr geliefert bekommen, als er zurückgegeben hat – und schuldet damit Paletten. Am Monatsende entscheidet dieser Saldo über Ausgleich, Rückgabe oder Abrechnung.</p>
+        <p class="text-lg text-navy/70 leading-relaxed">Solange das sauber dokumentiert ist, gibt es keinen Streit. Genau hier scheitern die meisten Betriebe – weil sie es mit Zetteln und Excel versuchen.</p>
+      </div>
+    </section>
 
+    <section class="px-6 py-14 lg:py-20 overflow-hidden">
+      <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
+          <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">So führt Palletto es</span></div>
+          <h2 class="font-display text-3xl lg:text-4xl font-bold tracking-tight mb-6">Der Saldo läuft von selbst</h2>
+          <ul class="space-y-3 text-navy/80">
+            <li class="flex items-start gap-3"><span class="text-orange mt-0.5">✓</span> <span><strong>Automatisch je Kunde:</strong> jeder Schein bucht auf das richtige Konto</span></li>
+            <li class="flex items-start gap-3"><span class="text-orange mt-0.5">✓</span> <span><strong>Immer aktuell:</strong> kein Nachtragen, keine Formelfehler</span></li>
+            <li class="flex items-start gap-3"><span class="text-orange mt-0.5">✓</span> <span><strong>Filter & Sortierung:</strong> „schuldet dir", „du schuldest", höchster Saldo</span></li>
+            <li class="flex items-start gap-3"><span class="text-orange mt-0.5">✓</span> <span><strong>CSV-Export</strong> für Buchhaltung und Steuerberater</span></li>
+          </ul>
+        </div>
+        <div class="relative">
+          <div class="glow-mint absolute -inset-4 -z-10 rounded-[2rem]"></div>
+          <img src="/assets/img/app-bilanz-desktop.webp" alt="Palettenkonto-Software: Palettensaldo je Kunde mit geliefert, abgeholt und offenem Saldo" width="2000" height="1128" loading="lazy" decoding="async" class="w-full rounded-xl border border-line shadow-2xl">
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 py-14 lg:py-20 bg-white border-y border-line">
+      <div class="max-w-5xl mx-auto">
+        <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Der Unterschied</span></div>
+        <h2 class="font-display text-3xl lg:text-4xl font-bold tracking-tight mb-8">Excel-Palettenkonto vs. Palletto</h2>
+        <div class="card overflow-hidden p-0">
+          <div class="grid grid-cols-3 bg-sand border-b border-line text-sm font-bold uppercase tracking-wider">
+            <div class="p-5 text-navy/60">Aufgabe</div><div class="p-5 text-center text-navy/60">📊 Excel</div><div class="p-5 text-center text-orange bg-orange/5">⚡ Palletto</div>
+          </div>
+          <div class="text-sm">
+            <div class="grid grid-cols-3 border-b border-line"><div class="p-5 font-semibold">Saldo aktualisieren</div><div class="p-5 text-center text-navy/55">von Hand</div><div class="p-5 text-center font-bold text-orange bg-orange/5">automatisch</div></div>
+            <div class="grid grid-cols-3 border-b border-line"><div class="p-5 font-semibold">Beleg zum Saldo</div><div class="p-5 text-center text-navy/55">fehlt oft</div><div class="p-5 text-center font-bold text-orange bg-orange/5">unterschriebener Schein</div></div>
+            <div class="grid grid-cols-3 border-b border-line"><div class="p-5 font-semibold">Fehlerquote</div><div class="p-5 text-center text-navy/55">hoch</div><div class="p-5 text-center font-bold text-orange bg-orange/5">≈ 0</div></div>
+            <div class="grid grid-cols-3 border-b border-line"><div class="p-5 font-semibold">Kunde sieht Saldo</div><div class="p-5 text-center text-navy/55">–</div><div class="p-5 text-center font-bold text-orange bg-orange/5">per Portal-Link</div></div>
+            <div class="grid grid-cols-3"><div class="p-5 font-semibold">Auswertung</div><div class="p-5 text-center text-navy/55">manuell</div><div class="p-5 text-center font-bold text-orange bg-orange/5">auf Knopfdruck</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 py-14 lg:py-20 bg-white border-y border-line">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="font-display text-2xl lg:text-3xl font-bold tracking-tight mb-8">Verwandte Themen</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <a href="/palettenschein-digitalisieren.html" class="card p-6 block"><h3 class="font-display text-lg font-bold mb-1.5">Palettenschein digitalisieren →</h3><p class="text-sm text-navy/65">Belege, die das Konto füttern.</p></a>
+          <a href="/luecken-erkennung.html" class="card p-6 block"><h3 class="font-display text-lg font-bold mb-1.5">Lücken-Erkennung →</h3><p class="text-sm text-navy/65">Fehlende Scheine automatisch finden.</p></a>
+          <a href="/kunden-portal.html" class="card p-6 block"><h3 class="font-display text-lg font-bold mb-1.5">Kunden-Portal →</h3><p class="text-sm text-navy/65">Kunden sehen ihren Saldo selbst.</p></a>
+          <a href="/palettentausch-app.html" class="card p-6 block"><h3 class="font-display text-lg font-bold mb-1.5">Palettentausch-App →</h3><p class="text-sm text-navy/65">Erfassung durch die Fahrer.</p></a>
+          <a href="/blog/palettenkonto-fuehren/" class="card p-6 block"><h3 class="font-display text-lg font-bold mb-1.5">Palettenkonto führen →</h3><p class="text-sm text-navy/65">Ratgeber & Best Practices.</p></a>
+          <a href="/blog/palettenkonto-software-vergleich/" class="card p-6 block"><h3 class="font-display text-lg font-bold mb-1.5">Software-Vergleich →</h3><p class="text-sm text-navy/65">Lösungen im Überblick.</p></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 py-14 lg:py-20">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display text-3xl lg:text-4xl font-bold tracking-tight mb-8 text-center">Häufige Fragen</h2>
+        <div class="space-y-3">
+          <details class="acc card p-5"><summary class="flex items-center justify-between font-display font-bold text-lg">Was ist ein Palettenkonto?<svg class="acc-arrow w-5 h-5 text-orange shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 9l6 6 6-6"/></svg></summary><p class="text-navy/70 leading-relaxed mt-3">Das laufende Konto der getauschten Europaletten je Partner – wie ein Kontokorrent, nur in Paletten. Es zeigt, wer wem am Ende wie viele Paletten schuldet.</p></details>
+          <details class="acc card p-5"><summary class="flex items-center justify-between font-display font-bold text-lg">Ersetzt Palletto meine Excel-Liste?<svg class="acc-arrow w-5 h-5 text-orange shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 9l6 6 6-6"/></svg></summary><p class="text-navy/70 leading-relaxed mt-3">Ja. Der Saldo wird automatisch aus den Palettenscheinen geführt – ohne manuelles Nachtragen, ohne Formelfehler, immer aktuell. CSV-Export für die Buchhaltung ist möglich.</p></details>
+          <details class="acc card p-5"><summary class="flex items-center justify-between font-display font-bold text-lg">Sehen meine Kunden ihren Saldo?<svg class="acc-arrow w-5 h-5 text-orange shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 9l6 6 6-6"/></svg></summary><p class="text-navy/70 leading-relaxed mt-3">Auf Wunsch ja – über einen Portal-Link ohne Login. Das schafft Vertrauen und spart Rückfragen.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 py-14 lg:py-20">
+      <div class="max-w-6xl mx-auto relative overflow-hidden rounded-[2.5rem] bg-ink text-white px-8 py-14 lg:px-16 lg:py-16 text-center">
+        <div class="absolute inset-0 -z-0" style="background:radial-gradient(50% 80% at 15% 0%, rgba(93,214,178,.22), transparent 60%), radial-gradient(50% 90% at 90% 100%, rgba(255,149,0,.28), transparent 60%);"></div>
+        <div class="relative max-w-xl mx-auto">
+          <h2 class="font-display text-3xl lg:text-4xl font-bold tracking-tight mb-4">Dein Palettenkonto – ohne Excel.</h2>
+          <p class="text-lg text-white/65 leading-relaxed mb-8">30 Tage kostenlos, keine Kreditkarte. Account in 24 Stunden eingerichtet.</p>
+          <a href="/#anmelden" class="btn-primary"><span class="swap"><span>30 Tage kostenlos testen</span><span>Los geht's</span></span><span class="ico"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span></a>
+        </div>
+      </div>
+    </section>
+  </main>
   <div id="site-footer"></div>
-
   <script>
-    Promise.all([
-      fetch('/_header.html').then(r=>r.text()),
-      fetch('/_footer.html').then(r=>r.text())
-    ]).then(([h,f])=>{
-      document.getElementById('site-header').innerHTML=h;
-      document.getElementById('site-footer').innerHTML=f;
-      const btn=document.getElementById('mobile-menu-btn');
-      const menu=document.getElementById('mobile-menu');
-      if(btn&&menu){
-        btn.addEventListener('click',()=>{btn.classList.toggle('open');menu.classList.toggle('open');});
-        document.querySelectorAll('.mobile-nav-link').forEach(l=>l.addEventListener('click',()=>{btn.classList.remove('open');menu.classList.remove('open');}));
-        document.addEventListener('keydown',e=>{if(e.key==='Escape'){btn.classList.remove('open');menu.classList.remove('open');}});
-      }
-    });
+    Promise.all([fetch('/_header.html').then(function(r){return r.text();}),fetch('/_footer.html').then(function(r){return r.text();})]).then(function(p){document.getElementById('site-header').innerHTML=p[0];document.getElementById('site-footer').innerHTML=p[1];}).catch(function(){});
   </script>
 </body>
 </html>
