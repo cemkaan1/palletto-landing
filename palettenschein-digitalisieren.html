@@ -1,312 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">
-  <title>AGB – Palletto</title>
-  
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: '#1B3A6B',
-            'navy-dark': '#142b50',
-            orange: '#FF9500',
-            'orange-dark': '#e88500',
-            warm: '#FAFAF7',
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-          },
-        },
-      },
-    };
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Palettenschein digitalisieren: rechtssicher in 30 Sekunden | Palletto</title>
+  <meta name="description" content="Palettenscheine digital erfassen statt auf Papier – mit Unterschrift, Foto-Beleg und QR-Prüfung. Rechtssicher nach §126b BGB, DSGVO-konform. So digitalisierst du deine Palettenscheine.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0F1B2D">
+  <link rel="canonical" href="https://palletto.de/palettenschein-digitalisieren.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Palettenschein digitalisieren: rechtssicher in 30 Sekunden">
+  <meta property="og:description" content="Vom Papier-Durchschlag zum rechtssicheren digitalen Beleg – mit Unterschrift, Foto und QR-Prüfsumme.">
+  <meta property="og:url" content="https://palletto.de/palettenschein-digitalisieren.html">
+  <meta property="og:image" content="https://palletto.de/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/assets/palletto.css?v=3">
+  <link rel="preload" href="/assets/fonts/jakarta-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/space-grotesk-700.woff2" as="font" type="font/woff2" crossorigin>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "WebPage", "@id": "https://palletto.de/palettenschein-digitalisieren.html", "name": "Palettenschein digitalisieren", "inLanguage": "de-DE",
+        "description": "Palettenscheine digital erfassen: mit Unterschrift, Foto-Beleg und QR-Prüfung, rechtssicher nach §126b BGB.",
+        "isPartOf": { "@type": "WebSite", "name": "Palletto", "url": "https://palletto.de/" } },
+      { "@type": "BreadcrumbList", "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://palletto.de/" },
+        { "@type": "ListItem", "position": 2, "name": "Palettenschein digitalisieren", "item": "https://palletto.de/palettenschein-digitalisieren.html" }
+      ]},
+      { "@type": "FAQPage", "mainEntity": [
+        { "@type": "Question", "name": "Ist ein digitaler Palettenschein rechtsgültig?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Ein digital erfasster Palettenschein mit Unterschrift von Fahrer und Empfänger erfüllt die Textform nach §126b BGB. Er wird mit Zeitstempel und Prüfsumme gespeichert und ist im Streitfall beweisgeeignet. Eine qualifizierte elektronische Signatur ist für Palettenscheine nicht vorgeschrieben." } },
+        { "@type": "Question", "name": "Wie lange dauert das Erfassen eines digitalen Palettenscheins?", "acceptedAnswer": { "@type": "Answer", "text": "Mit Palletto unter 30 Sekunden: Menge abgeliefert und abgeholt eintippen, Fahrer und Empfänger unterschreiben am Handy, fertig. Ohne Schulung bedienbar." } },
+        { "@type": "Question", "name": "Brauche ich extra Hardware, um Palettenscheine zu digitalisieren?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Es reicht ein normales Smartphone. Die Fahrer-App läuft im Browser, funktioniert offline und braucht keine Installation." } },
+        { "@type": "Question", "name": "Kann ich alte Papier-Palettenscheine nachträglich digitalisieren?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Über die Nacherfassung lädst du ein Foto oder einen Scan des unterschriebenen Zettels hoch und schließt so die Lücke – der Beleg bleibt dauerhaft gespeichert." } },
+        { "@type": "Question", "name": "Sind die Daten DSGVO-konform gespeichert?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Ausschließlich auf EU-Servern in Frankfurt, verschlüsselt und mit Auftragsverarbeitungsvertrag (AVV)." } }
+      ]}
+    ]
+  }
   </script>
-
-  <style>
-    @font-face { font-family: 'Inter'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/inter-v20-latin-regular.woff2') format('woff2'); }
-    @font-face { font-family: 'Inter'; font-style: normal; font-weight: 500; font-display: swap; src: url('fonts/inter-v20-latin-500.woff2') format('woff2'); }
-    @font-face { font-family: 'Inter'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/inter-v20-latin-600.woff2') format('woff2'); }
-    @font-face { font-family: 'Inter'; font-style: normal; font-weight: 700; font-display: swap; src: url('fonts/inter-v20-latin-700.woff2') format('woff2'); }
-    @font-face { font-family: 'Inter'; font-style: normal; font-weight: 800; font-display: swap; src: url('fonts/inter-v20-latin-800.woff2') format('woff2'); }
-    
-    html { scroll-behavior: smooth; }
-    body { font-feature-settings: 'cv11', 'ss01'; }
-    .legal-content h2 { font-size: 1.5rem; font-weight: 800; margin-top: 2.5rem; margin-bottom: 1rem; color: #1B3A6B; }
-    .legal-content h3 { font-size: 1.125rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.5rem; color: #1B3A6B; }
-    .legal-content p { margin-bottom: 1rem; line-height: 1.7; color: #1B3A6B; opacity: 0.85; }
-    .legal-content ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
-    .legal-content li { margin-bottom: 0.5rem; line-height: 1.7; color: #1B3A6B; opacity: 0.85; }
-    .legal-content strong { color: #1B3A6B; font-weight: 700; }
-  </style>
 </head>
-<body class="bg-warm text-navy font-sans antialiased">
+<body class="bg-sand text-ink font-sans antialiased">
 
   <div id="site-header"></div>
 
-  <main class="pt-32 pb-20 px-6 lg:px-8">
-    <div class="max-w-3xl mx-auto">
-      
-      <div class="mb-12">
-        <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Rechtliches</div>
-        <h1 class="text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight mb-4">Allgemeine Geschäftsbedingungen</h1>
-        <p class="text-navy/60 text-sm">Stand: 17. Mai 2026</p>
+  <main>
+    <!-- HERO -->
+    <section class="relative px-6 pt-10 lg:pt-16 pb-4 overflow-hidden">
+      <div class="pointer-events-none absolute inset-x-0 top-0 h-[560px] -z-10" style="background:radial-gradient(60% 55% at 15% 0%, rgba(93,214,178,.24), transparent 60%), radial-gradient(55% 55% at 88% 5%, rgba(255,149,0,.18), transparent 55%);"></div>
+      <div class="max-w-4xl mx-auto">
+        <nav aria-label="Breadcrumb" class="text-sm text-navy/50 mb-6"><a href="/" class="hover:text-orange">Start</a> <span class="mx-1.5">›</span> <span class="text-navy/70">Palettenschein digitalisieren</span></nav>
+        <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Palettenschein · digital</span></div>
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight mb-6">Palettenschein <span class="text-orange">digitalisieren</span></h1>
+        <p class="text-lg lg:text-xl text-navy/70 leading-relaxed max-w-2xl mb-6">Vom Papier-Durchschlag, der im LKW verschwindet, zum rechtssicheren digitalen Beleg – in unter 30 Sekunden, direkt am Handy.</p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="/#anmelden" class="btn-primary"><span class="swap"><span>30 Tage kostenlos testen</span><span>Ohne Kreditkarte</span></span><span class="ico"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span></a>
+          <a href="/#so-gehts" class="btn-ghost">So funktioniert's</a>
+        </div>
       </div>
+    </section>
 
-      <div class="legal-content">
-        
-        <h2>§1 Geltungsbereich und Vertragspartner</h2>
-        <p>
-          (1) Diese Allgemeinen Geschäftsbedingungen (nachfolgend „AGB") gelten für alle Verträge zwischen
-        </p>
-        <p>
-          <strong>Cem-Kaan Özertas</strong><br>
-          Bei den Mühren 1<br>
-          20457 Hamburg<br>
-          E-Mail: info@palletto.de<br>
-          (nachfolgend „Anbieter")
-        </p>
-        <p>
-          und den Kunden (nachfolgend „Kunde") über die Nutzung der Software-as-a-Service-Anwendung „Palletto" (nachfolgend „Software" oder „Dienst").
-        </p>
-        <p>
-          (2) Das Angebot richtet sich ausschließlich an Unternehmer im Sinne des § 14 BGB, juristische Personen des öffentlichen Rechts oder öffentlich-rechtliche Sondervermögen. Verträge mit Verbrauchern werden nicht geschlossen.
-        </p>
-        <p>
-          (3) Abweichende, entgegenstehende oder ergänzende Geschäftsbedingungen des Kunden werden nicht Vertragsbestandteil, es sei denn, der Anbieter stimmt ihrer Geltung ausdrücklich schriftlich zu.
-        </p>
-
-        <h2>§2 Vertragsgegenstand</h2>
-        <p>
-          (1) Der Anbieter stellt dem Kunden die Software „Palletto" zur Nutzung über das Internet zur Verfügung. Die Software ermöglicht die digitale Erfassung, Verwaltung und Auswertung von Palettenbewegungen mit digitaler Empfänger-Unterschrift in Textform nach §126b BGB.
-        </p>
-        <p>
-          (2) Der Funktionsumfang richtet sich nach dem gewählten Tarif (Starter, Business oder Enterprise). Die jeweils aktuellen Leistungsbeschreibungen sind unter <a href="https://palletto.de/#preise" class="text-orange underline">palletto.de/#preise</a> einsehbar.
-        </p>
-        <p>
-          (3) Der Anbieter ist berechtigt, den Funktionsumfang weiterzuentwickeln und zu verbessern. Wesentliche Funktionsänderungen werden dem Kunden mit angemessener Vorlaufzeit per E-Mail mitgeteilt.
-        </p>
-
-        <h2>§3 Vertragsschluss und Testphase</h2>
-        <p>
-          (1) Der Kunde kann die Software für <strong>30 Tage kostenlos und unverbindlich</strong> testen. Hierfür ist die Eintragung im Anmeldeformular unter palletto.de erforderlich.
-        </p>
-        <p>
-          (2) Die Testphase endet nach 30 Tagen automatisch. Es entstehen keine Kosten und keine Verpflichtungen. Eine Kreditkarte oder andere Zahlungsmittel sind während der Testphase nicht erforderlich.
-        </p>
-        <p>
-          (3) Wünscht der Kunde nach der Testphase die weitere Nutzung, schließt der Anbieter mit ihm einen kostenpflichtigen Vertrag. Der Vertrag kommt durch Vertragsunterzeichnung (per E-Mail oder Online-Bestätigung) oder durch die Bezahlung der ersten Rechnung zustande.
-        </p>
-        <p>
-          (4) Wird die Testphase nicht in einen kostenpflichtigen Vertrag überführt, wird der Anbieter den Kunden 7 Tage vor Ablauf der Testphase per E-Mail erinnern. Der Kunde kann auf diese Erinnerung hin entweder einen Vertrag abschließen oder seine Daten exportieren. Der Account wird anschließend gesperrt und innerhalb von 30 Tagen vollständig gelöscht.
-        </p>
-
-        <h2>§4 Preise und Zahlungsbedingungen</h2>
-        <p>
-          (1) Es gelten die zum Zeitpunkt des Vertragsabschlusses individuell vereinbarten Preise. Die Preise richten sich nach dem gewählten Tarif (Starter, Business oder Enterprise) sowie der Fuhrparkgröße des Kunden und werden dem Kunden vor Vertragsschluss in einem individuellen Angebot in Textform mitgeteilt.
-        </p>
-        <p>
-          (2) Alle genannten Preise verstehen sich als Netto-Preise zuzüglich der gesetzlichen Umsatzsteuer in Höhe von derzeit 19%.
-        </p>
-        <p>
-          (3) Die Abrechnung erfolgt wahlweise:
-        </p>
-        <ul>
-          <li><strong>Monatlich:</strong> Vorab zum jeweiligen Monatsersten</li>
-          <li><strong>Jährlich:</strong> Vorab zu Vertragsbeginn (mit 10% Rabatt auf die monatlichen Preise)</li>
-        </ul>
-        <p>
-          (4) Die erste Aktivierung erfolgt auf Vorkasse. Folgerechnungen werden per E-Mail versandt und sind innerhalb von 14 Tagen ohne Abzug zur Zahlung fällig.
-        </p>
-        <p>
-          (5) Bei Zahlungsverzug ist der Anbieter berechtigt, gesetzliche Verzugszinsen sowie eine Mahnpauschale gemäß § 288 Abs. 5 BGB zu erheben.
-        </p>
-
-        <h2>§5 Preisanpassung und Preisgarantie</h2>
-        <p>
-          (1) Der Anbieter garantiert dem Kunden eine <strong>Preisgarantie von 12 Monaten</strong> ab Vertragsbeginn. Innerhalb dieses Zeitraums wird der vereinbarte Nutzungspreis nicht erhöht.
-        </p>
-        <p>
-          (2) Nach Ablauf der 12-monatigen Preisgarantie ist der Anbieter berechtigt, die Preise mit einer Ankündigungsfrist von 3 Monaten zum Monatsende anzupassen. Die Anpassung erfolgt nach billigem Ermessen unter Berücksichtigung der allgemeinen Marktentwicklung.
-        </p>
-        <p>
-          (3) Der Kunde ist im Falle einer Preiserhöhung um mehr als 10% berechtigt, den Vertrag mit Wirksamwerden der Preiserhöhung außerordentlich zu kündigen.
-        </p>
-
-        <h2>§6 Vertragslaufzeit und Kündigung</h2>
-        <p>
-          (1) Der Vertrag beginnt mit dem Datum der ersten kostenpflichtigen Aktivierung des Accounts.
-        </p>
-        <p>
-          (2) Die Mindestvertragslaufzeit beträgt <strong>6 Monate</strong>.
-        </p>
-        <p>
-          (3) Nach Ablauf der Mindestlaufzeit verlängert sich der Vertrag automatisch um jeweils einen weiteren Monat, sofern er nicht mit einer Frist von <strong>1 Monat zum Monatsende</strong> gekündigt wird.
-        </p>
-        <p>
-          (4) Die Kündigung bedarf der Textform (z.B. E-Mail an info@palletto.de). Eine Kündigungsbestätigung erfolgt per E-Mail.
-        </p>
-        <p>
-          (5) Das Recht zur außerordentlichen Kündigung aus wichtigem Grund bleibt für beide Parteien unberührt.
-        </p>
-
-        <h2>§7 Zahlungsverzug</h2>
-        <p>
-          (1) Bei Zahlungsverzug erhält der Kunde zunächst eine freundliche Zahlungserinnerung mit einer Nachfrist von 14 Tagen. Wir suchen in der Regel zunächst den Kontakt, um Missverständnisse oder vorübergehende Engpässe zu klären.
-        </p>
-        <p>
-          (2) Bleiben 2 aufeinanderfolgende Rechnungen trotz Zahlungserinnerung unbezahlt, ist der Anbieter berechtigt, den Account des Kunden zu sperren. Der Kunde wird hierüber per E-Mail informiert.
-        </p>
-        <p>
-          (3) <strong>Auch während einer Sperrung hat der Kunde jederzeit das Recht, seine eigenen Daten gemäß Art. 20 DSGVO zu exportieren.</strong> Dieser Datenexport ist auf Anfrage an info@palletto.de möglich und wird innerhalb von 5 Werktagen bereitgestellt.
-        </p>
-        <p>
-          (4) Während der Sperrung kann der Kunde keine neuen Daten in der Software erfassen. Begleicht der Kunde die offenen Rechnungen innerhalb von 30 Tagen, wird der Account wieder freigeschaltet.
-        </p>
-        <p>
-          (5) Werden die offenen Rechnungen nicht innerhalb von 30 Tagen beglichen, werden die Kundendaten nach einer letzten Erinnerung per E-Mail vollständig und unwiderruflich gelöscht.
-        </p>
-        <p>
-          (6) Bei jährlicher Vorauszahlung werden bereits im Voraus gezahlte Beträge für Zeiträume nach der Vertragsbeendigung anteilig erstattet, sofern die Beendigung nicht durch ein vertragswidriges Verhalten des Kunden verursacht wurde.
-        </p>
-
-        <h2>§8 Verfügbarkeit und Support</h2>
-        <p>
-          (1) Der Anbieter bemüht sich nach besten Kräften um eine hohe Verfügbarkeit der Software. Eine bestimmte Verfügbarkeitsrate (SLA) wird nicht garantiert.
-        </p>
-        <p>
-          (2) Wartungsarbeiten werden, soweit möglich, in verkehrsarmen Zeiten durchgeführt und mit angemessener Vorlaufzeit angekündigt.
-        </p>
-        <p>
-          (3) Der Anbieter haftet nicht für Ausfälle aufgrund höherer Gewalt, technischer Störungen Dritter (z.B. Hosting-Provider, Internet-Provider) oder notwendiger Wartungsarbeiten.
-        </p>
-        <p>
-          (4) Der Support erfolgt per E-Mail mit einer Erstreaktion innerhalb von 48 Stunden (Werktage Mo-Fr, 9-17 Uhr). Eine telefonische Aufnahme des Anliegens ist ebenfalls möglich.
-        </p>
-        <p>
-          (5) Die genannten Reaktionszeiten beziehen sich auf die Erstreaktion. Eine Garantie für die Behebung von Störungen innerhalb dieser Zeit besteht nicht.
-        </p>
-
-        <h2>§9 Pflichten des Kunden</h2>
-        <p>
-          (1) Der Kunde verpflichtet sich, die Zugangsdaten zur Software vertraulich zu behandeln und Dritten nicht zugänglich zu machen.
-        </p>
-        <p>
-          (2) Der Kunde ist für alle Aktivitäten verantwortlich, die unter seinem Account durchgeführt werden.
-        </p>
-        <p>
-          (3) Bei Verdacht auf Missbrauch (z.B. Diebstahl der Zugangsdaten) ist der Anbieter unverzüglich zu informieren.
-        </p>
-        <p>
-          (4) Der Kunde verpflichtet sich, die Software ausschließlich im Rahmen der gesetzlichen Bestimmungen zu nutzen. Insbesondere ist es untersagt, die Software für rechtswidrige Zwecke oder zur Verbreitung schädlicher Inhalte einzusetzen.
-        </p>
-
-        <h2>§10 Datenschutz und Auftragsverarbeitung</h2>
-        <p>
-          (1) Der Anbieter erhebt und verarbeitet personenbezogene Daten des Kunden ausschließlich nach den Bestimmungen der Datenschutz-Grundverordnung (DSGVO) und des Bundesdatenschutzgesetzes (BDSG). Details siehe <a href="/datenschutz.html" class="text-orange underline">Datenschutzerklärung</a>.
-        </p>
-        <p>
-          (2) Soweit der Anbieter im Auftrag des Kunden personenbezogene Daten von Dritten (z.B. Mitarbeiter, Kunden des Kunden) verarbeitet, wird hierfür ein gesonderter Auftragsverarbeitungsvertrag (AVV) gemäß Art. 28 DSGVO geschlossen.
-        </p>
-        <p>
-          (3) Der AVV wird dem Kunden auf Anfrage zur Verfügung gestellt.
-        </p>
-
-        <h2>§11 Datenexport und Datenlöschung</h2>
-        <p>
-          (1) Während der aktiven Vertragslaufzeit kann der Kunde seine Daten jederzeit als PDF und CSV exportieren.
-        </p>
-        <p>
-          (2) <strong>Auch nach Vertragsende</strong> kann der Kunde innerhalb von <strong>30 Tagen</strong> einen letzten Datenexport anfordern. Wir empfehlen jedoch, einen Export rechtzeitig vor Vertragsende durchzuführen.
-        </p>
-        <p>
-          (3) Nach Ablauf der 30 Tage werden alle Kundendaten vollständig und unwiderruflich gelöscht, sofern keine gesetzlichen Aufbewahrungsfristen entgegenstehen.
-        </p>
-
-        <h2>§12 Haftung</h2>
-        <p>
-          (1) Der Anbieter haftet unbeschränkt bei Vorsatz und grober Fahrlässigkeit.
-        </p>
-        <p>
-          (2) Bei einfacher Fahrlässigkeit haftet der Anbieter nur bei Verletzung wesentlicher Vertragspflichten (Kardinalpflichten). Die Haftung ist in diesem Fall auf den vertragstypischen, vorhersehbaren Schaden begrenzt.
-        </p>
-        <p>
-          (3) Die Haftung des Anbieters für entgangenen Gewinn, ausgebliebene Einsparungen, mittelbare Schäden und Folgeschäden ist ausgeschlossen, soweit nicht Vorsatz oder grobe Fahrlässigkeit vorliegt.
-        </p>
-        <p>
-          (4) Der Anbieter haftet nicht für Schäden, die durch höhere Gewalt, Streik, behördliche Anordnungen oder durch Dritte (z.B. Hosting-Provider, Subunternehmer) verursacht werden, soweit diese außerhalb des Einflussbereichs des Anbieters liegen.
-        </p>
-        <p>
-          (5) Trotz regelmäßiger Backups übernimmt der Anbieter keine Haftung für Datenverluste, soweit nicht Vorsatz oder grobe Fahrlässigkeit vorliegt. Dem Kunden wird empfohlen, regelmäßig eigene Sicherungskopien (z.B. via Datenexport) anzufertigen.
-        </p>
-        <p>
-          (6) Die Haftung nach dem Produkthaftungsgesetz sowie für die Verletzung von Leben, Körper und Gesundheit bleibt unberührt.
-        </p>
-
-        <h2>§13 Rechtswahl und Gerichtsstand</h2>
-        <p>
-          (1) Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts.
-        </p>
-        <p>
-          (2) Ausschließlicher Gerichtsstand für alle Streitigkeiten aus oder im Zusammenhang mit diesem Vertrag ist Elmshorn, soweit der Kunde Kaufmann, juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen ist.
-        </p>
-
-        <h2>§14 Schlussbestimmungen</h2>
-        <p>
-          (1) Änderungen und Ergänzungen dieses Vertrages bedürfen der Textform. Dies gilt auch für die Aufhebung dieses Textformerfordernisses.
-        </p>
-        <p>
-          (2) Sollten einzelne Bestimmungen dieser AGB unwirksam sein oder werden, bleibt die Wirksamkeit der übrigen Bestimmungen davon unberührt. An die Stelle der unwirksamen Bestimmung tritt diejenige rechtlich zulässige Regelung, die dem mit der unwirksamen Bestimmung verfolgten Zweck am nächsten kommt.
-        </p>
-        <p>
-          (3) Der Anbieter behält sich vor, diese AGB jederzeit zu ändern. Änderungen werden dem Kunden mindestens 6 Wochen vor Inkrafttreten per E-Mail mitgeteilt. Widerspricht der Kunde der Änderung nicht innerhalb von 6 Wochen nach Zugang der Änderungsmitteilung in Textform, gelten die geänderten AGB als angenommen. Der Anbieter wird den Kunden auf diese Folge im Rahmen der Änderungsmitteilung hinweisen.
-        </p>
-
+    <!-- ANTWORT-KAPSEL (AI/SEO) -->
+    <section class="px-6 py-8">
+      <div class="max-w-4xl mx-auto card p-7 lg:p-8">
+        <p class="text-lg text-navy/80 leading-relaxed"><strong class="text-ink">Kurz erklärt:</strong> Einen Palettenschein zu digitalisieren bedeutet, die Übergabe von Europaletten nicht mehr auf Papier, sondern digital zu erfassen – mit den Mengen <em>abgeliefert</em> und <em>abgeholt</em>, digitaler Unterschrift von Fahrer und Empfänger (rechtssicher in Textform nach §126b BGB) und optionalem Foto-Beleg. Der fertige Schein wird als fälschungssicheres PDF mit QR-Prüfsumme gespeichert und ist jederzeit auffindbar.</p>
       </div>
+    </section>
 
-      <div class="mt-16 p-6 bg-white rounded-2xl border border-navy/10">
-        <p class="text-sm text-navy/60">
-          Bei Fragen zu diesen AGB erreichst du uns unter <a href="mailto:info@palletto.de" class="text-orange font-semibold hover:underline">info@palletto.de</a>. Wir nehmen uns gerne Zeit, deine Fragen persönlich zu klären.
-        </p>
+    <!-- PROBLEM -->
+    <section class="px-6 py-14 lg:py-20 bg-white border-y border-line">
+      <div class="max-w-6xl mx-auto">
+        <div class="max-w-2xl mb-10">
+          <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Warum überhaupt</span></div>
+          <h2 class="font-display text-3xl lg:text-4xl font-bold tracking-tight mb-3">Warum Papier-Palettenscheine teuer sind</h2>
+          <p class="text-navy/60 text-lg">Der Durchschlag auf Papier kostet mehr, als die meisten Speditionen denken.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="card p-6"><div class="w-11 h-11 rounded-xl bg-orange/10 flex items-center justify-center mb-4 text-xl">📄</div><h3 class="font-display text-lg font-bold mb-2">Verlorene Belege</h3><p class="text-sm text-navy/65 leading-relaxed">Zettel verschwinden im LKW, im Lager oder in der Buchhaltung – und mit ihnen der Nachweis.</p></div>
+          <div class="card p-6"><div class="w-11 h-11 rounded-xl bg-orange/10 flex items-center justify-center mb-4 text-xl">📊</div><h3 class="font-display text-lg font-bold mb-2">Excel-Chaos</h3><p class="text-sm text-navy/65 leading-relaxed">Salden werden per Hand in Tabellen gepflegt – fehleranfällig und nie wirklich aktuell.</p></div>
+          <div class="card p-6"><div class="w-11 h-11 rounded-xl bg-orange/10 flex items-center justify-center mb-4 text-xl">⚖️</div><h3 class="font-display text-lg font-bold mb-2">Streit mit Kunden</h3><p class="text-sm text-navy/65 leading-relaxed">Ohne lesbaren, unterschriebenen Beleg steht Aussage gegen Aussage.</p></div>
+          <div class="card p-6"><div class="w-11 h-11 rounded-xl bg-orange/10 flex items-center justify-center mb-4 text-xl">⏰</div><h3 class="font-display text-lg font-bold mb-2">Stunden Bürokratie</h3><p class="text-sm text-navy/65 leading-relaxed">Abtippen, sortieren, suchen – Zeit, die für das eigentliche Geschäft fehlt.</p></div>
+        </div>
       </div>
+    </section>
 
-    </div>
+    <!-- SO GEHT'S -->
+    <section id="so-gehts" class="px-6 py-14 lg:py-20 overflow-hidden">
+      <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
+          <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">In 3 Schritten</span></div>
+          <h2 class="font-display text-3xl lg:text-4xl font-bold tracking-tight mb-8">So digitalisierst du deine Palettenscheine</h2>
+          <ul class="space-y-6">
+            <li class="flex items-start gap-4"><div class="w-9 h-9 rounded-xl bg-orange/10 flex items-center justify-center shrink-0 font-display font-bold text-orange">1</div><div><div class="font-display font-bold text-lg mb-1">Mengen erfassen</div><p class="text-navy/65 leading-relaxed">Abgeliefert und abgeholt eintippen – die Differenz rechnet Palletto automatisch aus.</p></div></li>
+            <li class="flex items-start gap-4"><div class="w-9 h-9 rounded-xl bg-orange/10 flex items-center justify-center shrink-0 font-display font-bold text-orange">2</div><div><div class="font-display font-bold text-lg mb-1">Unterschreiben lassen</div><p class="text-navy/65 leading-relaxed">Fahrer und Empfänger unterschreiben direkt am Handy – rechtssicher nach §126b BGB.</p></div></li>
+            <li class="flex items-start gap-4"><div class="w-9 h-9 rounded-xl bg-orange/10 flex items-center justify-center shrink-0 font-display font-bold text-orange">3</div><div><div class="font-display font-bold text-lg mb-1">Fälschungssicher speichern</div><p class="text-navy/65 leading-relaxed">Der Schein wird als PDF mit QR-Prüfsumme gespeichert – auffindbar in Sekunden, mit optionalem Foto-Beleg.</p></div></li>
+          </ul>
+        </div>
+        <div class="relative flex items-end justify-center">
+          <div class="glow-mint absolute -inset-4 -z-10 rounded-[2rem]"></div>
+          <img src="/assets/img/app-schein-pdf.webp" alt="Digitalisierter Palettenschein als rechtssicheres PDF mit Unterschriften und QR-Prüfsumme" width="780" height="1113" loading="lazy" decoding="async" class="w-[260px] lg:w-[320px] rounded-xl border border-line shadow-2xl bg-white">
+          <img src="/assets/img/app-unterschrift-fahrer.webp" alt="Digitale Unterschrift am Handy" width="560" height="1136" loading="lazy" decoding="async" class="hidden sm:block absolute -right-2 lg:-right-8 -bottom-4 w-[120px] lg:w-[150px] drop-shadow-2xl">
+        </div>
+      </div>
+    </section>
+
+    <!-- RECHTSSICHER -->
+    <section class="px-6 py-14 lg:py-20 bg-ink text-white overflow-hidden">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="eyebrow mb-5 mx-auto"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Rechtssicher</span></div>
+        <h2 class="font-display text-3xl lg:text-4xl font-bold tracking-tight mb-5">Beweisgeeignet nach <span class="text-orange">§126b BGB</span></h2>
+        <p class="text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">Die digitale Unterschrift erfüllt die Textform nach §126b BGB. Jeder Schein wird mit Zeitstempel, Geräteinfo und einer SHA-256-Prüfsumme gespeichert. Über den QR-Code lässt sich die Echtheit jederzeit online prüfen – eine nachträgliche Änderung fliegt sofort auf. Eine qualifizierte elektronische Signatur ist für Palettenscheine nicht erforderlich.</p>
+      </div>
+    </section>
+
+    <!-- VORTEILE -->
+    <section class="px-6 py-14 lg:py-20">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="font-display text-3xl lg:text-4xl font-bold tracking-tight mb-10 text-center">Vorteile auf einen Blick</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="card p-6"><div class="text-2xl mb-3">⚡</div><h3 class="font-display text-lg font-bold mb-1.5">Unter 30 Sekunden</h3><p class="text-sm text-navy/65 leading-relaxed">Schneller als jeder Papierbeleg – ohne Abtippen.</p></div>
+          <div class="card p-6"><div class="text-2xl mb-3">🔒</div><h3 class="font-display text-lg font-bold mb-1.5">Nichts geht verloren</h3><p class="text-sm text-navy/65 leading-relaxed">Jeder Schein ist digital gespeichert und in Sekunden auffindbar.</p></div>
+          <div class="card p-6"><div class="text-2xl mb-3">✍️</div><h3 class="font-display text-lg font-bold mb-1.5">Rechtssichere Unterschrift</h3><p class="text-sm text-navy/65 leading-relaxed">Fahrer und Empfänger, in Textform nach §126b BGB.</p></div>
+          <div class="card p-6"><div class="text-2xl mb-3">📶</div><h3 class="font-display text-lg font-bold mb-1.5">Offline nutzbar</h3><p class="text-sm text-navy/65 leading-relaxed">Funktioniert auch ohne Netz auf dem Hof, Sync automatisch.</p></div>
+          <div class="card p-6"><div class="text-2xl mb-3">📷</div><h3 class="font-display text-lg font-bold mb-1.5">Foto-Beleg</h3><p class="text-sm text-navy/65 leading-relaxed">Defekte Paletten direkt fotografieren und dokumentieren.</p></div>
+          <div class="card p-6"><div class="text-2xl mb-3">🇪🇺</div><h3 class="font-display text-lg font-bold mb-1.5">DSGVO-konform</h3><p class="text-sm text-navy/65 leading-relaxed">EU-Server in Frankfurt, verschlüsselt, mit AVV.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERNE VERLINKUNG -->
+    <section class="px-6 py-14 lg:py-20 bg-white border-y border-line">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="font-display text-2xl lg:text-3xl font-bold tracking-tight mb-8">Passt dazu</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <a href="/palettenkonto-software.html" class="card p-6 block"><h3 class="font-display text-lg font-bold mb-1.5">Palettenkonto-Software →</h3><p class="text-sm text-navy/65">Salden je Kunde automatisch führen.</p></a>
+          <a href="/palettentausch-app.html" class="card p-6 block"><h3 class="font-display text-lg font-bold mb-1.5">Palettentausch-App →</h3><p class="text-sm text-navy/65">Erfassung mit Unterschrift, offline nutzbar.</p></a>
+          <a href="/luecken-erkennung.html" class="card p-6 block"><h3 class="font-display text-lg font-bold mb-1.5">Lücken-Erkennung →</h3><p class="text-sm text-navy/65">Vergessene Paletten automatisch erkennen.</p></a>
+          <a href="/echtheitspruefung-qr-code.html" class="card p-6 block"><h3 class="font-display text-lg font-bold mb-1.5">QR-Echtheitsprüfung →</h3><p class="text-sm text-navy/65">Fälschungssichere Scheine mit Prüfsumme.</p></a>
+          <a href="/blog/was-ist-ein-palettenschein/" class="card p-6 block"><h3 class="font-display text-lg font-bold mb-1.5">Was ist ein Palettenschein? →</h3><p class="text-sm text-navy/65">Grundlagen & was auf den Beleg gehört.</p></a>
+          <a href="/blog/digitaler-palettenschein/" class="card p-6 block"><h3 class="font-display text-lg font-bold mb-1.5">Digitaler Palettenschein →</h3><p class="text-sm text-navy/65">Ratgeber zur digitalen Umstellung.</p></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="px-6 py-14 lg:py-20">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-display text-3xl lg:text-4xl font-bold tracking-tight mb-8 text-center">Häufige Fragen</h2>
+        <div class="space-y-3">
+          <details class="acc card p-5"><summary class="flex items-center justify-between font-display font-bold text-lg">Ist ein digitaler Palettenschein rechtsgültig?<svg class="acc-arrow w-5 h-5 text-orange shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 9l6 6 6-6"/></svg></summary><p class="text-navy/70 leading-relaxed mt-3">Ja. Mit Unterschrift von Fahrer und Empfänger erfüllt er die Textform nach §126b BGB, wird mit Zeitstempel und Prüfsumme gespeichert und ist im Streitfall beweisgeeignet. Eine qualifizierte elektronische Signatur ist nicht vorgeschrieben.</p></details>
+          <details class="acc card p-5"><summary class="flex items-center justify-between font-display font-bold text-lg">Brauche ich extra Hardware?<svg class="acc-arrow w-5 h-5 text-orange shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 9l6 6 6-6"/></svg></summary><p class="text-navy/70 leading-relaxed mt-3">Nein, ein normales Smartphone genügt. Die Fahrer-App läuft im Browser, funktioniert offline und braucht keine Installation.</p></details>
+          <details class="acc card p-5"><summary class="flex items-center justify-between font-display font-bold text-lg">Kann ich alte Papierscheine nachträglich digitalisieren?<svg class="acc-arrow w-5 h-5 text-orange shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 9l6 6 6-6"/></svg></summary><p class="text-navy/70 leading-relaxed mt-3">Ja. Über die Nacherfassung lädst du ein Foto oder einen Scan des unterschriebenen Zettels hoch und schließt so die Lücke – der Beleg bleibt dauerhaft gespeichert.</p></details>
+          <details class="acc card p-5"><summary class="flex items-center justify-between font-display font-bold text-lg">Wo werden die Daten gespeichert?<svg class="acc-arrow w-5 h-5 text-orange shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 9l6 6 6-6"/></svg></summary><p class="text-navy/70 leading-relaxed mt-3">Ausschließlich auf EU-Servern in Frankfurt, verschlüsselt und mit Auftragsverarbeitungsvertrag (AVV). DSGVO-konform.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="px-6 py-14 lg:py-20">
+      <div class="max-w-6xl mx-auto relative overflow-hidden rounded-[2.5rem] bg-ink text-white px-8 py-14 lg:px-16 lg:py-16 text-center">
+        <div class="absolute inset-0 -z-0" style="background:radial-gradient(50% 80% at 15% 0%, rgba(93,214,178,.22), transparent 60%), radial-gradient(50% 90% at 90% 100%, rgba(255,149,0,.28), transparent 60%);"></div>
+        <div class="relative max-w-xl mx-auto">
+          <h2 class="font-display text-3xl lg:text-4xl font-bold tracking-tight mb-4">Palettenscheine ab heute digital.</h2>
+          <p class="text-lg text-white/65 leading-relaxed mb-8">30 Tage kostenlos, keine Kreditkarte. Account in 24 Stunden eingerichtet.</p>
+          <a href="/#anmelden" class="btn-primary"><span class="swap"><span>30 Tage kostenlos testen</span><span>Los geht's</span></span><span class="ico"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span></a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <div id="site-footer"></div>
 
   <script>
     Promise.all([
-      fetch('/_header.html').then(r => r.text()),
-      fetch('/_footer.html').then(r => r.text())
-    ]).then(([h, f]) => {
-      document.getElementById('site-header').innerHTML = h;
-      document.getElementById('site-footer').innerHTML = f;
-      
-      const btn = document.getElementById('mobile-menu-btn');
-      const menu = document.getElementById('mobile-menu');
-      if (btn && menu) {
-        btn.addEventListener('click', () => {
-          btn.classList.toggle('open');
-          menu.classList.toggle('open');
-        });
-        document.querySelectorAll('.mobile-nav-link').forEach(link => {
-          link.addEventListener('click', () => {
-            btn.classList.remove('open');
-            menu.classList.remove('open');
-          });
-        });
-        document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape') {
-            btn.classList.remove('open');
-            menu.classList.remove('open');
-          }
-        });
-      }
-    });
+      fetch('/_header.html').then(function(r){return r.text();}),
+      fetch('/_footer.html').then(function(r){return r.text();})
+    ]).then(function(p){
+      document.getElementById('site-header').innerHTML = p[0];
+      document.getElementById('site-footer').innerHTML = p[1];
+    }).catch(function(){});
   </script>
 </body>
 </html>
