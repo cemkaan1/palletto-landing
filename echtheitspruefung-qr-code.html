@@ -1,264 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Echtheitsprüfung per QR-Code (SHA-256) für Palettenscheine | Palletto</title>
-  <meta name="description" content="Jeder Palettenschein aus Palletto trägt eine SHA-256-Prüfsumme im QR-Code. Scannen und sehen: echt oder manipuliert. Mit Beispiel und FAQ, ohne App.">
-  <meta name="keywords" content="Echtheitsprüfung Palettenschein, QR-Code Prüfsumme, SHA-256 Palettenschein, fälschungssicherer Lieferschein">
-  <meta name="author" content="Palletto">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <meta name="googlebot" content="index, follow">
-  <meta name="language" content="German">
-  <meta name="geo.region" content="DE-HH">
-  <meta name="geo.placename" content="Hamburg">
-
+  <meta name="description" content="Jeder digitale Palettenschein trägt einen QR-Code mit SHA-256-Prüfsumme. Einmal scannen zeigt: echt, unverändert, aus Palletto. Fälschungen fliegen sofort auf.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0F1B2D">
   <link rel="canonical" href="https://palletto.de/echtheitspruefung-qr-code.html">
-  <link rel="alternate" hreflang="de" href="https://palletto.de/echtheitspruefung-qr-code.html">
-  <link rel="alternate" hreflang="x-default" href="https://palletto.de/echtheitspruefung-qr-code.html">
-
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Palletto">
-  <meta property="og:locale" content="de_DE">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="QR-Echtheitsprüfung">
+  <meta property="og:description" content="Jeder digitale Palettenschein trägt einen QR-Code mit SHA-256-Prüfsumme. Einmal scannen zeigt: echt, unverändert, aus Palletto. Fälschungen fliegen sofort auf.">
   <meta property="og:url" content="https://palletto.de/echtheitspruefung-qr-code.html">
-  <meta property="og:title" content="Echtheitsprüfung per QR-Code – fälschungssichere Palettenscheine">
-  <meta property="og:description" content="Jeder Palettenschein aus Palletto trägt eine SHA-256-Prüfsumme im QR-Code. Scannen und sehen: echt oder manipuliert. Mit Beispiel und FAQ, ohne App.">
   <meta property="og:image" content="https://palletto.de/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Echtheitsprüfung per QR-Code – fälschungssichere Palettenscheine">
-  <meta name="twitter:description" content="Jeder Palettenschein aus Palletto trägt eine SHA-256-Prüfsumme im QR-Code. Scannen und sehen: echt oder manipuliert. Mit Beispiel und FAQ, ohne App.">
-  <meta name="twitter:image" content="https://palletto.de/og-image.png">
-
-  <meta name="theme-color" content="#1B3A6B">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <link rel="preconnect" href="https://cdn.tailwindcss.com">
-  <link rel="preload" href="fonts/inter-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/inter-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/inter-v20-latin-800.woff2" as="font" type="font/woff2" crossorigin>
-
+  <link rel="stylesheet" href="/assets/palletto.css?v=3">
+  <link rel="preload" href="/assets/fonts/jakarta-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/space-grotesk-700.woff2" as="font" type="font/woff2" crossorigin>
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Start",
-          "item": "https://palletto.de/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Echtheitsprüfung (QR-Code)",
-          "item": "https://palletto.de/echtheitspruefung-qr-code.html"
-        }
-      ]
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://palletto.de/echtheitspruefung-qr-code.html#webpage",
-      "url": "https://palletto.de/echtheitspruefung-qr-code.html",
-      "name": "Echtheitsprüfung per QR-Code (SHA-256) für Palettenscheine | Palletto",
-      "description": "Jeder Palettenschein aus Palletto trägt eine SHA-256-Prüfsumme im QR-Code. Scannen und sehen: echt oder manipuliert. Mit Beispiel und FAQ, ohne App.",
-      "inLanguage": "de-DE",
-      "isPartOf": {
-        "@type": "WebSite",
-        "url": "https://palletto.de/",
-        "name": "Palletto"
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Wie funktioniert die Echtheitsprüfung?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Jedes Palletto-PDF trägt einen QR-Code mit einer eindeutigen Prüfsumme (SHA-256). Wer den Code scannt, landet auf einer Prüfseite, die bestätigt: Dieser Schein ist echt, unverändert und stammt aus Palletto."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Was passiert, wenn ein Schein nachträglich geändert wird?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Dann stimmt die Prüfsumme nicht mehr mit dem Dokument überein. Die Prüfung schlägt fehl und die Manipulation fällt sofort auf. Schon eine geänderte Zahl reicht, damit der Abgleich nicht mehr passt."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Was ist eine Prüfsumme?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Eine Prüfsumme ist ein kurzer, eindeutiger Fingerabdruck eines Dokuments. Ändert sich am Inhalt etwas, ändert sich der Fingerabdruck komplett. So lässt sich zuverlässig feststellen, ob ein Dokument seit seiner Erstellung verändert wurde."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Brauche ich eine App zum Scannen?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Nein. Der QR-Code lässt sich mit der normalen Kamera jedes Handys scannen. Die Prüfung läuft danach online im Browser, ohne Installation."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Kann ich alte Scheine nachträglich prüfen?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ja. Solange das PDF vorliegt, prüft der QR-Code jederzeit gegen den gespeicherten Fingerabdruck – auch Wochen oder Monate später."
-          }
-        }
-      ]
-    }
-  ]
-}
+  { "@context": "https://schema.org", "@graph": [
+    { "@type": "WebPage", "@id": "https://palletto.de/echtheitspruefung-qr-code.html", "name": "QR-Echtheitsprüfung", "inLanguage": "de-DE", "description": "Jeder digitale Palettenschein trägt einen QR-Code mit SHA-256-Prüfsumme. Einmal scannen zeigt: echt, unverändert, aus Palletto. Fälschungen fliegen sofort auf.", "isPartOf": { "@type": "WebSite", "name": "Palletto", "url": "https://palletto.de/" } },
+    { "@type": "BreadcrumbList", "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://palletto.de/" },
+      { "@type": "ListItem", "position": 2, "name": "QR-Echtheitsprüfung", "item": "https://palletto.de/echtheitspruefung-qr-code.html" } ]},
+    { "@type": "FAQPage", "mainEntity": [{ "@type": "Question", "name": "Wie prüfe ich die Echtheit?", "acceptedAnswer": { "@type": "Answer", "text": "QR-Code auf dem PDF scannen – die Verify-Seite zeigt sofort, ob das Dokument echt und unverändert ist." } },{ "@type": "Question", "name": "Was passiert bei einer Änderung?", "acceptedAnswer": { "@type": "Answer", "text": "Jede Änderung am Schein verändert die SHA-256-Prüfsumme. Der QR-Code passt dann nicht mehr – die Fälschung fällt auf." } },{ "@type": "Question", "name": "Brauche ich dafür eine App?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Der QR-Code lässt sich mit jedem Smartphone scannen, die Prüfung läuft im Browser." } }]} ]}
   </script>
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = { theme: { extend: {
-      colors: { navy:'#1B3A6B','navy-dark':'#142b50', orange:'#FF9500','orange-dark':'#e88500', warm:'#FAFAF7' },
-      fontFamily: { sans:['Inter','system-ui','sans-serif'] },
-    }}};
-  </script>
-
-  <style>
-    @font-face { font-family:'Inter'; font-style:normal; font-weight:400; font-display:swap; src:url('fonts/inter-v20-latin-regular.woff2') format('woff2'); }
-    @font-face { font-family:'Inter'; font-style:normal; font-weight:500; font-display:swap; src:url('fonts/inter-v20-latin-500.woff2') format('woff2'); }
-    @font-face { font-family:'Inter'; font-style:normal; font-weight:600; font-display:swap; src:url('fonts/inter-v20-latin-600.woff2') format('woff2'); }
-    @font-face { font-family:'Inter'; font-style:normal; font-weight:700; font-display:swap; src:url('fonts/inter-v20-latin-700.woff2') format('woff2'); }
-    @font-face { font-family:'Inter'; font-style:normal; font-weight:800; font-display:swap; src:url('fonts/inter-v20-latin-800.woff2') format('woff2'); }
-    html { scroll-behavior:smooth; }
-    body { font-feature-settings:'cv11','ss01'; }
-    .fade-in { animation: fadeIn .8s ease-out forwards; opacity:0; }
-    .fade-in-delay-1 { animation: fadeIn .8s ease-out .15s forwards; opacity:0; }
-    .fade-in-delay-2 { animation: fadeIn .8s ease-out .3s forwards; opacity:0; }
-    @keyframes fadeIn { from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:translateY(0);} }
-    @media (prefers-reduced-motion: reduce){ .fade-in,.fade-in-delay-1,.fade-in-delay-2{animation:none;opacity:1;} html{scroll-behavior:auto;} }
-  </style>
 </head>
-<body class="bg-warm text-navy font-sans antialiased">
-
+<body class="bg-sand text-ink font-sans antialiased">
   <div id="site-header"></div>
-
-  <section class="pt-32 pb-14 lg:pt-40 lg:pb-20 px-6 lg:px-8">
-    <div class="max-w-4xl mx-auto">
-      <nav class="text-sm text-navy/50 mb-6 fade-in"><a href="/" class="hover:text-orange transition-colors">Start</a> <span class="mx-2">/</span> <span class="text-navy/70">Echtheitsprüfung QR-Code</span></nav>
-      <div class="inline-flex items-center gap-2 bg-orange/10 text-orange-dark px-4 py-2 rounded-full text-sm font-semibold mb-6 fade-in">🔒 Fälschungssicher</div>
-      <h1 class="text-4xl lg:text-6xl font-extrabold leading-[1.06] tracking-tight mb-6 fade-in-delay-1">Echtheitsprüfung per QR-Code</h1>
-      <p class="text-lg lg:text-xl text-navy/70 leading-relaxed mb-8 max-w-2xl fade-in-delay-2">Jeder Palettenschein aus Palletto trägt eine kryptografische Prüfsumme. Einmal scannen, und jeder sieht sofort: echt und unverändert – oder nachträglich manipuliert.</p>
-      <a href="/#anmelden" class="inline-flex items-center gap-2 bg-navy text-white px-6 py-4 rounded-xl text-base font-semibold hover:bg-navy-dark transition-all hover:scale-[1.02] fade-in-delay-2">30 Tage kostenlos testen
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
-    </div>
-  </section>
-  <section class="py-14 lg:py-20 px-6 lg:px-8 bg-white border-y border-navy/5">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Grundlage</div>
-      <h2 class="text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight mb-6">Wie die Echtheitsprüfung funktioniert</h2>
-      <div class="bg-white border-l-4 border-orange rounded-r-2xl p-6 mb-6 shadow-sm"><div class="text-xs font-bold uppercase tracking-wider text-orange mb-2">Kurz erklärt</div><p class="text-lg text-navy/80 leading-relaxed">Jeder Palettenschein aus Palletto trägt einen QR-Code mit einer kryptografischen Prüfsumme (SHA-256). Wer den Code scannt, landet auf einer Prüfseite, die bestätigt, ob das Dokument echt und unverändert ist. Weil die Prüfsumme auf jede noch so kleine Änderung reagiert, fällt eine nachträgliche Manipulation sofort auf. So lässt sich ein Palettenschein nicht fälschen oder heimlich abändern – der Beweis steckt im Dokument selbst.</p></div>
-    </div>
-  </section>
-  <section class="py-14 lg:py-20 px-6 lg:px-8 ">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Das Problem</div>
-      <h2 class="text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight mb-6">Gefälschte und geänderte Scheine</h2>
-      <p class="text-lg text-navy/70 leading-relaxed mb-4">Ein Papierschein lässt sich nachträglich ändern, und man sieht es ihm nicht an. Eine Zahl überschrieben, eine Unterschrift kopiert – im Streitfall steht Aussage gegen Aussage. Ohne fälschungssicheren Nachweis verlierst du solche Diskussionen.</p>
-    </div>
-  </section>
-  <section class="py-14 lg:py-20 px-6 lg:px-8 bg-white border-y border-navy/5">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">So funktioniert es</div>
-      <h2 class="text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight mb-6">Prüfsumme, QR-Code, Verify-Seite</h2>
-      <div class="flex items-start gap-4 mb-5"><div class="w-9 h-9 bg-orange text-white rounded-xl flex items-center justify-center font-extrabold shrink-0">1</div><div><div class="font-bold text-lg mb-1">Prüfsumme beim Erstellen</div><div class="text-navy/70 leading-relaxed">Beim Erzeugen des PDFs berechnet Palletto einen SHA-256-Fingerabdruck über den Inhalt des Scheins.</div></div></div><div class="flex items-start gap-4 mb-5"><div class="w-9 h-9 bg-orange text-white rounded-xl flex items-center justify-center font-extrabold shrink-0">2</div><div><div class="font-bold text-lg mb-1">QR-Code auf dem Dokument</div><div class="text-navy/70 leading-relaxed">Dieser Fingerabdruck steckt im QR-Code, der auf jedem PDF sitzt.</div></div></div><div class="flex items-start gap-4 mb-5"><div class="w-9 h-9 bg-orange text-white rounded-xl flex items-center justify-center font-extrabold shrink-0">3</div><div><div class="font-bold text-lg mb-1">Scannen</div><div class="text-navy/70 leading-relaxed">Empfänger, Kunde oder Prüfer scannt den Code mit der Handykamera – keine App nötig.</div></div></div><div class="flex items-start gap-4 mb-5"><div class="w-9 h-9 bg-orange text-white rounded-xl flex items-center justify-center font-extrabold shrink-0">4</div><div><div class="font-bold text-lg mb-1">Ergebnis in Sekunden</div><div class="text-navy/70 leading-relaxed">Die Prüfseite zeigt: Dokument unverändert, Original aus Palletto – oder eben nicht.</div></div></div>
-    </div>
-  </section>
-  <section class="py-14 lg:py-20 px-6 lg:px-8 ">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Hintergrund</div>
-      <h2 class="text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight mb-6">Was ist SHA-256?</h2>
-      <p class="text-lg text-navy/70 leading-relaxed mb-4">SHA-256 ist ein etabliertes Standardverfahren, das aus einem beliebig langen Inhalt einen kurzen, eindeutigen Fingerabdruck berechnet. Ändert sich am Inhalt auch nur ein Zeichen, ändert sich der komplette Fingerabdruck. Genau deshalb lässt sich damit zuverlässig feststellen, ob ein Dokument seit seiner Erstellung verändert wurde – dieselbe Technik sichert auch Bank- und Behördendokumente.</p>
-    </div>
-  </section>
-  <section class="py-14 lg:py-20 px-6 lg:px-8 bg-white border-y border-navy/5">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">Beispiel</div>
-      <h2 class="text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight mb-6">Der geänderte Schein im Streitfall</h2>
-      <p class="text-lg text-navy/70 leading-relaxed mb-4">Ein Kunde legt einen Palettenschein vor, auf dem statt 8 nun 18 zurückgegebene Paletten stehen. Du scannst den QR-Code: Die Prüfung schlägt fehl, weil die Zahl geändert wurde und die Prüfsumme nicht mehr passt. Dein Original dagegen wird beim Scannen als echt und unverändert bestätigt – die Diskussion ist entschieden.</p>
-    </div>
-  </section>
-  <section class="py-14 lg:py-20 px-6 lg:px-8 bg-white border-y border-navy/5">
-    <div class="max-w-3xl mx-auto">
-      <div class="text-sm font-semibold text-orange uppercase tracking-wider mb-3">FAQ</div>
-      <h2 class="text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight mb-8">Häufige Fragen</h2>
-      <div class="space-y-4">
-        <details class="bg-white rounded-2xl border border-navy/10 group">
-          <summary class="cursor-pointer p-6 font-semibold text-lg flex items-center justify-between list-none">Wie funktioniert die Echtheitsprüfung?<svg class="w-5 h-5 text-orange transition-transform group-open:rotate-180 shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
-          <div class="px-6 pb-6 text-navy/70 leading-relaxed">Jedes Palletto-PDF trägt einen QR-Code mit einer eindeutigen Prüfsumme (SHA-256). Wer den Code scannt, landet auf einer Prüfseite, die bestätigt: Dieser Schein ist echt, unverändert und stammt aus Palletto.</div>
-        </details>
-        <details class="bg-white rounded-2xl border border-navy/10 group">
-          <summary class="cursor-pointer p-6 font-semibold text-lg flex items-center justify-between list-none">Was passiert, wenn ein Schein nachträglich geändert wird?<svg class="w-5 h-5 text-orange transition-transform group-open:rotate-180 shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
-          <div class="px-6 pb-6 text-navy/70 leading-relaxed">Dann stimmt die Prüfsumme nicht mehr mit dem Dokument überein. Die Prüfung schlägt fehl und die Manipulation fällt sofort auf. Schon eine geänderte Zahl reicht, damit der Abgleich nicht mehr passt.</div>
-        </details>
-        <details class="bg-white rounded-2xl border border-navy/10 group">
-          <summary class="cursor-pointer p-6 font-semibold text-lg flex items-center justify-between list-none">Was ist eine Prüfsumme?<svg class="w-5 h-5 text-orange transition-transform group-open:rotate-180 shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
-          <div class="px-6 pb-6 text-navy/70 leading-relaxed">Eine Prüfsumme ist ein kurzer, eindeutiger Fingerabdruck eines Dokuments. Ändert sich am Inhalt etwas, ändert sich der Fingerabdruck komplett. So lässt sich zuverlässig feststellen, ob ein Dokument seit seiner Erstellung verändert wurde.</div>
-        </details>
-        <details class="bg-white rounded-2xl border border-navy/10 group">
-          <summary class="cursor-pointer p-6 font-semibold text-lg flex items-center justify-between list-none">Brauche ich eine App zum Scannen?<svg class="w-5 h-5 text-orange transition-transform group-open:rotate-180 shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
-          <div class="px-6 pb-6 text-navy/70 leading-relaxed">Nein. Der QR-Code lässt sich mit der normalen Kamera jedes Handys scannen. Die Prüfung läuft danach online im Browser, ohne Installation.</div>
-        </details>
-        <details class="bg-white rounded-2xl border border-navy/10 group">
-          <summary class="cursor-pointer p-6 font-semibold text-lg flex items-center justify-between list-none">Kann ich alte Scheine nachträglich prüfen?<svg class="w-5 h-5 text-orange transition-transform group-open:rotate-180 shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
-          <div class="px-6 pb-6 text-navy/70 leading-relaxed">Ja. Solange das PDF vorliegt, prüft der QR-Code jederzeit gegen den gespeicherten Fingerabdruck – auch Wochen oder Monate später.</div>
-        </details>
+  <main>
+    <section class="relative px-6 pt-10 lg:pt-16 pb-4 overflow-hidden">
+      <div class="pointer-events-none absolute inset-x-0 top-0 h-[560px] -z-10" style="background:radial-gradient(60% 55% at 15% 0%, rgba(93,214,178,.24), transparent 60%), radial-gradient(55% 55% at 88% 5%, rgba(255,149,0,.18), transparent 55%);"></div>
+      <div class="max-w-4xl mx-auto">
+        <nav aria-label="Breadcrumb" class="text-sm text-navy/50 mb-6"><a href="/" class="hover:text-orange">Start</a> <span class="mx-1.5">›</span> <span class="text-navy/70">QR-Echtheitsprüfung</span></nav>
+        <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">QR-Echtheitsprüfung</span></div>
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight mb-6">Echtheitsprüfung per <span class="text-orange">QR-Code</span></h1>
+        <p class="text-lg lg:text-xl text-navy/70 leading-relaxed max-w-2xl mb-6">Jeder Schein trägt einen QR-Code mit Prüfsumme. Einmal scannen, und jeder sieht: echt, unverändert, aus Palletto. Fälschungen fliegen sofort auf.</p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="/#anmelden" class="btn-primary"><span class="swap"><span>30 Tage kostenlos testen</span><span>Ohne Kreditkarte</span></span><span class="ico"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span></a>
+          <a href="/palettenschein-digitalisieren.html" class="btn-ghost">Palettenschein digitalisieren</a>
+        </div>
       </div>
-    </div>
-  </section>
-  <section class="py-14 lg:py-24 px-6 lg:px-8">
-    <div class="max-w-4xl mx-auto bg-navy text-white rounded-3xl p-8 lg:p-12 text-center relative overflow-hidden">
-      <div class="absolute top-0 right-0 w-64 h-64 bg-orange/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-      <div class="relative">
-        <h2 class="text-3xl lg:text-4xl font-extrabold mb-4">Teste Palletto 30 Tage kostenlos</h2>
-        <p class="text-white/70 text-lg mb-8 max-w-xl mx-auto">Keine Kreditkarte. Account innerhalb von 24 Stunden eingerichtet. Made in Germany, EU-Server.</p>
-        <a href="/#anmelden" class="inline-flex items-center gap-2 bg-orange text-white px-8 py-4 rounded-xl text-base font-bold hover:bg-orange-dark transition-colors">Jetzt kostenlos starten
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
-      </div>
-    </div>
-  </section>
-
-
+    </section>
+    <section class="px-6 py-8"><div class="max-w-4xl mx-auto card p-7 lg:p-8"><p class="text-lg text-navy/80 leading-relaxed"><strong class="text-ink">Kurz erklärt:</strong> Bei der <em>Echtheitsprüfung per QR-Code</em> bekommt jeder Palettenschein eine eindeutige Prüfsumme (SHA-256), die als QR-Code auf dem PDF steht. Wer den Code scannt, landet auf einer Verify-Seite, die bestätigt: Das Dokument ist echt und wurde nicht verändert. Jede nachträgliche Änderung ändert die Prüfsumme – und fällt sofort auf.</p></div></section>
+    <section class="px-6 py-14 lg:py-20 overflow-hidden bg-white border-y border-line"><div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center"><div><div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Fälschungssicher</span></div><h2 class="font-display text-3xl lg:text-4xl font-bold tracking-tight mb-6">So funktioniert die Prüfung</h2><ul class="space-y-3 text-navy/80"><li class="flex items-start gap-3"><span class="text-orange mt-0.5">✓</span> <span><strong>QR-Code scannen</strong> – mit jedem Handy, ohne App</span></li><li class="flex items-start gap-3"><span class="text-orange mt-0.5">✓</span> <span><strong>Verify-Seite</strong> bestätigt Echtheit in Sekunden</span></li><li class="flex items-start gap-3"><span class="text-orange mt-0.5">✓</span> <span><strong>Nachträglich geändert?</strong> Prüfsumme stimmt nicht mehr</span></li></ul></div><div class="relative"><div class="glow-mint absolute -inset-4 -z-10 rounded-[2rem]"></div><img src="/assets/img/app-qr.webp" alt="QR-Code und SHA-256-Prüfsumme zur Echtheitsprüfung eines Palettenscheins" width="1800" height="1016" loading="lazy" decoding="async" class="w-full rounded-xl border border-line shadow-2xl mx-auto"></div></div></section><section class="px-6 py-14 lg:py-20 bg-ink text-white overflow-hidden"><div class="max-w-4xl mx-auto text-center"><div class="eyebrow mb-5 mx-auto"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Technik</span></div><h2 class="font-display text-3xl lg:text-4xl font-bold tracking-tight mb-5">Was ist SHA-256?</h2><p class="text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">SHA-256 ist ein kryptografisches Prüfverfahren: Aus dem Inhalt des Scheins wird eine eindeutige Zeichenfolge berechnet. Ändert sich auch nur ein Zeichen im Dokument, ergibt sich eine völlig andere Prüfsumme. Genau das macht Manipulation sichtbar – ohne dass man dem Aussteller vertrauen muss.</p></div></section>
+    <section class="px-6 py-14 lg:py-20 bg-white border-y border-line"><div class="max-w-6xl mx-auto"><h2 class="font-display text-2xl lg:text-3xl font-bold tracking-tight mb-8">Verwandte Themen</h2><div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"><a href="/palettenschein-digitalisieren.html" class="card p-6 block"><h3 class="font-display text-lg font-bold mb-1.5">Palettenschein digitalisieren →</h3><p class="text-sm text-navy/65">Der digitale Beleg im Detail.</p></a><a href="/palettentausch-app.html" class="card p-6 block"><h3 class="font-display text-lg font-bold mb-1.5">Palettentausch-App →</h3><p class="text-sm text-navy/65">Erfassung durch die Fahrer.</p></a><a href="/palettenkonto-software.html" class="card p-6 block"><h3 class="font-display text-lg font-bold mb-1.5">Palettenkonto-Software →</h3><p class="text-sm text-navy/65">Salden je Kunde automatisch.</p></a><a href="/luecken-erkennung.html" class="card p-6 block"><h3 class="font-display text-lg font-bold mb-1.5">Lücken-Erkennung →</h3><p class="text-sm text-navy/65">Vergessene Paletten finden.</p></a><a href="/palettenschein-vorlage.html" class="card p-6 block"><h3 class="font-display text-lg font-bold mb-1.5">Palettenschein-Vorlage →</h3><p class="text-sm text-navy/65">Was auf den Beleg gehört.</p></a><a href="/blog/digitaler-palettenschein/" class="card p-6 block"><h3 class="font-display text-lg font-bold mb-1.5">Digitaler Palettenschein →</h3><p class="text-sm text-navy/65">Warum digital sicherer ist.</p></a></div></div></section>
+    <section class="px-6 py-14 lg:py-20"><div class="max-w-3xl mx-auto"><h2 class="font-display text-3xl lg:text-4xl font-bold tracking-tight mb-8 text-center">Häufige Fragen</h2><div class="space-y-3"><details class="acc card p-5"><summary class="flex items-center justify-between font-display font-bold text-lg">Wie prüfe ich die Echtheit?<svg class="acc-arrow w-5 h-5 text-orange shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 9l6 6 6-6"/></svg></summary><p class="text-navy/70 leading-relaxed mt-3">QR-Code auf dem PDF scannen – die Verify-Seite zeigt sofort, ob das Dokument echt und unverändert ist.</p></details><details class="acc card p-5"><summary class="flex items-center justify-between font-display font-bold text-lg">Was passiert bei einer Änderung?<svg class="acc-arrow w-5 h-5 text-orange shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 9l6 6 6-6"/></svg></summary><p class="text-navy/70 leading-relaxed mt-3">Jede Änderung am Schein verändert die SHA-256-Prüfsumme. Der QR-Code passt dann nicht mehr – die Fälschung fällt auf.</p></details><details class="acc card p-5"><summary class="flex items-center justify-between font-display font-bold text-lg">Brauche ich dafür eine App?<svg class="acc-arrow w-5 h-5 text-orange shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 9l6 6 6-6"/></svg></summary><p class="text-navy/70 leading-relaxed mt-3">Nein. Der QR-Code lässt sich mit jedem Smartphone scannen, die Prüfung läuft im Browser.</p></details></div></div></section>
+    <section class="px-6 py-14 lg:py-20"><div class="max-w-6xl mx-auto relative overflow-hidden rounded-[2.5rem] bg-ink text-white px-8 py-14 lg:px-16 lg:py-16 text-center"><div class="absolute inset-0 -z-0" style="background:radial-gradient(50% 80% at 15% 0%, rgba(93,214,178,.22), transparent 60%), radial-gradient(50% 90% at 90% 100%, rgba(255,149,0,.28), transparent 60%);"></div><div class="relative max-w-xl mx-auto"><h2 class="font-display text-3xl lg:text-4xl font-bold tracking-tight mb-4">Belege, die keiner fälscht.</h2><p class="text-lg text-white/65 leading-relaxed mb-8">30 Tage kostenlos, keine Kreditkarte. Jeder Schein fälschungssicher.</p><a href="/#anmelden" class="btn-primary"><span class="swap"><span>30 Tage kostenlos testen</span><span>Los geht's</span></span><span class="ico"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span></a></div></div></section>
+  </main>
   <div id="site-footer"></div>
-
-  <script>
-    Promise.all([
-      fetch('/_header.html').then(r=>r.text()),
-      fetch('/_footer.html').then(r=>r.text())
-    ]).then(([h,f])=>{
-      document.getElementById('site-header').innerHTML=h;
-      document.getElementById('site-footer').innerHTML=f;
-      const btn=document.getElementById('mobile-menu-btn');
-      const menu=document.getElementById('mobile-menu');
-      if(btn&&menu){
-        btn.addEventListener('click',()=>{btn.classList.toggle('open');menu.classList.toggle('open');});
-        document.querySelectorAll('.mobile-nav-link').forEach(l=>l.addEventListener('click',()=>{btn.classList.remove('open');menu.classList.remove('open');}));
-        document.addEventListener('keydown',e=>{if(e.key==='Escape'){btn.classList.remove('open');menu.classList.remove('open');}});
-      }
-    });
-  </script>
+  <script>Promise.all([fetch('/_header.html').then(function(r){return r.text();}),fetch('/_footer.html').then(function(r){return r.text();})]).then(function(p){document.getElementById('site-header').innerHTML=p[0];document.getElementById('site-footer').innerHTML=p[1];}).catch(function(){});</script>
 </body>
 </html>
