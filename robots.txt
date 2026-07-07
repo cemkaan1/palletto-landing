@@ -1,56 +1,37 @@
-# robots.txt für Palletto
-# Crawl-Anweisungen für Suchmaschinen
-# https://palletto.de
-
+# palletto.de – robots.txt
 User-agent: *
 Allow: /
-
-# Block legal pages from indexing (sind eh schon noindex,nofollow markiert)
-Disallow: /impressum.html
-Disallow: /datenschutz.html
-Disallow: /agb.html
-Disallow: /avv.html
+Disallow: /demoindex.html
+Disallow: /indexkopie.html
+Disallow: /og-image.html
 Disallow: /danke.html
 
-# Block utility files
-Disallow: /og-image.html
-Disallow: /demoindex.html
-Disallow: /_header.html
-Disallow: /_footer.html
-
-# AI Crawlers - explicitly welcome (für AEO / AI Engine Optimization)
+# --- KI-/LLM-Crawler ausdrücklich erlaubt (Sichtbarkeit in ChatGPT, Perplexity, Google AI, Claude) ---
 User-agent: GPTBot
 Allow: /
-
+User-agent: OAI-SearchBot
+Allow: /
 User-agent: ChatGPT-User
 Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
 User-agent: PerplexityBot
 Allow: /
-
 User-agent: Perplexity-User
 Allow: /
-
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: anthropic-ai
+Allow: /
 User-agent: Google-Extended
 Allow: /
-
 User-agent: Applebot-Extended
 Allow: /
-
 User-agent: CCBot
 Allow: /
-
 User-agent: Bytespider
 Allow: /
+User-agent: Amazonbot
+Allow: /
 
-# Sitemap
 Sitemap: https://palletto.de/sitemap.xml
