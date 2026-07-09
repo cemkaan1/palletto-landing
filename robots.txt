@@ -1,9 +1,6 @@
 # palletto.de – robots.txt
 User-agent: *
 Allow: /
-Disallow: /demoindex.html
-Disallow: /indexkopie.html
-Disallow: /og-image.html
 Disallow: /danke.html
 
 # --- KI-/LLM-Crawler ausdrücklich erlaubt (Sichtbarkeit in ChatGPT, Perplexity, Google AI, Claude) ---

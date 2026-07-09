@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Danke für deine Anfrage – Palletto</title>
+  <meta name="theme-color" content="#0F1B2D">
+  <link rel="stylesheet" href="/assets/palletto.css?v=4">
+  <link rel="preload" href="/assets/fonts/jakarta-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/space-grotesk-700.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="description" content="Vielen Dank für deine Anfrage bei Palletto. Wir richten deinen Account innerhalb von 24 Stunden ein.">
   <!-- Diese Seite soll nicht in Google landen -->
   <meta name="robots" content="noindex, nofollow">
@@ -18,94 +22,17 @@
   <meta name="theme-color" content="#1B3A6B">
 
   <!-- Tailwind (gleiche Config wie Landing) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: '#1B3A6B',
-            'navy-dark': '#142b50',
-            orange: '#FF9500',
-            'orange-dark': '#e88500',
-            warm: '#FAFAF7',
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-          },
-        },
-      },
-    };
-  </script>
 
   <!-- Inter Font (lokal, wie auf der Landing) -->
-  <style>
-    @font-face {
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: url('fonts/inter-v20-latin-regular.woff2') format('woff2');
-    }
-    @font-face {
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 600;
-      font-display: swap;
-      src: url('fonts/inter-v20-latin-600.woff2') format('woff2');
-    }
-    @font-face {
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 700;
-      font-display: swap;
-      src: url('fonts/inter-v20-latin-700.woff2') format('woff2');
-    }
-    @font-face {
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 800;
-      font-display: swap;
-      src: url('fonts/inter-v20-latin-800.woff2') format('woff2');
-    }
-  </style>
-
-  <style>
-    body { font-feature-settings: 'cv11', 'ss01'; }
-    .fade-in { animation: fadeIn 0.7s ease-out forwards; opacity: 0; }
-    .fade-in-delay-1 { animation: fadeIn 0.7s ease-out 0.15s forwards; opacity: 0; }
-    .fade-in-delay-2 { animation: fadeIn 0.7s ease-out 0.3s forwards; opacity: 0; }
-    .fade-in-delay-3 { animation: fadeIn 0.7s ease-out 0.45s forwards; opacity: 0; }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    /* Häkchen-Animation */
-    .check-circle {
-      animation: pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s forwards;
-      transform: scale(0);
-    }
-    @keyframes pop {
-      to { transform: scale(1); }
-    }
-    .check-path {
-      stroke-dasharray: 50;
-      stroke-dashoffset: 50;
-      animation: draw 0.5s ease-out 0.6s forwards;
-    }
-    @keyframes draw {
-      to { stroke-dashoffset: 0; }
-    }
-  </style>
 </head>
-<body class="bg-warm text-navy font-sans antialiased min-h-screen flex flex-col">
+<body class="bg-sand text-ink font-sans antialiased">
 
   <!-- Schlichter Header -->
   <header class="px-6 lg:px-8 py-6">
     <div class="max-w-5xl mx-auto">
       <a href="/" class="inline-flex items-center" aria-label="Zur Startseite">
-        <img src="/pallettologo.png" alt="Palletto" class="h-8 w-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
-        <span class="text-2xl font-extrabold tracking-tight" style="display:none;">pall<span class="text-orange">e</span>tto</span>
+        <img src="/assets/img/logo.webp" alt="Palletto" width="525" height="140" class="h-8 w-auto">
+        
       </a>
     </div>
   </header>
