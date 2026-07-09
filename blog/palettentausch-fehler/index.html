@@ -17,7 +17,7 @@
 <meta property="og:locale" content="de_DE">
 <meta name="twitter:card" content="summary_large_image">
 
-<link rel="stylesheet" href="/blog/assets/blog.css">
+<link rel="stylesheet" href="/blog/assets/blog.css?v=2">
 
 <script type="application/ld+json">
 {
@@ -51,17 +51,7 @@
 </head>
 <body>
 
-<header class="site-header">
-  <div class="bar">
-    <a class="brand" href="/"><span class="dot"></span>Palletto</a>
-    <nav class="nav">
-      <a href="/">Startseite</a>
-      <a href="/blog/">Blog</a>
-      <a href="/#preise">Preise</a>
-      <a class="cta" href="/#preise">Kostenlos testen</a>
-    </nav>
-  </div>
-</header>
+<div id="site-header"></div>
 
 <main>
   <article>
@@ -137,19 +127,16 @@
   </article>
 </main>
 
-<footer class="site-footer">
-  <div class="inner">
-    <a class="brand" href="/"><span class="dot"></span>Palletto</a>
-    <div class="links">
-      <a href="/">Startseite</a>
-      <a href="/blog/">Blog</a>
-      <a href="/#preise">Preise</a>
-      <a href="/impressum.html">Impressum</a>
-      <a href="/datenschutz.html">Datenschutz</a>
-    </div>
-    <div class="copy">© 2026 Palletto · Digitale Palettenscheine für Transportunternehmen</div>
-  </div>
-</footer>
+<div id="site-footer"></div>
 
+<script>
+  Promise.all([
+    fetch('/_header.html').then(function(r){return r.text();}),
+    fetch('/_footer.html').then(function(r){return r.text();})
+  ]).then(function(p){
+    document.getElementById('site-header').innerHTML = p[0];
+    document.getElementById('site-footer').innerHTML = p[1];
+  }).catch(function(){});
+</script>
 </body>
 </html>
