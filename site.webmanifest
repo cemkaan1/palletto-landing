@@ -17,10 +17,14 @@
             "purpose": "maskable"
         }
     ],
-    "theme_color": "#1B3A6B",
-    "background_color": "#FAFAF7",
+    "theme_color": "#0F1B2D",
+    "background_color": "#0F1B2D",
     "display": "standalone",
     "start_url": "/",
     "scope": "/",
-    "categories": ["business", "productivity", "utilities"]
+    "categories": [
+        "business",
+        "productivity",
+        "utilities"
+    ]
 }
