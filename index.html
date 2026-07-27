@@ -467,7 +467,7 @@
               </select>
             </div>
             <div class="roi-fld"><div class="roi-lbl"><span>Paletten-Durchsatz pro Jahr</span><span class="roi-pill" id="roi-v-thru">200.000</span></div><input type="range" id="roi-thru" min="10000" max="1000000" step="10000" value="200000"></div>
-            <div class="roi-fld"><div class="roi-lbl"><span>Anzahl Geschäftspartner</span><span class="roi-pill" id="roi-v-part">80</span></div><input type="range" id="roi-part" min="5" max="1000" step="5" value="80"></div>
+            <div class="roi-fld"><div class="roi-lbl"><span>Std / Woche fürs Palettenmanagement</span><span class="roi-pill" id="roi-v-hpw">10</span></div><input type="range" id="roi-hpw" min="1" max="60" step="1" value="10"></div>
             <div class="roi-fld"><div class="roi-lbl"><span>Schwundquote</span><span class="roi-pill" id="roi-v-schwund">4 %</span></div><input type="range" id="roi-schwund" min="0" max="15" step="0.5" value="4"></div>
             <div class="roi-fld"><div class="roi-lbl"><span>Reparaturquote</span><span class="roi-pill" id="roi-v-rep">10 %</span></div><input type="range" id="roi-rep" min="0" max="30" step="1" value="10"></div>
             <div class="roi-fld"><div class="roi-lbl"><span>Preis je Palette (Nachkauf)</span><span class="roi-pill" id="roi-v-price">15 €</span></div><input type="range" id="roi-price" min="8" max="40" step="1" value="15"></div>
@@ -478,7 +478,7 @@
           <div>
             <div class="space-y-4">
               <div class="flex items-start justify-between gap-4 pb-4 border-b border-line">
-                <div><div class="font-semibold flex items-center gap-2"><span class="roi-dot" style="background:#5DD6B2"></span>Personalaufwand</div><div class="text-xs text-navy/55 mt-0.5 ml-5">Abstimmen, Buchen &amp; Nachfassen</div></div>
+                <div><div class="font-semibold flex items-center gap-2"><span class="roi-dot" style="background:#5DD6B2"></span>Personalaufwand</div><div class="text-xs text-navy/55 mt-0.5 ml-5">Abstimmen, Buchen &amp; Nachfassen · <span id="roi-hours">520</span> Std/Jahr</div></div>
                 <div class="font-display text-2xl font-bold whitespace-nowrap" id="roi-personal">–</div>
               </div>
               <div class="flex items-start justify-between gap-4 pb-4 border-b border-line">
@@ -502,7 +502,27 @@
             <p class="text-center text-navy/70 mt-5">Mit <strong class="text-ink">Palletto</strong> fällt der Großteil davon weg – <a href="#anmelden" class="text-orange font-semibold underline">jetzt testen</a>.</p>
           </div>
         </div>
-        <p class="text-xs text-navy/50 text-center mt-8">Schätzung auf Basis deiner Eingaben. Tatsächliche Kosten variieren je nach Betrieb.</p>
+        <div class="mt-8 pt-8 border-t border-line">
+          <div class="text-sm font-semibold text-navy/60 uppercase tracking-wider mb-4">So rechnen wir – transparent, keine Fantasiezahlen</div>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-sand border border-line rounded-2xl p-5">
+              <div class="font-semibold mb-1">Kapitalaufwand</div>
+              <div class="text-sm text-navy/70 mb-3">Durchsatz × Schwundquote × Palettenpreis&nbsp; +&nbsp; Durchsatz × Reparaturquote × Reparaturkosten*</div>
+              <div style="font-family:'Space Grotesk',ui-monospace,monospace;font-size:13px;line-height:1.9;color:#1B3A6B">200.000 × 4 % × 15 € = 120.000 €<br>200.000 × 10 % × 4,50 € = 90.000 €<br><span class="text-ink font-bold">Summe = 210.000 €</span></div>
+            </div>
+            <div class="bg-sand border border-line rounded-2xl p-5">
+              <div class="font-semibold mb-1">Personalaufwand</div>
+              <div class="text-sm text-navy/70 mb-3">Stunden/Woche × 52 Wochen × Stundensatz</div>
+              <div style="font-family:'Space Grotesk',ui-monospace,monospace;font-size:13px;line-height:1.9;color:#1B3A6B">10 Std × 52 × 30 € = <span class="text-ink font-bold">15.600 €</span></div>
+            </div>
+          </div>
+          <div class="mt-4 bg-ink text-white rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+            <span class="font-semibold">Aufwendungen gesamt pro Jahr</span>
+            <span class="font-display text-xl lg:text-2xl font-bold text-orange">210.000 € + 15.600 € = 225.600 €</span>
+          </div>
+          <p class="text-xs text-navy/50 mt-3">* Reparaturkosten = 30 % des Palettenpreises (hier 4,50 €). Rechenbeispiel mit den Standardwerten – der Rechner oben nutzt deine eigenen Zahlen.</p>
+        </div>
+        <p class="text-xs text-navy/50 text-center mt-6">Schätzung auf Basis deiner Eingaben. Tatsächliche Kosten variieren je nach Betrieb.</p>
 
         <script>
         (function(){
@@ -510,14 +530,15 @@
           function fmt(n){return Math.round(n).toLocaleString('de-DE');}
           var C=2*Math.PI*80;
           function calc(){
-            var thru=+g('thru').value, part=+g('part').value, sq=+g('schwund').value, rq=+g('rep').value, price=+g('price').value, hr=+g('hr').value;
-            g('v-thru').textContent=fmt(thru); g('v-part').textContent=part;
+            var thru=+g('thru').value, hpw=+g('hpw').value, sq=+g('schwund').value, rq=+g('rep').value, price=+g('price').value, hr=+g('hr').value;
+            g('v-thru').textContent=fmt(thru); g('v-hpw').textContent=hpw;
             g('v-schwund').textContent=sq+' %'; g('v-rep').textContent=rq+' %';
             g('v-price').textContent=price+' €'; g('v-hr').textContent=hr+' €';
-            var schwundP=thru*sq/100, repP=thru*rq/100;
-            var kapital=schwundP*price + repP*(price*0.3);
-            var personal=part*6*hr;
+            var kapital=thru*sq/100*price + thru*rq/100*(price*0.3);
+            var hoursYear=hpw*52;
+            var personal=hoursYear*hr;
             var total=kapital+personal;
+            g('hours').textContent=fmt(hoursYear);
             g('personal').textContent=fmt(personal)+' €';
             g('kapital').textContent=fmt(kapital)+' €';
             g('total').textContent=fmt(total)+' €';
@@ -528,7 +549,7 @@
             per.setAttribute('stroke-dashoffset',(-(kf*C)).toString());
             g('donut-total').textContent=fmt(total);
           }
-          ['thru','part','schwund','rep','price','hr'].forEach(function(f){ g(f).addEventListener('input',calc); });
+          ['thru','hpw','schwund','rep','price','hr'].forEach(function(f){ g(f).addEventListener('input',calc); });
           var roleMap={spedition:200000,transport:150000,produktion:400000,handel:300000};
           g('role').addEventListener('change',function(){ var v=roleMap[this.value]; if(v){ g('thru').value=v; } calc(); });
           calc();
