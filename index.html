@@ -435,61 +435,105 @@
     </div>
   </section>
 
-  <!-- ============ ROI ============ -->
-  <section class="py-14 lg:py-28 px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-      <div>
-        <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Was es bringt</span></div>
-        <h2 class="font-display font-bold text-4xl lg:text-5xl leading-tight tracking-tight mb-6">Was dich das Palettenchaos<br><span class="text-orange">wirklich kostet.</span></h2>
-        <p class="text-lg text-navy/70 leading-relaxed mb-6">Es sind nicht nur ein paar verlorene Paletten. <strong class="text-ink">Verschwundene Paletten, Reparaturen, Schwund und Personalzeit</strong> summieren sich Jahr für Jahr zu einem <strong class="text-ink">fünfstelligen Betrag</strong> – Geld, das lautlos aus deiner Spedition abfließt.</p>
-        <ul class="space-y-3 text-navy/80">
-          <li class="flex items-start gap-3"><span class="text-orange mt-0.5">✓</span> <span><strong>Weniger Palettenverluste</strong> – jede Bewegung ist dokumentiert</span></li>
-          <li class="flex items-start gap-3"><span class="text-orange mt-0.5">✓</span> <span><strong>Weniger Schwund &amp; Streit</strong> – lückenlos, gerichtsfest belegt</span></li>
-          <li class="flex items-start gap-3"><span class="text-orange mt-0.5">✓</span> <span><strong>Weniger Bürokratie</strong> – Schluss mit Zettel und Excel</span></li>
-        </ul>
+  <!-- ============ KOSTENRECHNER ============ -->
+  <section id="kosten" class="py-14 lg:py-28 px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <div class="eyebrow mb-5 mx-auto"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Kostenrechner</span></div>
+        <h2 class="font-display font-bold text-4xl lg:text-5xl leading-tight tracking-tight mb-3">Was dich das Palettenchaos<br><span class="text-orange">wirklich kostet.</span></h2>
+        <p class="text-lg text-navy/60">Schwund, Reparaturen, Nachkauf und Personalaufwand – rechne mit deinen Zahlen, was jedes Jahr zusammenkommt.</p>
       </div>
-      <div class="relative">
-        <div class="glow-mint absolute -inset-4 -z-10 rounded-[2rem]"></div>
-        <div class="card p-6 lg:p-8 shadow-xl roi-calc">
-          <style>
-            .roi-calc input[type=range]{width:100%;accent-color:#FF9500;height:5px;margin-top:2px}
-            .roi-calc .roi-lbl{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;font-weight:600;margin-bottom:4px}
-            .roi-calc .roi-pill{font-family:'Space Grotesk',system-ui,sans-serif;font-size:13px;color:#1B3A6B;background:#FBF9F4;border:1px solid #EBE8E1;border-radius:7px;padding:1px 8px}
-            .roi-calc .roi-fld{margin-bottom:12px}
-          </style>
-          <div class="text-sm font-semibold text-navy/60 uppercase tracking-wider mb-4">Rechne es selbst aus</div>
-          <div class="roi-fld"><div class="roi-lbl"><span>Verlorene Paletten / Monat</span><span class="roi-pill" id="roi-v-lost">40</span></div><input type="range" id="roi-lost" min="0" max="300" step="5" value="40"></div>
-          <div class="roi-fld"><div class="roi-lbl"><span>Kosten je Palette (Ersatz)</span><span class="roi-pill" id="roi-v-pcost">15 €</span></div><input type="range" id="roi-pcost" min="5" max="40" step="1" value="15"></div>
-          <div class="roi-fld"><div class="roi-lbl"><span>Reparaturen / Monat</span><span class="roi-pill" id="roi-v-rep">20</span></div><input type="range" id="roi-rep" min="0" max="200" step="5" value="20"></div>
-          <div class="roi-fld"><div class="roi-lbl"><span>Kosten je Reparatur</span><span class="roi-pill" id="roi-v-rcost">5 €</span></div><input type="range" id="roi-rcost" min="0" max="20" step="1" value="5"></div>
-          <div class="roi-fld"><div class="roi-lbl"><span>Personal-Stunden / Woche</span><span class="roi-pill" id="roi-v-ah">8</span></div><input type="range" id="roi-ah" min="0" max="40" step="1" value="8"></div>
-          <div class="roi-fld"><div class="roi-lbl"><span>Stundensatz (inkl. Nebenkosten)</span><span class="roi-pill" id="roi-v-hr">30 €</span></div><input type="range" id="roi-hr" min="15" max="60" step="1" value="30"></div>
-          <div class="bg-ink text-white rounded-2xl p-6 mt-4">
-            <div class="text-sm text-white/70 uppercase tracking-wider mb-1">Das kostet dich das Palettenchaos</div>
-            <div class="flex items-baseline gap-2"><span class="font-display text-5xl font-bold text-orange" id="roi-year">–</span><span class="text-2xl font-bold">€</span><span class="text-sm text-white/60 ml-1">/ Jahr</span></div>
-            <div class="text-sm text-white/70 mt-2" id="roi-month">–</div>
-            <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between text-sm"><span class="text-white/60">Mit Palletto:</span><span class="font-bold text-orange">der Großteil fällt weg</span></div>
+
+      <div class="card p-6 lg:p-10 shadow-xl roi-calc">
+        <style>
+          .roi-calc input[type=range]{width:100%;accent-color:#FF9500;height:5px;margin-top:2px}
+          .roi-calc .roi-lbl{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;font-weight:600;margin-bottom:4px}
+          .roi-calc .roi-pill{font-family:'Space Grotesk',system-ui,sans-serif;font-size:13px;color:#1B3A6B;background:#FBF9F4;border:1px solid #EBE8E1;border-radius:7px;padding:1px 8px}
+          .roi-calc .roi-fld{margin-bottom:15px}
+          .roi-calc .roi-sel{width:100%;font-family:inherit;font-size:14px;padding:9px 11px;border:1px solid #EBE8E1;border-radius:9px;background:#FBF9F4;font-weight:600;color:#0F1B2D}
+          .roi-calc .roi-dot{width:11px;height:11px;border-radius:3px;display:inline-block}
+        </style>
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+
+          <!-- Eingaben -->
+          <div>
+            <div class="text-sm font-semibold text-navy/60 uppercase tracking-wider mb-5">Deine Zahlen</div>
+            <div class="roi-fld"><div class="roi-lbl"><span>Ich bin</span></div>
+              <select id="roi-role" class="roi-sel">
+                <option value="spedition">Spedition</option>
+                <option value="transport">Transportunternehmen</option>
+                <option value="produktion">Produktion</option>
+                <option value="handel">Handel</option>
+              </select>
+            </div>
+            <div class="roi-fld"><div class="roi-lbl"><span>Paletten-Durchsatz pro Jahr</span><span class="roi-pill" id="roi-v-thru">200.000</span></div><input type="range" id="roi-thru" min="10000" max="1000000" step="10000" value="200000"></div>
+            <div class="roi-fld"><div class="roi-lbl"><span>Anzahl Geschäftspartner</span><span class="roi-pill" id="roi-v-part">80</span></div><input type="range" id="roi-part" min="5" max="1000" step="5" value="80"></div>
+            <div class="roi-fld"><div class="roi-lbl"><span>Schwundquote</span><span class="roi-pill" id="roi-v-schwund">4 %</span></div><input type="range" id="roi-schwund" min="0" max="15" step="0.5" value="4"></div>
+            <div class="roi-fld"><div class="roi-lbl"><span>Reparaturquote</span><span class="roi-pill" id="roi-v-rep">10 %</span></div><input type="range" id="roi-rep" min="0" max="30" step="1" value="10"></div>
+            <div class="roi-fld"><div class="roi-lbl"><span>Preis je Palette (Nachkauf)</span><span class="roi-pill" id="roi-v-price">15 €</span></div><input type="range" id="roi-price" min="8" max="40" step="1" value="15"></div>
+            <div class="roi-fld" style="margin-bottom:0"><div class="roi-lbl"><span>Stundensatz (inkl. Nebenkosten)</span><span class="roi-pill" id="roi-v-hr">30 €</span></div><input type="range" id="roi-hr" min="15" max="60" step="1" value="30"></div>
           </div>
-          <p class="text-xs text-navy/50 text-center mt-3">Schätzung. Tatsächliche Kosten variieren je nach Betrieb.</p>
-          <script>
-          (function(){
-            var g=function(s){return document.getElementById('roi-'+s);};
-            var fields=['lost','pcost','rep','rcost','ah','hr'];
-            function fmt(n){return Math.round(n).toLocaleString('de-DE');}
-            function calc(){
-              var lost=+g('lost').value,pcost=+g('pcost').value,rep=+g('rep').value,rcost=+g('rcost').value,ah=+g('ah').value,hr=+g('hr').value;
-              g('v-lost').textContent=lost; g('v-pcost').textContent=pcost+' €';
-              g('v-rep').textContent=rep; g('v-rcost').textContent=rcost+' €';
-              g('v-ah').textContent=ah; g('v-hr').textContent=hr+' €';
-              var month=lost*pcost + rep*rcost + ah*4.33*hr;
-              g('year').textContent=fmt(month*12);
-              g('month').textContent='rund '+fmt(month)+' € pro Monat';
-            }
-            fields.forEach(function(f){ g(f).addEventListener('input',calc); });
-            calc();
-          })();
-          </script>
+
+          <!-- Ergebnis -->
+          <div>
+            <div class="space-y-4">
+              <div class="flex items-start justify-between gap-4 pb-4 border-b border-line">
+                <div><div class="font-semibold flex items-center gap-2"><span class="roi-dot" style="background:#5DD6B2"></span>Personalaufwand</div><div class="text-xs text-navy/55 mt-0.5 ml-5">Abstimmen, Buchen &amp; Nachfassen</div></div>
+                <div class="font-display text-2xl font-bold whitespace-nowrap" id="roi-personal">–</div>
+              </div>
+              <div class="flex items-start justify-between gap-4 pb-4 border-b border-line">
+                <div><div class="font-semibold flex items-center gap-2"><span class="roi-dot" style="background:#1B3A6B"></span>Kapitalaufwand</div><div class="text-xs text-navy/55 mt-0.5 ml-5">Schwund, Reparatur &amp; Nachkauf</div></div>
+                <div class="font-display text-2xl font-bold whitespace-nowrap" id="roi-kapital">–</div>
+              </div>
+              <div class="flex items-center justify-between gap-4">
+                <div class="font-semibold">Aufwendungen gesamt / Jahr</div>
+                <div class="font-display text-3xl lg:text-4xl font-bold text-orange whitespace-nowrap" id="roi-total">–</div>
+              </div>
+            </div>
+
+            <svg id="roi-donut" viewBox="0 0 200 200" style="max-width:220px;margin:26px auto 0;display:block">
+              <circle cx="100" cy="100" r="80" fill="none" stroke="#EBE8E1" stroke-width="24"/>
+              <circle id="roi-arc-kap" cx="100" cy="100" r="80" fill="none" stroke="#1B3A6B" stroke-width="24" transform="rotate(-90 100 100)" stroke-dasharray="0 502.65"/>
+              <circle id="roi-arc-per" cx="100" cy="100" r="80" fill="none" stroke="#5DD6B2" stroke-width="24" transform="rotate(-90 100 100)" stroke-dasharray="0 502.65" stroke-dashoffset="0"/>
+              <text id="roi-donut-total" x="100" y="96" text-anchor="middle" font-family="'Space Grotesk',system-ui,sans-serif" font-weight="700" font-size="24" fill="#0F1B2D">–</text>
+              <text x="100" y="118" text-anchor="middle" font-size="11" fill="#7a869a">€ pro Jahr</text>
+            </svg>
+
+            <p class="text-center text-navy/70 mt-5">Mit <strong class="text-ink">Palletto</strong> fällt der Großteil davon weg – <a href="#anmelden" class="text-orange font-semibold underline">jetzt testen</a>.</p>
+          </div>
         </div>
+        <p class="text-xs text-navy/50 text-center mt-8">Schätzung auf Basis deiner Eingaben. Tatsächliche Kosten variieren je nach Betrieb.</p>
+
+        <script>
+        (function(){
+          var g=function(s){return document.getElementById('roi-'+s);};
+          function fmt(n){return Math.round(n).toLocaleString('de-DE');}
+          var C=2*Math.PI*80;
+          function calc(){
+            var thru=+g('thru').value, part=+g('part').value, sq=+g('schwund').value, rq=+g('rep').value, price=+g('price').value, hr=+g('hr').value;
+            g('v-thru').textContent=fmt(thru); g('v-part').textContent=part;
+            g('v-schwund').textContent=sq+' %'; g('v-rep').textContent=rq+' %';
+            g('v-price').textContent=price+' €'; g('v-hr').textContent=hr+' €';
+            var schwundP=thru*sq/100, repP=thru*rq/100;
+            var kapital=schwundP*price + repP*(price*0.3);
+            var personal=part*6*hr;
+            var total=kapital+personal;
+            g('personal').textContent=fmt(personal)+' €';
+            g('kapital').textContent=fmt(kapital)+' €';
+            g('total').textContent=fmt(total)+' €';
+            var kf=total>0?kapital/total:0, pf=total>0?personal/total:0;
+            g('arc-kap').setAttribute('stroke-dasharray',(kf*C)+' '+C);
+            var per=g('arc-per');
+            per.setAttribute('stroke-dasharray',(pf*C)+' '+C);
+            per.setAttribute('stroke-dashoffset',(-(kf*C)).toString());
+            g('donut-total').textContent=fmt(total);
+          }
+          ['thru','part','schwund','rep','price','hr'].forEach(function(f){ g(f).addEventListener('input',calc); });
+          var roleMap={spedition:200000,transport:150000,produktion:400000,handel:300000};
+          g('role').addEventListener('change',function(){ var v=roleMap[this.value]; if(v){ g('thru').value=v; } calc(); });
+          calc();
+        })();
+        </script>
       </div>
     </div>
   </section>
