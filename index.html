@@ -450,20 +450,45 @@
       </div>
       <div class="relative">
         <div class="glow-mint absolute -inset-4 -z-10 rounded-[2rem]"></div>
-        <div class="card p-8 lg:p-10 shadow-xl">
-          <div class="text-sm font-semibold text-navy/60 uppercase tracking-wider mb-4">Beispielrechnung · mittlere Spedition</div>
-          <div class="space-y-4">
-            <div class="flex justify-between items-baseline gap-4 pb-4 border-b border-line"><div><div class="font-semibold">Verlorene &amp; verschwundene Paletten</div><div class="text-sm text-navy/60">~40 / Monat × 15 € Ersatz</div></div><div class="font-display text-xl font-bold whitespace-nowrap">7.200 €</div></div>
-            <div class="flex justify-between items-baseline gap-4 pb-4 border-b border-line"><div><div class="font-semibold">Palettenreparaturen</div><div class="text-sm text-navy/60">~20 / Monat × 5 €</div></div><div class="font-display text-xl font-bold whitespace-nowrap">1.200 €</div></div>
-            <div class="flex justify-between items-baseline gap-4 pb-4 border-b border-line"><div><div class="font-semibold">Personalzeit</div><div class="text-sm text-navy/60">1,5 Std/Tag: Scheine, Excel, Nachfassen</div></div><div class="font-display text-xl font-bold whitespace-nowrap">11.610 €</div></div>
-            <div class="bg-ink text-white rounded-2xl p-6 mt-2">
-              <div class="text-sm text-white/70 uppercase tracking-wider mb-1">Summe pro Jahr</div>
-              <div class="flex items-baseline gap-2"><span class="font-display text-5xl font-bold text-orange">~20.000</span><span class="text-2xl font-bold">€</span></div>
-              <div class="text-sm text-white/70 mt-2">die dich das Palettenchaos jedes Jahr kostet</div>
-              <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between text-sm"><span class="text-white/60">Mit Palletto:</span><span class="font-bold text-orange">nur ein Bruchteil davon</span></div>
-            </div>
-            <p class="text-xs text-navy/50 text-center">* Beispielrechnung. Tatsächliche Kosten variieren je nach Betrieb.</p>
+        <div class="card p-6 lg:p-8 shadow-xl roi-calc">
+          <style>
+            .roi-calc input[type=range]{width:100%;accent-color:#FF9500;height:5px;margin-top:2px}
+            .roi-calc .roi-lbl{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;font-weight:600;margin-bottom:4px}
+            .roi-calc .roi-pill{font-family:'Space Grotesk',system-ui,sans-serif;font-size:13px;color:#1B3A6B;background:#FBF9F4;border:1px solid #EBE8E1;border-radius:7px;padding:1px 8px}
+            .roi-calc .roi-fld{margin-bottom:12px}
+          </style>
+          <div class="text-sm font-semibold text-navy/60 uppercase tracking-wider mb-4">Rechne es selbst aus</div>
+          <div class="roi-fld"><div class="roi-lbl"><span>Verlorene Paletten / Monat</span><span class="roi-pill" id="roi-v-lost">40</span></div><input type="range" id="roi-lost" min="0" max="300" step="5" value="40"></div>
+          <div class="roi-fld"><div class="roi-lbl"><span>Kosten je Palette (Ersatz)</span><span class="roi-pill" id="roi-v-pcost">15 €</span></div><input type="range" id="roi-pcost" min="5" max="40" step="1" value="15"></div>
+          <div class="roi-fld"><div class="roi-lbl"><span>Reparaturen / Monat</span><span class="roi-pill" id="roi-v-rep">20</span></div><input type="range" id="roi-rep" min="0" max="200" step="5" value="20"></div>
+          <div class="roi-fld"><div class="roi-lbl"><span>Kosten je Reparatur</span><span class="roi-pill" id="roi-v-rcost">5 €</span></div><input type="range" id="roi-rcost" min="0" max="20" step="1" value="5"></div>
+          <div class="roi-fld"><div class="roi-lbl"><span>Personal-Stunden / Woche</span><span class="roi-pill" id="roi-v-ah">8</span></div><input type="range" id="roi-ah" min="0" max="40" step="1" value="8"></div>
+          <div class="roi-fld"><div class="roi-lbl"><span>Stundensatz (inkl. Nebenkosten)</span><span class="roi-pill" id="roi-v-hr">30 €</span></div><input type="range" id="roi-hr" min="15" max="60" step="1" value="30"></div>
+          <div class="bg-ink text-white rounded-2xl p-6 mt-4">
+            <div class="text-sm text-white/70 uppercase tracking-wider mb-1">Das kostet dich das Palettenchaos</div>
+            <div class="flex items-baseline gap-2"><span class="font-display text-5xl font-bold text-orange" id="roi-year">–</span><span class="text-2xl font-bold">€</span><span class="text-sm text-white/60 ml-1">/ Jahr</span></div>
+            <div class="text-sm text-white/70 mt-2" id="roi-month">–</div>
+            <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between text-sm"><span class="text-white/60">Mit Palletto:</span><span class="font-bold text-orange">der Großteil fällt weg</span></div>
           </div>
+          <p class="text-xs text-navy/50 text-center mt-3">Schätzung. Tatsächliche Kosten variieren je nach Betrieb.</p>
+          <script>
+          (function(){
+            var g=function(s){return document.getElementById('roi-'+s);};
+            var fields=['lost','pcost','rep','rcost','ah','hr'];
+            function fmt(n){return Math.round(n).toLocaleString('de-DE');}
+            function calc(){
+              var lost=+g('lost').value,pcost=+g('pcost').value,rep=+g('rep').value,rcost=+g('rcost').value,ah=+g('ah').value,hr=+g('hr').value;
+              g('v-lost').textContent=lost; g('v-pcost').textContent=pcost+' €';
+              g('v-rep').textContent=rep; g('v-rcost').textContent=rcost+' €';
+              g('v-ah').textContent=ah; g('v-hr').textContent=hr+' €';
+              var month=lost*pcost + rep*rcost + ah*4.33*hr;
+              g('year').textContent=fmt(month*12);
+              g('month').textContent='rund '+fmt(month)+' € pro Monat';
+            }
+            fields.forEach(function(f){ g(f).addEventListener('input',calc); });
+            calc();
+          })();
+          </script>
         </div>
       </div>
     </div>
