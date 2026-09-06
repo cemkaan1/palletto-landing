@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Preise: Palettenschein-Software ab 59 € im Monat | Palletto</title>
-  <meta name="description" content="Transparente Preise für digitale Palettenscheine: Grundgebühr plus Preis je aktivem Fahrer. Keine Hardware, keine Setup-Gebühr, 30 Tage kostenlos testen.">
+  <meta name="description" content="Transparente Preise für digitale Palettenscheine: Grundgebühr plus Preis je aktivem Fahrer. Keine Hardware, keine Setup-Gebühr, monatlich kündbar, 30 Tage kostenlos testen.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0F1B2D">
   <link rel="canonical" href="https://palletto.de/preise.html">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Preise – Palletto">
-  <meta property="og:description" content="Transparente Preise für digitale Palettenscheine: Grundgebühr plus Preis je aktivem Fahrer. 30 Tage kostenlos testen.">
+  <meta property="og:description" content="Du zahlst pro Fahrer, nicht pro Schein. Transparente Preise ab 59 € im Monat. 30 Tage kostenlos testen.">
   <meta property="og:url" content="https://palletto.de/preise.html">
   <meta property="og:image" content="https://palletto.de/og-image.png">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -18,6 +18,68 @@
   <link rel="stylesheet" href="/assets/palletto.css?v=5">
   <link rel="preload" href="/assets/fonts/jakarta-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/space-grotesk-700.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+    /* Preisseite - eigene Styles, unabhaengig vom kompilierten Tailwind-Set */
+    .pr-grid{display:grid;gap:1.5rem;align-items:stretch}
+    @media(min-width:1024px){.pr-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    .pr-card{position:relative;background:#fff;border:1px solid #EBE8E1;border-radius:1.75rem;padding:2rem;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s,border-color .2s}
+    .pr-card:hover{transform:translateY(-3px);box-shadow:0 24px 48px -24px rgba(15,27,45,.22)}
+    .pr-card.is-best{border:2px solid #FF9500;box-shadow:0 24px 60px -30px rgba(255,149,0,.55)}
+    .pr-badge{position:absolute;top:-.85rem;left:2rem;background:#FF9500;color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:.4rem .85rem;border-radius:999px;box-shadow:0 6px 16px -6px rgba(255,149,0,.7)}
+    .pr-name{font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;margin-bottom:.35rem}
+    .pr-for{font-size:.9rem;color:rgba(27,58,107,.62);margin-bottom:1.5rem;line-height:1.5;min-height:2.7rem}
+    .pr-amt{display:flex;align-items:baseline;gap:.35rem}
+    .pr-amt b{font-family:'Space Grotesk',sans-serif;font-size:3rem;font-weight:700;line-height:1}
+    .pr-amt .cur{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700}
+    .pr-amt .per{font-size:.9rem;color:rgba(27,58,107,.6)}
+    .pr-var{font-size:1rem;font-weight:700;color:#FF9500;margin-top:.5rem}
+    .pr-note{font-size:.74rem;color:rgba(27,58,107,.5);margin-top:.55rem}
+    .pr-sep{border:0;border-top:1px solid #EBE8E1;margin:1.5rem 0}
+    .pr-list{list-style:none;padding:0;margin:0 0 2rem;flex:1}
+    .pr-list li{display:flex;gap:.65rem;align-items:flex-start;font-size:.9rem;color:rgba(27,58,107,.82);line-height:1.55;margin-bottom:.8rem}
+    .pr-list li .tick{color:#FF9500;font-weight:700;flex:0 0 auto;margin-top:.05rem}
+    .pr-btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;width:100%;box-sizing:border-box;font-weight:700;padding:.9rem 1.2rem;border-radius:999px;transition:background .2s,border-color .2s,transform .2s}
+    .pr-btn.solid{background:#FF9500;color:#fff;box-shadow:0 12px 28px -12px rgba(255,149,0,.7)}
+    .pr-btn.solid:hover{background:#E88500;transform:translateY(-1px)}
+    .pr-btn.line{background:#fff;color:#1B3A6B;border:1px solid #EBE8E1}
+    .pr-btn.line:hover{border-color:#CFCABB;background:#FAF8F3}
+    .pr-trust{display:grid;gap:1rem;grid-template-columns:repeat(2,minmax(0,1fr))}
+    @media(min-width:900px){.pr-trust{grid-template-columns:repeat(4,minmax(0,1fr))}}
+    .pr-trust div{background:#fff;border:1px solid #EBE8E1;border-radius:1.1rem;padding:1.1rem 1.25rem}
+    .pr-trust b{display:block;font-family:'Space Grotesk',sans-serif;font-size:.98rem;margin-bottom:.2rem}
+    .pr-trust span{font-size:.82rem;color:rgba(27,58,107,.62);line-height:1.5}
+    .pr-ben{display:grid;gap:1.25rem}
+    @media(min-width:768px){.pr-ben{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    .pr-ben article{background:#fff;border:1px solid #EBE8E1;border-radius:1.5rem;padding:1.75rem}
+    .pr-ben .num{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;color:#FF9500;line-height:1;margin-bottom:.5rem}
+    .pr-ben h3{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:.5rem}
+    .pr-ben p{font-size:.95rem;color:rgba(27,58,107,.72);line-height:1.65;margin:0}
+    .pr-calc{background:#fff;border:1px solid #EBE8E1;border-radius:1.75rem;padding:2rem}
+    .pr-slider{width:100%;accent-color:#FF9500;margin:.35rem 0}
+    .pr-res{display:grid;gap:1rem;margin-top:.5rem}
+    @media(min-width:640px){.pr-res{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    .pr-res .box{border:1px solid #EBE8E1;border-radius:1.1rem;padding:1.4rem;background:#FAF8F3}
+    .pr-res .box.hi{border:2px solid #FF9500;background:rgba(255,149,0,.06)}
+    .pr-res .lab{font-size:.7rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:rgba(27,58,107,.55);margin-bottom:.5rem}
+    .pr-res .box.hi .lab{color:#FF9500}
+    .pr-res .val{font-family:'Space Grotesk',sans-serif;font-size:2.2rem;font-weight:700;line-height:1}
+    .pr-res .box.hi .val{color:#FF9500}
+    .pr-res .sub{font-size:.76rem;color:rgba(27,58,107,.55);margin-top:.5rem}
+    .pr-steps{display:grid;gap:1.25rem}
+    @media(min-width:768px){.pr-steps{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    .pr-steps article{background:#fff;border:1px solid #EBE8E1;border-radius:1.5rem;padding:1.75rem}
+    .pr-steps .n{width:2.4rem;height:2.4rem;border-radius:999px;background:#FF9500;color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:.9rem}
+    .pr-steps h3{font-family:'Space Grotesk',sans-serif;font-size:1.08rem;font-weight:700;margin-bottom:.45rem}
+    .pr-steps p{font-size:.92rem;color:rgba(27,58,107,.72);line-height:1.6;margin:0}
+    .pr-pick{display:grid;gap:1.25rem}
+    @media(min-width:768px){.pr-pick{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    .pr-pick article{border:1px solid #EBE8E1;border-radius:1.5rem;padding:1.75rem;background:#fff}
+    .pr-pick h3{font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:.9rem}
+    .pr-pick ul{list-style:none;padding:0;margin:0}
+    .pr-pick li{position:relative;padding-left:1.5rem;margin-bottom:.6rem;font-size:.93rem;color:rgba(27,58,107,.78);line-height:1.55}
+    .pr-pick li:before{content:"";position:absolute;left:.25rem;top:.6rem;width:6px;height:6px;border-radius:2px;background:#FF9500}
+    .pr-mt{margin-top:1.5rem}
+  </style>
   <script type="application/ld+json">
   { "@context": "https://schema.org", "@graph": [
     { "@type": "WebPage", "@id": "https://palletto.de/preise.html", "name": "Preise", "inLanguage": "de-DE", "description": "Transparente Preise für digitale Palettenscheine: Grundgebühr plus Preis je aktivem Fahrer.", "isPartOf": { "@type": "WebSite", "name": "Palletto", "url": "https://palletto.de/" } },
@@ -25,13 +87,14 @@
       { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://palletto.de/" },
       { "@type": "ListItem", "position": 2, "name": "Preise", "item": "https://palletto.de/preise.html" } ]},
     { "@type": "Product", "name": "Palletto", "description": "Digitale Palettenscheine und Palettenkonto für Transportunternehmen.", "brand": { "@type": "Brand", "name": "Palletto" }, "offers": [
-      { "@type": "Offer", "name": "Starter", "price": "59.00", "priceCurrency": "EUR", "description": "Grundgebühr pro Monat zzgl. 12 € je aktivem Fahrer.", "url": "https://palletto.de/preise.html", "availability": "https://schema.org/InStock" },
-      { "@type": "Offer", "name": "Business", "price": "99.00", "priceCurrency": "EUR", "description": "Grundgebühr pro Monat zzgl. 19 € je aktivem Fahrer.", "url": "https://palletto.de/preise.html", "availability": "https://schema.org/InStock" } ]},
+      { "@type": "Offer", "name": "Starter", "price": "59.00", "priceCurrency": "EUR", "description": "Grundgebühr pro Monat zzgl. 12 Euro je aktivem Fahrer.", "url": "https://palletto.de/preise.html", "availability": "https://schema.org/InStock" },
+      { "@type": "Offer", "name": "Business", "price": "99.00", "priceCurrency": "EUR", "description": "Grundgebühr pro Monat zzgl. 19 Euro je aktivem Fahrer.", "url": "https://palletto.de/preise.html", "availability": "https://schema.org/InStock" } ]},
     { "@type": "FAQPage", "mainEntity": [
-      { "@type": "Question", "name": "Was kostet Palletto?", "acceptedAnswer": { "@type": "Answer", "text": "Palletto besteht aus einer monatlichen Grundgebühr und einem Preis je aktivem Fahrer. Starter kostet 59 € plus 12 € je Fahrer, Business 99 € plus 19 € je Fahrer, jeweils zzgl. USt." } },
+      { "@type": "Question", "name": "Was kostet Palletto?", "acceptedAnswer": { "@type": "Answer", "text": "Palletto besteht aus einer monatlichen Grundgebühr und einem Preis je aktivem Fahrer. Starter kostet 59 Euro plus 12 Euro je Fahrer, Business 99 Euro plus 19 Euro je Fahrer, jeweils zzgl. USt." } },
       { "@type": "Question", "name": "Was ist ein aktiver Fahrer?", "acceptedAnswer": { "@type": "Answer", "text": "Ein Fahrer gilt als aktiv, wenn er im Abrechnungsmonat mindestens einen Palettenschein erfasst hat. Fahrer ohne Erfassung werden nicht berechnet." } },
       { "@type": "Question", "name": "Gibt es eine Mindestlaufzeit?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Palletto ist monatlich kündbar. Bei jährlicher Zahlung sind zwei Monate geschenkt." } },
-      { "@type": "Question", "name": "Brauche ich zusätzliche Hardware?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Palletto läuft im Browser und auf jedem Smartphone. Es fallen keine Setup-Gebühren und keine Hardwarekosten an." } } ]} ]}
+      { "@type": "Question", "name": "Brauche ich zusätzliche Hardware?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Palletto läuft im Browser und auf jedem Smartphone. Es fallen keine Setup-Gebühren und keine Hardwarekosten an." } },
+      { "@type": "Question", "name": "Wie lange dauert die Einrichtung?", "acceptedAnswer": { "@type": "Answer", "text": "Konto anlegen, Kunden eintragen, Fahrer per Link einladen. Die meisten Unternehmen erfassen am selben Tag den ersten digitalen Palettenschein." } } ]} ]}
   </script>
 </head>
 <body class="bg-sand text-ink font-sans antialiased">
@@ -45,7 +108,7 @@
         <nav aria-label="Breadcrumb" class="text-sm text-navy/50 mb-6"><a href="/" class="hover:text-orange">Start</a> <span class="mx-1.5">›</span> <span class="text-navy/70">Preise</span></nav>
         <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Preise</span></div>
         <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight mb-6">Du zahlst pro Fahrer – <span class="text-orange">nicht pro Schein</span></h1>
-        <p class="text-lg lg:text-xl text-navy/70 leading-relaxed max-w-2xl mb-6">Eine feste Grundgebühr plus ein Preis je aktivem Fahrer. Keine Abrechnung pro Buchung, keine Hardware, keine Setup-Gebühr. So bleibt der Monatsbetrag planbar – auch wenn viel los ist.</p>
+        <p class="text-lg lg:text-xl text-navy/70 leading-relaxed max-w-2xl mb-8">Eine feste Grundgebühr plus ein Preis je aktivem Fahrer. Keine Abrechnung pro Buchung, keine Hardware, keine Einrichtungsgebühr. Der Monatsbetrag bleibt planbar – auch in Wochen, in denen viel läuft.</p>
         <div class="flex flex-col sm:flex-row gap-3">
           <a href="/#anmelden" class="btn-primary"><span class="swap"><span>30 Tage kostenlos testen</span><span>Ohne Kreditkarte</span></span><span class="ico"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span></a>
           <a href="#rechner" class="btn-ghost">Preis berechnen</a>
@@ -53,150 +116,224 @@
       </div>
     </section>
 
-    <!-- KURZ ERKLÄRT -->
-    <section class="px-6 py-8"><div class="max-w-4xl mx-auto card p-7 lg:p-8"><p class="text-lg text-navy/80 leading-relaxed"><strong class="text-ink">Kurz erklärt:</strong> Abgerechnet werden nur <em>aktive Fahrer</em> – also Fahrer, die im Monat mindestens einen Palettenschein erfasst haben. Wer nicht gefahren ist, kostet nichts. Alle Preise verstehen sich zzgl. der gesetzlichen Umsatzsteuer.</p></div></section>
+    <!-- VERTRAUENSLEISTE -->
+    <section class="px-6 py-8">
+      <div class="max-w-5xl mx-auto">
+        <div class="pr-trust">
+          <div><b>Keine Einrichtungsgebühr</b><span>Konto anlegen und loslegen – kein Setup-Paket, keine Beratungspflicht.</span></div>
+          <div><b>Keine Hardware</b><span>Läuft auf den Smartphones, die deine Fahrer ohnehin dabeihaben.</span></div>
+          <div><b>Monatlich kündbar</b><span>Keine Mindestlaufzeit. Wer jährlich zahlt, bekommt zwei Monate geschenkt.</span></div>
+          <div><b>Server in Deutschland</b><span>DSGVO-konform, AV-Vertrag inklusive, tägliche Backups.</span></div>
+        </div>
+      </div>
+    </section>
 
     <!-- PREIS-KARTEN -->
     <section id="pakete" class="px-6 py-14 lg:py-20 bg-white border-y border-line">
       <div class="max-w-6xl mx-auto">
         <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Pakete</span></div>
         <h2 class="font-display text-3xl lg:text-4xl font-bold tracking-tight mb-3">Zwei Pakete, ein klares Prinzip</h2>
-        <p class="text-lg text-navy/70 leading-relaxed max-w-2xl mb-10">Starter deckt die tägliche Erfassung ab. Business bringt alles dazu, was Paletten zurückholt: Lücken-Erkennung, Foto-Nachweis, Mahnwesen und das Kunden-Portal.</p>
+        <p class="text-lg text-navy/70 leading-relaxed max-w-2xl mb-10">Starter deckt die tägliche Erfassung ab: Schein schreiben, unterschreiben, Saldo sehen. Business bringt alles dazu, was offene Paletten wirklich zurückholt.</p>
 
-        <div class="grid lg:grid-cols-3 gap-6 items-stretch">
+        <div class="pr-grid">
 
-          <!-- STARTER -->
-          <div class="card p-8 flex flex-col">
-            <h3 class="font-display text-2xl font-bold mb-1.5">Starter</h3>
-            <p class="text-sm text-navy/60 mb-6">Für kleine Fuhrparks, die vom Papier weg wollen.</p>
-            <div class="pb-6 mb-6 border-b border-line">
-              <div class="flex items-baseline gap-1.5">
-                <span class="font-display text-5xl font-bold leading-none">59</span>
-                <span class="font-display text-2xl font-bold">€</span>
-                <span class="text-sm text-navy/60">/ Monat</span>
-              </div>
-              <div class="text-base font-semibold text-orange mt-2">+ 12 € je aktivem Fahrer</div>
-              <div class="text-xs text-navy/50 mt-2">zzgl. USt. · monatlich kündbar</div>
-            </div>
-            <ul class="space-y-3 text-navy/80 text-sm mb-8 flex-1">
-              <li class="flex items-start gap-2.5"><span class="text-orange mt-0.5">✓</span> <span><strong>Digitale Palettenscheine</strong> statt Papier</span></li>
-              <li class="flex items-start gap-2.5"><span class="text-orange mt-0.5">✓</span> <span>Unterschrift von <strong>Fahrer und Empfänger</strong> (§126b BGB)</span></li>
-              <li class="flex items-start gap-2.5"><span class="text-orange mt-0.5">✓</span> <span><strong>Saldo je Kunde</strong> in Echtzeit</span></li>
-              <li class="flex items-start gap-2.5"><span class="text-orange mt-0.5">✓</span> <span>Offline-Modus für unterwegs</span></li>
-              <li class="flex items-start gap-2.5"><span class="text-orange mt-0.5">✓</span> <span>PDF-Export und Druck</span></li>
-              <li class="flex items-start gap-2.5"><span class="text-orange mt-0.5">✓</span> <span>Server in Deutschland, DSGVO-konform</span></li>
-              <li class="flex items-start gap-2.5"><span class="text-orange mt-0.5">✓</span> <span>E-Mail-Support</span></li>
+          <div class="pr-card">
+            <div class="pr-name">Starter</div>
+            <div class="pr-for">Für kleine Fuhrparks, die vom Papier wegwollen.</div>
+            <div class="pr-amt"><b>59</b><span class="cur">€</span><span class="per">/ Monat</span></div>
+            <div class="pr-var">+ 12 € je aktivem Fahrer</div>
+            <div class="pr-note">zzgl. USt. · monatlich kündbar</div>
+            <hr class="pr-sep">
+            <ul class="pr-list">
+              <li><span class="tick">✓</span><span><strong>Digitale Palettenscheine</strong> statt Zettel</span></li>
+              <li><span class="tick">✓</span><span>Unterschrift von <strong>Fahrer und Empfänger</strong> (§126b BGB)</span></li>
+              <li><span class="tick">✓</span><span><strong>Saldo je Kunde</strong> in Echtzeit</span></li>
+              <li><span class="tick">✓</span><span>Offline-Modus für unterwegs</span></li>
+              <li><span class="tick">✓</span><span>PDF-Export und Druck</span></li>
+              <li><span class="tick">✓</span><span>Unbegrenzt viele Kunden</span></li>
+              <li><span class="tick">✓</span><span>E-Mail-Support</span></li>
             </ul>
-            <a href="/#anmelden" class="btn-ghost w-full text-center">30 Tage testen</a>
+            <a href="/#anmelden" class="pr-btn line">30 Tage testen</a>
           </div>
 
-          <!-- BUSINESS -->
-          <div class="card p-8 flex flex-col relative" style="border-color:#FF9500;border-width:2px;">
-            <div class="absolute -top-3 left-8 bg-orange text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">Beliebtestes Paket</div>
-            <h3 class="font-display text-2xl font-bold mb-1.5">Business</h3>
-            <p class="text-sm text-navy/60 mb-6">Für alle, die offene Paletten aktiv zurückholen wollen.</p>
-            <div class="pb-6 mb-6 border-b border-line">
-              <div class="flex items-baseline gap-1.5">
-                <span class="font-display text-5xl font-bold leading-none">99</span>
-                <span class="font-display text-2xl font-bold">€</span>
-                <span class="text-sm text-navy/60">/ Monat</span>
-              </div>
-              <div class="text-base font-semibold text-orange mt-2">+ 19 € je aktivem Fahrer</div>
-              <div class="text-xs text-navy/50 mt-2">zzgl. USt. · monatlich kündbar</div>
-            </div>
-            <ul class="space-y-3 text-navy/80 text-sm mb-8 flex-1">
-              <li class="flex items-start gap-2.5"><span class="text-orange mt-0.5">✓</span> <span><strong>Alles aus Starter</strong>, plus:</span></li>
-              <li class="flex items-start gap-2.5"><span class="text-orange mt-0.5">✓</span> <span><strong>Lücken-Erkennung</strong> – fehlende Scheine sofort sichtbar</span></li>
-              <li class="flex items-start gap-2.5"><span class="text-orange mt-0.5">✓</span> <span><strong>Foto-Dokumentation</strong> inkl. Foto-Pflicht je Kunde</span></li>
-              <li class="flex items-start gap-2.5"><span class="text-orange mt-0.5">✓</span> <span><strong>Mahnwesen</strong> für offene Palettenschulden</span></li>
-              <li class="flex items-start gap-2.5"><span class="text-orange mt-0.5">✓</span> <span><strong>Kunden-Portal</strong> – Kunden sehen ihren Saldo selbst</span></li>
-              <li class="flex items-start gap-2.5"><span class="text-orange mt-0.5">✓</span> <span><strong>QR-Echtheitsprüfung</strong> jedes Scheins</span></li>
-              <li class="flex items-start gap-2.5"><span class="text-orange mt-0.5">✓</span> <span>CSV-Export für die Buchhaltung</span></li>
-              <li class="flex items-start gap-2.5"><span class="text-orange mt-0.5">✓</span> <span>Tägliche Auswertung per E-Mail</span></li>
+          <div class="pr-card is-best">
+            <span class="pr-badge">Beliebtestes Paket</span>
+            <div class="pr-name">Business</div>
+            <div class="pr-for">Für alle, die offene Paletten aktiv zurückholen wollen.</div>
+            <div class="pr-amt"><b>99</b><span class="cur">€</span><span class="per">/ Monat</span></div>
+            <div class="pr-var">+ 19 € je aktivem Fahrer</div>
+            <div class="pr-note">zzgl. USt. · monatlich kündbar</div>
+            <hr class="pr-sep">
+            <ul class="pr-list">
+              <li><span class="tick">✓</span><span><strong>Alles aus Starter</strong>, plus:</span></li>
+              <li><span class="tick">✓</span><span><strong>Lücken-Erkennung</strong> – fehlende Scheine noch am selben Tag sichtbar</span></li>
+              <li><span class="tick">✓</span><span><strong>Foto-Dokumentation</strong> inkl. Foto-Pflicht je Kunde</span></li>
+              <li><span class="tick">✓</span><span><strong>Mahnwesen</strong> für offene Palettenschulden</span></li>
+              <li><span class="tick">✓</span><span><strong>Kunden-Portal</strong> – Kunden sehen ihren Saldo selbst</span></li>
+              <li><span class="tick">✓</span><span><strong>QR-Echtheitsprüfung</strong> jedes Scheins</span></li>
+              <li><span class="tick">✓</span><span>CSV-Export für die Buchhaltung</span></li>
+              <li><span class="tick">✓</span><span>Tägliche Auswertung per E-Mail</span></li>
             </ul>
-            <a href="/#anmelden" class="btn-primary w-full justify-center"><span class="swap"><span>30 Tage testen</span><span>Los geht's</span></span><span class="ico"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span></a>
+            <a href="/#anmelden" class="pr-btn solid">30 Tage testen</a>
           </div>
 
-          <!-- ENTERPRISE -->
-          <div class="card p-8 flex flex-col">
-            <h3 class="font-display text-2xl font-bold mb-1.5">Enterprise</h3>
-            <p class="text-sm text-navy/60 mb-6">Für große Flotten und mehrere Standorte.</p>
-            <div class="pb-6 mb-6 border-b border-line">
-              <div class="flex items-baseline gap-1.5">
-                <span class="font-display text-4xl font-bold leading-none">Individuell</span>
-              </div>
-              <div class="text-base font-semibold text-orange mt-2">ab 50 Fahrern</div>
-              <div class="text-xs text-navy/50 mt-2">Angebot nach Bedarf</div>
-            </div>
-            <ul class="space-y-3 text-navy/80 text-sm mb-8 flex-1">
-              <li class="flex items-start gap-2.5"><span class="text-orange mt-0.5">✓</span> <span><strong>Alles aus Business</strong>, plus:</span></li>
-              <li class="flex items-start gap-2.5"><span class="text-orange mt-0.5">✓</span> <span>Unbegrenzte Fahrer und Büro-Zugänge</span></li>
-              <li class="flex items-start gap-2.5"><span class="text-orange mt-0.5">✓</span> <span>Mehrere Standorte in einem Konto</span></li>
-              <li class="flex items-start gap-2.5"><span class="text-orange mt-0.5">✓</span> <span>Persönliches Onboarding und Schulung</span></li>
-              <li class="flex items-start gap-2.5"><span class="text-orange mt-0.5">✓</span> <span>Telefon-Support mit festem Ansprechpartner</span></li>
-              <li class="flex items-start gap-2.5"><span class="text-orange mt-0.5">✓</span> <span>Individuelle Anpassungen</span></li>
+          <div class="pr-card">
+            <div class="pr-name">Enterprise</div>
+            <div class="pr-for">Für große Flotten und mehrere Standorte.</div>
+            <div class="pr-amt"><b style="font-size:2.2rem;">Individuell</b></div>
+            <div class="pr-var">ab 50 Fahrern</div>
+            <div class="pr-note">Angebot nach Bedarf</div>
+            <hr class="pr-sep">
+            <ul class="pr-list">
+              <li><span class="tick">✓</span><span><strong>Alles aus Business</strong>, plus:</span></li>
+              <li><span class="tick">✓</span><span>Unbegrenzte Fahrer und Büro-Zugänge</span></li>
+              <li><span class="tick">✓</span><span>Mehrere Standorte in einem Konto</span></li>
+              <li><span class="tick">✓</span><span>Persönliches Onboarding und Schulung</span></li>
+              <li><span class="tick">✓</span><span>Telefon-Support mit festem Ansprechpartner</span></li>
+              <li><span class="tick">✓</span><span>Individuelle Anpassungen</span></li>
             </ul>
-            <a href="mailto:info@palletto.de?subject=Enterprise-Anfrage" class="btn-ghost w-full text-center">Angebot anfragen</a>
+            <a href="mailto:info@palletto.de?subject=Enterprise-Anfrage" class="pr-btn line">Angebot anfragen</a>
           </div>
 
         </div>
-        <p class="text-sm text-navy/50 mt-8">Alle Preise zzgl. der gesetzlichen Umsatzsteuer. Bei jährlicher Zahlung sind zwei Monate geschenkt.</p>
+        <p class="text-sm text-navy/50 pr-mt">Alle Preise zzgl. der gesetzlichen Umsatzsteuer. Bei jährlicher Zahlung sind zwei Monate geschenkt.</p>
+      </div>
+    </section>
+
+    <!-- NUTZEN -->
+    <section class="px-6 py-14 lg:py-20">
+      <div class="max-w-5xl mx-auto">
+        <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Was du dafür bekommst</span></div>
+        <h2 class="font-display text-3xl lg:text-4xl font-bold tracking-tight mb-3">Der Preis ist das eine. Das hier ist der Gegenwert.</h2>
+        <p class="text-lg text-navy/70 leading-relaxed max-w-2xl mb-10">Palettenmanagement kostet auch ohne Software Geld – es steht nur auf keiner Rechnung. Diese vier Posten verschwinden mit Palletto.</p>
+        <div class="pr-ben">
+          <article>
+            <div class="num">20 €</div>
+            <h3>Weniger Schwund</h3>
+            <p>So viel kostet eine Europalette im Nachkauf ungefähr. Jeder Schein, der nicht verloren geht, ist eine Palette, die du nicht ersetzen musst. Bei einem mittleren Fuhrpark summiert sich das schnell auf einen vierstelligen Betrag im Jahr.</p>
+          </article>
+          <article>
+            <div class="num">0 Min</div>
+            <h3>Kein Zettel-Suchen</h3>
+            <p>Kein Blättern in Ordnern, kein Nachtelefonieren beim Fahrer, kein „ich schau nochmal nach". Jeder Schein liegt digital ab und ist in Sekunden gefunden – mit Unterschrift und Foto.</p>
+          </article>
+          <article>
+            <div class="num">§126b</div>
+            <h3>Belege, die zählen</h3>
+            <p>Digitale Unterschrift von Fahrer und Empfänger, Zeitstempel, QR-Echtheitsprüfung. Wenn ein Kunde die Menge bestreitet, liegt der Nachweis auf dem Tisch statt im Führerhaus.</p>
+          </article>
+          <article>
+            <div class="num">Live</div>
+            <h3>Saldo statt Bauchgefühl</h3>
+            <p>Du siehst jederzeit, wer dir wie viele Paletten schuldet – ohne Excel, ohne Monatsabschluss. Und der Kunde sieht seinen Stand im Portal selbst, bevor Diskussionen entstehen.</p>
+          </article>
+        </div>
       </div>
     </section>
 
     <!-- RECHNER -->
-    <section id="rechner" class="px-6 py-14 lg:py-20">
+    <section id="rechner" class="px-6 py-14 lg:py-20 bg-white border-y border-line">
       <div class="max-w-4xl mx-auto">
         <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Preisrechner</span></div>
         <h2 class="font-display text-3xl lg:text-4xl font-bold tracking-tight mb-3">Was kostet Palletto bei dir?</h2>
         <p class="text-lg text-navy/70 leading-relaxed mb-8">Stell die Zahl deiner aktiven Fahrer ein – der Monatsbetrag rechnet sich sofort mit.</p>
 
-        <div class="card p-7 lg:p-9">
-          <div class="mb-8">
+        <div class="pr-calc">
+          <div style="margin-bottom:1.75rem;">
             <div class="flex items-center justify-between mb-3">
               <label for="pr-fahrer" class="font-display font-bold text-lg">Aktive Fahrer</label>
               <span id="pr-fahrer-val" class="font-display text-2xl font-bold text-orange">10</span>
             </div>
-            <input type="range" id="pr-fahrer" min="1" max="50" step="1" value="10" class="w-full">
-            <div class="flex justify-between text-xs text-navy/45 mt-2"><span>1</span><span>50</span></div>
+            <input type="range" id="pr-fahrer" min="1" max="50" step="1" value="10" class="pr-slider">
+            <div class="flex justify-between text-xs text-navy/45"><span>1</span><span>50</span></div>
           </div>
 
-          <div class="grid sm:grid-cols-2 gap-4">
-            <div class="rounded-2xl border border-line p-6 bg-sand">
-              <div class="text-xs font-bold uppercase tracking-wider text-navy/55 mb-2">Starter</div>
-              <div class="flex items-baseline gap-1.5">
-                <span id="pr-starter" class="font-display text-4xl font-bold leading-none">179</span>
-                <span class="font-display text-xl font-bold">€</span>
-                <span class="text-sm text-navy/60">/ Monat</span>
-              </div>
-              <div class="text-xs text-navy/50 mt-2">59 € Grundgebühr + <span id="pr-starter-var">120</span> € Fahrer</div>
+          <div class="pr-res">
+            <div class="box">
+              <div class="lab">Starter</div>
+              <div class="pr-amt"><span class="val" id="pr-starter">179</span><span class="cur" style="font-size:1.2rem;">€</span><span class="per">/ Monat</span></div>
+              <div class="sub">59 € Grundgebühr + <span id="pr-starter-var">120</span> € Fahrer</div>
             </div>
-            <div class="rounded-2xl border-2 p-6" style="border-color:#FF9500;background:rgba(255,149,0,.06);">
-              <div class="text-xs font-bold uppercase tracking-wider text-orange mb-2">Business</div>
-              <div class="flex items-baseline gap-1.5">
-                <span id="pr-business" class="font-display text-4xl font-bold leading-none text-orange">289</span>
-                <span class="font-display text-xl font-bold text-orange">€</span>
-                <span class="text-sm text-navy/60">/ Monat</span>
-              </div>
-              <div class="text-xs text-navy/50 mt-2">99 € Grundgebühr + <span id="pr-business-var">190</span> € Fahrer</div>
+            <div class="box hi">
+              <div class="lab">Business</div>
+              <div class="pr-amt"><span class="val" id="pr-business">289</span><span class="cur" style="font-size:1.2rem;color:#FF9500;">€</span><span class="per">/ Monat</span></div>
+              <div class="sub">99 € Grundgebühr + <span id="pr-business-var">190</span> € Fahrer</div>
             </div>
           </div>
 
-          <div class="mt-6 rounded-2xl bg-ink text-white p-6">
-            <div class="text-sm text-white/60 mb-1.5">Zum Vergleich: verlorene Paletten</div>
-            <p class="text-white/85 leading-relaxed text-sm">Eine Europalette kostet im Nachkauf rund 20 €. Wer im Monat nur <strong id="pr-break">15</strong> Paletten weniger verliert, hat das Business-Paket bereits ausgeglichen.</p>
+          <div style="margin-top:1.5rem;border-radius:1.1rem;background:#0F1B2D;color:#fff;padding:1.5rem;">
+            <div style="font-size:.82rem;color:rgba(255,255,255,.6);margin-bottom:.4rem;">Zum Vergleich: verlorene Paletten</div>
+            <p style="color:rgba(255,255,255,.88);line-height:1.65;font-size:.95rem;margin:0;">Eine Europalette kostet im Nachkauf rund 20 €. Wer im Monat nur <strong id="pr-break">15</strong> Paletten weniger verliert, hat das Business-Paket bereits ausgeglichen. Alles darüber ist gespartes Geld.</p>
           </div>
 
-          <p class="text-xs text-navy/50 mt-5">Abgerechnet werden nur Fahrer, die im Monat mindestens einen Schein erfasst haben. Alle Beträge zzgl. USt.</p>
+          <p class="text-xs text-navy/50" style="margin-top:1.25rem;">Abgerechnet werden nur Fahrer, die im Monat mindestens einen Schein erfasst haben. Alle Beträge zzgl. USt.</p>
         </div>
       </div>
     </section>
 
-    <!-- VERGLEICH ABRECHNUNGSMODELL -->
+    <!-- ENTSCHEIDUNGSHILFE -->
+    <section class="px-6 py-14 lg:py-20">
+      <div class="max-w-5xl mx-auto">
+        <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Entscheidungshilfe</span></div>
+        <h2 class="font-display text-3xl lg:text-4xl font-bold tracking-tight mb-10">Welches Paket passt zu dir?</h2>
+        <div class="pr-pick">
+          <article>
+            <h3>Starter passt, wenn …</h3>
+            <ul>
+              <li>du hauptsächlich weg vom Papier willst</li>
+              <li>deine Fahrer feste Touren mit wenigen Kunden fahren</li>
+              <li>du den Saldo selbst im Blick behältst</li>
+              <li>Streitfälle bei dir selten vorkommen</li>
+              <li>du klein anfangen und später wechseln willst</li>
+            </ul>
+          </article>
+          <article style="border-color:#FF9500;">
+            <h3>Business passt, wenn …</h3>
+            <ul>
+              <li>dir am Monatsende regelmäßig Paletten fehlen</li>
+              <li>du wissen willst, welcher Schein nicht erfasst wurde</li>
+              <li>du defekte Paletten mit Foto belegen musst</li>
+              <li>du offene Palettenschulden aktiv einfordern willst</li>
+              <li>deine Kunden ihren Saldo selbst einsehen sollen</li>
+            </ul>
+          </article>
+        </div>
+        <p class="text-sm text-navy/60 pr-mt">Wechseln geht jederzeit zum nächsten Monat – in beide Richtungen.</p>
+      </div>
+    </section>
+
+    <!-- SO STARTEST DU -->
     <section class="px-6 py-14 lg:py-20 bg-white border-y border-line">
       <div class="max-w-5xl mx-auto">
+        <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">In drei Schritten</span></div>
+        <h2 class="font-display text-3xl lg:text-4xl font-bold tracking-tight mb-3">Kein IT-Projekt. Ein Nachmittag.</h2>
+        <p class="text-lg text-navy/70 leading-relaxed max-w-2xl mb-10">Die meisten Unternehmen erfassen am selben Tag ihren ersten digitalen Palettenschein.</p>
+        <div class="pr-steps">
+          <article>
+            <div class="n">1</div>
+            <h3>Konto anlegen</h3>
+            <p>Firma eintragen, fertig. Keine Installation, keine Kreditkarte, kein Verkaufsgespräch nötig.</p>
+          </article>
+          <article>
+            <div class="n">2</div>
+            <h3>Kunden anlegen</h3>
+            <p>Deine Tauschpartner eintragen. Wer will, hinterlegt gleich Foto-Pflicht und Hinweise je Kunde.</p>
+          </article>
+          <article>
+            <div class="n">3</div>
+            <h3>Fahrer einladen</h3>
+            <p>Jeder Fahrer bekommt einen Link – kein Passwort, keine Schulung. Erster Schein läuft in unter einer Minute.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- VERGLEICH -->
+    <section class="px-6 py-14 lg:py-20">
+      <div class="max-w-5xl mx-auto">
         <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Der Unterschied</span></div>
-        <h2 class="font-display text-3xl lg:text-4xl font-bold tracking-tight mb-8">Pro Fahrer statt pro Buchung</h2>
+        <h2 class="font-display text-3xl lg:text-4xl font-bold tracking-tight mb-3">Pro Fahrer statt pro Buchung</h2>
+        <p class="text-lg text-navy/70 leading-relaxed max-w-2xl mb-8">Viele Lösungen rechnen je Buchung ab. Das klingt günstig, wird aber genau dann teuer, wenn dein Geschäft gut läuft.</p>
         <div class="card overflow-hidden p-0">
           <div class="grid grid-cols-3 bg-sand border-b border-line text-sm font-bold uppercase tracking-wider">
             <div class="p-5 text-navy/60">Thema</div>
@@ -204,8 +341,8 @@
             <div class="p-5 text-center text-orange bg-orange/5">Palletto</div>
           </div>
           <div class="text-sm">
-            <div class="grid grid-cols-3 border-b border-line"><div class="p-5 font-semibold">Viel Betrieb im Monat</div><div class="p-5 text-center text-navy/55">Rechnung steigt mit</div><div class="p-5 text-center font-bold text-orange bg-orange/5">Betrag bleibt gleich</div></div>
-            <div class="grid grid-cols-3 border-b border-line"><div class="p-5 font-semibold">Planbarkeit</div><div class="p-5 text-center text-navy/55">schwankt</div><div class="p-5 text-center font-bold text-orange bg-orange/5">fest kalkulierbar</div></div>
+            <div class="grid grid-cols-3 border-b border-line"><div class="p-5 font-semibold">Starkes Geschäftsjahr</div><div class="p-5 text-center text-navy/55">Rechnung steigt mit</div><div class="p-5 text-center font-bold text-orange bg-orange/5">Betrag bleibt gleich</div></div>
+            <div class="grid grid-cols-3 border-b border-line"><div class="p-5 font-semibold">Planbarkeit</div><div class="p-5 text-center text-navy/55">schwankt monatlich</div><div class="p-5 text-center font-bold text-orange bg-orange/5">fest kalkulierbar</div></div>
             <div class="grid grid-cols-3 border-b border-line"><div class="p-5 font-semibold">Fahrer im Urlaub</div><div class="p-5 text-center text-navy/55">–</div><div class="p-5 text-center font-bold text-orange bg-orange/5">kostet nichts</div></div>
             <div class="grid grid-cols-3 border-b border-line"><div class="p-5 font-semibold">Setup und Hardware</div><div class="p-5 text-center text-navy/55">oft zusätzlich</div><div class="p-5 text-center font-bold text-orange bg-orange/5">0 €</div></div>
             <div class="grid grid-cols-3"><div class="p-5 font-semibold">Laufzeit</div><div class="p-5 text-center text-navy/55">meist gebunden</div><div class="p-5 text-center font-bold text-orange bg-orange/5">monatlich kündbar</div></div>
@@ -215,25 +352,27 @@
     </section>
 
     <!-- FAQ -->
-    <section class="px-6 py-14 lg:py-20">
+    <section class="px-6 py-14 lg:py-20 bg-white border-y border-line">
       <div class="max-w-3xl mx-auto">
         <h2 class="font-display text-3xl lg:text-4xl font-bold tracking-tight mb-8 text-center">Häufige Fragen zum Preis</h2>
         <div class="space-y-3">
           <details class="acc card p-5"><summary class="flex items-center justify-between font-display font-bold text-lg">Was zählt als aktiver Fahrer?<svg class="acc-arrow w-5 h-5 text-orange shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 9l6 6 6-6"/></svg></summary><p class="text-navy/70 leading-relaxed mt-3">Ein Fahrer gilt als aktiv, wenn er im Abrechnungsmonat mindestens einen Palettenschein erfasst hat. War ein Fahrer krank, im Urlaub oder nur als Aushilfe da, ohne einen Schein zu erfassen, wird er nicht berechnet.</p></details>
-          <details class="acc card p-5"><summary class="flex items-center justify-between font-display font-bold text-lg">Kann ich jederzeit Fahrer hinzufügen?<svg class="acc-arrow w-5 h-5 text-orange shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 9l6 6 6-6"/></svg></summary><p class="text-navy/70 leading-relaxed mt-3">Ja. Du legst Fahrer an, wann du sie brauchst – es gibt keine gesperrten Plätze. Abgerechnet wird am Monatsende nach der tatsächlichen Nutzung.</p></details>
-          <details class="acc card p-5"><summary class="flex items-center justify-between font-display font-bold text-lg">Gibt es eine Mindestlaufzeit?<svg class="acc-arrow w-5 h-5 text-orange shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 9l6 6 6-6"/></svg></summary><p class="text-navy/70 leading-relaxed mt-3">Nein, Palletto ist monatlich kündbar. Wer jährlich zahlt, bekommt zwei Monate geschenkt.</p></details>
+          <details class="acc card p-5"><summary class="flex items-center justify-between font-display font-bold text-lg">Kann ich jederzeit Fahrer hinzufügen?<svg class="acc-arrow w-5 h-5 text-orange shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 9l6 6 6-6"/></svg></summary><p class="text-navy/70 leading-relaxed mt-3">Ja. Du legst Fahrer an, wann du sie brauchst – es gibt keine gesperrten Plätze und keine Bezahlschranke mitten im Tagesgeschäft. Abgerechnet wird am Monatsende nach tatsächlicher Nutzung.</p></details>
+          <details class="acc card p-5"><summary class="flex items-center justify-between font-display font-bold text-lg">Gibt es eine Mindestlaufzeit?<svg class="acc-arrow w-5 h-5 text-orange shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 9l6 6 6-6"/></svg></summary><p class="text-navy/70 leading-relaxed mt-3">Nein, Palletto ist monatlich kündbar. Wer jährlich zahlt, bekommt zwei Monate geschenkt – ist aber zu nichts verpflichtet.</p></details>
           <details class="acc card p-5"><summary class="flex items-center justify-between font-display font-bold text-lg">Fallen Setup-Gebühren oder Hardwarekosten an?<svg class="acc-arrow w-5 h-5 text-orange shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 9l6 6 6-6"/></svg></summary><p class="text-navy/70 leading-relaxed mt-3">Nein. Palletto läuft im Browser und auf jedem Smartphone, das deine Fahrer ohnehin dabeihaben. Keine Scanner, keine Installation, keine Einrichtungsgebühr.</p></details>
-          <details class="acc card p-5"><summary class="flex items-center justify-between font-display font-bold text-lg">Was passiert nach den 30 Tagen?<svg class="acc-arrow w-5 h-5 text-orange shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 9l6 6 6-6"/></svg></summary><p class="text-navy/70 leading-relaxed mt-3">Die Testphase läuft ohne Kreditkarte und endet automatisch. Wenn du weitermachen willst, wählst du dein Paket – wenn nicht, passiert nichts.</p></details>
-          <details class="acc card p-5"><summary class="flex items-center justify-between font-display font-bold text-lg">Kann ich zwischen den Paketen wechseln?<svg class="acc-arrow w-5 h-5 text-orange shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 9l6 6 6-6"/></svg></summary><p class="text-navy/70 leading-relaxed mt-3">Ja, jederzeit zum nächsten Monat. Viele starten mit Starter und wechseln zu Business, sobald sie offene Palettenschulden aktiv zurückholen wollen.</p></details>
+          <details class="acc card p-5"><summary class="flex items-center justify-between font-display font-bold text-lg">Was passiert nach den 30 Tagen?<svg class="acc-arrow w-5 h-5 text-orange shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 9l6 6 6-6"/></svg></summary><p class="text-navy/70 leading-relaxed mt-3">Die Testphase läuft ohne Kreditkarte und endet automatisch. Willst du weitermachen, wählst du dein Paket. Willst du nicht, passiert nichts – es wird nichts abgebucht.</p></details>
+          <details class="acc card p-5"><summary class="flex items-center justify-between font-display font-bold text-lg">Kann ich zwischen den Paketen wechseln?<svg class="acc-arrow w-5 h-5 text-orange shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 9l6 6 6-6"/></svg></summary><p class="text-navy/70 leading-relaxed mt-3">Ja, jederzeit zum nächsten Monat und in beide Richtungen. Viele starten mit Starter und wechseln zu Business, sobald sie offene Palettenschulden aktiv zurückholen wollen.</p></details>
+          <details class="acc card p-5"><summary class="flex items-center justify-between font-display font-bold text-lg">Was passiert mit meinen Daten, wenn ich kündige?<svg class="acc-arrow w-5 h-5 text-orange shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 9l6 6 6-6"/></svg></summary><p class="text-navy/70 leading-relaxed mt-3">Du kannst deine Palettenscheine jederzeit als PDF und CSV exportieren – auch zum Ende der Testphase. Deine Belege gehören dir.</p></details>
+          <details class="acc card p-5"><summary class="flex items-center justify-between font-display font-bold text-lg">Wo liegen meine Daten?<svg class="acc-arrow w-5 h-5 text-orange shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 9l6 6 6-6"/></svg></summary><p class="text-navy/70 leading-relaxed mt-3">Auf Servern in Deutschland (Frankfurt), DSGVO-konform mit Auftragsverarbeitungsvertrag und täglichen Backups.</p></details>
         </div>
       </div>
     </section>
 
     <!-- VERWANDTE THEMEN -->
-    <section class="px-6 py-14 lg:py-20 bg-white border-y border-line"><div class="max-w-6xl mx-auto"><h2 class="font-display text-2xl lg:text-3xl font-bold tracking-tight mb-8">Verwandte Themen</h2><div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"><a href="/palettenkonto-software.html" class="card p-6 block"><h3 class="font-display text-lg font-bold mb-1.5">Palettenkonto-Software →</h3><p class="text-sm text-navy/65">Salden je Kunde automatisch.</p></a><a href="/luecken-erkennung.html" class="card p-6 block"><h3 class="font-display text-lg font-bold mb-1.5">Lücken-Erkennung →</h3><p class="text-sm text-navy/65">Fehlende Scheine sofort sehen.</p></a><a href="/palettentausch-app.html" class="card p-6 block"><h3 class="font-display text-lg font-bold mb-1.5">Palettentausch-App →</h3><p class="text-sm text-navy/65">Erfassung durch die Fahrer.</p></a><a href="/kunden-portal.html" class="card p-6 block"><h3 class="font-display text-lg font-bold mb-1.5">Kunden-Portal →</h3><p class="text-sm text-navy/65">Kunden sehen ihren Saldo.</p></a><a href="/echtheitspruefung-qr-code.html" class="card p-6 block"><h3 class="font-display text-lg font-bold mb-1.5">QR-Echtheitsprüfung →</h3><p class="text-sm text-navy/65">Jeder Schein überprüfbar.</p></a><a href="/blog/kosten-schlechtes-palettenmanagement/" class="card p-6 block"><h3 class="font-display text-lg font-bold mb-1.5">Kosten schlechten Managements →</h3><p class="text-sm text-navy/65">Was Schwund wirklich kostet.</p></a></div></div></section>
+    <section class="px-6 py-14 lg:py-20"><div class="max-w-6xl mx-auto"><h2 class="font-display text-2xl lg:text-3xl font-bold tracking-tight mb-8">Verwandte Themen</h2><div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"><a href="/palettenkonto-software.html" class="card p-6 block"><h3 class="font-display text-lg font-bold mb-1.5">Palettenkonto-Software →</h3><p class="text-sm text-navy/65">Salden je Kunde automatisch.</p></a><a href="/luecken-erkennung.html" class="card p-6 block"><h3 class="font-display text-lg font-bold mb-1.5">Lücken-Erkennung →</h3><p class="text-sm text-navy/65">Fehlende Scheine sofort sehen.</p></a><a href="/palettentausch-app.html" class="card p-6 block"><h3 class="font-display text-lg font-bold mb-1.5">Palettentausch-App →</h3><p class="text-sm text-navy/65">Erfassung durch die Fahrer.</p></a><a href="/kunden-portal.html" class="card p-6 block"><h3 class="font-display text-lg font-bold mb-1.5">Kunden-Portal →</h3><p class="text-sm text-navy/65">Kunden sehen ihren Saldo.</p></a><a href="/echtheitspruefung-qr-code.html" class="card p-6 block"><h3 class="font-display text-lg font-bold mb-1.5">QR-Echtheitsprüfung →</h3><p class="text-sm text-navy/65">Jeder Schein überprüfbar.</p></a><a href="/blog/kosten-schlechtes-palettenmanagement/" class="card p-6 block"><h3 class="font-display text-lg font-bold mb-1.5">Kosten schlechten Managements →</h3><p class="text-sm text-navy/65">Was Schwund wirklich kostet.</p></a></div></div></section>
 
     <!-- CTA -->
-    <section class="px-6 py-14 lg:py-20"><div class="max-w-6xl mx-auto relative overflow-hidden rounded-[2.5rem] bg-ink text-white px-8 py-14 lg:px-16 lg:py-16 text-center"><div class="absolute inset-0 -z-0" style="background:radial-gradient(50% 80% at 15% 0%, rgba(93,214,178,.22), transparent 60%), radial-gradient(50% 90% at 90% 100%, rgba(255,149,0,.28), transparent 60%);"></div><div class="relative max-w-xl mx-auto"><h2 class="font-display text-3xl lg:text-4xl font-bold tracking-tight mb-4">Erst testen, dann entscheiden.</h2><p class="text-lg text-white/65 leading-relaxed mb-8">30 Tage kostenlos, keine Kreditkarte, monatlich kündbar.</p><a href="/#anmelden" class="btn-primary"><span class="swap"><span>30 Tage kostenlos testen</span><span>Los geht's</span></span><span class="ico"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span></a></div></div></section>
+    <section class="px-6 py-14 lg:py-20"><div class="max-w-6xl mx-auto relative overflow-hidden rounded-[2.5rem] bg-ink text-white px-8 py-14 lg:px-16 lg:py-16 text-center"><div class="absolute inset-0 -z-0" style="background:radial-gradient(50% 80% at 15% 0%, rgba(93,214,178,.22), transparent 60%), radial-gradient(50% 90% at 90% 100%, rgba(255,149,0,.28), transparent 60%);"></div><div class="relative max-w-xl mx-auto"><h2 class="font-display text-3xl lg:text-4xl font-bold tracking-tight mb-4">Erst testen, dann entscheiden.</h2><p class="text-lg text-white/65 leading-relaxed mb-8">30 Tage kostenlos, keine Kreditkarte, monatlich kündbar. Wenn es nicht passt, kostet es dich nichts außer einer halben Stunde.</p><a href="/#anmelden" class="btn-primary"><span class="swap"><span>30 Tage kostenlos testen</span><span>Los geht's</span></span><span class="ico"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span></a></div></div></section>
 
   </main>
   <div id="site-footer"></div>
