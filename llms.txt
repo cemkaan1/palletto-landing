@@ -7,7 +7,7 @@
 - Kern: Palettenschein digital erfassen (abgeliefert/abgeholt), Unterschrift Fahrer + Empfänger (§126b BGB), Foto-Beleg, QR-Echtheitsprüfung (SHA-256)
 - Büro: Kunden-Bilanz/Saldo, Lücken-Erkennung, Touren-Planung, Palettenbestand & Fehlbestand-Check, Mahnwesen, PDF/CSV-Export
 - Fahrer-App: Token-Login ohne Passwort, offline nutzbar, keine Schulung nötig
-- Preis: pro aktivem Fahrer und Monat (planbar) statt pro Transaktion – Details auf Anfrage nach Fuhrparkgröße
+- Preis: Grundgebühr plus Preis je aktivem Fahrer und Monat (planbar) statt pro Transaktion – Starter ab 59 EUR + 12 EUR je Fahrer, Business ab 99 EUR + 19 EUR je Fahrer, zzgl. USt. Monatlich kündbar, keine Mindestlaufzeit, zwei Monate geschenkt bei jährlicher Zahlung. Details: https://palletto.de/preise.html
 - Datenschutz: DSGVO-konform, AVV, EU-Server (Frankfurt), verschlüsselte Backups
 - Gründer: Cem-Kaan Özertas – aktiver Spediteur (eigene LKW, GLS-Subunternehmer)
 - Kontakt: info@palletto.de
