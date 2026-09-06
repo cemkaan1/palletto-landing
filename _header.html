@@ -21,10 +21,20 @@
 .plh-cta{display:inline-flex;align-items:center;gap:.55rem;background:#FF9500;color:#fff;font-weight:700;font-size:.875rem;padding:.45rem .45rem .45rem 1.1rem;border-radius:999px;text-decoration:none;box-shadow:0 12px 28px -10px rgba(255,149,0,.6);transition:.2s;white-space:nowrap;}
 .plh-cta:hover{background:#e88500;}
 .plh-cta .ico{width:1.9rem;height:1.9rem;background:#fff;color:#FF9500;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;}
-.plh-burger{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:999px;border:1px solid #EBE8E1;color:#0F1B2D;background:none;cursor:pointer;}
-.plh-burger .x{display:none;}
-.plh-cb:checked ~ .plh-in .plh-burger .bars{display:none;}
-.plh-cb:checked ~ .plh-in .plh-burger .x{display:block;}
+.plh-burger{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:999px;border:1px solid #EBE8E1;color:#0F1B2D;background:none;cursor:pointer;transition:background .2s ease,border-color .2s ease;-webkit-tap-highlight-color:transparent;}
+.plh-burger:hover{background:rgba(27,58,107,.05);border-color:#DCD7C9;}
+.plh-burger:active{transform:scale(.94);}
+.plh-bars{position:relative;display:block;width:18px;height:14px;}
+.plh-bars i{position:absolute;left:0;width:100%;height:2px;border-radius:2px;background:currentColor;transition:transform .32s cubic-bezier(.68,-.35,.27,1.35),opacity .18s ease,width .32s ease;}
+.plh-bars i:nth-child(1){top:0;}
+.plh-bars i:nth-child(2){top:6px;width:76%;}
+.plh-bars i:nth-child(3){top:12px;}
+.plh-burger:hover .plh-bars i:nth-child(2){width:100%;}
+.plh-cb:checked ~ .plh-in .plh-burger{background:rgba(255,149,0,.1);border-color:#FF9500;color:#FF9500;}
+.plh-cb:checked ~ .plh-in .plh-bars i:nth-child(1){transform:translateY(6px) rotate(45deg);}
+.plh-cb:checked ~ .plh-in .plh-bars i:nth-child(2){opacity:0;transform:scaleX(.2);}
+.plh-cb:checked ~ .plh-in .plh-bars i:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+@media(prefers-reduced-motion:reduce){.plh-bars i{transition:none;}}
 .plh-mobile{display:none;padding:0 1rem 1rem;font-family:'Plus Jakarta Sans',system-ui,sans-serif;}
 .plh-cb:checked ~ .plh-mobile{display:block;}
 .plh-mcard{background:#fff;border:1px solid #EBE8E1;border-radius:1.5rem;box-shadow:0 24px 48px -20px rgba(15,27,45,.3);padding:1rem;display:flex;flex-direction:column;gap:.1rem;max-height:78vh;overflow-y:auto;}
@@ -65,9 +75,8 @@
       <a href="/#anmelden" class="plh-cta">Kostenlos testen
         <span class="ico"><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span>
       </a>
-      <label for="plh-toggle" class="plh-burger" aria-label="Menü">
-        <svg class="bars" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16"/></svg>
-        <svg class="x" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 6l12 12M18 6L6 18"/></svg>
+      <label for="plh-toggle" class="plh-burger" aria-label="Menü öffnen">
+        <span class="plh-bars" aria-hidden="true"><i></i><i></i><i></i></span>
       </label>
     </div>
   </div>
