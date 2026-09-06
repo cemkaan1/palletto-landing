@@ -20,27 +20,47 @@
   <link rel="preload" href="/assets/fonts/space-grotesk-700.woff2" as="font" type="font/woff2" crossorigin>
   <style>
     /* Preisseite - eigene Styles, unabhaengig vom kompilierten Tailwind-Set */
+    .pr-toggle{display:inline-flex;align-items:center;gap:.25rem;background:#fff;border:1px solid #EBE8E1;border-radius:999px;padding:.3rem;box-shadow:0 2px 10px -6px rgba(15,27,45,.2)}
+    .pr-toggle button{border:0;background:transparent;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.92rem;color:rgba(27,58,107,.6);padding:.6rem 1.35rem;border-radius:999px;cursor:pointer;transition:background .2s,color .2s}
+    .pr-toggle button.on{background:#0F1B2D;color:#fff}
+    .pr-save{display:inline-block;margin-left:.65rem;font-size:.78rem;font-weight:700;color:#FF9500;background:rgba(255,149,0,.12);padding:.35rem .7rem;border-radius:999px}
     .pr-grid{display:grid;gap:1.5rem;align-items:stretch}
     @media(min-width:1024px){.pr-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    .pr-card{position:relative;background:#fff;border:1px solid #EBE8E1;border-radius:1.75rem;padding:2rem;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s,border-color .2s}
-    .pr-card:hover{transform:translateY(-3px);box-shadow:0 24px 48px -24px rgba(15,27,45,.22)}
-    .pr-card.is-best{border:2px solid #FF9500;box-shadow:0 24px 60px -30px rgba(255,149,0,.55)}
-    .pr-badge{position:absolute;top:-.85rem;left:2rem;background:#FF9500;color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:.4rem .85rem;border-radius:999px;box-shadow:0 6px 16px -6px rgba(255,149,0,.7)}
-    .pr-name{font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;margin-bottom:.35rem}
-    .pr-for{font-size:.9rem;color:rgba(27,58,107,.62);margin-bottom:1.5rem;line-height:1.5;min-height:2.7rem}
-    .pr-amt{display:flex;align-items:baseline;gap:.35rem}
-    .pr-amt b{font-family:'Space Grotesk',sans-serif;font-size:3rem;font-weight:700;line-height:1}
-    .pr-amt .cur{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700}
-    .pr-amt .per{font-size:.9rem;color:rgba(27,58,107,.6)}
-    .pr-var{font-size:1rem;font-weight:700;color:#FF9500;margin-top:.5rem}
-    .pr-note{font-size:.74rem;color:rgba(27,58,107,.5);margin-top:.55rem}
-    .pr-sep{border:0;border-top:1px solid #EBE8E1;margin:1.5rem 0}
+    .pr-card{position:relative;background:#fff;border:1px solid #EBE8E1;border-radius:2rem;padding:2.25rem 2rem;display:flex;flex-direction:column;transition:transform .22s,box-shadow .22s,border-color .22s}
+    .pr-card:hover{transform:translateY(-4px);box-shadow:0 28px 56px -28px rgba(15,27,45,.25)}
+    .pr-card.is-best{background:#0F1B2D;border:2px solid #FF9500;box-shadow:0 30px 70px -30px rgba(15,27,45,.65)}
+    .pr-card.is-best .pr-name{color:#fff}
+    .pr-card.is-best .pr-for{color:rgba(255,255,255,.62)}
+    .pr-card.is-best .pr-amt b,.pr-card.is-best .pr-amt .cur{color:#FF9500}
+    .pr-card.is-best .pr-amt .per{color:rgba(255,255,255,.55)}
+    .pr-card.is-best .pr-note{color:rgba(255,255,255,.45)}
+    .pr-card.is-best .pr-sep{border-top-color:rgba(255,255,255,.14)}
+    .pr-card.is-best .pr-list li{color:rgba(255,255,255,.86)}
+    .pr-card.is-best .pr-list li.off{color:rgba(255,255,255,.32)}
+    .pr-card.is-best .pr-strike{color:rgba(255,255,255,.4)}
+    .pr-badge{position:absolute;top:-.9rem;left:50%;transform:translateX(-50%);white-space:nowrap;background:#FF9500;color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:.45rem 1rem;border-radius:999px;box-shadow:0 8px 20px -8px rgba(255,149,0,.8)}
+    .pr-name{font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;margin-bottom:.4rem;text-align:center}
+    .pr-for{font-size:.88rem;color:rgba(27,58,107,.62);margin-bottom:1.5rem;line-height:1.55;min-height:3.4rem;text-align:center}
+    .pr-amt{display:flex;align-items:baseline;justify-content:center;gap:.35rem;flex-wrap:wrap}
+    .pr-amt b{font-family:'Space Grotesk',sans-serif;font-size:3.2rem;font-weight:700;line-height:1}
+    .pr-amt .cur{font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700}
+    .pr-amt .per{font-size:.88rem;color:rgba(27,58,107,.6)}
+    .pr-strike{font-family:'Space Grotesk',sans-serif;font-size:1.9rem;font-weight:700;color:rgba(27,58,107,.32);text-decoration:line-through;margin-right:.15rem}
+    .pr-var{font-size:1rem;font-weight:700;color:#FF9500;margin-top:.6rem;text-align:center}
+    .pr-note{font-size:.74rem;color:rgba(27,58,107,.5);margin-top:.5rem;text-align:center}
+    .pr-sep{border:0;border-top:1px dashed #E2DED2;margin:1.6rem 0}
     .pr-list{list-style:none;padding:0;margin:0 0 2rem;flex:1}
-    .pr-list li{display:flex;gap:.65rem;align-items:flex-start;font-size:.9rem;color:rgba(27,58,107,.82);line-height:1.55;margin-bottom:.8rem}
-    .pr-list li .tick{color:#FF9500;font-weight:700;flex:0 0 auto;margin-top:.05rem}
-    .pr-btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;width:100%;box-sizing:border-box;font-weight:700;padding:.9rem 1.2rem;border-radius:999px;transition:background .2s,border-color .2s,transform .2s}
-    .pr-btn.solid{background:#FF9500;color:#fff;box-shadow:0 12px 28px -12px rgba(255,149,0,.7)}
+    .pr-list li{display:flex;gap:.7rem;align-items:flex-start;font-size:.9rem;color:rgba(27,58,107,.85);line-height:1.5;margin-bottom:.85rem}
+    .pr-list li.off{color:rgba(27,58,107,.38)}
+    .pr-ic{flex:0 0 auto;width:1.35rem;height:1.35rem;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;margin-top:.02rem}
+    .pr-ic.yes{background:#2EBE8C;color:#fff}
+    .pr-ic.no{background:transparent;color:rgba(27,58,107,.32)}
+    .pr-card.is-best .pr-ic.no{color:rgba(255,255,255,.3)}
+    .pr-btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;width:100%;box-sizing:border-box;font-weight:700;padding:1rem 1.2rem;border-radius:999px;transition:background .2s,border-color .2s,transform .2s}
+    .pr-btn.solid{background:#FF9500;color:#fff;box-shadow:0 14px 30px -12px rgba(255,149,0,.8)}
     .pr-btn.solid:hover{background:#E88500;transform:translateY(-1px)}
+    .pr-btn.white{background:#fff;color:#0F1B2D}
+    .pr-btn.white:hover{background:#F3F4F6;transform:translateY(-1px)}
     .pr-btn.line{background:#fff;color:#1B3A6B;border:1px solid #EBE8E1}
     .pr-btn.line:hover{border-color:#CFCABB;background:#FAF8F3}
     .pr-trust{display:grid;gap:1rem;grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -65,6 +85,7 @@
     .pr-res .val{font-family:'Space Grotesk',sans-serif;font-size:2.2rem;font-weight:700;line-height:1}
     .pr-res .box.hi .val{color:#FF9500}
     .pr-res .sub{font-size:.76rem;color:rgba(27,58,107,.55);margin-top:.5rem}
+    .pr-res .pr-amt{justify-content:flex-start}
     .pr-steps{display:grid;gap:1.25rem}
     @media(min-width:768px){.pr-steps{grid-template-columns:repeat(3,minmax(0,1fr))}}
     .pr-steps article{background:#fff;border:1px solid #EBE8E1;border-radius:1.5rem;padding:1.75rem}
@@ -79,7 +100,7 @@
     .pr-pick li{position:relative;padding-left:1.5rem;margin-bottom:.6rem;font-size:.93rem;color:rgba(27,58,107,.78);line-height:1.55}
     .pr-pick li:before{content:"";position:absolute;left:.25rem;top:.6rem;width:6px;height:6px;border-radius:2px;background:#FF9500}
     .pr-mt{margin-top:1.5rem}
-  </style>
+</style>
   <script type="application/ld+json">
   { "@context": "https://schema.org", "@graph": [
     { "@type": "WebPage", "@id": "https://palletto.de/preise.html", "name": "Preise", "inLanguage": "de-DE", "description": "Transparente Preise für digitale Palettenscheine: Grundgebühr plus Preis je aktivem Fahrer.", "isPartOf": { "@type": "WebSite", "name": "Palletto", "url": "https://palletto.de/" } },
@@ -118,7 +139,7 @@
 
     <!-- VERTRAUENSLEISTE -->
     <section class="px-6 py-8">
-      <div class="max-w-5xl mx-auto">
+      <div class="max-w-4xl mx-auto">
         <div class="pr-trust">
           <div><b>Keine Einrichtungsgebühr</b><span>Konto anlegen und loslegen – kein Setup-Paket, keine Beratungspflicht.</span></div>
           <div><b>Keine Hardware</b><span>Läuft auf den Smartphones, die deine Fahrer ohnehin dabeihaben.</span></div>
@@ -134,24 +155,36 @@
         <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Pakete</span></div>
         <h2 class="font-display text-3xl lg:text-4xl font-bold tracking-tight mb-3">Zwei Pakete, ein klares Prinzip</h2>
         <p class="text-lg text-navy/70 leading-relaxed max-w-2xl mb-10">Starter deckt die tägliche Erfassung ab: Schein schreiben, unterschreiben, Saldo sehen. Business bringt alles dazu, was offene Paletten wirklich zurückholt.</p>
+        <div style="display:flex;align-items:center;flex-wrap:wrap;gap:.5rem;margin-bottom:2.5rem;">
+          <div class="pr-toggle" role="group" aria-label="Abrechnungszeitraum">
+            <button type="button" id="pr-monthly" class="on">Monatlich</button>
+            <button type="button" id="pr-yearly">Jährlich</button>
+          </div>
+          <span class="pr-save">2 Monate geschenkt</span>
+        </div>
 
         <div class="pr-grid">
 
           <div class="pr-card">
             <div class="pr-name">Starter</div>
             <div class="pr-for">Für kleine Fuhrparks, die vom Papier wegwollen.</div>
-            <div class="pr-amt"><b>59</b><span class="cur">€</span><span class="per">/ Monat</span></div>
-            <div class="pr-var">+ 12 € je aktivem Fahrer</div>
-            <div class="pr-note">zzgl. USt. · monatlich kündbar</div>
+            <div class="pr-amt"><span class="pr-strike" data-strike="starter" style="display:none;">71</span><b data-base="starter">59</b><span class="cur">€</span><span class="per">/ Monat</span></div>
+            <div class="pr-var">+ <span data-drv="starter">12</span> € je aktivem Fahrer</div>
+            <div class="pr-note" data-note>zzgl. USt. · monatlich kündbar</div>
             <hr class="pr-sep">
             <ul class="pr-list">
-              <li><span class="tick">✓</span><span><strong>Digitale Palettenscheine</strong> statt Zettel</span></li>
-              <li><span class="tick">✓</span><span>Unterschrift von <strong>Fahrer und Empfänger</strong> (§126b BGB)</span></li>
-              <li><span class="tick">✓</span><span><strong>Saldo je Kunde</strong> in Echtzeit</span></li>
-              <li><span class="tick">✓</span><span>Offline-Modus für unterwegs</span></li>
-              <li><span class="tick">✓</span><span>PDF-Export und Druck</span></li>
-              <li><span class="tick">✓</span><span>Unbegrenzt viele Kunden</span></li>
-              <li><span class="tick">✓</span><span>E-Mail-Support</span></li>
+              <li><span class="pr-ic yes">✓</span><span>Digitale Palettenscheine statt Zettel</span></li>
+              <li><span class="pr-ic yes">✓</span><span>Unterschrift Fahrer &amp; Empfänger (§126b BGB)</span></li>
+              <li><span class="pr-ic yes">✓</span><span>Saldo je Kunde in Echtzeit</span></li>
+              <li><span class="pr-ic yes">✓</span><span>Offline-Modus &amp; PDF-Export</span></li>
+              <li class="off"><span class="pr-ic no">✕</span><span>Lücken-Erkennung fehlender Scheine</span></li>
+              <li class="off"><span class="pr-ic no">✕</span><span>Foto-Dokumentation defekter Paletten</span></li>
+              <li class="off"><span class="pr-ic no">✕</span><span>Mahnwesen für offene Palettenschulden</span></li>
+              <li class="off"><span class="pr-ic no">✕</span><span>Kunden-Portal mit eigenem Saldo</span></li>
+              <li class="off"><span class="pr-ic no">✕</span><span>QR-Echtheitsprüfung jedes Scheins</span></li>
+              <li class="off"><span class="pr-ic no">✕</span><span>CSV-Export &amp; tägliche Auswertung</span></li>
+              <li class="off"><span class="pr-ic no">✕</span><span>Mehrere Standorte in einem Konto</span></li>
+              <li class="off"><span class="pr-ic no">✕</span><span>Persönliches Onboarding &amp; Telefon-Support</span></li>
             </ul>
             <a href="/#anmelden" class="pr-btn line">30 Tage testen</a>
           </div>
@@ -160,19 +193,23 @@
             <span class="pr-badge">Beliebtestes Paket</span>
             <div class="pr-name">Business</div>
             <div class="pr-for">Für alle, die offene Paletten aktiv zurückholen wollen.</div>
-            <div class="pr-amt"><b>99</b><span class="cur">€</span><span class="per">/ Monat</span></div>
-            <div class="pr-var">+ 19 € je aktivem Fahrer</div>
-            <div class="pr-note">zzgl. USt. · monatlich kündbar</div>
+            <div class="pr-amt"><span class="pr-strike" data-strike="business" style="display:none;">119</span><b data-base="business">99</b><span class="cur">€</span><span class="per">/ Monat</span></div>
+            <div class="pr-var">+ <span data-drv="business">19</span> € je aktivem Fahrer</div>
+            <div class="pr-note" data-note>zzgl. USt. · monatlich kündbar</div>
             <hr class="pr-sep">
             <ul class="pr-list">
-              <li><span class="tick">✓</span><span><strong>Alles aus Starter</strong>, plus:</span></li>
-              <li><span class="tick">✓</span><span><strong>Lücken-Erkennung</strong> – fehlende Scheine noch am selben Tag sichtbar</span></li>
-              <li><span class="tick">✓</span><span><strong>Foto-Dokumentation</strong> inkl. Foto-Pflicht je Kunde</span></li>
-              <li><span class="tick">✓</span><span><strong>Mahnwesen</strong> für offene Palettenschulden</span></li>
-              <li><span class="tick">✓</span><span><strong>Kunden-Portal</strong> – Kunden sehen ihren Saldo selbst</span></li>
-              <li><span class="tick">✓</span><span><strong>QR-Echtheitsprüfung</strong> jedes Scheins</span></li>
-              <li><span class="tick">✓</span><span>CSV-Export für die Buchhaltung</span></li>
-              <li><span class="tick">✓</span><span>Tägliche Auswertung per E-Mail</span></li>
+              <li><span class="pr-ic yes">✓</span><span>Digitale Palettenscheine statt Zettel</span></li>
+              <li><span class="pr-ic yes">✓</span><span>Unterschrift Fahrer &amp; Empfänger (§126b BGB)</span></li>
+              <li><span class="pr-ic yes">✓</span><span>Saldo je Kunde in Echtzeit</span></li>
+              <li><span class="pr-ic yes">✓</span><span>Offline-Modus &amp; PDF-Export</span></li>
+              <li><span class="pr-ic yes">✓</span><span>Lücken-Erkennung fehlender Scheine</span></li>
+              <li><span class="pr-ic yes">✓</span><span>Foto-Dokumentation defekter Paletten</span></li>
+              <li><span class="pr-ic yes">✓</span><span>Mahnwesen für offene Palettenschulden</span></li>
+              <li><span class="pr-ic yes">✓</span><span>Kunden-Portal mit eigenem Saldo</span></li>
+              <li><span class="pr-ic yes">✓</span><span>QR-Echtheitsprüfung jedes Scheins</span></li>
+              <li><span class="pr-ic yes">✓</span><span>CSV-Export &amp; tägliche Auswertung</span></li>
+              <li class="off"><span class="pr-ic no">✕</span><span>Mehrere Standorte in einem Konto</span></li>
+              <li class="off"><span class="pr-ic no">✕</span><span>Persönliches Onboarding &amp; Telefon-Support</span></li>
             </ul>
             <a href="/#anmelden" class="pr-btn solid">30 Tage testen</a>
           </div>
@@ -180,17 +217,23 @@
           <div class="pr-card">
             <div class="pr-name">Enterprise</div>
             <div class="pr-for">Für große Flotten und mehrere Standorte.</div>
-            <div class="pr-amt"><b style="font-size:2.2rem;">Individuell</b></div>
+            <div class="pr-amt"><b style="font-size:2.3rem;">Individuell</b></div>
             <div class="pr-var">ab 50 Fahrern</div>
             <div class="pr-note">Angebot nach Bedarf</div>
             <hr class="pr-sep">
             <ul class="pr-list">
-              <li><span class="tick">✓</span><span><strong>Alles aus Business</strong>, plus:</span></li>
-              <li><span class="tick">✓</span><span>Unbegrenzte Fahrer und Büro-Zugänge</span></li>
-              <li><span class="tick">✓</span><span>Mehrere Standorte in einem Konto</span></li>
-              <li><span class="tick">✓</span><span>Persönliches Onboarding und Schulung</span></li>
-              <li><span class="tick">✓</span><span>Telefon-Support mit festem Ansprechpartner</span></li>
-              <li><span class="tick">✓</span><span>Individuelle Anpassungen</span></li>
+              <li><span class="pr-ic yes">✓</span><span>Digitale Palettenscheine statt Zettel</span></li>
+              <li><span class="pr-ic yes">✓</span><span>Unterschrift Fahrer &amp; Empfänger (§126b BGB)</span></li>
+              <li><span class="pr-ic yes">✓</span><span>Saldo je Kunde in Echtzeit</span></li>
+              <li><span class="pr-ic yes">✓</span><span>Offline-Modus &amp; PDF-Export</span></li>
+              <li><span class="pr-ic yes">✓</span><span>Lücken-Erkennung fehlender Scheine</span></li>
+              <li><span class="pr-ic yes">✓</span><span>Foto-Dokumentation defekter Paletten</span></li>
+              <li><span class="pr-ic yes">✓</span><span>Mahnwesen für offene Palettenschulden</span></li>
+              <li><span class="pr-ic yes">✓</span><span>Kunden-Portal mit eigenem Saldo</span></li>
+              <li><span class="pr-ic yes">✓</span><span>QR-Echtheitsprüfung jedes Scheins</span></li>
+              <li><span class="pr-ic yes">✓</span><span>CSV-Export &amp; tägliche Auswertung</span></li>
+              <li><span class="pr-ic yes">✓</span><span>Mehrere Standorte in einem Konto</span></li>
+              <li><span class="pr-ic yes">✓</span><span>Persönliches Onboarding &amp; Telefon-Support</span></li>
             </ul>
             <a href="mailto:info@palletto.de?subject=Enterprise-Anfrage" class="pr-btn line">Angebot anfragen</a>
           </div>
@@ -202,7 +245,7 @@
 
     <!-- NUTZEN -->
     <section class="px-6 py-14 lg:py-20">
-      <div class="max-w-5xl mx-auto">
+      <div class="max-w-6xl mx-auto">
         <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Was du dafür bekommst</span></div>
         <h2 class="font-display text-3xl lg:text-4xl font-bold tracking-tight mb-3">Der Preis ist das eine. Das hier ist der Gegenwert.</h2>
         <p class="text-lg text-navy/70 leading-relaxed max-w-2xl mb-10">Palettenmanagement kostet auch ohne Software Geld – es steht nur auf keiner Rechnung. Diese vier Posten verschwinden mit Palletto.</p>
@@ -252,12 +295,12 @@
             <div class="box">
               <div class="lab">Starter</div>
               <div class="pr-amt"><span class="val" id="pr-starter">179</span><span class="cur" style="font-size:1.2rem;">€</span><span class="per">/ Monat</span></div>
-              <div class="sub">59 € Grundgebühr + <span id="pr-starter-var">120</span> € Fahrer</div>
+              <div class="sub"><span id="pr-gs">59</span> € Grundgebühr + <span id="pr-starter-var">120</span> € Fahrer</div>
             </div>
             <div class="box hi">
               <div class="lab">Business</div>
               <div class="pr-amt"><span class="val" id="pr-business">289</span><span class="cur" style="font-size:1.2rem;color:#FF9500;">€</span><span class="per">/ Monat</span></div>
-              <div class="sub">99 € Grundgebühr + <span id="pr-business-var">190</span> € Fahrer</div>
+              <div class="sub"><span id="pr-gb">99</span> € Grundgebühr + <span id="pr-business-var">190</span> € Fahrer</div>
             </div>
           </div>
 
@@ -273,7 +316,7 @@
 
     <!-- ENTSCHEIDUNGSHILFE -->
     <section class="px-6 py-14 lg:py-20">
-      <div class="max-w-5xl mx-auto">
+      <div class="max-w-6xl mx-auto">
         <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Entscheidungshilfe</span></div>
         <h2 class="font-display text-3xl lg:text-4xl font-bold tracking-tight mb-10">Welches Paket passt zu dir?</h2>
         <div class="pr-pick">
@@ -304,7 +347,7 @@
 
     <!-- SO STARTEST DU -->
     <section class="px-6 py-14 lg:py-20 bg-white border-y border-line">
-      <div class="max-w-5xl mx-auto">
+      <div class="max-w-6xl mx-auto">
         <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">In drei Schritten</span></div>
         <h2 class="font-display text-3xl lg:text-4xl font-bold tracking-tight mb-3">Kein IT-Projekt. Ein Nachmittag.</h2>
         <p class="text-lg text-navy/70 leading-relaxed max-w-2xl mb-10">Die meisten Unternehmen erfassen am selben Tag ihren ersten digitalen Palettenschein.</p>
@@ -379,24 +422,56 @@
   <script>Promise.all([fetch('/_header.html').then(function(r){return r.text();}),fetch('/_footer.html').then(function(r){return r.text();})]).then(function(p){document.getElementById('site-header').innerHTML=p[0];document.getElementById('site-footer').innerHTML=p[1];}).catch(function(){});</script>
   <script>
   (function(){
+    /* --- Abrechnungs-Umschalter: jaehrlich = 2 Monate geschenkt (10/12) --- */
+    var mB=document.getElementById('pr-monthly'), yB=document.getElementById('pr-yearly');
+    var BASE={starter:59,business:99}, DRV={starter:12,business:19};
+    var yearly=false;
+    function eff(v){ return Math.round(v*10/12); }
+    function paint(){
+      ['starter','business'].forEach(function(k){
+        var b=document.querySelector('[data-base="'+k+'"]');
+        var d=document.querySelector('[data-drv="'+k+'"]');
+        var st=document.querySelector('[data-strike="'+k+'"]');
+        if(!b||!d||!st) return;
+        b.textContent = yearly ? eff(BASE[k]) : BASE[k];
+        d.textContent = yearly ? eff(DRV[k]) : DRV[k];
+        st.textContent = BASE[k];
+        st.style.display = yearly ? 'inline' : 'none';
+      });
+      document.querySelectorAll('[data-note]').forEach(function(n){
+        n.textContent = yearly ? 'zzgl. USt. · jährlich abgerechnet' : 'zzgl. USt. · monatlich kündbar';
+      });
+      if(mB&&yB){ mB.classList.toggle('on',!yearly); yB.classList.toggle('on',yearly); }
+      calc();
+    }
+    if(mB) mB.addEventListener('click',function(){ yearly=false; paint(); });
+    if(yB) yB.addEventListener('click',function(){ yearly=true; paint(); });
+
+    /* --- Rechner --- */
     var s = document.getElementById('pr-fahrer');
-    if(!s) return;
     var out = document.getElementById('pr-fahrer-val');
     var st = document.getElementById('pr-starter'), stv = document.getElementById('pr-starter-var');
     var bu = document.getElementById('pr-business'), buv = document.getElementById('pr-business-var');
     var br = document.getElementById('pr-break');
     function fmt(n){ return n.toLocaleString('de-DE'); }
     function calc(){
+      if(!s) return;
       var f = parseInt(s.value, 10) || 1;
-      var sVar = f * 12, bVar = f * 19;
-      var sTot = 59 + sVar, bTot = 99 + bVar;
-      out.textContent = f;
-      st.textContent = fmt(sTot); stv.textContent = fmt(sVar);
-      bu.textContent = fmt(bTot); buv.textContent = fmt(bVar);
-      br.textContent = Math.ceil(bTot / 20);
+      var sB = yearly ? eff(BASE.starter) : BASE.starter;
+      var bB = yearly ? eff(BASE.business) : BASE.business;
+      var sD = yearly ? eff(DRV.starter) : DRV.starter;
+      var bD = yearly ? eff(DRV.business) : DRV.business;
+      var sVar = f*sD, bVar = f*bD;
+      var sTot = sB + sVar, bTot = bB + bVar;
+      if(out) out.textContent = f;
+      if(st){ st.textContent = fmt(sTot); } if(stv){ stv.textContent = fmt(sVar); }
+      if(bu){ bu.textContent = fmt(bTot); } if(buv){ buv.textContent = fmt(bVar); }
+      var g1=document.getElementById('pr-gs'), g2=document.getElementById('pr-gb');
+      if(g1) g1.textContent = fmt(sB); if(g2) g2.textContent = fmt(bB);
+      if(br) br.textContent = Math.ceil(bTot/20);
     }
-    s.addEventListener('input', calc);
-    calc();
+    if(s) s.addEventListener('input', calc);
+    paint();
   })();
   </script>
 </body>
