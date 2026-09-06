@@ -74,19 +74,7 @@
     .pr-ben .num{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;color:#FF9500;line-height:1;margin-bottom:.5rem}
     .pr-ben h3{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:.5rem}
     .pr-ben p{font-size:.95rem;color:rgba(27,58,107,.72);line-height:1.65;margin:0}
-    .pr-calc{background:#fff;border:1px solid #EBE8E1;border-radius:1.75rem;padding:2rem}
-    .pr-slider{width:100%;accent-color:#FF9500;margin:.35rem 0}
-    .pr-res{display:grid;gap:1rem;margin-top:.5rem}
-    @media(min-width:640px){.pr-res{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    .pr-res .box{border:1px solid #EBE8E1;border-radius:1.1rem;padding:1.4rem;background:#FAF8F3}
-    .pr-res .box.hi{border:2px solid #FF9500;background:rgba(255,149,0,.06)}
-    .pr-res .lab{font-size:.7rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:rgba(27,58,107,.55);margin-bottom:.5rem}
-    .pr-res .box.hi .lab{color:#FF9500}
-    .pr-res .val{font-family:'Space Grotesk',sans-serif;font-size:2.2rem;font-weight:700;line-height:1}
-    .pr-res .box.hi .val{color:#FF9500}
-    .pr-res .sub{font-size:.76rem;color:rgba(27,58,107,.55);margin-top:.5rem}
-    .pr-res .pr-amt{justify-content:flex-start}
-    .pr-steps{display:grid;gap:1.25rem}
+.pr-steps{display:grid;gap:1.25rem}
     @media(min-width:768px){.pr-steps{grid-template-columns:repeat(3,minmax(0,1fr))}}
     .pr-steps article{background:#fff;border:1px solid #EBE8E1;border-radius:1.5rem;padding:1.75rem}
     .pr-steps .n{width:2.4rem;height:2.4rem;border-radius:999px;background:#FF9500;color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:.9rem}
@@ -132,7 +120,7 @@
         <p class="text-lg lg:text-xl text-navy/70 leading-relaxed max-w-2xl mb-8">Eine feste Grundgebühr plus ein Preis je aktivem Fahrer. Keine Abrechnung pro Buchung, keine Hardware, keine Einrichtungsgebühr. Der Monatsbetrag bleibt planbar – auch in Wochen, in denen viel läuft.</p>
         <div class="flex flex-col sm:flex-row gap-3">
           <a href="https://app.palletto.de/registrieren" class="btn-primary"><span class="swap"><span>30 Tage kostenlos testen</span><span>Ohne Kreditkarte</span></span><span class="ico"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></span></a>
-          <a href="#rechner" class="btn-ghost">Preis berechnen</a>
+          <a href="#pakete" class="btn-ghost">Pakete ansehen</a>
         </div>
       </div>
     </section>
@@ -253,7 +241,7 @@
           <article>
             <div class="num">20 €</div>
             <h3>Weniger Schwund</h3>
-            <p>So viel kostet eine Europalette im Nachkauf ungefähr. Jeder Schein, der nicht verloren geht, ist eine Palette, die du nicht ersetzen musst. Bei einem mittleren Fuhrpark summiert sich das schnell auf einen vierstelligen Betrag im Jahr.</p>
+            <p>So viel kostet eine Europalette im Nachkauf ungefähr. Bei zehn Fahrern liegt Business bei 289 € im Monat – wer dafür rund 15 Paletten weniger im Monat verliert, hat die Software bereits bezahlt. Alles darüber ist gespartes Geld.</p>
           </article>
           <article>
             <div class="num">0 Min</div>
@@ -275,44 +263,6 @@
     </section>
 
     <!-- RECHNER -->
-    <section id="rechner" class="px-6 py-14 lg:py-20 bg-white border-y border-line">
-      <div class="max-w-4xl mx-auto">
-        <div class="eyebrow mb-5"><span class="slat"><svg width="12" height="12" viewBox="0 0 18 18" aria-hidden="true"><g fill="#fff"><rect x="2" y="3" width="14" height="3" rx="1.2"/><rect x="2" y="7.5" width="14" height="3" rx="1.2"/><rect x="2" y="12" width="14" height="3" rx="1.2"/></g></svg></span><span class="lbl">Preisrechner</span></div>
-        <h2 class="font-display text-3xl lg:text-4xl font-bold tracking-tight mb-3">Was kostet Palletto bei dir?</h2>
-        <p class="text-lg text-navy/70 leading-relaxed mb-8">Stell die Zahl deiner aktiven Fahrer ein – der Monatsbetrag rechnet sich sofort mit.</p>
-
-        <div class="pr-calc">
-          <div style="margin-bottom:1.75rem;">
-            <div class="flex items-center justify-between mb-3">
-              <label for="pr-fahrer" class="font-display font-bold text-lg">Aktive Fahrer</label>
-              <span id="pr-fahrer-val" class="font-display text-2xl font-bold text-orange">10</span>
-            </div>
-            <input type="range" id="pr-fahrer" min="1" max="50" step="1" value="10" class="pr-slider">
-            <div class="flex justify-between text-xs text-navy/45"><span>1</span><span>50</span></div>
-          </div>
-
-          <div class="pr-res">
-            <div class="box">
-              <div class="lab">Starter</div>
-              <div class="pr-amt"><span class="val" id="pr-starter">179</span><span class="cur" style="font-size:1.2rem;">€</span><span class="per">/ Monat</span></div>
-              <div class="sub"><span id="pr-gs">59</span> € Grundgebühr + <span id="pr-starter-var">120</span> € Fahrer</div>
-            </div>
-            <div class="box hi">
-              <div class="lab">Business</div>
-              <div class="pr-amt"><span class="val" id="pr-business">289</span><span class="cur" style="font-size:1.2rem;color:#FF9500;">€</span><span class="per">/ Monat</span></div>
-              <div class="sub"><span id="pr-gb">99</span> € Grundgebühr + <span id="pr-business-var">190</span> € Fahrer</div>
-            </div>
-          </div>
-
-          <div style="margin-top:1.5rem;border-radius:1.1rem;background:#0F1B2D;color:#fff;padding:1.5rem;">
-            <div style="font-size:.82rem;color:rgba(255,255,255,.6);margin-bottom:.4rem;">Zum Vergleich: verlorene Paletten</div>
-            <p style="color:rgba(255,255,255,.88);line-height:1.65;font-size:.95rem;margin:0;">Eine Europalette kostet im Nachkauf rund 20 €. Wer im Monat nur <strong id="pr-break">15</strong> Paletten weniger verliert, hat das Business-Paket bereits ausgeglichen. Alles darüber ist gespartes Geld.</p>
-          </div>
-
-          <p class="text-xs text-navy/50" style="margin-top:1.25rem;">Abgerechnet werden nur Fahrer, die im Monat mindestens einen Schein erfasst haben. Alle Beträge zzgl. USt.</p>
-        </div>
-      </div>
-    </section>
 
     <!-- ENTSCHEIDUNGSHILFE -->
     <section class="px-6 py-14 lg:py-20">
@@ -442,35 +392,10 @@
         n.textContent = yearly ? 'zzgl. USt. · jährlich abgerechnet' : 'zzgl. USt. · monatlich kündbar';
       });
       if(mB&&yB){ mB.classList.toggle('on',!yearly); yB.classList.toggle('on',yearly); }
-      calc();
     }
     if(mB) mB.addEventListener('click',function(){ yearly=false; paint(); });
     if(yB) yB.addEventListener('click',function(){ yearly=true; paint(); });
 
-    /* --- Rechner --- */
-    var s = document.getElementById('pr-fahrer');
-    var out = document.getElementById('pr-fahrer-val');
-    var st = document.getElementById('pr-starter'), stv = document.getElementById('pr-starter-var');
-    var bu = document.getElementById('pr-business'), buv = document.getElementById('pr-business-var');
-    var br = document.getElementById('pr-break');
-    function fmt(n){ return n.toLocaleString('de-DE'); }
-    function calc(){
-      if(!s) return;
-      var f = parseInt(s.value, 10) || 1;
-      var sB = yearly ? eff(BASE.starter) : BASE.starter;
-      var bB = yearly ? eff(BASE.business) : BASE.business;
-      var sD = yearly ? eff(DRV.starter) : DRV.starter;
-      var bD = yearly ? eff(DRV.business) : DRV.business;
-      var sVar = f*sD, bVar = f*bD;
-      var sTot = sB + sVar, bTot = bB + bVar;
-      if(out) out.textContent = f;
-      if(st){ st.textContent = fmt(sTot); } if(stv){ stv.textContent = fmt(sVar); }
-      if(bu){ bu.textContent = fmt(bTot); } if(buv){ buv.textContent = fmt(bVar); }
-      var g1=document.getElementById('pr-gs'), g2=document.getElementById('pr-gb');
-      if(g1) g1.textContent = fmt(sB); if(g2) g2.textContent = fmt(bB);
-      if(br) br.textContent = Math.ceil(bTot/20);
-    }
-    if(s) s.addEventListener('input', calc);
     paint();
   })();
   </script>
