@@ -6,6 +6,11 @@
       "source": "/preise.html",
       "destination": "/kontakt.html",
       "permanent": true
+    },
+    {
+      "source": "/preise",
+      "destination": "/kontakt.html",
+      "permanent": true
     }
   ]
 }
