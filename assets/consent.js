@@ -5,17 +5,34 @@
    kurz vor </body> auf jeder Seite.
 
    Grundsatz: Vor einer Einwilligung wird KEIN Marketing-Script
-   geladen. Das LinkedIn Insight Tag wird ausschliesslich hier
-   gestartet – es darf in keiner Seite mehr fest eingebaut sein.
+   geladen und keine Verbindung zu LinkedIn oder Google
+   aufgebaut. Beide Dienste werden ausschliesslich hier
+   gestartet – sie duerfen in keiner Seite fest eingebaut sein.
 
-   Einstellungen erneut oeffnen:  window.pallettoConsent.open()
+   Google Consent Mode v2 wird sofort auf "denied" gesetzt,
+   bevor irgendetwas laedt. Erst die Einwilligung schaltet auf
+   "granted" und laedt das Google-Tag nach.
+
+   Conversion melden:            window.pallettoTrack.demoTour()
+   Einstellungen erneut oeffnen: window.pallettoConsent.open()
    ============================================================ */
 (function () {
   "use strict";
 
-  var SPEICHER   = "palletto-consent";
-  var FASSUNG    = 1;                 // bei inhaltlicher Aenderung hochzaehlen
-  var LI_PARTNER = "9703802";
+  /* ---------- Konfiguration ---------- */
+
+  var SPEICHER = "palletto-consent";
+  var FASSUNG  = 2;            // bei inhaltlicher Aenderung hochzaehlen
+
+  var LI_PARTNER    = "9703802";
+  var LI_CONVERSION = 31233506;
+
+  var ADS_ID    = "AW-18503040542";
+  var ADS_LABEL = "2qTBCN-XzpsdEJ789_ZE";
+
+  // Sobald die GA4-Property existiert, hier die Mess-ID eintragen
+  // (Format "G-XXXXXXXXXX"). Leer lassen heisst: GA4 laeuft nicht.
+  var GA4_ID = "";
 
   /* ---------- Speicher ---------- */
 
@@ -37,6 +54,27 @@
       }));
     } catch (e) { /* privater Modus o. ae. – dann gilt: keine Einwilligung */ }
   }
+
+  /* ---------- Google Consent Mode v2 ----------
+     Das hier baut keine Verbindung zu Google auf. Es legt nur
+     fest, womit das Google-Tag zu rechnen hat, falls es spaeter
+     geladen wird: zunaechst mit einem Nein zu allem. */
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  if (typeof window.gtag !== "function") window.gtag = gtag;
+
+  gtag("consent", "default", {
+    ad_storage:            "denied",
+    ad_user_data:          "denied",
+    ad_personalization:    "denied",
+    analytics_storage:     "denied",
+    functionality_storage: "granted",
+    security_storage:      "granted",
+    wait_for_update:       500
+  });
+  gtag("set", "ads_data_redaction", true);
+  gtag("set", "url_passthrough", true);
 
   /* ---------- LinkedIn Insight Tag ---------- */
 
@@ -62,13 +100,64 @@
     s.parentNode.insertBefore(b, s);
   }
 
-  /* Bei Widerruf: Script laesst sich nicht entladen, aber die von
-     LinkedIn gesetzten Cookies werden entfernt und beim naechsten
+  /* ---------- Google (Ads, spaeter zusaetzlich GA4) ---------- */
+
+  var googleGeladen = false;
+
+  function googleStarten() {
+    if (googleGeladen) return;
+    googleGeladen = true;
+
+    gtag("consent", "update", {
+      ad_storage:         "granted",
+      ad_user_data:       "granted",
+      ad_personalization: "granted",
+      analytics_storage:  "granted"
+    });
+    gtag("set", "ads_data_redaction", false);
+
+    var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.async = true;
+    b.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(ADS_ID);
+    s.parentNode.insertBefore(b, s);
+
+    gtag("js", new Date());
+    gtag("config", ADS_ID);
+    if (GA4_ID) gtag("config", GA4_ID);
+  }
+
+  /* ---------- Widerruf: Cookies entfernen ----------
+     Ein bereits geladenes Script laesst sich nicht entladen.
+     Die gesetzten Cookies werden entfernt, und beim naechsten
      Seitenaufruf wird gar nichts mehr geladen. */
-  function linkedInCookiesLoeschen() {
-    var namen = ["li_fat_id", "li_sugr", "bcookie", "bscookie", "lidc", "UserMatchHistory", "AnalyticsSyncHistory", "li_gc"];
+
+  function cookiesLoeschen() {
+    var feste = [
+      /* LinkedIn */
+      "li_fat_id", "li_sugr", "bcookie", "bscookie", "lidc",
+      "UserMatchHistory", "AnalyticsSyncHistory", "li_gc",
+      /* Google */
+      "_gcl_au", "_gcl_aw", "_gcl_dc", "_gcl_gb", "_ga", "_gid", "_gat"
+    ];
+
+    /* GA4 und Google Ads legen zusaetzlich Cookies mit variablem
+       Namen an (_ga_ABC123, _gac_AW-...). Die werden hier anhand
+       ihres Praefixes eingesammelt. */
+    var variable = [];
+    try {
+      document.cookie.split(";").forEach(function (teil) {
+        var name = teil.split("=")[0].trim();
+        if (name.indexOf("_ga_") === 0 || name.indexOf("_gac_") === 0) {
+          variable.push(name);
+        }
+      });
+    } catch (e) { /* ignorieren */ }
+
+    var namen = feste.concat(variable);
     var host = location.hostname;
     var domains = [host, "." + host, "." + host.split(".").slice(-2).join(".")];
+
     namen.forEach(function (n) {
       domains.forEach(function (d) {
         document.cookie = n + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=" + d;
@@ -78,9 +167,39 @@
   }
 
   function anwenden(marketing) {
-    if (marketing) linkedInStarten();
-    else linkedInCookiesLoeschen();
+    if (marketing) {
+      linkedInStarten();
+      googleStarten();
+    } else {
+      cookiesLoeschen();
+    }
   }
+
+  /* ---------- Conversion „Demo-Tour gebucht" ----------
+     Wird von kontakt.html aufgerufen, sobald Cal.com die Buchung
+     bestaetigt hat. Ohne Einwilligung passiert nichts – das ist
+     gewollt und der Grund, warum die gemessenen Zahlen niedriger
+     liegen als die tatsaechlichen Buchungen.
+     Das Flag verhindert Doppelzaehlung, falls Cal.com das
+     Ereignis mehrfach meldet. */
+
+  var demoGemeldet = false;
+
+  window.pallettoTrack = {
+    demoTour: function () {
+      if (demoGemeldet) return;
+      var zustand = lesen();
+      if (!zustand || !zustand.marketing) return;
+      demoGemeldet = true;
+
+      if (typeof window.lintrk === "function") {
+        window.lintrk("track", { conversion_id: LI_CONVERSION });
+      }
+      gtag("event", "conversion", {
+        send_to: ADS_ID + "/" + ADS_LABEL
+      });
+    }
+  };
 
   /* ---------- Styles ---------- */
 
@@ -134,14 +253,14 @@
 
   /* ---------- Banner ---------- */
 
-  var box = null, overlay = null, letzterFokus = null;
+  var box = null, letzterFokus = null;
 
   function schliessen() {
     if (!box) return;
     box.classList.remove("offen");
     setTimeout(function () {
       if (box && box.parentNode) box.parentNode.removeChild(box);
-      box = null; overlay = null;
+      box = null;
       if (letzterFokus && letzterFokus.focus) letzterFokus.focus();
     }, 240);
   }
@@ -165,7 +284,7 @@
 
     box.innerHTML =
       '<div class="plc-in">' +
-        '<p id="plc-titel">Wir messen mit dem LinkedIn Insight Tag, ob unsere Anzeigen etwas bringen. ' +
+        '<p id="plc-titel">Wir messen mit LinkedIn und Google, ob unsere Anzeigen etwas bringen. ' +
         'Nur mit Ihrer Zustimmung. Technisch Notwendiges läuft ohnehin. ' +
         '<a href="/datenschutz.html">Datenschutz</a></p>' +
 
@@ -184,7 +303,7 @@
           '</div>' +
           '<div class="plc-zeile">' +
             '<div><h3>Marketing</h3>' +
-            '<p>LinkedIn Insight Tag. Überträgt Daten an LinkedIn in den USA.</p></div>' +
+            '<p>LinkedIn Insight Tag und Google Ads. Übertragen Daten an LinkedIn und Google in den USA.</p></div>' +
             '<label class="plc-schalter">' +
               '<input type="checkbox" id="plc-marketing" aria-label="Marketing erlauben">' +
               '<span class="plc-spur"></span><span class="plc-knopf"></span>' +

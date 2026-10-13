@@ -459,22 +459,17 @@
     cssVarsPerTheme: { light: { "cal-brand": "#FF9500" } }
   });
 
-  /* LinkedIn-Conversion „Demo-Tour gebucht" – feuert erst, wenn Cal.com die
-     Buchung bestätigt hat. Ein Seitenaufruf allein löst nichts aus.
-     Mehrfachzählung ist ausgeschlossen: das Flag unten lässt nur einen Treffer zu. */
-  (function () {
-    var gemeldet = false;
-    Cal.ns.demotour("on", {
-      action: "bookingSuccessful",
-      callback: function () {
-        if (gemeldet) return;
-        gemeldet = true;
-        if (typeof window.lintrk === "function") {
-          window.lintrk("track", { conversion_id: 31233506 });
-        }
-      }
-    });
-  })();
+  /* Conversion „Demo-Tour gebucht" – feuert erst, wenn Cal.com die Buchung
+     bestätigt hat. Ein Seitenaufruf allein löst nichts aus.
+     Gemeldet wird an LinkedIn und Google Ads; das übernimmt consent.js,
+     damit ohne Einwilligung nichts passiert und die IDs an einer Stelle
+     gepflegt werden. Mehrfachzählung ist dort ebenfalls ausgeschlossen. */
+  Cal.ns.demotour("on", {
+    action: "bookingSuccessful",
+    callback: function () {
+      if (window.pallettoTrack) window.pallettoTrack.demoTour();
+    }
+  });
 
   // Ladeanzeige entfernen, sobald der Kalender steht – sonst Fallback zeigen.
   (function () {
