@@ -16,6 +16,68 @@
    Conversion melden:            window.pallettoTrack.demoTour()
    Einstellungen erneut oeffnen: window.pallettoConsent.open()
    ============================================================ */
+
+/* ============================================================
+   TEIL 1 – Eigener Besucherzaehler
+   ------------------------------------------------------------
+   ACHTUNG, bevor jemand hier aufraeumt: Dieser Block laeuft
+   absichtlich VOR und AUSSERHALB der Einwilligung. Er gehoert
+   nicht in den Teil darunter.
+
+   Begruendung: Der Zaehler setzt kein Cookie, liest und
+   schreibt nichts auf dem Geraet und bildet keinen Fingerprint.
+   Damit greift § 25 Abs. 1 TDDDG nicht und es braucht keine
+   Einwilligung. Genau deshalb stimmen die Zahlen auch – es
+   werden die Besucher mitgezaehlt, die das Banner wegklicken,
+   und das ist je nach Seite die Haelfte.
+
+   Wer diesen Block hinter das Einwilligungs-Gate schiebt,
+   macht die Statistik wertlos.
+
+   Gegenstelle: /api/z  (Repo palletto-landing, Datei api/z.js)
+   ============================================================ */
+(function () {
+  "use strict";
+  try {
+    if (location.protocol === "file:") return;
+    if (/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) return;
+
+    var q = new URLSearchParams(location.search);
+    var breite = window.innerWidth || 0;
+
+    var daten = {
+      pfad:         location.pathname || "/",
+      referrer:     document.referrer || "",
+      utm_quelle:   q.get("utm_source")   || "",
+      utm_medium:   q.get("utm_medium")   || "",
+      utm_kampagne: q.get("utm_campaign") || "",
+      /* Google Ads haengt beim Klick eine gclid an. Wir merken
+         uns nur, DASS der Aufruf aus einer Anzeige kam – die
+         Klick-Kennung selbst wird nicht gespeichert. */
+      google_ads:   q.has("gclid") || q.has("gbraid") || q.has("wbraid"),
+      /* Grobe Klasse statt Pixelbreite: eine genaue
+         Fenstergroesse waere ein Fingerprint-Merkmal. */
+      geraet:       breite < 768 ? "handy" : (breite < 1100 ? "tablet" : "desktop")
+    };
+
+    var json = JSON.stringify(daten);
+
+    if (navigator.sendBeacon) {
+      navigator.sendBeacon("/api/z", new Blob([json], { type: "application/json" }));
+    } else {
+      fetch("/api/z", {
+        method:  "POST",
+        headers: { "Content-Type": "application/json" },
+        body:    json,
+        keepalive: true
+      }).catch(function () { /* Zaehlen darf nie stoeren */ });
+    }
+  } catch (e) { /* Zaehlen darf nie stoeren */ }
+})();
+
+/* ============================================================
+   TEIL 2 – Einwilligungsbanner
+   ============================================================ */
 (function () {
   "use strict";
 
