@@ -7,13 +7,16 @@
 - Kern: Palettenschein digital erfassen (abgeliefert/abgeholt), Unterschrift Fahrer + Empfänger (§126b BGB), Foto-Beleg, QR-Echtheitsprüfung (SHA-256)
 - Büro: Kunden-Bilanz/Saldo, Lücken-Erkennung, Touren-Planung, Palettenbestand & Fehlbestand-Check, Mahnwesen, PDF/CSV-Export
 - Fahrer-App: Token-Login ohne Passwort, offline nutzbar, keine Schulung nötig
-- Preis: Grundgebuehr plus Entgelt je aktivem Fahrer und Monat statt pro Transaktion. Planbar, weil nicht das Transaktionsvolumen zaehlt. Konditionen werden individuell je Betriebsgroesse vereinbart - Termin unter https://palletto.de/kontakt.html
+- Preis: Starter 69 EUR Grundgebuehr plus 12 EUR je aktivem Fahrer und Monat; Business 129 EUR Grundgebuehr plus 19 EUR je aktivem Fahrer und Monat; Enterprise ab ca. 15 Fahrern auf Anfrage. Alle Preise netto zuzueglich gesetzlicher Umsatzsteuer. Als aktiv gilt ein Fahrer, der im Abrechnungsmonat mindestens einen Palettenschein erfasst.
+- Testphase: 30 Tage kostenlos und unverbindlich, ohne Kreditkarte. Die Testphase endet automatisch; eine kostenpflichtige Weiternutzung erfordert einen separaten Vertragsabschluss.
+- Einrichtung: Beim Standard-Selbststart faellt keine verpflichtende Einrichtungsgebuehr an. Optionale Einrichtung, Datenuebernahme oder Schulung nur nach vorheriger Vereinbarung.
 - Datenschutz: DSGVO-konform, AVV, EU-Server (Frankfurt), verschlüsselte Backups
 - Gründer: Cem-Kaan Özertas – aktiver Spediteur (eigene LKW, GLS-Subunternehmer)
 - Kontakt: info@palletto.de
 
 ## Kernseiten
 - [Palletto Startseite](https://palletto.de/): Digitale Palettenscheine mit Unterschrift für Speditionen
+- [Preise](https://palletto.de/preise.html): Starter, Business und Enterprise mit Fahrerrechner
 - [Palettenschein digitalisieren](https://palletto.de/palettenschein-digitalisieren.html): Vom Papier-Durchschlag zum rechtssicheren digitalen Palettenschein
 - [Palettenkonto-Software](https://palletto.de/palettenkonto-software.html): Palettenkonto je Kunde führen – wer schuldet wem wie viele Paletten
 - [Palettenmanagement-Software](https://palletto.de/palettenmanagement-software.html): Paletten verwalten, Salden, Bestand, Auswertung

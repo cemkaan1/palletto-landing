@@ -1,16 +1,4 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false,
-  "redirects": [
-    {
-      "source": "/preise.html",
-      "destination": "/kontakt.html",
-      "permanent": true
-    },
-    {
-      "source": "/preise",
-      "destination": "/kontakt.html",
-      "permanent": true
-    }
-  ]
+  "trailingSlash": false
 }
