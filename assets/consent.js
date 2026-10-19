@@ -92,6 +92,18 @@
   var ADS_ID    = "AW-18503040542";
   var ADS_LABEL = "2qTBCN-XzpsdEJ789_ZE";
 
+  /* Conversion "Testzugang gestartet", angelegt 19.10.2026.
+     Gemessen wird der Klick auf einen Knopf mit data-cta="trial",
+     nicht der Abschluss der Registrierung. Grund: die Registrierung
+     liegt auf app.palletto.de, also auf einer anderen Domain ohne
+     Einwilligungsbanner, und die gclid traegt nicht ueber die
+     Domaingrenze. Das zaehlt Absicht statt Abschluss, ist dafuer
+     aber sauber einer Anzeige zuzuordnen.
+     LinkedIn-Conversion fuer denselben Schritt ist noch nicht
+     angelegt - 0 heisst: an LinkedIn wird nichts gemeldet. */
+  var ADS_LABEL_TRIAL     = "qPhECISGraIdEJ789_ZE";
+  var LI_CONVERSION_TRIAL = 0;
+
   // Sobald die GA4-Property existiert, hier die Mess-ID eintragen
   // (Format "G-XXXXXXXXXX"). Leer lassen heisst: GA4 laeuft nicht.
   var GA4_ID = "";
@@ -245,7 +257,8 @@
      Das Flag verhindert Doppelzaehlung, falls Cal.com das
      Ereignis mehrfach meldet. */
 
-  var demoGemeldet = false;
+  var demoGemeldet  = false;
+  var trialGemeldet = false;
 
   window.pallettoTrack = {
     demoTour: function () {
@@ -260,8 +273,34 @@
       gtag("event", "conversion", {
         send_to: ADS_ID + "/" + ADS_LABEL
       });
+    },
+
+    /* Wird beim Klick auf einen Knopf mit data-cta="trial" ausgeloest.
+       Eigenes Flag, damit Demo und Test sich nicht gegenseitig sperren. */
+    trialStart: function () {
+      if (trialGemeldet) return;
+      var zustand = lesen();
+      if (!zustand || !zustand.marketing) return;
+      trialGemeldet = true;
+
+      if (LI_CONVERSION_TRIAL && typeof window.lintrk === "function") {
+        window.lintrk("track", { conversion_id: LI_CONVERSION_TRIAL });
+      }
+      if (ADS_LABEL_TRIAL) {
+        gtag("event", "conversion", {
+          send_to: ADS_ID + "/" + ADS_LABEL_TRIAL
+        });
+      }
     }
   };
+
+  /* Klicks auf Testen-Knoepfe abfangen. Delegiert am document, weil Header
+     und Fusszeile per innerHTML nachgeladen werden - ein Listener direkt am
+     Knopf gaebe es zu dem Zeitpunkt noch gar nicht. */
+  document.addEventListener("click", function (e) {
+    var knopf = e.target && e.target.closest && e.target.closest('[data-cta="trial"]');
+    if (knopf) window.pallettoTrack.trialStart();
+  }, true);
 
   /* ---------- Styles ---------- */
 
